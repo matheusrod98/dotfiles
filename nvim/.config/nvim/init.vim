@@ -6,9 +6,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
 " Color scheme.
-Plug 'sainnhe/edge'
 Plug 'sainnhe/gruvbox-material'
-Plug 'folke/tokyonight.nvim'
 
 " Lualine
 Plug 'hoob3rt/lualine.nvim'
@@ -31,6 +29,7 @@ call plug#end ()
 
 syntax enable
 set number
+set wildmenu
 set relativenumber
 set shiftwidth=4
 set tabstop=4
@@ -51,28 +50,19 @@ set hidden
 set noshowmode
 
 " Theme.
-let g:gruvbox_material_enable_italic = 1
 let g:gruvbox_material_sign_column_background = 'none'
 let g:gruvbox_material_better_performance = 1
 let g:gruvbox_material_transparent_background = 1
+let g:gruvbox_material_palette = 'mix'
+let g:gruvbox_material_background = 'soft'
 colorscheme gruvbox-material
-
-"let g:edge_style = 'default'
-"let g:edge_disable_italic_comment = 1
-"let g:edge_transparent_background = 1
-"let g:edge_better_performance = 1
-"colorscheme edge
-
-"let g:tokyonight_style = "storm"
-"let g:tokyonight_transparent = 1
-"colorscheme tokyonight
 
 " Lualine.
 lua << EOF
 require'lualine'.setup {
     options = {
     icons_enabled = false,
-    theme = 'gruvbox_material',
+    theme = 'gruvbox',
     component_separators = {'', ''},
     section_separators = {'', ''},
     disabled_filetypes = {}
@@ -131,27 +121,20 @@ local on_attach = function(client, bufnr)
   -- Mappings.
   local opts = { noremap=true, silent=true }
 
-  -- See `:help vim.lsp.*` for documentation on any of the below functions
-  buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-  buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-  buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-  buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-  buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-  buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-  buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
-  buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-  buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
-  buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
-  buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-
 end
 EOF
+
+nnoremap <leader>gd :lua vim.lsp.buf.definition()<CR>
+nnoremap <leader>gi :lua vim.lsp.buf.implementation()<CR>
+nnoremap <leader>vsh :lua vim.lsp.buf.signature_help()<CR>
+nnoremap <leader>vr :lua vim.lsp.buf.references()<CR>
+nnoremap <leader>rn :lua vim.lsp.buf.rename()<CR>
+nnoremap <leader>h :lua vim.lsp.buf.hover()<CR>
+nnoremap <leader>ca :lua vim.lsp.buf.code_action()<CR>
+nnoremap <leader>d :lua vim.lsp.diagnostic.show_line_diagnostics(); vim.lsp.util.show_line_diagnostics()<CR>
+nnoremap <leader>gp :lua vim.lsp.diagnostic.goto_prev()<CR>
+nnoremap <leader>gn :lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap <leader>vll :call LspLocationList()<CR>
 
 " nvim-compe configuration.
 let g:compe = {}
@@ -162,7 +145,6 @@ let g:compe.min_length = 1
 let g:compe.preselect = 'enable'
 let g:compe.throttle_time = 80
 let g:compe.source_timeout = 200
-let g:compe.resolve_timeout = 800
 let g:compe.incomplete_delay = 400
 let g:compe.max_abbr_width = 100
 let g:compe.max_kind_width = 100
@@ -176,9 +158,6 @@ let g:compe.source.calc = v:true
 let g:compe.source.nvim_lsp = v:true
 let g:compe.source.nvim_lua = v:true
 let g:compe.source.vsnip = v:true
-let g:compe.source.ultisnips = v:true
-let g:compe.source.luasnip = v:true
-let g:compe.source.emoji = v:true
 
 inoremap <silent><expr> <CR>      compe#confirm('<CR>')
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
