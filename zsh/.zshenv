@@ -15,6 +15,6 @@ export NPM_CONFIG_PREFIX=$XDG_CONFIG_HOME/npm/npm-global
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
 
 # ZSH history config.
-export HISTFILE="$ZDOTDIR/.zhistory"
+export HISTFILE="$XDG_CACHE_HOME/zsh/.zhistory"
 export HISTSIZE=1000000
 export SAVEHIST=1000000

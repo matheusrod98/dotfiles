@@ -15,6 +15,7 @@ Plug 'hoob3rt/lualine.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
 Plug 'kabouzeid/nvim-lspinstall'
+Plug 'glepnir/lspsaga.nvim'
 
 "NERDCommenter
 Plug 'preservim/nerdcommenter'
@@ -190,6 +191,22 @@ require'lspinstall'.post_install_hook = function ()
   vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
 end
 EOF
+
+" lspsaga config.
+lua << EOF
+local saga = require 'lspsaga'
+saga.init_lsp_saga()
+EOF
+nnoremap <silent><leader>ca :Lspsaga code_action<CR>
+vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
+nnoremap <silent>K :Lspsaga hover_doc<CR>
+nnoremap <silent> gs :Lspsaga signature_help<CR>
+nnoremap <silent>gr :Lspsaga rename<CR>
+nnoremap <silent> gd :Lspsaga preview_definition<CR>
+nnoremap <silent><leader>cd <cmd>lua
+nnoremap <silent> [e :Lspsaga diagnostic_jump_next<CR>
+nnoremap <silent> ]e :Lspsaga diagnostic_jump_prev<CR>
+
 
 " Treesitter modules and configuration.
 lua << EOF

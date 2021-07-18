@@ -29,11 +29,11 @@ bindkey -v
 # Enable searching through history
 bindkey '^R' history-incremental-pattern-search-backward
 
-# My aliases.
-source $XDG_CONFIG_HOME/zsh/zsh_aliases
-
 # CTRL + SPACE to use autosuggestion.
 bindkey '^ ' autosuggest-accept
+
+# My aliases.
+source $XDG_CONFIG_HOME/zsh/zsh_aliases
 
 # Nautilus
 source $XDG_CONFIG_HOME/zsh/nautilus_sources
