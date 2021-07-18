@@ -25,6 +25,9 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Git integration
 Plug 'tpope/vim-fugitive'
 
+" Python PEP8 formatter.
+Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
+
 call plug#end ()
 
 syntax enable
@@ -98,6 +101,9 @@ EOF
 
 " Leader key.
 let mapleader = " "
+
+" Some keybindings.
+nnoremap <leader>8 <cmd>:YAPF<cr>
 
 " Telescope commands.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
