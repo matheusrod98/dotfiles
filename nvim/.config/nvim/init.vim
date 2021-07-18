@@ -36,7 +36,11 @@ set tabstop=4
 set expandtab
 set incsearch
 set nohls
-set termguicolors
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 set noerrorbells
 set updatetime=50
 set cmdheight=2
@@ -53,8 +57,7 @@ set noshowmode
 let g:gruvbox_material_sign_column_background = 'none'
 let g:gruvbox_material_better_performance = 1
 let g:gruvbox_material_transparent_background = 1
-let g:gruvbox_material_palette = 'mix'
-let g:gruvbox_material_background = 'soft'
+let g:gruvbox_material_palette = 'original'
 colorscheme gruvbox-material
 
 " Lualine.
@@ -62,7 +65,7 @@ lua << EOF
 require'lualine'.setup {
     options = {
     icons_enabled = false,
-    theme = 'gruvbox',
+    theme = 'gruvbox_material',
     component_separators = {'', ''},
     section_separators = {'', ''},
     disabled_filetypes = {}
