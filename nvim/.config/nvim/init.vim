@@ -56,6 +56,7 @@ set nowritebackup
 filetype plugin on
 set hidden
 set noshowmode
+set encoding=utf-8
 
 " Theme.
 let g:gruvbox_material_sign_column_background = 'none'
