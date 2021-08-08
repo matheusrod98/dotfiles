@@ -7,6 +7,9 @@ Plug 'nvim-telescope/telescope.nvim'
 
 " Color scheme.
 Plug 'sainnhe/gruvbox-material'
+Plug 'rafamadriz/neon'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'sainnhe/edge'
 
 " Lualine
 Plug 'hoob3rt/lualine.nvim'
@@ -40,11 +43,7 @@ set tabstop=4
 set expandtab
 set incsearch
 set nohls
-if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
-endif
+set termguicolors
 set noerrorbells
 set updatetime=50
 set cmdheight=2
@@ -59,18 +58,28 @@ set noshowmode
 set encoding=utf-8
 
 " Theme.
-let g:gruvbox_material_sign_column_background = 'none'
-let g:gruvbox_material_better_performance = 1
-let g:gruvbox_material_transparent_background = 1
-let g:gruvbox_material_palette = 'original'
-colorscheme gruvbox-material
+"let g:gruvbox_material_sign_column_background = 'none'
+"let g:gruvbox_material_better_performance = 1
+"let g:gruvbox_material_transparent_background = 1
+"let g:gruvbox_material_palette = 'original'
+"colorscheme gruvbox-material
+"vim.g.neon_style = "default"
+"vim.g.neon_transparent = true
+"let g:neon_style = 'dark'
+"let g:neon_transparent = 1
+"let g:tokyonight_style = "night"
+"let g:tokyonight_transparent = 1
+let g:edge_style = 'neon'
+let g:edge_transparent_background = 1
+let g:edge_better_performance = 1
+colorscheme edge
 
 " Lualine.
 lua << EOF
 require'lualine'.setup {
     options = {
     icons_enabled = false,
-    theme = 'gruvbox_material',
+    theme = 'palenight',
     component_separators = {'', ''},
     section_separators = {'', ''},
     disabled_filetypes = {}
