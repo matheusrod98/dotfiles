@@ -5,19 +5,10 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
-" Color scheme.
-Plug 'sainnhe/gruvbox-material'
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-Plug 'sainnhe/edge'
-
-" Lualine
-Plug 'hoob3rt/lualine.nvim'
-
 " Nvim LSP and autocompletion.
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
 Plug 'kabouzeid/nvim-lspinstall'
-Plug 'glepnir/lspsaga.nvim'
 
 "NERDCommenter
 Plug 'preservim/nerdcommenter'
@@ -31,11 +22,18 @@ Plug 'tpope/vim-fugitive'
 " Python PEP8 formatter.
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 
+" Statusline.
+Plug 'hoob3rt/lualine.nvim'
+
+" Colorscheme.
+Plug 'sainnhe/gruvbox-material'
+Plug 'projekt0n/github-nvim-theme'
+
 call plug#end ()
 
+set encoding=utf-8
 syntax enable
 set number
-set wildmenu
 set relativenumber
 set shiftwidth=4
 set tabstop=4
@@ -44,6 +42,7 @@ set incsearch
 set nohls
 set termguicolors
 set noerrorbells
+set wildmenu
 set updatetime=50
 set cmdheight=2
 set signcolumn=yes
@@ -54,23 +53,25 @@ set nowritebackup
 filetype plugin on
 set hidden
 set noshowmode
-set encoding=utf-8
 
 " Theme.
 let g:gruvbox_material_sign_column_background = 'none'
 let g:gruvbox_material_better_performance = 1
 let g:gruvbox_material_transparent_background = 1
 let g:gruvbox_material_palette = 'material'
-"let g:tokyonight_style = "night"
-"let g:tokyonight_transparent = 1
-"let g:edge_style = 'neon'
-"let g:edge_transparent_background = 1
-"let g:edge_better_performance = 1
+let g:gruvbox_material_diagnostic_virtual_text = 'colored'
 colorscheme gruvbox-material
+
+"lua << EOF
+"require("github-theme").setup({
+    "themeStyle = "dark",
+    "transparent = true
+"})
+"EOF
 
 " Lualine.
 lua << EOF
-require'lualine'.setup {
+require("lualine").setup {
     options = {
     icons_enabled = false,
     theme = 'gruvbox_material',
@@ -149,6 +150,9 @@ nnoremap <leader>d :lua vim.lsp.diagnostic.show_line_diagnostics(); vim.lsp.util
 nnoremap <leader>gp :lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap <leader>gn :lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <leader>vll :call LspLocationList()<CR>
+nnoremap <leader>vn :lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap <leader>vp :lua vim.lsp.diagnostic.goto_prev()<CR>
+nnoremap <leader>vll :call LspLocationList()<CR>
 
 " nvim-compe configuration.
 let g:compe = {}
@@ -179,6 +183,7 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <ESC> pumvisible() ? compe#close('<C-e>') : "\<ESC>"
 
 lua << EOF
+require'lspconfig'.pylsp.setup{}
 local function setup_servers()
   require'lspinstall'.setup()
   local servers = require'lspinstall'.installed_servers()
@@ -195,22 +200,6 @@ require'lspinstall'.post_install_hook = function ()
   vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
 end
 EOF
-
-" lspsaga config.
-lua << EOF
-local saga = require 'lspsaga'
-saga.init_lsp_saga()
-EOF
-nnoremap <silent><leader>ca :Lspsaga code_action<CR>
-vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
-nnoremap <silent>K :Lspsaga hover_doc<CR>
-nnoremap <silent> gs :Lspsaga signature_help<CR>
-nnoremap <silent>gr :Lspsaga rename<CR>
-nnoremap <silent> gd :Lspsaga preview_definition<CR>
-nnoremap <silent><leader>cd <cmd>lua
-nnoremap <silent> [e :Lspsaga diagnostic_jump_next<CR>
-nnoremap <silent> ]e :Lspsaga diagnostic_jump_prev<CR>
-
 
 " Treesitter modules and configuration.
 lua << EOF

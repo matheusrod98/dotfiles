@@ -7,7 +7,7 @@ alias cp='cp -iv'
 alias mv='mv -iv'
 
 # Better safe than sorry.
-alias rm='rm -i'
+alias rm='rm -iv'
 
 # Open AppImage nvim.
 alias nvim="/home/matheus/.local/bin/aplications/appimages/./nvim.appimage"
