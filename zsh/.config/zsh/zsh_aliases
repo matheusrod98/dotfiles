@@ -3,11 +3,11 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias cp='cp -iv'
-alias mv='mv -iv'
+alias cp='cp -v'
+alias mv='mv -v'
 
 # Better safe than sorry.
-alias rm='rm -iv'
+alias rm='rm -i'
 
 # Open AppImage nvim.
 alias nvim="/home/matheus/.local/bin/aplications/appimages/./nvim.appimage"
