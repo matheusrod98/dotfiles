@@ -25,6 +25,7 @@ setopt HIST_REDUCE_BLANKS
 
 # Vi mode.
 bindkey -v
+bindkey "^?" backward-delete-char
 
 # Enable searching through history
 bindkey '^R' history-incremental-pattern-search-backward

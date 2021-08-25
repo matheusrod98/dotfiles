@@ -1,13 +1,16 @@
-# Basic aliases.
 alias ls='ls --color=auto'
+alias l='ls --color=auto'
+alias ll='ls -lh'
+alias la='ls -a'
+alias lal='ls -alh'
+
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+
 alias cp='cp -v'
 alias mv='mv -v'
 
-# Better safe than sorry.
-alias rm='rm -i'
+alias open='xdg-open'
 
-# Open AppImage nvim.
-alias nvim="/home/matheus/.local/bin/aplications/appimages/./nvim.appimage"
+alias rm='rm -i'

@@ -27,22 +27,24 @@ Plug 'hoob3rt/lualine.nvim'
 
 " Colorscheme.
 Plug 'sainnhe/gruvbox-material'
-Plug 'projekt0n/github-nvim-theme'
 
 call plug#end ()
 
+filetype plugin indent on
+syntax on
 set encoding=utf-8
-syntax enable
+set nocompatible
 set number
-set relativenumber
-set shiftwidth=4
-set tabstop=4
-set expandtab
-set incsearch
-set nohls
+set ruler
+set shiftwidth=4 tabstop=4 expandtab smarttab
+set incsearch nohls smartcase ignorecase
 set termguicolors
 set noerrorbells
+set background=dark
+set laststatus=2
 set wildmenu
+set mouse=a
+
 set updatetime=50
 set cmdheight=2
 set signcolumn=yes
@@ -50,24 +52,16 @@ set completeopt=menuone,noinsert,noselect
 set shortmess+=c
 set nobackup
 set nowritebackup
-filetype plugin on
 set hidden
 set noshowmode
 
-" Theme.
+"Theme.
 let g:gruvbox_material_sign_column_background = 'none'
 let g:gruvbox_material_better_performance = 1
 let g:gruvbox_material_transparent_background = 1
 let g:gruvbox_material_palette = 'material'
 let g:gruvbox_material_diagnostic_virtual_text = 'colored'
 colorscheme gruvbox-material
-
-"lua << EOF
-"require("github-theme").setup({
-    "themeStyle = "dark",
-    "transparent = true
-"})
-"EOF
 
 " Lualine.
 lua << EOF
