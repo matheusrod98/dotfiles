@@ -4,9 +4,8 @@
 # Blinking l-beam cursor.
 precmd() { echo -ne '\e[5 q' ;}
 
-# My Plugins.
+# My Plugins
 source $XDG_CONFIG_HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-source $XDG_CONFIG_HOME/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 
 # Completion system.
 autoload -Uz compinit
@@ -30,14 +29,11 @@ bindkey "^?" backward-delete-char
 # Enable searching through history
 bindkey '^R' history-incremental-pattern-search-backward
 
-# CTRL + SPACE to use autosuggestion.
-bindkey '^ ' autosuggest-accept
-
 # My aliases.
 source $XDG_CONFIG_HOME/zsh/zsh_aliases
 
 # Nautilus
-source $XDG_CONFIG_HOME/zsh/nautilus_sources
+source $XDG_CONFIG_HOME/zsh/sources/nautilus
 
 # Prompt.
 eval "$(starship init zsh)"
