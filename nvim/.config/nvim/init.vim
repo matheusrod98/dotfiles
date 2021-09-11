@@ -43,7 +43,6 @@ set noerrorbells
 set background=dark
 set laststatus=2
 set wildmenu
-set mouse=a
 
 set updatetime=50
 set cmdheight=2
