@@ -1,0 +1,107 @@
+call plug#begin ('~/.local/share/.vim/plugged')
+
+" Git wrapper.
+Plug 'tpope/vim-fugitive'
+
+" Comment stuff easily.
+Plug 'preservim/nerdcommenter'
+
+" Better syntax highlight.
+Plug 'sheerun/vim-polyglot'
+
+"Colorscheme.
+Plug 'sainnhe/gruvbox-material'
+
+" PEP8 Formatter.
+Plug 'google/yapf', {'rtp': 'plugins/vim', 'for': 'python'}
+
+call plug#end ()
+
+" Load plugin and indentation for each detected file type.
+filetype plugin indent on
+
+" Fixes the cursors
+let &t_SI = "\e[6 q"
+let &t_SR = "\e[4 q"
+let &t_EI = "\e[2 q"
+norm i
+
+" Make netrw able to delete folders with files inside.
+let g:netrw_localrmdir='rm -r'
+
+" Will improve gf and find command.
+set path+=**
+
+" Had problems without it.
+set encoding=utf-8
+
+" Increase command history.
+let history=10000
+
+" Uses syntax highlight that respect my settings.
+syntax enable
+
+" Allows me to move to another buffer without writing to the old file before.
+set hidden
+
+" Number column.
+set number
+
+" Ruler on the statusline.
+set ruler
+
+" Insert and remove 4 spaces when pressed tab, shifted or pressed BS.
+set shiftwidth=4 tabstop=4 softtabstop=4 expandtab smarttab
+
+" Copy the identation from the line form the above or indent when needed.
+set autoindent smartindent
+
+" Backspace deletes indents and tabs.
+set backspace="indent,eol,start"
+
+" Let Vim know that my terminal is fast enough.
+set ttyfast
+
+" Incremental search with highlight and only case-sensitive when a uppercase letter has been inserted.
+set hls incsearch smartcase ignorecase
+ 
+" Basic statusline.
+set laststatus=2
+
+" Update file within vim if it has been changed from outside.
+set autoread
+
+" Autocompletion enabled menu.
+set wildmenu
+
+" More room to command window.
+set cmdheight=2
+
+" For my mental sanity.
+set noerrorbells
+
+" Enable true color support.
+set termguicolors
+
+" Enable mouse support.
+set mouse=a
+
+" Colorcheme configuration.
+set background=dark
+let g:gruvbox_material_background = 'hard'
+let g:gruvbox_material_sign_column_background = 'none'
+let g:gruvbox_material_enable_italic = 1
+let g:gruvbox_material_transparent_background = 1
+let g:gruvbox_material_better_performance = 1
+colorscheme gruvbox-material
+
+" Keyboard mappings.
+let mapleader = " "
+
+nnoremap <silent> <leader>q :cw<CR>
+nnoremap <silent> <leader>Q :ccl<CR>
+nnoremap <silent> <C-n>     :cnext<CR>
+nnoremap <silent> <C-p>     :cprev<CR>
+
+"This unsets the last search pattern register when hitting return.
+nnoremap <silent> <CR> :nohlsearch<CR>

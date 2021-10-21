@@ -32,8 +32,10 @@ bindkey '^R' history-incremental-pattern-search-backward
 # My aliases.
 source $XDG_CONFIG_HOME/zsh/zsh_aliases
 
-# Nautilus
-source $XDG_CONFIG_HOME/zsh/sources/nautilus
-
 # Prompt.
 eval "$(starship init zsh)"
+
+# Nautilus.
+source /home/matheus/Nautilus/nautilus_auv/devel/setup.zsh
+source /usr/share/gazebo/setup.sh
+source ~/harpia/devel/setup.zsh

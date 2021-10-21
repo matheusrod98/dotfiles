@@ -1,3 +1,0 @@
-source /home/matheus/Nautilus/nautilus_auv/devel/setup.zsh
-source /usr/share/gazebo/setup.sh
-source /home/matheus/Nautilus/nautilus_drone/devel/setup.zsh
