@@ -39,3 +39,18 @@ eval "$(starship init zsh)"
 source /home/matheus/Nautilus/nautilus_auv/devel/setup.zsh
 source /usr/share/gazebo/setup.sh
 source ~/harpia/devel/setup.zsh
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/matheus/.local/bin/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/matheus/.local/bin/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/matheus/.local/bin/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/matheus/.local/bin/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<

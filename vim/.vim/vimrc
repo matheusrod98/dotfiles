@@ -26,9 +26,6 @@ let &t_SR = "\e[4 q"
 let &t_EI = "\e[2 q"
 norm i
 
-" Make netrw able to delete folders with files inside.
-let g:netrw_localrmdir='rm -r'
-
 " Will improve gf and find command.
 set path+=**
 
@@ -58,9 +55,6 @@ set autoindent smartindent
 
 " Backspace deletes indents and tabs.
 set backspace="indent,eol,start"
-
-" Let Vim know that my terminal is fast enough.
-set ttyfast
 
 " Incremental search with highlight and only case-sensitive when a uppercase letter has been inserted.
 set hls incsearch smartcase ignorecase
@@ -105,3 +99,63 @@ nnoremap <silent> <C-p>     :cprev<CR>
 
 "This unsets the last search pattern register when hitting return.
 nnoremap <silent> <CR> :nohlsearch<CR>
+
+" Statusline
+set noshowmode
+
+highlight TabLineSel gui=bold cterm=bold
+
+let g:gitBranch = ''
+function! UpdateGitBranch ()
+    let g:gitBranch =  system ("git branch --show-current 2>/dev/null | tr -d '\n'")
+endfunction
+
+augroup UPDATE_GITBRANCH
+  autocmd!
+  autocmd BufEnter * :call UpdateGitBranch()
+  autocmd ShellCmdPost * :call UpdateGitBranch()
+augroup END
+
+let g:currentMode={
+      \ 'n'          :'NORMAL',
+      \ 'no'         :"OPERATOR-PENDING",
+      \ 'nov'        :"OPERATOR-PENDING",
+      \ 'noV'        :"OPERATOR-PENDING",
+      \ 'no"\<C-v>"' :"OPERATOR-PENDING",
+      \ 'niI'        :'NORMAL',
+      \ 'niR'        :'NORMAL',
+      \ 'niV'        :'NORMAL',
+      \ 'v'          :'VISUAL',
+      \ 'V'          :"V-LINE",
+      \ "\<C-v>"     :"V-BLOCK",
+      \ 's'          :'SELECT',
+      \ 'S'          :"S-LINE",
+      \ "\<C-s>"     :"S-BLOCK",
+      \ 'i'          :'INSERT',
+      \ 'ic'         :'INSERT',
+      \ 'ix'         :'INSERT',
+      \ 'R'          :'REPLACE',
+      \ 'Rc'         :'REPLACE',
+      \ 'Rv'         :"V-REPLACE",
+      \ 'Rx'         :'REPLACE',
+      \ 'c'          :'COMMAND',
+      \ 'cv'         :'EX MODE',
+      \ 'ce'         :'EX MODE',
+      \ 'r'          :'PROMPT',
+      \ 'rm'         :'MORE',
+      \ 'r?'         :'CONFIRM',
+      \ '!'          :'SHELL',
+      \ 't'          :'TERMINAL',
+      \}
+
+set statusline=%#TabLineSel#
+set statusline+=\ %{g:currentMode[mode()]}
+set statusline+=\ %#TabLine#
+set statusline+=\ %{g:gitBranch}
+set statusline+=\ %#StatusLineNC#
+set statusline+=\ %F\ %m\ %r
+set statusline+=\ %=
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}/%{&fileformat}
+set statusline+=\ %#TabLineSel#
+set statusline+=\ %l:%c
+set statusline+=\ 

@@ -28,4 +28,4 @@ export PATH=/home/matheus/ardupilot/Tools/autotest:$PATH
 export PATH=/usr/lib/ccache:$PATH
 export GAZEBO_MODEL_PATH=~/ardupilot_gazebo/models
 export GAZEBO_MODEL_PATH=~/harpia/src/harpia_simulator/models
-export PYTHONPATH=$PYTHONPATH:/home/matheus/harpia/src/harpia/include
+export PYTHONPATH=$PYTHONPATH:$HOME/harpia/src/harpia/include
