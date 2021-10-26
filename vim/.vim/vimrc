@@ -29,6 +29,9 @@ norm i
 " Will improve gf and find command.
 set path+=**
 
+" Splits will be below and on the right.
+set splitbelow splitright
+
 " Had problems without it.
 set encoding=utf-8
 
