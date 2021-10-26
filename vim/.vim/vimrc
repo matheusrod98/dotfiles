@@ -103,25 +103,12 @@ nnoremap <silent> <CR> :nohlsearch<CR>
 " Statusline
 set noshowmode
 
-highlight TabLineSel gui=bold cterm=bold
-
-let g:gitBranch = ''
-function! UpdateGitBranch ()
-    let g:gitBranch =  system ("git branch --show-current 2>/dev/null | tr -d '\n'")
-endfunction
-
-augroup UPDATE_GITBRANCH
-  autocmd!
-  autocmd BufEnter * :call UpdateGitBranch()
-  autocmd ShellCmdPost * :call UpdateGitBranch()
-augroup END
-
 let g:currentMode={
       \ 'n'          :'NORMAL',
-      \ 'no'         :"OPERATOR-PENDING",
-      \ 'nov'        :"OPERATOR-PENDING",
-      \ 'noV'        :"OPERATOR-PENDING",
-      \ 'no"\<C-v>"' :"OPERATOR-PENDING",
+      \ 'no'         :"OPERATOR PENDING",
+      \ 'nov'        :"OPERATOR PENDING",
+      \ 'noV'        :"OPERATOR PENDING",
+      \ 'no"\<C-v>"' :"OPERATOR PENDING",
       \ 'niI'        :'NORMAL',
       \ 'niR'        :'NORMAL',
       \ 'niV'        :'NORMAL',
@@ -148,14 +135,39 @@ let g:currentMode={
       \ 't'          :'TERMINAL',
       \}
 
-set statusline=%#TabLineSel#
-set statusline+=\ %{g:currentMode[mode()]}
-set statusline+=\ %#TabLine#
-set statusline+=\ %{g:gitBranch}
-set statusline+=\ %#StatusLineNC#
-set statusline+=\ %F\ %m\ %r
-set statusline+=\ %=
-set statusline+=\ %{&fileencoding?&fileencoding:&encoding}/%{&fileformat}
-set statusline+=\ %#TabLineSel#
-set statusline+=\ %l:%c
-set statusline+=\ 
+highlight TabLineSel gui=bold cterm=bold
+
+let g:gitBranch = ''
+
+augroup UPDATE_GITBRANCH
+    autocmd!
+    autocmd BufEnter * :call UpdateGitBranch()
+    autocmd ShellCmdPost * :call UpdateGitBranch()
+augroup END
+
+function! UpdateGitBranch ()
+    if (system ("git rev-parse --is-inside-work-tree 2>/dev/null | tr -d '\n'") == "true")
+        let g:gitBranch = system ("git branch --show-current 2>/dev/null | tr -d '\n'")
+        set statusline=%#TabLineSel#
+        set statusline+=\ %{g:currentMode[mode()]}
+        set statusline+=\ %#TabLine#
+        set statusline+=\ %{g:gitBranch}
+        set statusline+=\ %#StatusLineNC#
+        set statusline+=\ %F\ %m\ %r
+        set statusline+=\ %=
+        set statusline+=\ %{&fileencoding?&fileencoding:&encoding}/%{&fileformat}
+        set statusline+=\ %#TabLineSel#
+        set statusline+=\ %p%%\ %l:%c
+        set statusline+=\ 
+    else
+        set statusline=%#TabLineSel#
+        set statusline+=\ %{g:currentMode[mode()]}
+        set statusline+=\ %#StatusLineNC#
+        set statusline+=\ %F\ %m\ %r
+        set statusline+=\ %=
+        set statusline+=\ %{&fileencoding?&fileencoding:&encoding}/%{&fileformat}
+        set statusline+=\ %#TabLineSel#
+        set statusline+=\ %p%%\ %l:%c
+        set statusline+=\ 
+    endif
+endfunction
