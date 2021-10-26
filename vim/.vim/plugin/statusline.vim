@@ -38,14 +38,16 @@ let g:gitBranch = ''
 
 augroup UPDATE_GITBRANCH
     autocmd!
-    autocmd BufEnter * :call UpdateGitBranch()
+    autocmd BufEnter *     :call UpdateGitBranch()
     autocmd ShellCmdPost * :call UpdateGitBranch()
-    autocmd CmdUndefined * :call UpdateGitBranch()
+    autocmd BufReadPost *  :call UpdateGitBranch()
+    autocmd BufNewFile *   :call UpdateGitBranch()
 augroup END
 
 function! UpdateGitBranch ()
     if (system ("git rev-parse --is-inside-work-tree 2>/dev/null | tr -d '\n'") == "true")
         let g:gitBranch = system ("git branch --show-current 2>/dev/null | tr -d '\n'")
+
         set statusline=%#TabLineSel#
         set statusline+=\ %{g:currentMode[mode()]}
         set statusline+=\ %#TabLine#
