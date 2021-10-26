@@ -155,9 +155,10 @@ function! UpdateGitBranch ()
         set statusline+=\ %#StatusLineNC#
         set statusline+=\ %F\ %m\ %r
         set statusline+=\ %=
-        set statusline+=\ %{&fileencoding?&fileencoding:&encoding}/%{&fileformat}
+        set statusline+=\ %#TabLine#
+        set statusline+=\ %{&fileencoding?&fileencoding:&encoding}/%{&fileformat}\ %y
         set statusline+=\ %#TabLineSel#
-        set statusline+=\ %p%%\ %l:%c
+        set statusline+=\ %P\ %l:%c
         set statusline+=\ 
     else
         set statusline=%#TabLineSel#
@@ -165,9 +166,10 @@ function! UpdateGitBranch ()
         set statusline+=\ %#StatusLineNC#
         set statusline+=\ %F\ %m\ %r
         set statusline+=\ %=
-        set statusline+=\ %{&fileencoding?&fileencoding:&encoding}/%{&fileformat}
+        set statusline+=\ %#TabLine#
+        set statusline+=\ %{&fileencoding?&fileencoding:&encoding}/%{&fileformat}\ %y
         set statusline+=\ %#TabLineSel#
-        set statusline+=\ %p%%\ %l:%c
+        set statusline+=\ %P\ %l:%c
         set statusline+=\ 
     endif
 endfunction
