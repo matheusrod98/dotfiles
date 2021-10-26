@@ -40,6 +40,7 @@ augroup UPDATE_GITBRANCH
     autocmd!
     autocmd BufEnter * :call UpdateGitBranch()
     autocmd ShellCmdPost * :call UpdateGitBranch()
+    autocmd CmdlineLeave * :call UpdateGitBranch()
 augroup END
 
 function! UpdateGitBranch ()
