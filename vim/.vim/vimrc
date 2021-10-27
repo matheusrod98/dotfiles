@@ -29,6 +29,9 @@ norm i
 " Will improve gf and find command.
 set path+=**
 
+" Turn on omnifunc.
+set omnifunc=syntaxcomplete#Complete
+
 " Splits will be below and on the right.
 set splitbelow splitright
 
