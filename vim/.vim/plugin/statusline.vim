@@ -34,40 +34,15 @@ let g:currentMode={
 
 highlight TabLineSel gui=bold cterm=bold
 
-let g:gitBranch = ''
-
-augroup UPDATE_GITBRANCH
-    autocmd!
-    autocmd BufEnter *     :call UpdateGitBranch()
-    autocmd ShellCmdPost * :call UpdateGitBranch()
-augroup END
-
-function! UpdateGitBranch ()
-    if (system ("git rev-parse --is-inside-work-tree 2>/dev/null | tr -d '\n'") == "true")
-        let g:gitBranch = system ("git branch --show-current 2>/dev/null | tr -d '\n'")
-
-        set statusline=%#TabLineSel#
-        set statusline+=\ %{g:currentMode[mode()]}
-        set statusline+=\ %#TabLine#
-        set statusline+=\ %{g:gitBranch}
-        set statusline+=\ %#StatusLineNC#
-        set statusline+=\ %F\ %m\ %r
-        set statusline+=\ %=
-        set statusline+=\ %#TabLine#
-        set statusline+=\ %{&fileencoding?&fileencoding:&encoding}/%{&fileformat}\ %y
-        set statusline+=\ %#TabLineSel#
-        set statusline+=\ %P\ %l:%c
-        set statusline+=\ 
-    else
-        set statusline=%#TabLineSel#
-        set statusline+=\ %{g:currentMode[mode()]}
-        set statusline+=\ %#StatusLineNC#
-        set statusline+=\ %F\ %m\ %r
-        set statusline+=\ %=
-        set statusline+=\ %#TabLine#
-        set statusline+=\ %{&fileencoding?&fileencoding:&encoding}/%{&fileformat}\ %y
-        set statusline+=\ %#TabLineSel#
-        set statusline+=\ %P\ %l:%c
-        set statusline+=\ 
-    endif
-endfunction
+set statusline=%#TabLineSel#
+set statusline+=\ %{g:currentMode[mode()]}
+set statusline+=\ %#TabLine#
+set statusline+=\ %F
+set statusline+=\ %#StatusLineNC#
+set statusline+=\ [%{FugitiveHead()}]
+set statusline+=\ %m\ %r 
+set statusline+=\ %=
+set statusline+=\ %y\ %{&fileencoding?&fileencoding:&encoding}/%{&fileformat}
+set statusline+=\ %#TabLineSel#
+set statusline+=\ %P\ %l:%c
+set statusline+=\ 
