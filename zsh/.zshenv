@@ -29,3 +29,5 @@ export PATH=/usr/lib/ccache:$PATH
 export GAZEBO_MODEL_PATH=~/ardupilot_gazebo/models
 export GAZEBO_MODEL_PATH=~/harpia/src/harpia_simulator/models
 export PYTHONPATH=$PYTHONPATH:$HOME/harpia/src/harpia/include
+export PATH=/usr/lib/ccache:$PATH
+export UAV_NAMESPACE=red

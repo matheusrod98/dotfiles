@@ -36,9 +36,9 @@ source $XDG_CONFIG_HOME/zsh/zsh_aliases
 eval "$(starship init zsh)"
 
 # Nautilus.
-source /home/matheus/Nautilus/nautilus_auv/devel/setup.zsh
+source $HOME/Nautilus/nautilus_auv/devel/setup.zsh
 source /usr/share/gazebo/setup.sh
-source ~/harpia/devel/setup.zsh
+source $HOME/harpia/devel/setup.zsh
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

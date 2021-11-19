@@ -1,12 +1,14 @@
 " Linter settings.
 compiler pylint
-nnoremap <C-l> :silent make % <CR><CR>
+nnoremap <leader>l :silent make % <CR><CR>
 
-" Format based on PEP8 before write to the file.
-if executable ('black')
-    setlocal formatprg='black'
+" Format based on PEP8.
+if executable ('yapf')
+    setlocal formatprg='yapf'
     setlocal formatexpr=
 endif
+
+nnoremap <leader>f :!yapf -i % <CR><CR>
 
 " Damn you PEP8.
 set colorcolumn=80

@@ -12,9 +12,6 @@ Plug 'sheerun/vim-polyglot'
 "Colorscheme.
 Plug 'sainnhe/gruvbox-material'
 
-" PEP8 Formatter.
-Plug 'google/yapf', {'rtp': 'plugins/vim', 'for': 'python'}
-
 call plug#end ()
 
 " Load plugin and indentation for each detected file type.
