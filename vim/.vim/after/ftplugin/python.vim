@@ -1,6 +1,6 @@
 " Linter settings.
 compiler pylint
-nnoremap <leader>l :silent make % <CR><CR>
+nnoremap <leader>l :silent make % <bar> redraw!<CR>
 
 " Format based on PEP8.
 if executable ('yapf')
@@ -8,7 +8,7 @@ if executable ('yapf')
     setlocal formatexpr=
 endif
 
-nnoremap <leader>f :!yapf -i % <CR><CR>
+nnoremap <leader>f :silent !yapf -i % <bar> redraw!<CR>
 
 " Damn you PEP8.
 set colorcolumn=80

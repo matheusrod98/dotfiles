@@ -1,16 +1,16 @@
 call plug#begin ('~/.local/share/.vim/plugged')
 
+"Colorscheme.
+Plug 'sainnhe/gruvbox-material'
+
+" Better syntax highlight.
+Plug 'sheerun/vim-polyglot'
+
 " Git wrapper.
 Plug 'tpope/vim-fugitive'
 
 " Comment stuff easily.
 Plug 'preservim/nerdcommenter'
-
-" Better syntax highlight.
-Plug 'sheerun/vim-polyglot'
-
-"Colorscheme.
-Plug 'sainnhe/gruvbox-material'
 
 call plug#end ()
 
@@ -83,6 +83,15 @@ set termguicolors
 " Enable mouse support.
 set mouse=a
 
+" Grep commmand
+command! -nargs=+ Rg execute 'silent grep <args>' | redraw! | copen
+
+"" External grep program.
+if executable ('rg')
+    set grepprg=rg\ --only-matching\ --vimgrep\ --smart-case
+    set grepformat=%f:%l:%c:%m
+endif
+
 " Colorcheme configuration.
 set background=dark
 let g:gruvbox_material_background = 'hard'
@@ -95,10 +104,14 @@ colorscheme gruvbox-material
 " Keyboard mappings.
 let mapleader = " "
 
+"" Quickfix list
 nnoremap <silent> <leader>q :cw<CR>
 nnoremap <silent> <leader>Q :ccl<CR>
 nnoremap <silent> <C-n>     :cnext<CR>
 nnoremap <silent> <C-p>     :cprev<CR>
+
+"" Grep.
+nnoremap <leader>g          :Rg<space>
 
 "This unsets the last search pattern register when hitting return.
 nnoremap <silent> <CR> :nohlsearch<CR>
