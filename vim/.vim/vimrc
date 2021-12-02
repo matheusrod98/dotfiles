@@ -1,4 +1,4 @@
-call plug#begin ('~/.local/share/.vim/plugged')
+call plug#begin('~/.local/share/.vim/plugged')
 
 "Colorscheme.
 Plug 'sainnhe/gruvbox-material'
@@ -12,7 +12,7 @@ Plug 'tpope/vim-fugitive'
 " Comment stuff easily.
 Plug 'preservim/nerdcommenter'
 
-call plug#end ()
+call plug#end()
 
 " Load plugin and indentation for each detected file type.
 filetype plugin indent on
@@ -96,10 +96,12 @@ endif
 set background=dark
 let g:gruvbox_material_background = 'hard'
 let g:gruvbox_material_sign_column_background = 'none'
-let g:gruvbox_material_enable_italic = 1
 let g:gruvbox_material_transparent_background = 1
 let g:gruvbox_material_better_performance = 1
 colorscheme gruvbox-material
+
+"netrw.
+let g:netrw_banner=0 
 
 " Keyboard mappings.
 let mapleader = " "
@@ -114,4 +116,4 @@ nnoremap <silent> <C-p>     :cprev<CR>
 nnoremap <leader>g          :Rg<space>
 
 "This unsets the last search pattern register when hitting return.
-nnoremap <silent> <CR> :nohlsearch<CR>
+nnoremap <silent> <CR>      :nohlsearch<CR>
