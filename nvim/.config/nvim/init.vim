@@ -6,6 +6,7 @@ Plug 'tpope/vim-commentary'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'neovim/nvim-lspconfig'
 call plug#end()
 
 " General settings.
@@ -24,6 +25,3 @@ let g:sonokai_better_performance=1
 let g:sonokai_transparent_background=1
 let g:sonokai_style='shusia'
 colorscheme sonokai
-
-" Mappings.
-let mapleader=','
