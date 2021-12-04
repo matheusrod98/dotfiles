@@ -5,6 +5,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 " General settings.
@@ -14,9 +15,7 @@ set sw=4 tabstop=4 softtabstop=4 expandtab
 set smartcase ignorecase
 set cmdheight=2
 set mouse=a
-
-" Netrw.
-let g:netrw_banner=0
+set nofoldenable
 
 " Colorscheme.
 set termguicolors
@@ -28,9 +27,3 @@ colorscheme sonokai
 
 " Mappings.
 let mapleader=','
-
-""Telescope.
-nnoremap <leader>f <cmd>Telescope find_files<CR>
-nnoremap <leader>g <cmd>Telescope live_grep<CR>
-nnoremap <leader>b <cmd>Telescope buffers<CR>
-nnoremap <leader>h <cmd>Telescope help_tags<CR>
