@@ -5,11 +5,11 @@ export XDG_DATA_HOME=$HOME/.local/share
 export XDG_STATE_HOME=$HOME/.local/state
 
 # Some environment variables.
-export PATH=~/.local/bin:$PATH
 export EDITOR="vim"
 export VISUAL="vim"
 export TERM=xterm-256color
 export NPM_CONFIG_PREFIX=$XDG_CONFIG_HOME/npm/npm-global
+export PATH=~/.local/bin:$NPM_CONFIG_PREFIX/bin:$PATH
 
 # Needed for Quartus II
 export QSYS_ROOTDIR="/home/matheus/intelFPGA_lite/20.1/quartus/sopc_builder/bin"
