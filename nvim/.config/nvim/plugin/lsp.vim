@@ -28,7 +28,7 @@ local lspkind = require('lspkind')
 local cmp = require'cmp'
 cmp.setup({
     formatting = {
-        format = lspkind.cmp_format({with_text = false, maxwidth = 50})
+        format = lspkind.cmp_format({with_text = true, maxwidth = 50})
     },
     snippet = {
         expand = function(args)
