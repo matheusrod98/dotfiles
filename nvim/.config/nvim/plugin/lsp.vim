@@ -1,21 +1,70 @@
-setlocal omnifunc=v:lua.vim.lsp.omnifunc
 set completeopt=menu,menuone,noselect
-
-nnoremap <leader>gd :silent lua vim.lsp.buf.definition()<CR>
-nnoremap <leader>gi :silent lua vim.lsp.buf.implementation()<CR>
-nnoremap <leader>gr :silent lua vim.lsp.buf.references()<CR>
-nnoremap <leader>rn :silent lua vim.lsp.buf.rename()<CR>
-nnoremap K          :silent lua vim.lsp.buf.hover()<CR>
-nnoremap <leader>ca :silent lua vim.lsp.buf.code_action()<CR>
-nnoremap <C-k>      :silent lua vim.lsp.buf.signature_help()<CR>
-nnoremap <space>D   :silent lua vim.lsp.buf.signature_help()<CR>
-nnoremap <space>D   :silent lua vim.lsp.buf.signature_help()<CR>
-nnoremap <space>e   :silent lua vim.diagnostic.open_float()<CR>
-nnoremap ]d         :silent lua vim.diagnostic.goto_prev()<CR>
-nnoremap [d         :silent lua vim.diagnostic.goto_next()<CR>
-nnoremap <space>f   :silent lua vim.lsp.buf.formatting()<CR>
-
 lua << EOF
+local on_attach = function(client, bufnr)
+    local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+    local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+
+    buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+    local opts = { noremap=true, silent=true }
+
+    buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+    buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+    buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+    buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+    buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+    buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+    buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+    buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+    buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+    buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+    buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+    buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+    buf_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+    buf_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+    buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_prex()<CR>', opts)
+    buf_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+    buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+
+end
+require"lspconfig".clangd.setup{
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = {
+        debounce_text_changes = 150
+    }
+}
+require"lspconfig".pyright.setup{
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = {
+        debounce_text_changes = 150
+    }
+}
+require"lspconfig".vimls.setup{
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = {
+        debounce_text_changes = 150
+    }
+}
+require"lspconfig".cmake.setup{
+    filetypes = {"cmake", "make"},
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = {
+        debounce_text_changes = 150
+    }
+}
+require"lspconfig".bashls.setup{
+    filetypes = {"zsh", "sh"},
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = {
+        debounce_text_changes = 150
+    }
+}
+
 local has_words_before = function()
     local line, col = unpack(vim.api.nvim_win_get_cursor(0))
     return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
@@ -23,13 +72,9 @@ end
 local feedkey = function(key, mode)
     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
 end
-local lspkind = require('lspkind')
 
 local cmp = require'cmp'
 cmp.setup({
-    formatting = {
-        format = lspkind.cmp_format({with_text = true, maxwidth = 50})
-    },
     snippet = {
         expand = function(args)
             vim.fn["vsnip#anonymous"](args.body)
@@ -78,22 +123,4 @@ cmp.setup({
     })
 })
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-
-require"lspconfig".clangd.setup{
-    capabilities = capabilities
-    }
-require"lspconfig".pyright.setup{
-    capabilities = capabilities
-    }
-require"lspconfig".vimls.setup{
-    capabilities = capabilities
-    }
-require"lspconfig".cmake.setup{
-filetypes = {"cmake", "make"},
-capabilities = capabilities
-}
-require"lspconfig".bashls.setup{
-    filetypes = {"zsh", "sh"},
-    capabilities = capabilities
-}
 EOF

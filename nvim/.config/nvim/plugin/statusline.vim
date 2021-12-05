@@ -1,3 +1,4 @@
+set noshowmode
 lua << EOF
 -- Eviline config for lualine
 -- Author: shadmansaleh
