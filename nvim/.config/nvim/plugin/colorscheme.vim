@@ -1,6 +1,7 @@
 set termguicolors
 set background=dark
-let g:edge_style='neon'
-let g:edge_transparent_background=1
-let g:edge_better_performance=1
-colorscheme edge
+let g:tokyonight_style = "storm"
+let g:tokyonight_italic_comments = "false"
+let g:tokyonight_italic_keywords = "false"
+let g:tokyonight_transparent = "true"
+colorscheme tokyonight

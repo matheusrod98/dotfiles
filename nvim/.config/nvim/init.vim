@@ -1,7 +1,6 @@
 " Plugins.
 call plug#begin('~/.config/nvim/plugged')
-Plug 'sainnhe/everforest'
-Plug 'sainnhe/edge'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
@@ -30,3 +29,6 @@ set cmdheight=2
 set mouse=a
 set nofoldenable
 set shortmess+=c
+
+" Leader key.
+let mapleader=','

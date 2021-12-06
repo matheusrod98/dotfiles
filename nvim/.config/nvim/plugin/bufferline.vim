@@ -3,8 +3,8 @@ require("bufferline").setup{}
 EOF
 
 " Mappings.
-nnoremap <silent>cb :bdelete<CR>
-nnoremap <silent>gb :BufferLinePick<CR>
-nnoremap <silent>db :BufferLinePickClose<CR>
-nnoremap <silent>b[ :BufferLineCycleNext<CR>
-nnoremap <silent>b] :BufferLineCyclePrev<CR>
+nnoremap <silent><space>d :bdelete<CR>
+nnoremap <silent><space>  :BufferLinePick<CR>
+nnoremap <silent><space>c :BufferLinePickClose<CR>
+nnoremap <silent><space>[ :BufferLineCycleNext<CR>
+nnoremap <silent><space>] :BufferLineCyclePrev<CR>
