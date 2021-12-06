@@ -64,6 +64,21 @@ require"lspconfig".bashls.setup{
         debounce_text_changes = 150
     }
 }
+--require"lspconfig".hdl_checker.setup {
+--    filetypes = {"vhdl", "verilog", "systemverilog"},
+--    cmd = {"hdl_checker", "--lsp"},
+--    root_dir = {
+--        function(fname)
+--            return lspconfig.util.find_git_ancestor(fname) or lspconfig.util.path.dirname(fname)
+--            return lspconfig.util.root_pattern('.hdl_checker.config')(fname) or lspconfig.util.path.dirname(fname)
+--        end
+--    },
+--    capabilities = capabilities,
+--    on_attach = on_attach,
+--    flags = {
+--       debounce_text_changes = 150
+--    }
+--}
 
 local has_words_before = function()
     local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -72,9 +87,39 @@ end
 local feedkey = function(key, mode)
     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
 end
-
+require('lspkind').init({
+    with_text = true,
+    preset = 'default',
+    symbol_map = {
+        Class = "⁂  ",
+        Color = "☀ ",
+        Constant = "𝜋 ",
+        Constructor = " ",
+        Enum = "ℰ ",
+        EnumMember = " ",
+        Field = " ",
+        File = " ",
+        Folder = " ",
+        Function = " ",
+        Interface = " ",
+        Keyword = " ",
+        Method = "ƒ ",
+        Module = " ",
+        Property = " ",
+        Snippet = "﬌ ",
+        Struct = " ",
+        Text = " ",
+        Unit = " ",
+        Value = " ",
+        Variable = "α ",
+    },
+})
+local lspkind = require('lspkind')
 local cmp = require'cmp'
 cmp.setup({
+    formatting = {
+        format = lspkind.cmp_format({with_text = true, maxwidth = 50})
+    },
     snippet = {
         expand = function(args)
             vim.fn["vsnip#anonymous"](args.body)

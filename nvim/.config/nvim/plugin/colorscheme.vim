@@ -1,6 +1,6 @@
 set termguicolors
 set background=dark
-let g:everforest_style='soft'
-let g:everforest_transparent_background=1
-let g:everforest_better_performance=1
-colorscheme everforest
+let g:edge_style='neon'
+let g:edge_transparent_background=1
+let g:edge_better_performance=1
+colorscheme edge
