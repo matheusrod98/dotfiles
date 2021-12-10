@@ -1,6 +1,10 @@
 " Plugins.
 call plug#begin('~/.config/nvim/plugged')
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'sainnhe/everforest'
+Plug 'sainnhe/gruvbox-material'
+Plug 'navarasu/onedark.nvim'
+Plug 'tanvirtin/monokai.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
@@ -29,6 +33,7 @@ set cmdheight=2
 set mouse=a
 set nofoldenable
 set shortmess+=c
+set splitbelow splitright
 
 " Leader key.
 let mapleader=','
