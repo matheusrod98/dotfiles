@@ -38,8 +38,7 @@ set statusline=%#TabLineSel#
 set statusline+=\ %{g:currentMode[mode()]}
 set statusline+=\ %#TabLine#
 set statusline+=\ %F
-set statusline+=\ %#StatusLineNC#
-set statusline+=\ %{FugitiveHead()}
+set statusline+=\ \[%{FugitiveHead()}\]
 set statusline+=\ %m\ %r 
 set statusline+=\ %=
 set statusline+=\ %y\ %{&fileencoding?&fileencoding:&encoding}/%{&fileformat}

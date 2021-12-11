@@ -10,7 +10,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
 
 " Comment stuff easily.
-Plug 'preservim/nerdcommenter'
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 
@@ -94,17 +94,14 @@ endif
 
 " Colorcheme configuration.
 set background=dark
-let g:gruvbox_material_background = 'hard'
-let g:gruvbox_material_sign_column_background = 'none'
 let g:gruvbox_material_transparent_background = 1
-let g:gruvbox_material_better_performance = 1
 colorscheme gruvbox-material
 
 "netrw.
 let g:netrw_banner=0 
 
 " Keyboard mappings.
-let mapleader = " "
+let mapleader = ","
 
 "" Quickfix list
 nnoremap <silent> <leader>q :cw<CR>
@@ -116,4 +113,4 @@ nnoremap <silent> <C-p>     :cprev<CR>
 nnoremap <leader>g          :Rg<space>
 
 "This unsets the last search pattern register when hitting return.
-nnoremap <silent> <CR>      :nohlsearch<CR>
+nnoremap <silent> <C-l>      :nohlsearch<CR>

@@ -17,3 +17,5 @@ alias open='xdg-open'
 alias rm='rm -i'
 
 alias xc='xclip -sel clip'
+
+alias vi='nvim'
