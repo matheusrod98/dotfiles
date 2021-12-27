@@ -11,11 +11,10 @@ alias egrep='egrep --color=auto'
 
 alias cp='cp -v'
 alias mv='mv -v'
+alias rm='rm -i'
 
 alias open='xdg-open'
 
-alias rm='rm -i'
-
 alias xc='xclip -sel clip'
 
-alias vi='nvim'
+alias nv='nvim'
