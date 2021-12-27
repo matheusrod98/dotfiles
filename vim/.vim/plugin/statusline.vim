@@ -1,5 +1,4 @@
 set noshowmode
-
 let g:currentMode={
       \ 'n'          :'NORMAL',
       \ 'no'         :"OPERATOR PENDING",
@@ -38,7 +37,7 @@ set statusline=%#TabLineSel#
 set statusline+=\ %{g:currentMode[mode()]}
 set statusline+=\ %#TabLine#
 set statusline+=\ %F
-set statusline+=\ \[%{FugitiveHead()}\]
+set statusline+=\ %{exists('g:loaded_fugitive')?fugitive#statusline():''}
 set statusline+=\ %m\ %r 
 set statusline+=\ %=
 set statusline+=\ %y\ %{&fileencoding?&fileencoding:&encoding}/%{&fileformat}

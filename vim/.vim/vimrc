@@ -1,3 +1,10 @@
+" TODO
+" - [] Install YAPF as plugin.
+" - [] Edit Python config to format before write.
+" - [] Remove the rest of old configs in the Python file.
+" - [x] Add a if to load the branch on statusline only in git repos.
+" - [] Install fzf.
+
 call plug#begin('~/.local/share/.vim/plugged')
 
 "Colorscheme.
