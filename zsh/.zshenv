@@ -10,6 +10,8 @@ export VISUAL="nvim"
 export TERM=xterm-256color
 export NPM_CONFIG_PREFIX=$XDG_CONFIG_HOME/npm/npm-global
 export PATH=~/.local/bin:$NPM_CONFIG_PREFIX/bin:$PATH
+# This improves font rendering consistency between gtk and qt applications, it's only for Plasma.
+export FREETYPE_PROPERTIES="cff:no-stem-darkening=0"
 
 # Needed for Quartus II
 export QSYS_ROOTDIR="/home/matheus/intelFPGA_lite/20.1/quartus/sopc_builder/bin"
