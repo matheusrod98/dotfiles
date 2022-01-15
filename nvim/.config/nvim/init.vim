@@ -18,16 +18,23 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/cmp-vsnip'
 call plug#end()
 
-" General settings.
-set path+=**
-set number
-set sw=4 tabstop=4 softtabstop=4 expandtab 
-set smartcase ignorecase
-set cmdheight=2
-set mouse=a
-set nofoldenable
-set shortmess+=c
-set splitbelow splitright
+lua << EOF
+-- General settings.
+vim.o.path = vim.o.path .. "**"
+vim.o.number = true
+vim.bo.sw = 4
+vim.bo.tabstop = 4
+vim.bo.softtabstop = 4
+vim.bo.expandtab = true
+vim.o.smartcase = true
+vim.o.ignorecase = true
+vim.o.cmdheight = 2
+vim.o.mouse = "a"
+vim.wo.foldenable = false
+vim.o.shortmess = vim.o.shortmess .. "c"
+vim.o.splitbelow = true
+vim.o.splitright = true
 
-" Leader key.
-let mapleader=','
+-- Leader key.
+vim.g.mapleader = ","
+EOF
