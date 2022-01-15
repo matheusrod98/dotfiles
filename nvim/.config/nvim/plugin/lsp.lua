@@ -1,5 +1,4 @@
-set completeopt=menu,menuone,noselect
-lua << EOF
+vim.o.completeopt = "menu,menuone,noselect"
 local on_attach = function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -87,39 +86,8 @@ end
 local feedkey = function(key, mode)
     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
 end
-require('lspkind').init({
-    with_text = true,
-    preset = 'default',
-    symbol_map = {
-        Class = "⁂  ",
-        Color = "☀ ",
-        Constant = "𝜋 ",
-        Constructor = " ",
-        Enum = "ℰ ",
-        EnumMember = " ",
-        Field = " ",
-        File = " ",
-        Folder = " ",
-        Function = " ",
-        Interface = " ",
-        Keyword = " ",
-        Method = "ƒ ",
-        Module = " ",
-        Property = " ",
-        Snippet = "﬌ ",
-        Struct = " ",
-        Text = " ",
-        Unit = " ",
-        Value = " ",
-        Variable = "α ",
-    },
-})
-local lspkind = require('lspkind')
 local cmp = require'cmp'
 cmp.setup({
-    formatting = {
-        format = lspkind.cmp_format({with_text = true, maxwidth = 50})
-    },
     snippet = {
         expand = function(args)
             vim.fn["vsnip#anonymous"](args.body)
@@ -169,4 +137,3 @@ cmp.setup({
     })
 })
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-EOF

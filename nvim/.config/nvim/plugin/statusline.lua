@@ -1,5 +1,4 @@
-set noshowmode
-lua << EOF
+vim.o.showmode = false
 require'lualine'.setup {
     options = {
         icons_enabled = false,
@@ -29,4 +28,3 @@ require'lualine'.setup {
   tabline = {},
   extensions = {}
 }
-EOF

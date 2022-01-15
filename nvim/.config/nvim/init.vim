@@ -1,22 +1,15 @@
 " Plugins.
 call plug#begin('~/.config/nvim/plugged')
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-Plug 'sainnhe/everforest'
-Plug 'sainnhe/gruvbox-material'
-Plug 'navarasu/onedark.nvim'
-Plug 'tanvirtin/monokai.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-orgmode/orgmode'
-Plug 'akinsho/bufferline.nvim'
 Plug 'nvim-lualine/lualine.nvim'
-Plug 'onsails/lspkind-nvim'
-Plug 'hrsh7th/vim-vsnip'
 Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
