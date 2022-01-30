@@ -15,6 +15,6 @@ alias rm='rm -i'
 
 alias open='xdg-open'
 
-alias xc='xclip -sel clip'
+alias xc='wl-copy -n'
 
 alias nv='nvim'

@@ -10,11 +10,6 @@ export VISUAL="nvim"
 export TERM=xterm-256color
 export NPM_CONFIG_PREFIX=$XDG_CONFIG_HOME/npm/npm-global
 export PATH=~/.local/bin:$NPM_CONFIG_PREFIX/bin:$PATH
-# This improves font rendering consistency between gtk and qt applications, it's only for Plasma.
-export FREETYPE_PROPERTIES="cff:no-stem-darkening=0"
-
-# Needed for Quartus II
-export QSYS_ROOTDIR="/home/matheus/intelFPGA_lite/20.1/quartus/sopc_builder/bin"
 
 # ZSH config directory.
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
@@ -25,11 +20,4 @@ export HISTSIZE=1000000
 export SAVEHIST=1000000
 
 # Nautilus.
-export PATH=/opt/gcc-arm-none-eabi-10-2020-q4-major/bin:$PATH
-export PATH=/home/matheus/ardupilot/Tools/autotest:$PATH
-export PATH=/usr/lib/ccache:$PATH
-export GAZEBO_MODEL_PATH=~/ardupilot_gazebo/models
-export GAZEBO_MODEL_PATH=~/harpia/src/harpia_simulator/models
-export PYTHONPATH=$PYTHONPATH:$HOME/harpia/src/harpia/include
-export PATH=/usr/lib/ccache:$PATH
-export UAV_NAMESPACE=red
+export NAUTILUS_AUV_WS=$HOME/Devel/Nautilus/nautilus_auv

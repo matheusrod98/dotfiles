@@ -35,21 +35,16 @@ source $XDG_CONFIG_HOME/zsh/zsh_aliases
 # Prompt.
 eval "$(starship init zsh)"
 
-# Nautilus.
-source $HOME/Nautilus/nautilus_auv/devel/setup.zsh
-source /usr/share/gazebo/setup.sh
-source $HOME/harpia/devel/setup.zsh
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/matheus/.local/bin/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/matheus/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/matheus/.local/bin/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/matheus/.local/bin/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/matheus/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/matheus/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/matheus/.local/bin/anaconda3/bin:$PATH"
+        export PATH="/home/matheus/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
