@@ -35,7 +35,6 @@ vim.o.cmdheight = 2
 vim.o.mouse = "a"
 vim.wo.foldenable = false
 vim.o.shortmess = vim.o.shortmess .. "c"
-vim.o.clipboard = vim.o.clipboard .. "unnamedplus"
 
 -- Leader key.
 vim.g.mapleader = ","
