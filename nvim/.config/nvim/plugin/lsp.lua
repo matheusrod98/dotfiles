@@ -1,4 +1,5 @@
 vim.o.completeopt = "menu,menuone,noselect"
+
 local on_attach = function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -63,8 +64,8 @@ require"lspconfig".bashls.setup{
         debounce_text_changes = 150
     }
 }
-require"lspconfig".solc.setup{
-    cmd = {"solc", "--lsp"},
+require"lspconfig".solidity_ls.setup{
+    cmd = {"solidity-language-server", "--stdio"},
     filetypes = {"solidity"},
     capabilities = capabilities,
     on_attach = on_attach,

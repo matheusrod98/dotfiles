@@ -19,6 +19,7 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
+Plug 'TovarishFin/vim-solidity'
 call plug#end()
 
 lua << EOF
