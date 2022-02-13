@@ -1,5 +1,4 @@
 vim.o.completeopt = "menu,menuone,noselect"
-
 local on_attach = function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -67,6 +66,19 @@ require"lspconfig".bashls.setup{
 require"lspconfig".solidity_ls.setup{
     cmd = {"solidity-language-server", "--stdio"},
     filetypes = {"solidity"},
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = {
+        debounce_text_changes = 150
+    }
+}
+require"lspconfig".dockerls.setup{
+    cmd = {"docker-langserver", "--stdio"},
+    filetypes = {"dockerfile"},
+    root_dir = function(fname)
+        return util.root_pattern('Dockerfile') or util.path.dirname(fname)
+    end,
+    single_file_support = true,
     capabilities = capabilities,
     on_attach = on_attach,
     flags = {
