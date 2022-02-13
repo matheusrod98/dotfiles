@@ -1,6 +1,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+precmd () {print -Pn "\e]0;%~\a"}
+
 # Blinking l-beam cursor.
 precmd() { echo -ne '\e[5 q' ;}
 

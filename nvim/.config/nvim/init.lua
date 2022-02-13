@@ -2,7 +2,7 @@
 local use = require('packer').use
 require('packer').startup(function()
 	use 'wbthomason/packer.nvim'
-	use 'folke/tokyonight.nvim'
+    use 'navarasu/onedark.nvim'
 	use 'kyazdani42/nvim-web-devicons'
 	use 'tpope/vim-fugitive'
 	use 'tpope/vim-commentary'
