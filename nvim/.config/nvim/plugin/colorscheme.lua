@@ -1,6 +1,7 @@
 vim.opt.termguicolors = true
 vim.o.background = "dark"
-vim.g.everforest_background = "hard"
-vim.g.everforest_transparent_background = 1
-vim.g.everforest_better_performance = 1
-vim.cmd[[colorscheme everforest]]
+vim.g.tokyonight_style = "storm"
+vim.g.tokyonight_italic_comments = "true"
+vim.g.tokyonight_italic_keywords = "false"
+vim.g.tokyonight_transparent = "true"
+vim.cmd[[colorscheme tokyonight]]
