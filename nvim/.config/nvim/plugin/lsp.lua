@@ -75,9 +75,6 @@ require"lspconfig".solidity_ls.setup{
 require"lspconfig".dockerls.setup{
     cmd = {"docker-langserver", "--stdio"},
     filetypes = {"dockerfile"},
-    root_dir = function(fname)
-        return util.root_pattern('Dockerfile') or util.path.dirname(fname)
-    end,
     single_file_support = true,
     capabilities = capabilities,
     on_attach = on_attach,

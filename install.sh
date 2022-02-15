@@ -65,7 +65,7 @@ nvim --headless +PackerInstall +qa
 nvim --headless +TSInstall all +qa
 
 # Remove Unecessary Software.
-sudo dnf remove -y gnome-music gnome-calculator gnome-characters cheese evince gnome-logs gnome-screenshot gnome-weather gnome-clocks eog gnome-font-viewer gedit libreoffice-core gnome-terminal
+sudo dnf remove -y gnome-music gnome-calculator gnome-characters cheese evince gnome-logs gnome-screenshot gnome-weather gnome-clocks eog gnome-font-viewer gedit libreoffice-core gnome-terminal fedora-chromium-config
 
 # Configure network.
 sudo cp ./etc/resolved.conf /etc/systemd/resolved.conf
