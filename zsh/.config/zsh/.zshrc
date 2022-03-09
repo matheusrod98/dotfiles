@@ -1,11 +1,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Blinking l-beam cursor.
-precmd() { echo -ne '\e[5 q' ;}
-
 # My Plugins
 source $XDG_CONFIG_HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+source $XDG_CONFIG_HOME/zsh/plugins/zsh-notify/notify.plugin.zsh 2>/dev/null
 
 # Completion system.
 autoload -Uz compinit
@@ -49,3 +47,9 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# Set terminal title to $USER@$HOST:$PWD and the cursor to beam.
+precmd() { 
+    echo -ne "\e]0;${USER}@${HOST}: ${PWD/#$HOME/~}\a";
+    echo -ne '\e[5 q'
+}

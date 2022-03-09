@@ -1,19 +1,19 @@
 alias ls='ls --color=auto'
 alias l='ls --color=auto'
 alias ll='ls -lh'
-alias la='ls -ah'
-alias lal='ls -alh'
-alias lla='ls -alh'
+alias la='ls -Ah'
+alias lal='ls -Alh'
+alias lla='ls -Alh'
 
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-alias cp='cp -v'
-alias mv='mv -v'
+alias cp='cp -i'
+alias mv='mv -i'
 alias rm='rm -i'
 
-alias open='xdg-open'
+alias open='re.sonny.Junction'
 
 alias xc='wl-copy -n'
 

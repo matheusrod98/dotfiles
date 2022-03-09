@@ -48,6 +48,7 @@ vim.o.smartcase = true
 vim.o.ignorecase = true
 vim.o.cmdheight = 2
 vim.o.mouse = "a"
+vim.o.signcolumn="yes"
 vim.wo.foldenable = false
 vim.o.shortmess = vim.o.shortmess .. "c"
 

@@ -17,6 +17,3 @@ export ZDOTDIR=$XDG_CONFIG_HOME/zsh
 export HISTFILE="$XDG_CACHE_HOME/zsh/.zhistory"
 export HISTSIZE=1000000
 export SAVEHIST=1000000
-
-# Nautilus.
-export NAUTILUS_AUV_WS=$HOME/Devel/Nautilus/nautilus_auv
