@@ -13,7 +13,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 
-alias open='re.sonny.Junction'
+alias open='xdg-open'
 
 alias xc='wl-copy -n'
 

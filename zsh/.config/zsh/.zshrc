@@ -1,10 +1,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# My Plugins
-source $XDG_CONFIG_HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-source $XDG_CONFIG_HOME/zsh/plugins/zsh-notify/notify.plugin.zsh 2>/dev/null
-
 # Completion system.
 autoload -Uz compinit
 zstyle ':completion:*' menu select
@@ -12,13 +8,16 @@ zmodload zsh/complist
 compinit
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 
-# More completions.
-fpath=($XDG_CONFIG_HOME/zsh/plugins/zsh-completions/src $fpath)
-
 # History settings.
 setopt HIST_IGNORE_DUPS
 setopt APPEND_HISTORY
 setopt HIST_REDUCE_BLANKS
+
+# My Plugins
+source /usr/share/doc/pkgfile/command-not-found.zsh
+source $XDG_CONFIG_HOME/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source $XDG_CONFIG_HOME/zsh/plugins/zsh-auto-notify/auto-notify.plugin.zsh
+fpath=($XDG_CONFIG_HOME/zsh/plugins/zsh-completions/src $fpath)
 
 # Vi mode.
 bindkey -v
