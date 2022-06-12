@@ -56,6 +56,7 @@ require"lspconfig".cmake.setup{
     }
 }
 require"lspconfig".bashls.setup{
+    cmd = {"bash-language-server", "start"},
     filetypes = {"zsh", "sh"},
     capabilities = capabilities,
     on_attach = on_attach,
