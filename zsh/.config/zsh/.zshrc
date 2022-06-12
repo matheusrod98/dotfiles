@@ -16,7 +16,6 @@ setopt HIST_REDUCE_BLANKS
 # My Plugins
 source /usr/share/doc/pkgfile/command-not-found.zsh
 source $XDG_CONFIG_HOME/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-source $XDG_CONFIG_HOME/zsh/plugins/zsh-auto-notify/auto-notify.plugin.zsh
 fpath=($XDG_CONFIG_HOME/zsh/plugins/zsh-completions/src $fpath)
 
 # Vi mode.

@@ -31,10 +31,10 @@ require('packer').startup(function()
 	use 'hrsh7th/nvim-cmp'
 	use 'saadparwaiz1/cmp_luasnip'
 	use 'TovarishFin/vim-solidity'
-    use {
-        'google/yapf', 
-        rtp = 'plugins/vim', 
-        ft = 'python' }
+	use { 'google/yapf',
+		rtp = 'plugins/vim', 
+		ft = 'python'
+	}
 end)
 
 -- General settings.
