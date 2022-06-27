@@ -18,6 +18,7 @@ mv /usr/share/applications/designer.desktop /usr/share/applications/designer.des
 mv /usr/share/applications/linguist.desktop /usr/share/applications/linguist.desktop.bak 1> /dev/null 2> /dev/null
 mv /usr/share/applications/cmake-gui.desktop /usr/share/applications/cmake-gui.desktop.bak 1> /dev/null 2> /dev/null
 
-cp /usr/share/applications/firefox.desktop.bak /usr/share/applications/firefox.desktop 1> /dev/null 2> /dev/null
+cp /home/matheus/.dotfiles/desktop-files/firefox.desktop /usr/share/applications/firefox.desktop 1> /dev/null 2> /dev/null
 
 sudo update-desktop-database 1> /dev/null 2> /dev/null
+
