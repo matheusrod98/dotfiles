@@ -6,6 +6,7 @@ export XDG_STATE_HOME=$HOME/.local/state
 
 # Some environment variables.
 export EDITOR="nvim"
+export SYSTEMD_EDITOR="nvim"
 export VISUAL="nvim"
 export NPM_CONFIG_PREFIX=$XDG_CONFIG_HOME/npm/npm-global
 export PATH=~/.local/bin:$NPM_CONFIG_PREFIX/bin:$PATH

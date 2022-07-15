@@ -29,5 +29,11 @@ bindkey '^R' history-incremental-pattern-search-backward
 # My aliases.
 source $XDG_CONFIG_HOME/zsh/zsh_aliases
 
+# Set terminal title to $USER@$HOST:$PWD and the cursor to beam.
+precmd() { 
+    echo -ne "\e]0;${USER}@${HOST}: ${PWD/#$HOME/~}\a";
+    echo -ne '\e[5 q'
+}
+
 # Prompt.
 eval "$(starship init zsh)"

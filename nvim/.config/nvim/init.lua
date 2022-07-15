@@ -3,38 +3,22 @@ local use = require('packer').use
 require('packer').startup(function()
 	use 'wbthomason/packer.nvim'
     use 'navarasu/onedark.nvim'
-	use 'kyazdani42/nvim-web-devicons'
 	use 'tpope/vim-fugitive'
 	use 'tpope/vim-commentary'
 	use {
 		'nvim-telescope/telescope.nvim',
 		requires = {{'nvim-lua/plenary.nvim'}}
 	}
-	use {'nvim-telescope/telescope-fzf-native.nvim', 
-		run = 'make' 
-	}
-    	use {
-        	'nvim-treesitter/nvim-treesitter',
-        	run = ':TSUpdate'
-    	}
 	use {
-  		'nvim-lualine/lualine.nvim',
-	  	requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+        'nvim-telescope/telescope-fzf-native.nvim', 
+        run = 'make' 
 	}
-	use 'L3MON4D3/LuaSnip'
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
+	use 'nvim-lualine/lualine.nvim'
 	use 'neovim/nvim-lspconfig'
-	use 'onsails/lspkind-nvim'
-	use 'hrsh7th/cmp-nvim-lsp'
-	use 'hrsh7th/cmp-buffer'
-	use 'hrsh7th/cmp-path'
-	use 'hrsh7th/cmp-cmdline'
-	use 'hrsh7th/nvim-cmp'
-	use 'saadparwaiz1/cmp_luasnip'
-	use 'TovarishFin/vim-solidity'
-	use { 'google/yapf',
-		rtp = 'plugins/vim', 
-		ft = 'python'
-	}
 end)
 
 -- General settings.
