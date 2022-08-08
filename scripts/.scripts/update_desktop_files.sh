@@ -22,7 +22,11 @@ sudo mv /usr/share/applications/electron17.desktop /usr/share/applications/elect
 sudo mv /usr/share/applications/org.freedesktop.IBus.Setup.desktop /usr/share/applications/org.freedesktop.IBus.Setup.desktop.bak &>/dev/null
 sudo mv /usr/share/applications/jconsole-java-openjdk.desktop /usr/share/applications/jconsole-java-openjdk.desktop.bak &>/dev/null
 sudo mv /usr/share/applications/jshell-java-openjdk.desktop /usr/share/applications/jshell-java-openjdk.desktop.bak &>/dev/null
+sudo mv /usr/share/applications/firewall-config.desktop /usr/share/applications/firewall-config.desktop.bak &>/dev/null
+sudo mv /usr/share/applications/cmake-gui.desktop /usr/share/applications/cmake-gui.desktop.bak &>/dev/null
 
 sudo cp /usr/share/applications/firefox.desktop.bak /usr/share/applications/firefox.desktop &>/dev/null
+sudo cp /usr/share/applications/Alacritty.desktop.bak /usr/share/applications/Alacritty.desktop &>/dev/null
+sudo cp /usr/share/applications/kitty.desktop.bak /usr/share/applications/kitty.desktop &>/dev/null
 
 sudo update-desktop-database

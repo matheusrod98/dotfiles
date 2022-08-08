@@ -19,6 +19,25 @@ require('packer').startup(function()
     }
 	use 'nvim-lualine/lualine.nvim'
 	use 'neovim/nvim-lspconfig'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-cmdline'
+    use 'hrsh7th/nvim-cmp'
+    use 'L3MON4D3/LuaSnip'
+    use 'saadparwaiz1/cmp_luasnip'
+    use 'kyazdani42/nvim-web-devicons'
+    use 'onsails/lspkind.nvim'
+    use {
+        'chipsenkbeil/distant.nvim',
+        config = function()
+            require('distant').setup {
+                ['*'] = require('distant.settings').chip_default()
+            }
+        end
+    }
+    use 'jamestthompson3/nvim-remote-containers'
+
 end)
 
 -- General settings.
