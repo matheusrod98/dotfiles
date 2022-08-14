@@ -1,24 +1,36 @@
 -- Plugins.
 local use = require('packer').use
 require('packer').startup(function()
-	use 'wbthomason/packer.nvim'
+    use 'wbthomason/packer.nvim'
     use 'navarasu/onedark.nvim'
+    use 'numToStr/Comment.nvim'
 	use 'tpope/vim-fugitive'
-	use 'tpope/vim-commentary'
+    use 'lewis6991/gitsigns.nvim'
 	use {
 		'nvim-telescope/telescope.nvim',
 		requires = {{'nvim-lua/plenary.nvim'}}
 	}
 	use {
         'nvim-telescope/telescope-fzf-native.nvim', 
-        run = 'make' 
+        run = 'make'
 	}
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
-	use 'nvim-lualine/lualine.nvim'
-	use 'neovim/nvim-lspconfig'
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
+    use {
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "neovim/nvim-lspconfig"
+    }
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'

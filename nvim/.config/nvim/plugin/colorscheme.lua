@@ -1,19 +1,21 @@
-require('onedark').load()
-require('onedark').setup {
-	transparent = true,
+require('onedark').setup  {
+    style = 'deep', -- Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+    transparent = true,
     term_colors = true,
-    globalstatu = true,
+
     code_style = {
         comments = 'italic',
         keywords = 'none',
         functions = 'none',
         strings = 'none',
-        variables = 'none',
+        variables = 'none'
     },
+
     diagnostics = {
         darker = true,
-        undercurl = false,
+        undercurl = true,
         background = false,
-    }
+    },
 }
-vim.cmd[[colorscheme onedark]]
+
+require('onedark').load()

@@ -1,11 +1,13 @@
 # Plugins
-- [ ] gitsigns.nvim
-- [ ] mason.nvim
-- [ ] NvChad/ui (statusline)
-- [ ] nvim-autopairs
-- [ ] nvterm (maybe not)
-- [ ] which-key.nvim
+- [x] gitsigns.nvim
+- [x] nvim-autopairs
+- [x] Comment.nvim
+- [x] mason.nvim
+- [o] which-key.nvim (terrible)
 - [ ] nvim-tree.lua (maybe not)
-- [ ] tagbar
-- [ ] indent-blankline.nvim (maybe not)
+- [ ] tagbar or aerial
+- [ ] trouble.nvim
+- [ ] lazygit.nvim
+- [ ] nvim-dap and nvim-dap-ui
+- [ ] indent-blankline.nvim (mayb not)
 - [ ] cheatsheet nvim plugin

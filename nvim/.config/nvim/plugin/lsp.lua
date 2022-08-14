@@ -27,6 +27,13 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
 end
 
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = false,
+  update_in_insert = true,
+})
+
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 local cmp = require'cmp'
 
 cmp.setup({
@@ -51,61 +58,27 @@ cmp.setup({
         })
 })
 
-require"lspconfig".clangd.setup{
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = {
-        debounce_text_changes = 150
-    }
-}
-require"lspconfig".pyright.setup{
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = {
-        debounce_text_changes = 150
-    }
-}
-require"lspconfig".vimls.setup{
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = {
-        debounce_text_changes = 150
-    }
-}
-require"lspconfig".cmake.setup{
-    filetypes = {"cmake", "make"},
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = {
-        debounce_text_changes = 150
-    }
-}
-require"lspconfig".bashls.setup{
-    cmd = {"bash-language-server", "start"},
-    filetypes = {"zsh", "sh"},
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = {
-        debounce_text_changes = 150
-    }
-}
-require"lspconfig".dockerls.setup{
-    cmd = {"docker-langserver", "--stdio"},
-    filetypes = {"dockerfile"},
-    single_file_support = true,
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = {
-        debounce_text_changes = 150
-    }
-}
+cmp.event:on(
+    'confirm_done',
+    cmp_autopairs.on_confirm_done()
+)
 
-local lspkind = require('lspkind')    
-  cmp.setup {                       
-      formatting = {                
-          format = lspkind.cmp_format({    
-              mode = 'symbol_text',      
-              maxwidth = 50,        
-          })                        
-      }                             
+local lspkind = require('lspkind')
+  cmp.setup {
+      formatting = {
+          format = lspkind.cmp_format({
+              mode = 'symbol_text',
+              maxwidth = 50,
+          })
+      }
   }
+
+require("mason").setup({
+    ui = {
+        icons = {
+            package_installed = "✓",
+	    package_pending = "➜",
+            package_uninstalled = "✗"
+	}
+    }
+})
