@@ -3,24 +3,30 @@ local use = require('packer').use
 require('packer').startup(function()
     use 'wbthomason/packer.nvim'
     use 'navarasu/onedark.nvim'
+    use 'folke/tokyonight.nvim'
     use 'numToStr/Comment.nvim'
-	use 'tpope/vim-fugitive'
+    use 'kdheepak/lazygit.nvim'
     use 'lewis6991/gitsigns.nvim'
+    use 'folke/trouble.nvim'
+    use 'glepnir/dashboard-nvim'
+    use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
+    use 'stevearc/aerial.nvim'
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
 	use {
 		'nvim-telescope/telescope.nvim',
 		requires = {{'nvim-lua/plenary.nvim'}}
 	}
 	use {
-        'nvim-telescope/telescope-fzf-native.nvim', 
+        'nvim-telescope/telescope-fzf-native.nvim',
         run = 'make'
 	}
+    use 'kyazdani42/nvim-tree.lua'
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
-    }
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
     use {
         "windwp/nvim-autopairs",
@@ -48,13 +54,12 @@ require('packer').startup(function()
             }
         end
     }
-    use 'jamestthompson3/nvim-remote-containers'
-
 end)
 
 -- General settings.
 vim.o.path = vim.o.path .. "**"
 vim.o.number = true
+vim.bo.smartindent = true
 vim.bo.sw = 4
 vim.bo.tabstop = 4
 vim.bo.softtabstop = 4

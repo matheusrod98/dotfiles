@@ -3,11 +3,16 @@
 - [x] nvim-autopairs
 - [x] Comment.nvim
 - [x] mason.nvim
-- [o] which-key.nvim (terrible)
-- [ ] nvim-tree.lua (maybe not)
-- [ ] tagbar or aerial
-- [ ] trouble.nvim
-- [ ] lazygit.nvim
+- [o] which-key.nvim (not was I looking for)
+- [x] bufferline.nvim (maybe not)
+- [o] indent-blankline.nvim (Didn't like it)
+- [x] aerial
+- [x] trouble.nvim
+- [x] lazygit.nvim
+- [x] tokyonight colorscheme
+- [x] nvim-tree.lua
+- [o] nvim-remote-containers (useless)
+- [x] dashboard
+- [ ] lspsaga
 - [ ] nvim-dap and nvim-dap-ui
-- [ ] indent-blankline.nvim (mayb not)
 - [ ] cheatsheet nvim plugin

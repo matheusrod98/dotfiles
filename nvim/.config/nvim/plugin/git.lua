@@ -1,5 +1,5 @@
 -- Git status.
-vim.api.nvim_set_keymap('n', '<leader>g', ':G<CR>', {noremap = true, silent = false})
+vim.api.nvim_set_keymap('n', '<leader>g', ':LazyGit<CR>', {noremap = true, silent = false})
 
 -- Git signs.
 require('gitsigns').setup {

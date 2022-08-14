@@ -18,3 +18,4 @@ alias open='xdg-open'
 alias xc='wl-copy -n'
 
 alias nv='nvim'
+alias lg='lazygit'
