@@ -16,3 +16,7 @@
 - [ ] lspsaga
 - [ ] nvim-dap and nvim-dap-ui
 - [ ] cheatsheet nvim plugin
+
+# Configurations
+- [ ] Add a telescope thing to show me all my keymaps and let me ff them.
+- [ ] Add an option on dashboard to lcd and open my latest git repos.
