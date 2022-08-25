@@ -3,40 +3,28 @@ local use = require('packer').use
 require('packer').startup(function()
     use 'wbthomason/packer.nvim'
     use 'navarasu/onedark.nvim'
-    use 'folke/tokyonight.nvim'
+    use 'neovim/nvim-lspconfig'
     use 'numToStr/Comment.nvim'
     use 'kdheepak/lazygit.nvim'
     use 'lewis6991/gitsigns.nvim'
     use 'folke/trouble.nvim'
-    use 'glepnir/dashboard-nvim'
-    use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
+    use 'glepnir/dashboard-nvim' -- Maybe don't need it.
+    use 'https://codeberg.org/esensar/nvim-dev-container'
+    use {'akinsho/bufferline.nvim', tag = "v2.*"}
     use 'stevearc/aerial.nvim'
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-    }
-	use {
-		'nvim-telescope/telescope.nvim',
-		requires = {{'nvim-lua/plenary.nvim'}}
-	}
-	use {
-        'nvim-telescope/telescope-fzf-native.nvim',
-        run = 'make'
-	}
-    use 'kyazdani42/nvim-tree.lua'
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
-    }
+    use 'kyazdani42/nvim-web-devicons'
+    use 'nvim-lualine/lualine.nvim'
+	use 'nvim-telescope/telescope.nvim'
+	use 'nvim-lua/plenary.nvim'
+	use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+    use 'kyazdani42/nvim-tree.lua' -- Maybe don't need it.
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use {
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     }
-    use {
-        "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
-        "neovim/nvim-lspconfig"
-    }
+    use "williamboman/mason.nvim"
+    use "williamboman/mason-lspconfig.nvim"
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
@@ -44,7 +32,6 @@ require('packer').startup(function()
     use 'hrsh7th/nvim-cmp'
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
-    use 'kyazdani42/nvim-web-devicons'
     use 'onsails/lspkind.nvim'
     use {
         'chipsenkbeil/distant.nvim',

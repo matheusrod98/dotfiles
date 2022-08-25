@@ -20,25 +20,25 @@ db.custom_center = {
     {
 		icon = "🔍 ",
 		desc = "finder",
-		-- shortcut = "~",
+		shortcut = "~",
 		action = "Telescope find_files find_command=rg,--hidden,--files",
 	},
 	{
 		icon = "🔨 ",
 		desc = "dotfiles",
-		-- shortcut = "~",
-		action = "Telescope find_files find_command=rg, --hidden, --files=~/.dotfiles",
+		shortcut = "~",
+		action = "Telescope find_files find_command=rg, --hidden,--files=~/.dotfiles",
 	},
 	{
 		icon = "📦 ",
 		desc = "update plugins",
-		-- shortcut = "~",
+		shortcut = "~",
 		action = "PackerUpdate",
 	},
 	{
 		icon = "🚪 ",
 		desc = "exit",
-		-- shortcut = "~",
+		shortcut = "~",
 		action = "qa",
 	},
 }
