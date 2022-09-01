@@ -1,8 +1,8 @@
 # Window.
 linux_display_server x11
 window_padding_width 4
-# active_border_color #00ff70
-# inactive_border_color #353535
+active_border_color #00ff70
+inactive_border_color #353535
 remember_window_size  no
 initial_window_width  1280
 initial_window_height 900
@@ -18,12 +18,6 @@ font_size 13.0
 cursor_shape beam
 
 # Mouse.
-# selection_background #dddddd
-# url_color #dddddd
+selection_background #dddddd
+url_color #dddddd
 url_style straight
-
-
-# BEGIN_KITTY_THEME
-# Catppuccin-Mocha
-include current-theme.conf
-# END_KITTY_THEME

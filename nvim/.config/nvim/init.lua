@@ -2,7 +2,7 @@
 local use = require('packer').use
 require('packer').startup(function()
     use 'wbthomason/packer.nvim'
-    use 'navarasu/onedark.nvim'
+    use { "catppuccin/nvim", as = "catppuccin" }
     use 'neovim/nvim-lspconfig'
     use 'numToStr/Comment.nvim'
     use 'kdheepak/lazygit.nvim'
@@ -58,6 +58,7 @@ vim.o.mouse = "a"
 vim.o.signcolumn="yes"
 vim.wo.foldenable = false
 vim.o.shortmess = vim.o.shortmess .. "c"
+vim.o.clipboard = 'unnamedplus'
 
 -- Leader key.
 vim.g.mapleader = ","
