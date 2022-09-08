@@ -2,7 +2,7 @@
 local use = require('packer').use
 require('packer').startup(function()
     use 'wbthomason/packer.nvim'
-    use { "catppuccin/nvim", as = "catppuccin" }
+    use 'navarasu/onedark.nvim'
     use 'neovim/nvim-lspconfig'
     use 'numToStr/Comment.nvim'
     use 'kdheepak/lazygit.nvim'
@@ -14,9 +14,9 @@ require('packer').startup(function()
     use 'stevearc/aerial.nvim'
     use 'kyazdani42/nvim-web-devicons'
     use 'nvim-lualine/lualine.nvim'
-	use 'nvim-telescope/telescope.nvim'
-	use 'nvim-lua/plenary.nvim'
-	use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+    use 'nvim-telescope/telescope.nvim'
+    use 'nvim-lua/plenary.nvim'
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use 'kyazdani42/nvim-tree.lua' -- Maybe don't need it.
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use {

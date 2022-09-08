@@ -20,4 +20,14 @@ require("mason-lspconfig").setup_handlers({
     end
 })
 
-require("mason-lspconfig").setup()
+require("mason-lspconfig").setup({
+    ensure_installed = {
+		"bash-language-server",
+		"clangd",
+		"cmake-language-server",
+		"golangci-lint-langserver",
+		"jedi-language-server",
+		"lua-language-server",
+		"vim-language-server"
+	}
+})

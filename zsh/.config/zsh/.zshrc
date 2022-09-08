@@ -9,15 +9,12 @@ compinit
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 
 # Syntax highlighting.
-source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source $XDG_DATA_HOME/zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 # History settings.
 setopt HIST_IGNORE_DUPS
 setopt APPEND_HISTORY
 setopt HIST_REDUCE_BLANKS
-
-# Command not found
-source /usr/share/doc/pkgfile/command-not-found.zsh
 
 # Vi mode.
 bindkey -v
