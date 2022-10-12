@@ -9,7 +9,7 @@ compinit
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 
 # Syntax highlighting.
-source $XDG_DATA_HOME/zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source $XDG_DATA_HOME/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 # History settings.
 setopt HIST_IGNORE_DUPS
@@ -32,5 +32,5 @@ precmd() {
     echo -ne '\e[5 q'
 }
 
-# Prompt.
+# Prompt
 eval "$(starship init zsh)"

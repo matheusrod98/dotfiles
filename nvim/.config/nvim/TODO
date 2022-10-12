@@ -12,7 +12,7 @@
 - [x] tokyonight colorscheme
 - [x] nvim-tree.lua
 - [o] nvim-remote-containers (useless)
-- [x] dashboard
+- [] dashboard
 - [ ] nvim-dap and nvim-dap-ui
 - [ ] lspsaga
 - [ ] cheatsheet nvim plugin

@@ -6,3 +6,7 @@ disabled = true
 
 [cmd_duration]
 disabled = true
+
+[git_status]
+ignore_submodules = true
+untracked = ""

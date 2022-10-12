@@ -8,8 +8,6 @@ require('packer').startup(function()
     use 'kdheepak/lazygit.nvim'
     use 'lewis6991/gitsigns.nvim'
     use 'folke/trouble.nvim'
-    use 'jamestthompson3/nvim-remote-containers'
-    use 'glepnir/dashboard-nvim' -- Maybe don't need it.
     use 'https://codeberg.org/esensar/nvim-dev-container'
     use {'akinsho/bufferline.nvim', tag = "v2.*"}
     use 'stevearc/aerial.nvim'
