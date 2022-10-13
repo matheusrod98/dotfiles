@@ -9,7 +9,7 @@ compinit
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 
 # Syntax highlighting.
-source $XDG_DATA_HOME/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 # History settings.
 setopt HIST_IGNORE_DUPS
@@ -28,7 +28,7 @@ source $XDG_CONFIG_HOME/zsh/zsh_aliases
 
 # Set terminal title to $USER@$HOST:$PWD and the cursor to beam.
 precmd() { 
-    echo -ne "\e]0;${USER}@${HOST}: ${PWD/#$HOME/~}\a";
+    # echo -ne "\e]0;${USER}@${HOST}: ${PWD/#$HOME/~}\a";
     echo -ne '\e[5 q'
 }
 
