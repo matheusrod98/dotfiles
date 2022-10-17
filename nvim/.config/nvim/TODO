@@ -16,9 +16,9 @@
 - [ ] nvim-dap and nvim-dap-ui
 - [ ] lspsaga
 - [ ] cheatsheet nvim plugin
-- [ ] nvim-dev-container
+- [o] nvim-dev-container
 
 # Configurations
 - [ ] Add a telescope thing to show me all my keymaps and let me ff them.
 - [ ] Add an option on dashboard to lcd and open my latest git repos.
-- [ ] add laststatus=3 to have global statusline.
+- [x] add laststatus=3 to have global statusline.

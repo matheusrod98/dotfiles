@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -8,8 +15,9 @@ zmodload -i zsh/complist
 compinit
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 
-# Syntax highlighting.
-source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+# Plugins.
+source $XDG_DATA_HOME/zsh/F-Sy-H/F-Sy-H.plugin.zsh
+fpath=($XDG_DATA_HOME/zsh/zsh-completions/src $fpath)
 
 # History settings.
 setopt HIST_IGNORE_DUPS
@@ -33,4 +41,7 @@ precmd() {
 }
 
 # Prompt
-eval "$(starship init zsh)"
+source $XDG_DATA_HOME/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
