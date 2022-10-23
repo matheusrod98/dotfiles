@@ -1,14 +1,35 @@
-require('onedark').setup  {
-    style = 'deep',
-    transparent = true,
-    term_colors = true,
-    code_style = {
-        comments = 'italic',
-        keywords = 'none',
-        functions = 'none',
-        strings = 'none',
-        variables = 'none'
+require("catppuccin").setup {
+    flavour = "mocha",
+    color_overrides = {
+        mocha = {
+	    base = "#000000",
+	},
     },
+
+    integrations = {
+        nvimtree = true,
+    },
+
+    custom_highlights = {
+        NvimTreeNormal = { bg = "NONE" },
+    },
+
+    native_lsp = {
+	enabled = true,
+        virtual_text = {
+            errors = { "italic" },
+            hints = { "italic" },
+            warnings = { "italic" },
+            information = { "italic" },
+        },
+    },
+
+	underlines = {
+		errors = { "underline" },
+		hints = { "underline" },
+		warnings = { "underline" },
+		information = { "underline" },
+	}
 }
 
-require('onedark').load()
+vim.api.nvim_command "colorscheme catppuccin"

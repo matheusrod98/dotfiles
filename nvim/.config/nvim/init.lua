@@ -2,28 +2,8 @@
 local use = require('packer').use
 require('packer').startup(function()
     use 'wbthomason/packer.nvim'
-    use 'navarasu/onedark.nvim'
+    use { "catppuccin/nvim", as = "catppuccin" }
     use 'neovim/nvim-lspconfig'
-    use 'numToStr/Comment.nvim'
-    use 'kdheepak/lazygit.nvim'
-    use 'lewis6991/gitsigns.nvim'
-    use 'folke/trouble.nvim'
-    use 'https://codeberg.org/esensar/nvim-dev-container'
-    use {'akinsho/bufferline.nvim', tag = "v2.*"}
-    use 'stevearc/aerial.nvim'
-    use 'kyazdani42/nvim-web-devicons'
-    use 'nvim-lualine/lualine.nvim'
-    use 'nvim-telescope/telescope.nvim'
-    use 'nvim-lua/plenary.nvim'
-    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-    use 'kyazdani42/nvim-tree.lua' -- Maybe don't need it.
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-    use {
-        "windwp/nvim-autopairs",
-        config = function() require("nvim-autopairs").setup {} end
-    }
-    use "williamboman/mason.nvim"
-    use "williamboman/mason-lspconfig.nvim"
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
@@ -32,14 +12,25 @@ require('packer').startup(function()
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
     use 'onsails/lspkind.nvim'
+    use "williamboman/mason.nvim"
+    use "williamboman/mason-lspconfig.nvim"
+    use 'numToStr/Comment.nvim'
+    use 'kdheepak/lazygit.nvim'
+    use 'lewis6991/gitsigns.nvim'
+    use 'kyazdani42/nvim-web-devicons'
+    use 'feline-nvim/feline.nvim'
+    use 'nvim-telescope/telescope.nvim'
+    use 'nvim-lua/plenary.nvim'
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use {
-        'chipsenkbeil/distant.nvim',
-        config = function()
-            require('distant').setup {
-                ['*'] = require('distant.settings').chip_default()
-            }
-        end
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
     }
+    use {'akinsho/bufferline.nvim', tag = "v3.*"}
+    use 'folke/trouble.nvim'
+    use 'stevearc/aerial.nvim'
+    use 'kyazdani42/nvim-tree.lua' -- Maybe don't need it.
 end)
 
 -- General settings.

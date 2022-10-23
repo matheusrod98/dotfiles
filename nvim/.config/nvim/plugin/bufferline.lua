@@ -1,8 +1,7 @@
-require("bufferline").setup{
+require("bufferline").setup {
     options = {
         mode = "tabs",
-	always_show_bufferline = false,
-	show_close_icon = false,
-	separator_style = "padded_slant"
-    }
+        always_show_bufferline = false,
+    },
+    -- highlights = require("catppuccin.groups.integrations.bufferline").get()
 }

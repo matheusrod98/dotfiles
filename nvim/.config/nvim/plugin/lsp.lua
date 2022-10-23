@@ -30,7 +30,7 @@ end
 vim.diagnostic.config({
   virtual_text = true,
   signs = false,
-  update_in_insert = true,
+  update_in_insert = false,
 })
 
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')

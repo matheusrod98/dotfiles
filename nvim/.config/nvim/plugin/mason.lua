@@ -1,12 +1,19 @@
 local lspconfig = require("lspconfig")
 require("mason").setup({
     ui = {
+	border = "single",
         icons = {
             package_installed = "✓",
             package_pending = "➜",
             package_uninstalled = "✗"
         }
     }
+})
+
+require("mason-lspconfig").setup({
+    ensure_installed = { "bashls", "clangd", "cmake", "dockerls", "gopls", "sumneko_lua", "pyright", "vimls" },
+    automatic_installation = true,
+
 })
 
 require("mason-lspconfig").setup_handlers({
@@ -16,9 +23,10 @@ require("mason-lspconfig").setup_handlers({
             flags = lsp_flags,
         }
     end,
+
     ["bashls"] = function ()
         lspconfig.bashls.setup {
             filetypes = {"zsh", "sh"}
         }
-    end
+    end,
 })
