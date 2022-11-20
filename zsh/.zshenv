@@ -8,8 +8,6 @@ export XDG_STATE_HOME=$HOME/.local/state
 export EDITOR="nvim"
 export SYSTEMD_EDITOR="nvim"
 export VISUAL="nvim"
-export NPM_CONFIG_PREFIX=$XDG_CONFIG_HOME/npm/npm-global
-export PATH=~/.local/bin:$NPM_CONFIG_PREFIX/bin:/home/matheus/.cargo/bin:$PATH
 
 # ZSH config directory.
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
@@ -18,3 +16,8 @@ export ZDOTDIR=$XDG_CONFIG_HOME/zsh
 export HISTFILE="$XDG_CACHE_HOME/zsh/.zhistory"
 export HISTSIZE=1000000
 export SAVEHIST=1000000
+
+# Dev
+export NPM_CONFIG_PREFIX=$XDG_CONFIG_HOME/npm/npm-global
+export PATH=$HOME/.local/bin:$NPM_CONFIG_PREFIX/bin:/home/matheus/.cargo/bin:$PATH
+export ASDF_DIR=$HOME/.asdf

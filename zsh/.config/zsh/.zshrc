@@ -8,7 +8,16 @@ fi
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Dev
+source $ASDF_DIR/asdf.sh
+source <(ng completion script)
+
 # Completion system.
+fpath=(
+    $XDG_DATA_HOME/zsh/plugins/zsh-completions/src 
+    $ASDF_DIR/completions
+    $fpath
+)
 autoload -Uz compinit
 zstyle ':completion:*' menu select
 zmodload -i zsh/complist
@@ -16,8 +25,7 @@ compinit
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 
 # Plugins.
-source $XDG_DATA_HOME/zsh/F-Sy-H/F-Sy-H.plugin.zsh
-fpath=($XDG_DATA_HOME/zsh/zsh-completions/src $fpath)
+source $XDG_DATA_HOME/zsh/plugins/F-Sy-H/F-Sy-H.plugin.zsh
 
 # History settings.
 setopt HIST_IGNORE_DUPS
@@ -41,7 +49,6 @@ precmd() {
 }
 
 # Prompt
-source $XDG_DATA_HOME/powerlevel10k/powerlevel10k.zsh-theme
-
+source $XDG_DATA_HOME/zsh/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
