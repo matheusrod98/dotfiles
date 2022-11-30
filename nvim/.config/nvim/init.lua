@@ -2,7 +2,8 @@
 local use = require('packer').use
 require('packer').startup(function()
     use 'wbthomason/packer.nvim'
-    use { "catppuccin/nvim", as = "catppuccin" }
+    use 'nvim-lualine/lualine.nvim'
+    use 'folke/tokyonight.nvim'
     use 'neovim/nvim-lspconfig'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
@@ -18,7 +19,6 @@ require('packer').startup(function()
     use 'kdheepak/lazygit.nvim'
     use 'lewis6991/gitsigns.nvim'
     use 'kyazdani42/nvim-web-devicons'
-    use 'feline-nvim/feline.nvim'
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-lua/plenary.nvim'
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
@@ -31,6 +31,7 @@ require('packer').startup(function()
     use 'folke/trouble.nvim'
     use 'stevearc/aerial.nvim'
     use 'kyazdani42/nvim-tree.lua' -- Maybe don't need it.
+    use 'mattn/emmet-vim'
 end)
 
 -- General settings.

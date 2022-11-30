@@ -21,3 +21,4 @@ export SAVEHIST=1000000
 export NPM_CONFIG_PREFIX=$XDG_CONFIG_HOME/npm/npm-global
 export PATH=$HOME/.local/bin:$NPM_CONFIG_PREFIX/bin:/home/matheus/.cargo/bin:$PATH
 export ASDF_DIR=$HOME/.asdf
+export GOPATH=$HOME/.local/bin/go

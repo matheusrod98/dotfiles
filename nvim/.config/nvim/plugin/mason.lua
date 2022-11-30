@@ -11,13 +11,27 @@ require("mason").setup({
 })
 
 require("mason-lspconfig").setup({
-    ensure_installed = { "bashls", "clangd", "cmake", "dockerls", "gopls", "sumneko_lua", "pyright", "vimls", "angularls", "tsserver" },
+    ensure_installed = {
+        "bashls",
+        "clangd",
+        "cmake",
+        "dockerls",
+        "gopls",
+        "sumneko_lua",
+        "pyright",
+        "vimls",
+        "angularls",
+        "tsserver",
+        -- "html-lsp",
+        -- "css-lsp"
+        "html",
+        "css"
+    },
     automatic_installation = true,
-
 })
 
 require("mason-lspconfig").setup_handlers({
-    function (server_name)
+    function(server_name)
         require("lspconfig")[server_name].setup {
             on_attach = on_attach,
             flags = lsp_flags,

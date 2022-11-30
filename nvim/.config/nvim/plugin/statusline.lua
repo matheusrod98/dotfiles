@@ -1,74 +1,40 @@
-vim.go.showmode = false
-
-local clrs = require("catppuccin.palettes").get_palette()
-local ctp_feline = require('catppuccin.groups.integrations.feline')
-
-require("feline").setup({
-	components = ctp_feline.get(),
-})
-
-ctp_feline.setup({
-	assets = {
-		left_separator = "",
-		right_separator = "",
-		bar = "█",
-		mode_icon = "",
-		dir = "  ",
-		file = "   ",
-		lsp = {
-			server = "  ",
-			error = "  ",
-			warning = "  ",
-			info = "  ",
-			hint = "  ",
-		},
-		git = {
-			branch = "  ",
-			added = "  ",
-			changed = "  ",
-			removed = "  ",
-		},
-	},
-	sett = {
-		-- text = ucolors.vary_color({ latte = latte.base }, clrs.surface0),
-		-- bkg = ucolors.vary_color({ latte = latte.crust }, clrs.surface0),
-		diffs = clrs.mauve,
-		extras = clrs.overlay1,
-		curr_file = clrs.maroon,
-		curr_dir = clrs.flamingo,
-		show_modified = true -- show if the file has been modified
-	},
-	mode_colors = {
-		["n"] = { "NORMAL", clrs.lavender },
-		["no"] = { "N-PENDING", clrs.lavender },
-		["i"] = { "INSERT", clrs.green },
-		["ic"] = { "INSERT", clrs.green },
-		["t"] = { "TERMINAL", clrs.green },
-		["v"] = { "VISUAL", clrs.flamingo },
-		["V"] = { "V-LINE", clrs.flamingo },
-		["�"] = { "V-BLOCK", clrs.flamingo },
-		["R"] = { "REPLACE", clrs.maroon },
-		["Rv"] = { "V-REPLACE", clrs.maroon },
-		["s"] = { "SELECT", clrs.maroon },
-		["S"] = { "S-LINE", clrs.maroon },
-		["�"] = { "S-BLOCK", clrs.maroon },
-		["c"] = { "COMMAND", clrs.peach },
-		["cv"] = { "COMMAND", clrs.peach },
-		["ce"] = { "COMMAND", clrs.peach },
-		["r"] = { "PROMPT", clrs.teal },
-		["rm"] = { "MORE", clrs.teal },
-		["r?"] = { "CONFIRM", clrs.mauve },
-		["!"] = { "SHELL", clrs.green },
-	}
-})
-
-vim.api.nvim_create_autocmd("ColorScheme", {
-	pattern = "*",
-	callback = function()
-		package.loaded["feline"] = nil
-		package.loaded["catppuccin.groups.integrations.feline"] = nil
-		require("feline").setup {
-			components = require("catppuccin.groups.integrations.feline").get(),
-		}
-	end,
-})
+require('lualine').setup {
+    options = {
+        icons_enabled = true,
+        theme = 'auto',
+        component_separators = { left = '', right = ''},
+        section_separators = { left = '', right = ''},
+        disabled_filetypes = {
+            statusline = {},
+            winbar = {},
+        },
+        ignore_focus = {},
+        always_divide_middle = true,
+        globalstatus = true,
+        refresh = {
+            statusline = 1000,
+            tabline = 1000,
+            winbar = 1000,
+        }
+    },
+    sections = {
+        lualine_a = {'mode'},
+        lualine_b = {'branch', 'diff', 'diagnostics'},
+        lualine_c = {'filename'},
+        lualine_x = {'encoding', 'fileformat', 'filetype'},
+        lualine_y = {'progress'},
+        lualine_z = {'location'}
+    },
+    inactive_sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = {'filename'},
+        lualine_x = {'location'},
+        lualine_y = {},
+        lualine_z = {}
+    },
+    tabline = {},
+    winbar = {},
+    inactive_winbar = {},
+    extensions = {}
+}

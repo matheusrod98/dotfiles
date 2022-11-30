@@ -5,12 +5,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 # Dev
 source $ASDF_DIR/asdf.sh
-source <(ng completion script)
 
 # Completion system.
 fpath=(

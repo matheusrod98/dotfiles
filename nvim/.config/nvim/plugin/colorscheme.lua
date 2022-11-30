@@ -1,35 +1,8 @@
-require("catppuccin").setup {
-    flavour = "mocha",
-    color_overrides = {
-        mocha = {
-	    base = "#000000",
-	},
-    },
+require("tokyonight").setup({
+    style = "moon",
+    light_style = "day",
+    transparent = true,
+    terminal_colors = true,
+})
 
-    integrations = {
-        nvimtree = true,
-    },
-
-    custom_highlights = {
-        NvimTreeNormal = { bg = "NONE" },
-    },
-
-    native_lsp = {
-	enabled = true,
-        virtual_text = {
-            errors = { "italic" },
-            hints = { "italic" },
-            warnings = { "italic" },
-            information = { "italic" },
-        },
-    },
-
-	underlines = {
-		errors = { "underline" },
-		hints = { "underline" },
-		warnings = { "underline" },
-		information = { "underline" },
-	}
-}
-
-vim.api.nvim_command "colorscheme catppuccin"
+vim.cmd[[colorscheme tokyonight]]
