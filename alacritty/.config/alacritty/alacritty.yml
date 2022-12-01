@@ -1,5 +1,5 @@
 import:
- - ~/.config/alacritty/theme.yaml
+ - ~/.config/alacritty/tokyonight_night.yml
 
 window:
   dimensions:
@@ -10,11 +10,9 @@ window:
    x: 4
    y: 4
 
-  #dynamic_padding: false
-
-  #title: Alacritty
-
-  #dynamic_title: true
+  dynamic_padding: false
+  title: Alacritty
+  dynamic_title: true
 
 scrolling:
   history: 100000
@@ -44,4 +42,4 @@ cursor:
     blinking: On
 
 shell:
- program: /bin/zsh
+  program: /bin/zsh
