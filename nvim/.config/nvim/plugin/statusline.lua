@@ -1,3 +1,4 @@
+vim.go.showmode = false
 require('lualine').setup {
     options = {
         icons_enabled = true,
