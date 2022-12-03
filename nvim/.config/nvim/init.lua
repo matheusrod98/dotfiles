@@ -2,8 +2,20 @@
 local use = require('packer').use
 require('packer').startup(function()
     use 'wbthomason/packer.nvim'
-    use 'nvim-lualine/lualine.nvim'
     use 'folke/tokyonight.nvim'
+    use 'numToStr/Comment.nvim'
+    use 'lewis6991/gitsigns.nvim'
+    use 'nvim-lualine/lualine.nvim'
+    use 'kyazdani42/nvim-web-devicons'
+    use 'dinhhuy258/git.nvim'
+    use 'nvim-telescope/telescope.nvim'
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+    use 'nvim-telescope/telescope-file-browser.nvim'
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use 'nvim-lua/plenary.nvim'
+    use {'akinsho/bufferline.nvim', tag = "v3.*"}
+    use 'windwp/nvim-autopairs'
+    use 'windwp/nvim-ts-autotag'
     use 'neovim/nvim-lspconfig'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
@@ -12,32 +24,15 @@ require('packer').startup(function()
     use 'hrsh7th/nvim-cmp'
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
+    use 'glepnir/lspsaga.nvim'
     use 'onsails/lspkind.nvim'
-    use "williamboman/mason.nvim"
-    use "williamboman/mason-lspconfig.nvim"
-    use 'numToStr/Comment.nvim'
-    use 'kdheepak/lazygit.nvim'
-    use 'lewis6991/gitsigns.nvim'
-    use 'kyazdani42/nvim-web-devicons'
-    use 'nvim-telescope/telescope.nvim'
-    use 'nvim-lua/plenary.nvim'
-    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-    use {
-        "windwp/nvim-autopairs",
-        config = function() require("nvim-autopairs").setup {} end
-    }
-    use {'akinsho/bufferline.nvim', tag = "v3.*"}
-    use 'folke/trouble.nvim'
-    use 'stevearc/aerial.nvim'
-    use 'kyazdani42/nvim-tree.lua' -- Maybe don't need it.
-    use 'mattn/emmet-vim'
+    use 'williamboman/mason.nvim'
+    use 'williamboman/mason-lspconfig.nvim'
 end)
 
 -- General settings.
 vim.o.path = vim.o.path .. "**"
 vim.o.number = true
-vim.bo.smartindent = true
 vim.bo.sw = 4
 vim.bo.tabstop = 4
 vim.bo.softtabstop = 4

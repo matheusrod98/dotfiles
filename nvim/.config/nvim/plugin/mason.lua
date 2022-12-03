@@ -22,10 +22,8 @@ require("mason-lspconfig").setup({
         "vimls",
         "angularls",
         "tsserver",
-        -- "html-lsp",
-        -- "css-lsp"
         "html",
-        "css"
+        "css",
     },
     automatic_installation = true,
 })
@@ -40,7 +38,18 @@ require("mason-lspconfig").setup_handlers({
 
     ["bashls"] = function ()
         lspconfig.bashls.setup {
-            filetypes = {"zsh", "sh"}
+            filetypes = { "zsh", "sh" }
+        }
+    end,
+    ["sumneko_lua"] = function ()
+        lspconfig.sumneko_lua.setup {
+            settings = {
+                Lua = {
+                    diagnostics = {
+                        globals = { "vim" }
+                    }
+                }
+            }
         }
     end,
 })
