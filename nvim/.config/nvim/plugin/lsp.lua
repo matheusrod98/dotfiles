@@ -28,8 +28,8 @@ local on_attach = function(client, bufnr)
 end
 
 vim.diagnostic.config({
-  virtual_text = true,
-  signs = false,
+  virtual_text = false,
+  signs = true,
   update_in_insert = false,
 })
 

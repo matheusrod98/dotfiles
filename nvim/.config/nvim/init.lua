@@ -2,7 +2,8 @@
 local use = require('packer').use
 require('packer').startup(function()
     use 'wbthomason/packer.nvim'
-    use 'folke/tokyonight.nvim'
+    -- use 'folke/tokyonight.nvim'
+    use { "catppuccin/nvim", as = "catppuccin" }
     use 'numToStr/Comment.nvim'
     use 'lewis6991/gitsigns.nvim'
     use 'nvim-lualine/lualine.nvim'
@@ -40,11 +41,12 @@ vim.bo.expandtab = true
 vim.o.smartcase = true
 vim.o.ignorecase = true
 vim.o.cmdheight = 2
-vim.o.mouse = "a"
+-- vim.o.mouse = "a"
 vim.o.signcolumn="yes"
 vim.wo.foldenable = false
 vim.o.shortmess = vim.o.shortmess .. "c"
 vim.o.clipboard = 'unnamedplus'
+vim.wo.wrap = false
 
 -- Leader key.
 vim.g.mapleader = ","
