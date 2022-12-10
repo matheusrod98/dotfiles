@@ -13,7 +13,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 
-alias open='xdg-open'
+alias open='distrobox-host-exec xdg-open'
 
 alias xc='wl-copy -n'
 

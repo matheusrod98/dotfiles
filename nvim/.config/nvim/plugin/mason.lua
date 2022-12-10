@@ -23,7 +23,7 @@ require("mason-lspconfig").setup({
         "angularls",
         "tsserver",
         "html",
-        "css",
+        "css-lsp",
     },
     automatic_installation = true,
 })

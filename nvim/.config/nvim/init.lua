@@ -2,8 +2,7 @@
 local use = require('packer').use
 require('packer').startup(function()
     use 'wbthomason/packer.nvim'
-    -- use 'folke/tokyonight.nvim'
-    use { "catppuccin/nvim", as = "catppuccin" }
+    use 'folke/tokyonight.nvim'
     use 'numToStr/Comment.nvim'
     use 'lewis6991/gitsigns.nvim'
     use 'nvim-lualine/lualine.nvim'
