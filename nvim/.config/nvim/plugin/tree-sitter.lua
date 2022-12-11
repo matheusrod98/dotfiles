@@ -7,7 +7,7 @@ require'nvim-treesitter.configs'.setup {
         enable = true,
     },
     indent = {
-        enable = true,
+        enable = false, --Still experimental, messing my identation.
     },
     autotag = {
         enabled = true
