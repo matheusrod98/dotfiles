@@ -1,12 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -45,14 +36,9 @@ source $XDG_CONFIG_HOME/zsh/zsh_aliases
 
 # Set terminal title to $USER@$HOST:$PWD and the cursor to beam.
 precmd() { 
-    # echo -ne "\e]0;${USER}@${HOST}: ${PWD/#$HOME/~}\a";
+    echo -ne "\e]0;${USER}@${HOST}: ${PWD/#$HOME/~}\a";
     echo -ne '\e[5 q'
 }
 
 # Prompt
-source $XDG_DATA_HOME/zsh/powerlevel10k/powerlevel10k.zsh-theme
-# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
-
-# To customize prompt, run `p10k configure` or edit ~/.dotfiles/zsh/.config/zsh/.p10k.zsh.
-[[ ! -f ~/.dotfiles/zsh/.config/zsh/.p10k.zsh ]] || source ~/.dotfiles/zsh/.config/zsh/.p10k.zsh
+eval "$(starship init zsh)"

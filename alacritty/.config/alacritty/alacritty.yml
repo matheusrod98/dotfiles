@@ -1,5 +1,5 @@
 import:
- - ~/.config/alacritty/tokyonight_night.yml
+ - ~/.config/alacritty/themes/tokyo-night/tokyonight_night.yml
 
 window:
   dimensions:
@@ -11,7 +11,6 @@ window:
    y: 4
 
   dynamic_padding: false
-  title: Alacritty
   dynamic_title: true
 
 scrolling:
