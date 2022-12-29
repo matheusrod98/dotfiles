@@ -19,3 +19,4 @@ alias xc='wl-copy -n'
 
 alias nv='nvim'
 alias lg='lazygit'
+alias th='trash'
