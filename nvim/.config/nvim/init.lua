@@ -2,6 +2,7 @@
 local use = require('packer').use
 require('packer').startup(function()
     use 'wbthomason/packer.nvim'
+    use { 'rose-pine/neovim', as = 'rose-pine' }
     use 'folke/tokyonight.nvim'
     use 'numToStr/Comment.nvim'
     use 'lewis6991/gitsigns.nvim'

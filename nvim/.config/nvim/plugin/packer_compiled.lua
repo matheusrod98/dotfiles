@@ -189,6 +189,11 @@ _G.packer_plugins = {
     path = "/var/home/matheus/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["rose-pine"] = {
+    loaded = true,
+    path = "/var/home/matheus/.local/share/nvim/site/pack/packer/start/rose-pine",
+    url = "https://github.com/rose-pine/neovim"
+  },
   ["telescope-file-browser.nvim"] = {
     loaded = true,
     path = "/var/home/matheus/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",

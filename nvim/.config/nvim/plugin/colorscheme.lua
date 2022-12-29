@@ -1,11 +1,8 @@
-require("tokyonight").setup({
-    style = "night",
-    light_style = "day",
-    transparent = false,
-    -- styles = {
-    --     sidebars = "transparent",
-    --     floats = "transparent",
-    -- }
+require('rose-pine').setup({
+    --- @usage 'main' | 'moon'
+    dark_variant = 'main',
+    dim_nc_background = false,
+    disable_background = true,
+    disable_float_background = true,
 })
-
-vim.cmd[[colorscheme tokyonight]]
+vim.cmd('colorscheme rose-pine')
