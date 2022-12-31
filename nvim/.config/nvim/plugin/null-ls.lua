@@ -3,14 +3,31 @@ if not setup then
     return
 end
 
+local diagnostics = null_ls.builtins.diagnostics
 local formatting = null_ls.builtins.formatting
-local diagostics = null_ls.builtins.diagnostics
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null_ls.setup({
     sources = {
+        -- Typescript
         formatting.prettier,
-        diagostics.eslint_d,
+        diagnostics.eslint_d,
+        -- Python
+        diagnostics.pylint,
+        -- C & CPP
+        diagnostics.cpplint,
+        formatting.clang_format,
+        -- Shell
+        diagnostics.shellcheck
+        -- Cmake
+        -- ROS
+        -- JSON
+        -- YAML
+        -- TOML
+        -- MARKDOWN
+        -- LATEX
+        -- ORG
+
     },
     on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then

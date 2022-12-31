@@ -73,6 +73,10 @@ mason_null_ls.setup({
     ensure_installed = {
         "prettier",
         "eslint_d",
+        "pylint",
+        "shellcheck",
+        "cpplint",
+        "clang_format"
     },
     automatic_installation = false,
     automatic_setup = false,
