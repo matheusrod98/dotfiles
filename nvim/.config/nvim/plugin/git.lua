@@ -1,11 +1,8 @@
--- Git signs.
-require('gitsigns').setup {
-    current_line_blame = true
-}
+local setup, gitsigns = pcall(require, "gitsigns")
+if not setup then
+  return
+end
 
--- Fugitive like git wrapper.
-require('git').setup {
-    keymaps = {
-        browse = "<leader>g"
-    }
-}
+gitsigns.setup({
+    current_line_blame = true
+})

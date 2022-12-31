@@ -8,15 +8,17 @@ alias lla='ls -Alh'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 
-alias open='distrobox-host-exec xdg-open'
-
 alias xc='wl-copy -n'
-
 alias nv='nvim'
-alias lg='lazygit'
 alias th='trash'
+alias ssh="kitty +kitten ssh"
+alias cat="cat -v"
+
+# Distrobox
+alias podman-compose="distrobox-host-exec podman-compose"
+alias podman="distrobox-host-exec podman"
+alias open="distrobox-host-exec xdg-open"

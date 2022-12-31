@@ -2,21 +2,16 @@
 local use = require('packer').use
 require('packer').startup(function()
     use 'wbthomason/packer.nvim'
+
+    -- Appearence
     use { 'rose-pine/neovim', as = 'rose-pine' }
     use 'folke/tokyonight.nvim'
-    use 'numToStr/Comment.nvim'
-    use 'lewis6991/gitsigns.nvim'
+    use { "catppuccin/nvim", as = "catppuccin" }
     use 'nvim-lualine/lualine.nvim'
     use 'kyazdani42/nvim-web-devicons'
-    use 'dinhhuy258/git.nvim'
-    use 'nvim-telescope/telescope.nvim'
-    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-    use 'nvim-telescope/telescope-file-browser.nvim'
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-    use 'nvim-lua/plenary.nvim'
     use {'akinsho/bufferline.nvim', tag = "v3.*"}
-    use 'windwp/nvim-autopairs'
-    use 'windwp/nvim-ts-autotag'
+
+    -- LSP & autocompletion
     use 'neovim/nvim-lspconfig'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
@@ -29,6 +24,21 @@ require('packer').startup(function()
     use 'onsails/lspkind.nvim'
     use 'williamboman/mason.nvim'
     use 'williamboman/mason-lspconfig.nvim'
+    use 'jose-elias-alvarez/null-ls.nvim'
+    use 'jayp0521/mason-null-ls.nvim'
+
+    -- File management
+    use 'nvim-tree/nvim-tree.lua'
+    use 'nvim-lua/plenary.nvim'
+    use 'nvim-telescope/telescope.nvim'
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+
+    -- Etc...
+    use 'windwp/nvim-ts-autotag'
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use 'numToStr/Comment.nvim'
+    use 'windwp/nvim-autopairs'
+    use 'lewis6991/gitsigns.nvim'
 end)
 
 -- General settings.
@@ -41,7 +51,7 @@ vim.bo.expandtab = true
 vim.o.smartcase = true
 vim.o.ignorecase = true
 vim.o.cmdheight = 2
--- vim.o.mouse = "a"
+vim.o.mouse = "a"
 vim.o.signcolumn="yes"
 vim.wo.foldenable = false
 vim.o.shortmess = vim.o.shortmess .. "c"
