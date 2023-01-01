@@ -1,44 +1,51 @@
 -- Plugins.
-local use = require('packer').use
-require('packer').startup(function()
-    use 'wbthomason/packer.nvim'
+local use = require("packer").use
+require("packer").startup(function()
+	use("wbthomason/packer.nvim")
 
-    -- Appearence
-    use { 'rose-pine/neovim', as = 'rose-pine' }
-    use 'folke/tokyonight.nvim'
-    use { "catppuccin/nvim", as = "catppuccin" }
-    use 'nvim-lualine/lualine.nvim'
-    use 'kyazdani42/nvim-web-devicons'
-    use {'akinsho/bufferline.nvim', tag = "v3.*"}
+	-- Appearence
+	use({ "rose-pine/neovim", as = "rose-pine" })
+	use("folke/tokyonight.nvim")
+	use("rebelot/kanagawa.nvim")
+	use({ "catppuccin/nvim", as = "catppuccin" })
+	use("nvim-lualine/lualine.nvim")
+	use("kyazdani42/nvim-web-devicons")
+	use({ "akinsho/bufferline.nvim", tag = "v3.*" })
+	use("glepnir/dashboard-nvim")
 
-    -- LSP & autocompletion
-    use 'neovim/nvim-lspconfig'
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/cmp-cmdline'
-    use 'hrsh7th/nvim-cmp'
-    use 'L3MON4D3/LuaSnip'
-    use 'saadparwaiz1/cmp_luasnip'
-    use 'glepnir/lspsaga.nvim'
-    use 'onsails/lspkind.nvim'
-    use 'williamboman/mason.nvim'
-    use 'williamboman/mason-lspconfig.nvim'
-    use 'jose-elias-alvarez/null-ls.nvim'
-    use 'jayp0521/mason-null-ls.nvim'
+	-- LSP & autocompletion
+	use("neovim/nvim-lspconfig")
+	use("hrsh7th/cmp-nvim-lsp")
+	use("hrsh7th/cmp-buffer")
+	use("hrsh7th/cmp-path")
+	use("hrsh7th/cmp-cmdline")
+	use("hrsh7th/nvim-cmp")
+	use("L3MON4D3/LuaSnip")
+	use("saadparwaiz1/cmp_luasnip")
+	use("glepnir/lspsaga.nvim")
+	use("onsails/lspkind.nvim")
+	use("williamboman/mason.nvim")
+	use("williamboman/mason-lspconfig.nvim")
+	use("jose-elias-alvarez/null-ls.nvim")
+	use("jayp0521/mason-null-ls.nvim")
+	use("folke/trouble.nvim")
 
-    -- File management
-    use 'nvim-tree/nvim-tree.lua'
-    use 'nvim-lua/plenary.nvim'
-    use 'nvim-telescope/telescope.nvim'
-    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+	-- File management
+	use("nvim-tree/nvim-tree.lua")
+	use("nvim-lua/plenary.nvim")
+	use("nvim-telescope/telescope.nvim")
+	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+	use({ "nvim-telescope/telescope-file-browser.nvim" })
 
-    -- Etc...
-    use 'windwp/nvim-ts-autotag'
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-    use 'numToStr/Comment.nvim'
-    use 'windwp/nvim-autopairs'
-    use 'lewis6991/gitsigns.nvim'
+	-- Etc...
+	use("windwp/nvim-ts-autotag")
+	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+	use("numToStr/Comment.nvim")
+	use("windwp/nvim-autopairs")
+	use("lewis6991/gitsigns.nvim")
+
+	-- Web
+	use("norcalli/nvim-colorizer.lua")
 end)
 
 -- General settings.
@@ -52,11 +59,12 @@ vim.o.smartcase = true
 vim.o.ignorecase = true
 vim.o.cmdheight = 2
 vim.o.mouse = "a"
-vim.o.signcolumn="yes"
+vim.o.signcolumn = "yes"
 vim.wo.foldenable = false
 vim.o.shortmess = vim.o.shortmess .. "c"
-vim.o.clipboard = 'unnamedplus'
+vim.o.clipboard = "unnamedplus"
 vim.wo.wrap = false
+vim.o.termguicolors = true
 
 -- Leader key.
 vim.g.mapleader = ","

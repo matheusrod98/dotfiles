@@ -1,18 +1,10 @@
--- require('rose-pine').setup({
---     --- @usage 'main' | 'moon'
---     dark_variant = 'main',
---     dim_nc_background = false,
---     disable_background = true,
---     disable_float_background = true,
--- })
--- vim.cmd('colorscheme rose-pine')
-require("catppuccin").setup({
-    flavour = "mocha", -- latte, frappe, macchiato, mocha
-    background = {
-        light = "latte",
-        dark = "mocha",
-    },
-    transparent_background = true,
-    term_colors = true,
+local setup, kanagawa = pcall(require, "kanagawa")
+if not setup then
+	return
+end
+
+kanagawa.setup({
+	transparent = true,
+	theme = "default",
 })
-vim.cmd.colorscheme "catppuccin"
+vim.cmd("colorscheme kanagawa")

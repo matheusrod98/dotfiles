@@ -14,20 +14,20 @@ null_ls.setup({
         diagnostics.eslint_d,
         -- Python
         diagnostics.pylint,
+        formatting.autopep8,
         -- C & CPP
         diagnostics.cpplint,
         formatting.clang_format,
+        -- Lua
+        formatting.stylua,
         -- Shell
-        diagnostics.shellcheck
-        -- Cmake
-        -- ROS
-        -- JSON
-        -- YAML
-        -- TOML
+        diagnostics.shellcheck,
         -- MARKDOWN
-        -- LATEX
-        -- ORG
-
+        diagnostics.markdownlint,
+        -- AWS
+        diagnostics.cfn_lint,
+        -- Docker
+        diagnostics.hadolint,
     },
     on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then

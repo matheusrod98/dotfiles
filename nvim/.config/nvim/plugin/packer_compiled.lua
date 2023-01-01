@@ -119,11 +119,6 @@ _G.packer_plugins = {
     path = "/var/home/matheus/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["git.nvim"] = {
-    loaded = true,
-    path = "/var/home/matheus/.local/share/nvim/site/pack/packer/start/git.nvim",
-    url = "https://github.com/dinhhuy258/git.nvim"
-  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/var/home/matheus/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
@@ -149,10 +144,25 @@ _G.packer_plugins = {
     path = "/var/home/matheus/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
     url = "https://github.com/williamboman/mason-lspconfig.nvim"
   },
+  ["mason-null-ls.nvim"] = {
+    loaded = true,
+    path = "/var/home/matheus/.local/share/nvim/site/pack/packer/start/mason-null-ls.nvim",
+    url = "https://github.com/jayp0521/mason-null-ls.nvim"
+  },
   ["mason.nvim"] = {
     loaded = true,
     path = "/var/home/matheus/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  neosolarized = {
+    loaded = true,
+    path = "/var/home/matheus/.local/share/nvim/site/pack/packer/start/neosolarized",
+    url = "https://github.com/svrana/neosolarized"
+  },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "/var/home/matheus/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -164,10 +174,20 @@ _G.packer_plugins = {
     path = "/var/home/matheus/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-colorizer.lua"] = {
+    loaded = true,
+    path = "/var/home/matheus/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
+    url = "https://github.com/norcalli/nvim-colorizer.lua"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/var/home/matheus/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/var/home/matheus/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/nvim-tree/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -198,11 +218,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/var/home/matheus/.local/share/nvim/site/pack/packer/start/rose-pine",
     url = "https://github.com/rose-pine/neovim"
-  },
-  ["telescope-file-browser.nvim"] = {
-    loaded = true,
-    path = "/var/home/matheus/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
-    url = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
   },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
