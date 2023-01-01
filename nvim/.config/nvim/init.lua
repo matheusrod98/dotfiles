@@ -4,9 +4,6 @@ require("packer").startup(function()
 	use("wbthomason/packer.nvim")
 
 	-- Appearence
-	use({ "rose-pine/neovim", as = "rose-pine" })
-	use("folke/tokyonight.nvim")
-	use("rebelot/kanagawa.nvim")
 	use({ "catppuccin/nvim", as = "catppuccin" })
 	use("nvim-lualine/lualine.nvim")
 	use("kyazdani42/nvim-web-devicons")
