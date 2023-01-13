@@ -4,6 +4,8 @@ require("packer").startup(function()
 	use("wbthomason/packer.nvim")
 
 	-- Appearence
+	use({ "ellisonleao/gruvbox.nvim" })
+	use("bluz71/vim-moonfly-colors")
 	use({ "catppuccin/nvim", as = "catppuccin" })
 	use("nvim-lualine/lualine.nvim")
 	use("kyazdani42/nvim-web-devicons")
@@ -40,6 +42,7 @@ require("packer").startup(function()
 	use("numToStr/Comment.nvim")
 	use("windwp/nvim-autopairs")
 	use("lewis6991/gitsigns.nvim")
+	-- use("github/copilot.vim")
 
 	-- Web
 	use("norcalli/nvim-colorizer.lua")
@@ -62,6 +65,31 @@ vim.o.shortmess = vim.o.shortmess .. "c"
 vim.o.clipboard = "unnamedplus"
 vim.wo.wrap = false
 vim.o.termguicolors = true
+vim.o.relativenumber = true
+vim.o.scrolloff = 8
 
 -- Leader key.
 vim.g.mapleader = ","
+
+-- Mappings
+---- Move blocks of code
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+---- Center cursor after half-page movement
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+---- Center cursor after paragraph movement
+vim.keymap.set("n", "{", "{zz")
+vim.keymap.set("n", "}", "}zz")
+
+---- Center cursor after bottom file movement
+vim.keymap.set("n", "G", "Gzz")
+
+---- Center search results
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+
+---- Type a JSON object
+vim.keymap.set("n", "<leader>jt", ":w !command quicktype -o % --just-types<CR>e")
