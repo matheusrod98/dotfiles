@@ -1,3 +1,5 @@
+#!/bin/bash
+
 rpm-ostree override remove firefox firefox-langpack toolbox
 rpm-ostree install podman-compose syncthing distrobox
 
@@ -11,7 +13,7 @@ distrobox enter Fedora
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
 sudo dnf upgrade -y --refresh
-sudo dnf install neovim git-lfs stow clang gcc nodejs npm ripgrep fd-find code wl-clipboard kitty zsh trash-cli neofetch htop cmatrix lolcat
+sudo dnf install neovim git-lfs stow clang gcc nodejs npm ripgrep fd-find code wl-clipboard kitty zsh trash-cli neofetch htop cmatrix tmux
 git-lfs install
 
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
