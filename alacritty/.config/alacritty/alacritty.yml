@@ -1,5 +1,5 @@
 import:
- - ~/.config/alacritty/themes/terminal-app/theme.yaml
+ - ~/.config/alacritty/themes/tokyo-night/tokyonight_night.yml
 
 window:
   dimensions:
@@ -41,5 +41,5 @@ cursor:
     blinking: On
 
 # Useful for distrobox
-#shell:
-  #program: /bin/zsh
+shell:
+  program: /bin/zsh
