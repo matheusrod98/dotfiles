@@ -1,4 +1,6 @@
 -- General settings.
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 vim.o.path = vim.o.path .. "**"
 vim.o.number = true
 vim.bo.sw = 4
