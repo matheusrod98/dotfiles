@@ -4,8 +4,18 @@ if not setup then
 end
 
 nvimtree.setup({
-	disable_netrw = false,
-	hijack_netrw = false,
+	renderer = {
+		indent_markers = {
+			enable = true,
+		},
+		icons = {
+			show = {
+				folder_arrow = false,
+			},
+		},
+	},
+	disable_netrw = true,
+	hijack_netrw = true,
 	hijack_directories = {
 		auto_open = false,
 	},
