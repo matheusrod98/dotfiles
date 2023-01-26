@@ -16,8 +16,6 @@ sudo dnf upgrade -y --refresh
 sudo dnf install neovim git-lfs stow clang gcc nodejs npm ripgrep fd-find code wl-clipboard kitty zsh trash-cli neofetch htop cmatrix tmux
 git-lfs install
 
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 git clone git@github.com:matheusrod98/dotfiles.git ~/.dotfiles
 mkdir -p ~/.cache/zsh
 touch ~/.cache/zsh/.zhistory

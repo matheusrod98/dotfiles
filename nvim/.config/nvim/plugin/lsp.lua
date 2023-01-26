@@ -3,6 +3,8 @@ if not lspconfig_setup then
 	return
 end
 
+require("lspconfig.ui.windows").default_options.border = "rounded"
+
 vim.o.completeopt = "menu,menuone,noselect"
 local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, opts)

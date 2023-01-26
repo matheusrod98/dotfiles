@@ -63,7 +63,7 @@ require("lazy").setup({
 	"nvim-lualine/lualine.nvim",
 	"kyazdani42/nvim-web-devicons",
 	{ "akinsho/bufferline.nvim" },
-	"glepnir/dashboard-nvim",
+	-- "glepnir/dashboard-nvim",
 	"neovim/nvim-lspconfig",
 	"hrsh7th/cmp-nvim-lsp",
 	"hrsh7th/cmp-buffer",
@@ -95,6 +95,6 @@ require("lazy").setup({
 	"norcalli/nvim-colorizer.lua",
 }, {
 	ui = {
-		border = "single",
+		border = "rounded",
 	},
 })

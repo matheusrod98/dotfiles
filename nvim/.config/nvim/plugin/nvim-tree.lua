@@ -31,11 +31,6 @@ nvimtree.setup({
 			error = "",
 		},
 	},
-	actions = {
-		open_file = {
-			quit_on_open = false,
-		},
-	},
 	trash = {
 		cmd = "distrobox-host-exec gio trash",
 		require_confirm = true,
