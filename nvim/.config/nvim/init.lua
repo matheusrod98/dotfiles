@@ -1,52 +1,3 @@
--- Plugins.
-local use = require("packer").use
-require("packer").startup(function()
-	use("wbthomason/packer.nvim")
-
-	-- Appearence
-	use("folke/tokyonight.nvim")
-	use("nvim-lualine/lualine.nvim")
-	use("kyazdani42/nvim-web-devicons")
-	use({ "akinsho/bufferline.nvim", tag = "v3.*" })
-	use("glepnir/dashboard-nvim")
-
-	-- LSP & autocompletion
-	use("neovim/nvim-lspconfig")
-	use("hrsh7th/cmp-nvim-lsp")
-	use("hrsh7th/cmp-buffer")
-	use("hrsh7th/cmp-path")
-	use("hrsh7th/cmp-cmdline")
-	use("hrsh7th/nvim-cmp")
-	use("L3MON4D3/LuaSnip")
-	use("saadparwaiz1/cmp_luasnip")
-	use("glepnir/lspsaga.nvim")
-	use("onsails/lspkind.nvim")
-	use("williamboman/mason.nvim")
-	use("williamboman/mason-lspconfig.nvim")
-	use("jose-elias-alvarez/null-ls.nvim")
-	use("jayp0521/mason-null-ls.nvim")
-	use("folke/trouble.nvim")
-
-	-- File management
-	use("nvim-tree/nvim-tree.lua")
-	use("nvim-lua/plenary.nvim")
-	use("nvim-telescope/telescope.nvim")
-	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
-	use({ "nvim-telescope/telescope-file-browser.nvim" })
-
-	-- Etc...
-	use("windwp/nvim-ts-autotag")
-	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-	use("numToStr/Comment.nvim")
-	use("windwp/nvim-autopairs")
-	use("lewis6991/gitsigns.nvim")
-	use("github/copilot.vim")
-	use("tpope/vim-fugitive")
-
-	-- Web
-	use("norcalli/nvim-colorizer.lua")
-end)
-
 -- General settings.
 vim.o.path = vim.o.path .. "**"
 vim.o.number = true
@@ -92,3 +43,58 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 ---- Type a JSON object
 vim.keymap.set("n", "<leader>jt", ":w !command quicktype -o % --just-types<CR>e")
+
+-- Plugins
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup({
+	"folke/tokyonight.nvim",
+	"nvim-lualine/lualine.nvim",
+	"kyazdani42/nvim-web-devicons",
+	{ "akinsho/bufferline.nvim" },
+	"glepnir/dashboard-nvim",
+	"neovim/nvim-lspconfig",
+	"hrsh7th/cmp-nvim-lsp",
+	"hrsh7th/cmp-buffer",
+	"hrsh7th/cmp-path",
+	"hrsh7th/cmp-cmdline",
+	"hrsh7th/nvim-cmp",
+	"L3MON4D3/LuaSnip",
+	"saadparwaiz1/cmp_luasnip",
+	"glepnir/lspsaga.nvim",
+	"onsails/lspkind.nvim",
+	"williamboman/mason.nvim",
+	"williamboman/mason-lspconfig.nvim",
+	"jose-elias-alvarez/null-ls.nvim",
+	"jayp0521/mason-null-ls.nvim",
+	"folke/trouble.nvim",
+	"nvim-tree/nvim-tree.lua",
+	"nvim-tree/nvim-tree.lua",
+	"nvim-lua/plenary.nvim",
+	"nvim-telescope/telescope.nvim",
+	{ "nvim-telescope/telescope-fzf-native.nvim", run = "make", as = "fzf" },
+	{ "nvim-telescope/telescope-file-browser.nvim" },
+	"windwp/nvim-ts-autotag",
+	{ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
+	"numToStr/Comment.nvim",
+	"windwp/nvim-autopairs",
+	"lewis6991/gitsigns.nvim",
+	-- "github/copilot.vim",
+	"tpope/vim-fugitive",
+	"norcalli/nvim-colorizer.lua",
+}, {
+	ui = {
+		border = "single",
+	},
+})
