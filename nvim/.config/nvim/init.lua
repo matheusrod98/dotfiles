@@ -4,10 +4,6 @@ require("packer").startup(function()
 	use("wbthomason/packer.nvim")
 
 	-- Appearence
-	use({ "ellisonleao/gruvbox.nvim" })
-	use("bluz71/vim-moonfly-colors")
-	use({ "catppuccin/nvim", as = "catppuccin" })
-	use("rose-pine/neovim")
 	use("folke/tokyonight.nvim")
 	use("nvim-lualine/lualine.nvim")
 	use("kyazdani42/nvim-web-devicons")
@@ -44,7 +40,8 @@ require("packer").startup(function()
 	use("numToStr/Comment.nvim")
 	use("windwp/nvim-autopairs")
 	use("lewis6991/gitsigns.nvim")
-	-- use("github/copilot.vim")
+	use("github/copilot.vim")
+	use("tpope/vim-fugitive")
 
 	-- Web
 	use("norcalli/nvim-colorizer.lua")

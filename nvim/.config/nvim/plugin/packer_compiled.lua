@@ -89,11 +89,6 @@ _G.packer_plugins = {
     path = "/var/home/matheus/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
-  catppuccin = {
-    loaded = true,
-    path = "/var/home/matheus/.local/share/nvim/site/pack/packer/start/catppuccin",
-    url = "https://github.com/catppuccin/nvim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/var/home/matheus/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -119,6 +114,11 @@ _G.packer_plugins = {
     path = "/var/home/matheus/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["copilot.vim"] = {
+    loaded = true,
+    path = "/var/home/matheus/.local/share/nvim/site/pack/packer/start/copilot.vim",
+    url = "https://github.com/github/copilot.vim"
+  },
   ["dashboard-nvim"] = {
     loaded = true,
     path = "/var/home/matheus/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
@@ -128,11 +128,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/var/home/matheus/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
-  },
-  ["gruvbox.nvim"] = {
-    loaded = true,
-    path = "/var/home/matheus/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
-    url = "https://github.com/ellisonleao/gruvbox.nvim"
   },
   ["lspkind.nvim"] = {
     loaded = true,
@@ -163,11 +158,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/var/home/matheus/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
-  },
-  neovim = {
-    loaded = true,
-    path = "/var/home/matheus/.local/share/nvim/site/pack/packer/start/neovim",
-    url = "https://github.com/rose-pine/neovim"
   },
   ["null-ls.nvim"] = {
     loaded = true,
@@ -249,10 +239,10 @@ _G.packer_plugins = {
     path = "/var/home/matheus/.local/share/nvim/site/pack/packer/start/trouble.nvim",
     url = "https://github.com/folke/trouble.nvim"
   },
-  ["vim-moonfly-colors"] = {
+  ["vim-fugitive"] = {
     loaded = true,
-    path = "/var/home/matheus/.local/share/nvim/site/pack/packer/start/vim-moonfly-colors",
-    url = "https://github.com/bluz71/vim-moonfly-colors"
+    path = "/var/home/matheus/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
   }
 }
 

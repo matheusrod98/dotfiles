@@ -1,8 +1,11 @@
 local setup, gitsigns = pcall(require, "gitsigns")
 if not setup then
-  return
+	return
 end
 
 gitsigns.setup({
-    current_line_blame = true
+	current_line_blame = true,
 })
+
+-- Opens Fugitive
+vim.keymap.set("n", "<leader>g", ":Git<CR>")
