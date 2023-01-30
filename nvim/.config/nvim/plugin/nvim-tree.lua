@@ -34,7 +34,7 @@ nvimtree.setup({
 	},
 })
 
-vim.cmd([[hi NvimTreeNormal guibg=NONE ctermbg=NONE]])
+-- vim.cmd([[hi NvimTreeNormal guibg=NONE ctermbg=NONE]])
 
 -- Mappings
 vim.api.nvim_set_keymap("n", "<leader>t", "<cmd>NvimTreeToggle<CR>", { noremap = true, silent = true })

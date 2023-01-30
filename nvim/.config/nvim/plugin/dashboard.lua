@@ -3,55 +3,25 @@ if not setup then
 	return
 end
 
+local emoji = "💭 "
+local handle = io.popen("fortune")
+local text = handle:read("*a")
+text = text:gsub("\n", "")
+text = emoji .. text
+handle:close()
+
 dashboard.setup({
-	theme = "doom",
+	theme = "hyper",
 	config = {
-		header = {
-			" ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗",
-			" ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║",
-			" ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║",
-			" ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║",
-			" ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║",
-			" ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝",
+		week_header = { enable = true },
+		packages = { enable = false },
+		shortcut = {
+			{ desc = " Update plugins", action = "Lazy update", key = "u" },
+			{ desc = " File browser", action = "e .", key = "b" },
+			{ desc = " Find files", action = "Telescope find_files", key = "f" },
+			{ desc = " String grep", action = "Telescope live_grep", key = "g" },
+			{ desc = " Neovim config", action = "e ~/.dotfiles/nvim/.config/nvim", key = "n" },
 		},
-		center = {
-			{
-				icon = "  ",
-				desc = "Recently latest session                  ",
-				shortcut = "SPC s l",
-				action = "SessionLoad",
-			},
-			{
-				icon = "  ",
-				desc = "Recently opened files                   ",
-				action = "DashboardFindHistory",
-				shortcut = "SPC f h",
-			},
-			{
-				icon = "  ",
-				desc = "Find  File                              ",
-				action = "Telescope find_files find_command=rg,--hidden,--files",
-				shortcut = "SPC f f",
-			},
-			{
-				icon = "  ",
-				desc = "File Browser                            ",
-				action = "Telescope file_browser",
-				shortcut = "SPC f b",
-			},
-			{
-				icon = "  ",
-				desc = "Find  word                              ",
-				action = "Telescope live_grep",
-				shortcut = "SPC f w",
-			},
-			{
-				icon = "  ",
-				desc = "Open Personal dotfiles                  ",
-				action = "Telescope dotfiles path=" .. home .. "~/.dotfiles",
-				shortcut = "SPC f d",
-			},
-		},
-		footer = {},
+		footer = { text },
 	},
 })
