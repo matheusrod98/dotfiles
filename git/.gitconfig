@@ -1,12 +1,12 @@
 [user]
 	name = Matheus Rodrigues
 	email = matheusrodrigues@poli.ufrj.br
-; [filter "lfs"]
-; 	clean = git-lfs clean -- %f
-; 	smudge = git-lfs smudge -- %f
-; 	process = git-lfs filter-process
-; 	required = true
 [core]
 	editor = nvim
 [alias]
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
