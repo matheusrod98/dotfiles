@@ -15,7 +15,7 @@ alias rm='rm -i'
 alias xc='wl-copy -n'
 alias nv='nvim'
 alias th='trash'
-alias ssh="kitty +kitten ssh"
+# alias ssh="kitty +kitten ssh"
 alias cat="cat -v"
 
 # Distrobox

@@ -16,7 +16,7 @@ cd paru
 makepkg -si --noconfirm
 cd ..
 rm -rf paru
-sudo paru -S --noconfirm neovim git-lfs stow clang gcc nodejs npm ripgrep fd kitty zsh trash-cli neofetch htop cmatrix tmux wl-clipboard visual-studio-code-bin fortune-mod cowsay lolcat openssh
+sudo paru -S --noconfirm neovim git-lfs stow clang gcc nodejs npm ripgrep fd zsh trash-cli neofetch htop cmatrix tmux wl-clipboard visual-studio-code-bin fortune-mod cowsay lolcat openssh
 git-lfs install
 
 git clone git@github.com:matheusrod98/dotfiles.git ~/.dotfiles

@@ -1,5 +1,5 @@
 import:
- - ~/.config/alacritty/themes/tokyo-night/tokyonight_night.yml
+ - ~/.config/alacritty/themes/rose-pine/rose-pine.yml
 
 window:
   dimensions:
@@ -39,7 +39,3 @@ cursor:
   style:
     shape: Beam
     blinking: On
-
-# Useful for distrobox
-shell:
-  program: /bin/zsh

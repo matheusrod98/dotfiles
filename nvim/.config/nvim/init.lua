@@ -61,7 +61,12 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	{ "folke/tokyonight.nvim" },
+	{
+		"rose-pine/neovim",
+		name = "rose-pine",
+		lazy = false,
+		priority = 1000,
+	},
 	{ "kyazdani42/nvim-web-devicons" },
 	{ "akinsho/bufferline.nvim" },
 	{ "nvim-lualine/lualine.nvim" },

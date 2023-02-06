@@ -1,9 +1,13 @@
-require("tokyonight").setup({
-	style = "night", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
-	light_style = "day",
-	day_brightness = 0.3,
-	hide_inactive_statusline = false,
-	dim_inactive = true,
-	lualine_bold = true,
+local setup, rose_pine = pcall(require, "rose-pine")
+if not setup then
+	return
+end
+
+rose_pine.setup({
+	dark_variant = "main",
+	bold_vert_split = false,
+	dim_nc_background = false,
+	disable_background = false,
+	disable_float_background = false,
 })
-vim.cmd("colorscheme tokyonight")
+vim.cmd("colorscheme rose-pine")
