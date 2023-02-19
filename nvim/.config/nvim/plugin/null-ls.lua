@@ -10,16 +10,16 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null_ls.setup({
     sources = {
         -- Typescript
-        formatting.prettier,
+        -- formatting.prettier,
         diagnostics.eslint_d,
         -- Python
         diagnostics.pylint,
-        formatting.autopep8,
+        -- formatting.autopep8,
         -- C & CPP
         diagnostics.cpplint,
-        formatting.clang_format,
+        -- formatting.clang_format,
         -- Lua
-        formatting.stylua,
+        -- formatting.stylua,
         -- Shell
         diagnostics.shellcheck,
         -- MARKDOWN

@@ -14,7 +14,7 @@ dashboard.setup({
 	theme = "hyper",
 	config = {
 		week_header = { enable = true },
-		packages = { enable = false },
+		packages = { enable = true },
 		shortcut = {
 			{ desc = " Update plugins", action = "Lazy update", key = "u" },
 			{ desc = " File browser", action = "e .", key = "b" },
@@ -22,6 +22,6 @@ dashboard.setup({
 			{ desc = " String grep", action = "Telescope live_grep", key = "g" },
 			{ desc = " Neovim config", action = "e ~/.dotfiles/nvim/.config/nvim", key = "n" },
 		},
-		footer = { text },
+		-- footer = { text },
 	},
 })

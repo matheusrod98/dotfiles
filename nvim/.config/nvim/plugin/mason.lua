@@ -31,7 +31,7 @@ mason_lspconfig.setup({
 		"clangd",
 		"cmake",
 		"dockerls",
-		"sumneko_lua",
+		-- "lua-language-server",
 		"pyright",
 		"tsserver",
 		"html",
@@ -52,20 +52,21 @@ mason_lspconfig.setup_handlers({
 
 	["bashls"] = function()
 		lspconfig.bashls.setup({
-			filetypes = { "zsh", "sh" },
+			filetypes = { "zsh", "sh" }
 		})
 	end,
-	["sumneko_lua"] = function()
-		lspconfig.sumneko_lua.setup({
-			settings = {
-				Lua = {
-					diagnostics = {
-						globals = { "vim" },
-					},
-				},
-			},
-		})
-	end,
+
+	-- ["lua-language-server"] = function()
+	-- 	lspconfig["lua-language-server"].setup({
+	-- 		settings = {
+	-- 			Lua = {
+	-- 				diagnostics = {
+	-- 					globals = { "vim" },
+	-- 				},
+	-- 			},
+	-- 		},
+	-- 	})
+	-- end,
 })
 
 mason_null_ls.setup({

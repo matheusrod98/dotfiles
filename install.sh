@@ -1,25 +1,92 @@
 #!/bin/bash
 
-rpm-ostree override remove firefox firefox-langpack toolbox
-rpm-ostree install podman-compose syncthing distrobox
+sudo transactional-update pkg rm \
+	gnome-shell-extension-desktop-icons \
+	gnome-shell-classic \
+	gnome-shell-extension-desktop-icons
 
-flatpak remote-delete fedora
-flatpak remote-delete fedora-testing
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install com.authy.Authy com.brave.Browser com.discordapp.Discord com.getpostman.Postman com.github.ADBeveridge.Raider com.github.liferooter.textpieces com.github.maoschanz.drawing com.github.tchx84.Flatseal com.heroicgameslauncher.hgl com.mattjakeman.ExtensionManager com.obsproject.Studio com.rafaelmardojai.Blanket com.skype.Client com.spotify.Client com.stremio.Stremio com.usebottles.bottles com.valvesoftware.Steam de.haeckerfelix.Fragments io.github.celluloid_player.Celluloid io.github.lainsce.Khronos nl.hjdskes.gcolor3 org.gaphor.Gaphor org.gimp.GIMP org.gnome.Calculator org.gnome.Characters org.gnome.Cheese org.gnome.Evince org.gnome.Extensions org.gnome.Logs org.gnome.NautilusPreviewer org.gnome.Solanum org.gnome.TextEditor org.gnome.clocks org.gnome.eog org.gnome.font-viewer org.kde.kdenlive org.libreoffice.LibreOffice org.mozilla.firefox org.telegram.desktop rest.insomnia.Insomnia us.zoom.Zoom
+sudo transactional-update pkg in \
+	podman-compose \
+	systemd-zram-service\
+	zram-generator \
+	systemd-network \
+	syncthing
+
+flatpak install \
+    com.brave.Browser \
+    com.discordapp.Discord \
+    com.getpostman.Postman \
+    com.github.ADBeveridge.Raider \
+    com.github.liferooter.textpieces \
+    com.github.maoschanz.drawing \
+    com.github.tchx84.Flatseal \
+    com.google.ChromeDev \
+    com.heroicgameslauncher.hgl \
+    com.hunterwittenborn.Celeste \
+    com.mattjakeman.ExtensionManager \
+    com.obsproject.Studio \
+    com.rafaelmardojai.Blanket \
+    com.raggesilver.BlackBox \
+    com.skype.Client \
+    com.stremio.Stremio \
+    com.todoist.Todoist \
+    com.usebottles.bottles \
+    com.valvesoftware.Steam \
+    io.github.celluloid_player.Celluloid \
+    md.obsidian.Obsidian \
+    org.gaphor.Gaphor \
+    org.gimp.GIMP \
+    org.gnome.Calculator \
+    org.gnome.Solanum \
+    org.gnome.TextEditor \
+    org.gnome.Weather \
+    org.gnome.clocks \
+    org.gnome.eog \
+    org.kde.kdenlive \
+    org.libreoffice.LibreOffice \
+    org.mozilla.firefox \
+    us.zoom.Zoom
 
 distrobox create -n arch -i docker.io/library/archlinux:latest
 distrobox enter arch
-sudo pacman -Syu --noconfirm --needed --base-devel git
+sudo pacman -Syu --noconfirm --needed base-devel git
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si --noconfirm
 cd ..
 rm -rf paru
-sudo paru -S --noconfirm neovim git-lfs stow clang gcc nodejs npm ripgrep fd zsh trash-cli neofetch htop cmatrix tmux wl-clipboard visual-studio-code-bin fortune-mod cowsay lolcat openssh
+paru -S --noconfirm \
+    neovim \
+    git-lfs \
+    stow \
+    clang \
+    gcc \
+    nodejs \
+    npm \
+    ripgrep \
+    fzf \
+    fd \
+    zoxide \
+    bat \
+    trash-cli \
+    neofetch \
+    btop \
+    tmux \
+    wl-clipboard \
+    visual-studio-code-bin \
+    fortune-mode \
+    mosh \
+    openssh \
+    starship \
+    jq \
+    tldr \
+    howdoi \
+    imagemagick \
+
 git-lfs install
 
-git clone git@github.com:matheusrod98/dotfiles.git ~/.dotfiles
+npm i -g nativefier
+
 mkdir -p ~/.cache/zsh
 touch ~/.cache/zsh/.zhistory
 mkdir -p ~/.config/npm/npm-global/bin
@@ -27,6 +94,5 @@ mkdir -p ~/.cargo/bin
 mkdir -p ~/.local/share/zsh/plugins
 cd ~/.local/share/zsh/plugins
 git clone https://github.com/z-shell/F-Sy-H
-curl -sS https://starship.rs/install.sh | sh
 cd ~/.dotfiles
 stow *
