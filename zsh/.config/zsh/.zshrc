@@ -2,7 +2,7 @@
 [[ $- != *i* ]] && return
 
 # Dev
-source $ASDF_DIR/asdf.sh
+. /opt/asdf-vm/asdf.sh
 
 # Completion system.
 fpath=(

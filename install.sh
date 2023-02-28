@@ -49,43 +49,6 @@ flatpak install \
 
 distrobox create -n arch -i docker.io/library/archlinux:latest
 distrobox enter arch
-sudo pacman -Syu --noconfirm --needed base-devel git
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si --noconfirm
-cd ..
-rm -rf paru
-paru -S --noconfirm \
-    neovim \
-    git-lfs \
-    stow \
-    clang \
-    gcc \
-    nodejs \
-    npm \
-    ripgrep \
-    fzf \
-    fd \
-    zoxide \
-    bat \
-    trash-cli \
-    neofetch \
-    btop \
-    tmux \
-    wl-clipboard \
-    visual-studio-code-bin \
-    fortune-mode \
-    mosh \
-    openssh \
-    starship \
-    jq \
-    tldr \
-    howdoi \
-    imagemagick \
-
-git-lfs install
-
-npm i -g nativefier
 
 mkdir -p ~/.cache/zsh
 touch ~/.cache/zsh/.zhistory
@@ -93,6 +56,27 @@ mkdir -p ~/.config/npm/npm-global/bin
 mkdir -p ~/.cargo/bin
 mkdir -p ~/.local/share/zsh/plugins
 cd ~/.local/share/zsh/plugins
+cd ~/.dotfiles
+stow zsh
+zsh
+cd
+
 git clone https://github.com/z-shell/F-Sy-H
+sudo pacman -Syu --noconfirm --needed base-devel git
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si --noconfirm
+cd ..
+rm -rf paru
+paru -S --noconfirm \
+    neovim git-lfs stow clang gcc nodejs lazygit \
+    npm ripgrep fzf fd zoxide bat trash-cli \
+    neofetch btop tmux wl-clipboard visual-studio-code-bin \
+    fortune-mod mosh openssh starship jq tldr howdoi \
+    imagemagick zsh lsd zip unzip mcfly asdf-vm aws-cli-v2 \
+    newsboat lynx
+
+git-lfs install
+
 cd ~/.dotfiles
 stow *

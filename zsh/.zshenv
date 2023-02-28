@@ -20,9 +20,8 @@ export SAVEHIST=1000000
 # Dev
 export NPM_CONFIG_PREFIX=$XDG_CONFIG_HOME/npm/npm-global
 export PATH=$HOME/.local/bin:$NPM_CONFIG_PREFIX/bin:/home/matheus/.cargo/bin:$PATH
-export ASDF_DIR=$HOME/.asdf
+export ASDF_DIR=/opt/asdf-vm/
 export GOPATH=$HOME/.local/bin/go
 
 # Modern command line
 export MCFLY_KEY_SCHEME=vim
-# export MCFLY_DISABLE_MENU=TRUE
