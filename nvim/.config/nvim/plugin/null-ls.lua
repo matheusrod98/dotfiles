@@ -28,6 +28,8 @@ null_ls.setup({
         diagnostics.cfn_lint,
         -- Docker
         diagnostics.hadolint,
+	-- JSON
+	diagnostics.jsonlint
     },
     on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then

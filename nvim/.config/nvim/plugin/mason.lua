@@ -82,7 +82,8 @@ mason_null_ls.setup({
 		"markdownlint",
 		"cfn_lint",
 		"hadolint",
+		"jsonlint"
 	},
 	automatic_installation = false,
-	automatic_setup = false,
+	automatic_setup = true,
 })
