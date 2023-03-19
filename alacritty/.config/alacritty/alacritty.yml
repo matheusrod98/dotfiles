@@ -1,10 +1,16 @@
 import:
- - ~/.config/alacritty/themes/rose-pine/rose-pine.yml
+ - ~/.config/alacritty/themes/rose-pine/rose-pine-amoled.yml
+
+shell:
+  program: /usr/bin/bash
+  args:
+    - -c
+    - distrobox enter arch -- zsh
 
 window:
   dimensions:
-   columns: 140
-   lines: 40
+   columns: 130
+   lines: 36
 
   padding:
    x: 4
@@ -18,19 +24,19 @@ scrolling:
 
 font:
   normal:
-    family: JetBrainsMono Nerd Font
+    family: terminal-font
     style: Regular
 
   bold:
-    family: JetBrainsMono Nerd Font
+    family: terminal-font
     style: Bold
 
   italic:
-    family: JetBrainsMono Nerd Font
+    family: terminal-font
     style: Italic
 
   bold_italic:
-    family: JetBrainsMono Nerd Font
+    family: terminal-font
     style: Bold Italic
 
   size: 13.0

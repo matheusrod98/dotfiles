@@ -49,78 +49,55 @@ vim.keymap.set("n", "<leader>jt", ":w !command quicktype -o % --just-types<CR>e"
 -- Plugins
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
-		lazypath,
-	})
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
 end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	{
-		"rose-pine/neovim",
-		name = "rose-pine",
-		lazy = false,
-		priority = 1000,
-	},
+    { "rose-pine/neovim", name = "rose-pine" },
     { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
-	{
-		"nvim-neorg/neorg",
-		build = ":Neorg sync-parsers",
-		opts = {
-			load = {
-				["core.defaults"] = {}, -- Loads default behaviour
-				["core.norg.concealer"] = {}, -- Adds pretty icons to your documents
-				["core.norg.dirman"] = { -- Manages Neorg workspaces
-				config = {
-					workspaces = {
-						notes = "~/Notes",
-					},
-				},
-			},
-		},
-	},
-	dependencies = { { "nvim-lua/plenary.nvim" } },
-},
-{ "kyazdani42/nvim-web-devicons" },
-{ "akinsho/bufferline.nvim" },
-{ "nvim-lualine/lualine.nvim" },
-{ "neovim/nvim-lspconfig" },
-{ "hrsh7th/cmp-nvim-lsp" },
-{ "glepnir/dashboard-nvim", event = "VimEnter" },
-{ "hrsh7th/cmp-buffer" },
-{ "hrsh7th/cmp-path" },
-{ "hrsh7th/cmp-cmdline" },
-{ "hrsh7th/nvim-cmp" },
-{ "L3MON4D3/LuaSnip" },
-{ "saadparwaiz1/cmp_luasnip" },
-{ "glepnir/lspsaga.nvim" },
-{ "onsails/lspkind.nvim" },
-{ "williamboman/mason.nvim" },
-{ "williamboman/mason-lspconfig.nvim" },
-{ "jose-elias-alvarez/null-ls.nvim" },
-{ "jayp0521/mason-null-ls.nvim" },
-{ "folke/trouble.nvim" },
-{ "nvim-tree/nvim-tree.lua" },
-{ "nvim-lua/plenary.nvim" },
-{ "nvim-telescope/telescope.nvim" },
-{ "nvim-telescope/telescope-fzf-native.nvim", run = "make", name = "fzf" },
-{ "nvim-telescope/telescope-file-browser.nvim" },
-{ "windwp/nvim-ts-autotag" },
-{ "numToStr/Comment.nvim" },
-{ "windwp/nvim-autopairs" },
-{ "lewis6991/gitsigns.nvim" },
-{ "github/copilot.vim" },
-{ "norcalli/nvim-colorizer.lua" },
-{ "rafamadriz/friendly-snippets" }, --Configure later.
-{ "folke/which-key.nvim" }, -- Configure later.
-{ "tpope/vim-surround" },
+    { "kyazdani42/nvim-web-devicons" },
+    { "akinsho/bufferline.nvim" },
+    { "nvim-lualine/lualine.nvim" },
+    { "neovim/nvim-lspconfig" },
+    { "hrsh7th/cmp-nvim-lsp" },
+    { "glepnir/dashboard-nvim", event = "VimEnter" },
+    { "hrsh7th/cmp-buffer" },
+    { "hrsh7th/cmp-path" },
+    { "hrsh7th/cmp-cmdline" },
+    { "hrsh7th/nvim-cmp" },
+    { "L3MON4D3/LuaSnip" },
+    { "saadparwaiz1/cmp_luasnip" },
+    { "glepnir/lspsaga.nvim" },
+    { "onsails/lspkind.nvim" },
+    { "williamboman/mason.nvim" },
+    { "williamboman/mason-lspconfig.nvim" },
+    { "jose-elias-alvarez/null-ls.nvim" },
+    { "jayp0521/mason-null-ls.nvim" },
+    { "folke/trouble.nvim" },
+    { "nvim-tree/nvim-tree.lua" },
+    { "nvim-lua/plenary.nvim" },
+    { "nvim-telescope/telescope.nvim" },
+    { "nvim-telescope/telescope-fzf-native.nvim", run = "make", name = "fzf" },
+    { "nvim-telescope/telescope-file-browser.nvim" },
+    { "windwp/nvim-ts-autotag" },
+    { "numToStr/Comment.nvim" },
+    { "windwp/nvim-autopairs" },
+    { "lewis6991/gitsigns.nvim" },
+    { "github/copilot.vim" },
+    { "norcalli/nvim-colorizer.lua" },
+    { "rafamadriz/friendly-snippets" }, --Configure later.
+    { "folke/which-key.nvim" }, -- Configure later.
+    { "tpope/vim-surround" },
 }, {
-	ui = {
-		border = "rounded",
-	},
+    ui = {
+        border = "rounded",
+    },
 })
