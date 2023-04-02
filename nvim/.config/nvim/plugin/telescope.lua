@@ -9,7 +9,6 @@ telescope.setup({
 	},
 })
 -- telescope.load_extension("fzf")
-telescope.load_extension("file_browser")
 
 -- Mappings.
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>", { noremap = true, silent = false })

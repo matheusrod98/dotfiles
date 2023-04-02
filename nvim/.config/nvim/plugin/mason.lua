@@ -3,8 +3,13 @@ if not mason_setup then
 	return
 end
 
-local mason_lspconfig_setup, mason_lspconfig = pcall(require, "mason-lspconfig")
-if not mason_lspconfig_setup then
+local lsp_setup, lspconfig = pcall(require, "lspconfig")
+if not lsp_setup then
+	return
+end
+
+local mason_setup, mason_lsp_integration = pcall(require, "mason-lspconfig")
+if not mason_setup then
 	return
 end
 
@@ -13,7 +18,6 @@ if not mason_null_ls_setup then
 	return
 end
 
-local lspconfig = require("lspconfig")
 mason.setup({
 	ui = {
 		border = "rounded",
@@ -25,36 +29,21 @@ mason.setup({
 	},
 })
 
-mason_lspconfig.setup({
-	ensure_installed = {
-		"bashls",
-		"clangd",
-		"cmake",
-		"dockerls",
-		-- "lua-language-server",
-		"pyright",
-		"tsserver",
-		"html",
-		"cssls",
-		"marksman",
-		"texlab",
-	},
-	automatic_installation = true,
-})
-
-mason_lspconfig.setup_handlers({
+mason_lsp_integration.setup_handlers({
 	function(server_name)
-		require("lspconfig")[server_name].setup({
+		lspconfig[server_name].setup {
 			on_attach = on_attach,
 			flags = lsp_flags,
-		})
+			capabilities = capabilities,
+			settings = settings,
+		}
 	end,
 
 	["bashls"] = function()
 		lspconfig.bashls.setup({
 			filetypes = { "zsh", "sh" }
 		})
-	end,
+	end
 
 	-- ["lua-language-server"] = function()
 	-- 	lspconfig["lua-language-server"].setup({
@@ -68,6 +57,17 @@ mason_lspconfig.setup_handlers({
 	-- 	})
 	-- end,
 })
+
+mason_lsp_integration.setup({
+	ensure_installed = {
+		"clangd",
+		-- "lua-language-server",
+		"pyright",
+		"tsserver",
+	},
+	automatic_installation = true,
+})
+
 
 mason_null_ls.setup({
 	ensure_installed = {

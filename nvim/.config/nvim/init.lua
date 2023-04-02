@@ -43,6 +43,8 @@ vim.keymap.set("n", "G", "Gzz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+---- Window management
+
 ---- Type a JSON object
 vim.keymap.set("n", "<leader>jt", ":w !command quicktype -o % --just-types<CR>e")
 
@@ -61,41 +63,40 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    { "rose-pine/neovim", name = "rose-pine" },
+    { "nvim-lua/plenary.nvim" },
     { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
+    { "windwp/nvim-ts-autotag" },
+    { "ellisonleao/gruvbox.nvim" },
+    { "rose-pine/neovim", name = "rose-pine" },
+    { "zbirenbaum/copilot.lua", cmd = "Copilot", event = "InsertEnter" },
+    { "glepnir/dashboard-nvim", event = "VimEnter" },
     { "kyazdani42/nvim-web-devicons" },
     { "akinsho/bufferline.nvim" },
     { "nvim-lualine/lualine.nvim" },
+    { "nvim-tree/nvim-tree.lua" },
+    { "nvim-telescope/telescope.nvim" },
+    { "nvim-telescope/telescope-fzf-native.nvim", run = "make", name = "fzf" },
+    { "numToStr/Comment.nvim" },
+    { "windwp/nvim-autopairs" },
+    { "lewis6991/gitsigns.nvim" },
+    { "folke/which-key.nvim" },
+    { "tpope/vim-surround" },
+    { "rafamadriz/friendly-snippets" }, --Configure later.
+    { "norcalli/nvim-colorizer.lua" },
     { "neovim/nvim-lspconfig" },
+    { "jose-elias-alvarez/null-ls.nvim" },
+    { "williamboman/mason.nvim" },
+    { "williamboman/mason-lspconfig.nvim" },
+    { "jayp0521/mason-null-ls.nvim" },
+    { "glepnir/lspsaga.nvim" },
+    { "L3MON4D3/LuaSnip" },
     { "hrsh7th/cmp-nvim-lsp" },
-    { "glepnir/dashboard-nvim", event = "VimEnter" },
     { "hrsh7th/cmp-buffer" },
     { "hrsh7th/cmp-path" },
     { "hrsh7th/cmp-cmdline" },
     { "hrsh7th/nvim-cmp" },
-    { "L3MON4D3/LuaSnip" },
     { "saadparwaiz1/cmp_luasnip" },
-    { "glepnir/lspsaga.nvim" },
-    { "onsails/lspkind.nvim" },
-    { "williamboman/mason.nvim" },
-    { "williamboman/mason-lspconfig.nvim" },
-    { "jose-elias-alvarez/null-ls.nvim" },
-    { "jayp0521/mason-null-ls.nvim" },
-    { "folke/trouble.nvim" },
-    { "nvim-tree/nvim-tree.lua" },
-    { "nvim-lua/plenary.nvim" },
-    { "nvim-telescope/telescope.nvim" },
-    { "nvim-telescope/telescope-fzf-native.nvim", run = "make", name = "fzf" },
-    { "nvim-telescope/telescope-file-browser.nvim" },
-    { "windwp/nvim-ts-autotag" },
-    { "numToStr/Comment.nvim" },
-    { "windwp/nvim-autopairs" },
-    { "lewis6991/gitsigns.nvim" },
-    { "github/copilot.vim" },
-    { "norcalli/nvim-colorizer.lua" },
-    { "rafamadriz/friendly-snippets" }, --Configure later.
-    { "folke/which-key.nvim" }, -- Configure later.
-    { "tpope/vim-surround" },
+    { "onsails/lspkind.nvim" }
 }, {
     ui = {
         border = "rounded",
