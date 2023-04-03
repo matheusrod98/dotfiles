@@ -66,8 +66,7 @@ require("lazy").setup({
     { "nvim-lua/plenary.nvim" },
     { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
     { "windwp/nvim-ts-autotag" },
-    { "ellisonleao/gruvbox.nvim" },
-    { "rose-pine/neovim", name = "rose-pine" },
+    { "folke/tokyonight.nvim" },
     { "zbirenbaum/copilot.lua", cmd = "Copilot", event = "InsertEnter" },
     { "glepnir/dashboard-nvim", event = "VimEnter" },
     { "kyazdani42/nvim-web-devicons" },
@@ -88,15 +87,22 @@ require("lazy").setup({
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
     { "jayp0521/mason-null-ls.nvim" },
+    { "joechrisellis/lsp-format-modifications.nvim" },
     { "glepnir/lspsaga.nvim" },
+    { "folke/trouble.nvim" },
     { "L3MON4D3/LuaSnip" },
     { "hrsh7th/cmp-nvim-lsp" },
     { "hrsh7th/cmp-buffer" },
     { "hrsh7th/cmp-path" },
     { "hrsh7th/cmp-cmdline" },
     { "hrsh7th/nvim-cmp" },
+    { "hrsh7th/cmp-emoji" },
     { "saadparwaiz1/cmp_luasnip" },
-    { "onsails/lspkind.nvim" }
+    { "onsails/lspkind.nvim" },
+    { "edluffy/hologram.nvim" },
+    { "mfussenegger/nvim-dap" },
+    { "rcarriga/nvim-dap-ui" },
+    { "jay-babu/mason-nvim-dap.nvim" }
 }, {
     ui = {
         border = "rounded",

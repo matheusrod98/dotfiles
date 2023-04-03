@@ -18,6 +18,16 @@ if not mason_null_ls_setup then
 	return
 end
 
+local null_ls_setup, null_ls = pcall(require, "null-ls")
+if not null_ls_setup then
+	return
+end
+
+local lsp_format_modifications_setup, lsp_format_modifications = pcall(require, "lsp-format-modifications")
+if not lsp_format_modifications_setup then
+	return
+end
+
 mason.setup({
 	ui = {
 		border = "rounded",
@@ -27,6 +37,15 @@ mason.setup({
 			package_uninstalled = "✗",
 		},
 	},
+})
+
+mason_lsp_integration.setup({
+	ensure_installed = {
+		"clangd",
+		"pyright",
+		"tsserver",
+	},
+	automatic_installation = true,
 })
 
 mason_lsp_integration.setup_handlers({
@@ -44,46 +63,36 @@ mason_lsp_integration.setup_handlers({
 			filetypes = { "zsh", "sh" }
 		})
 	end
-
-	-- ["lua-language-server"] = function()
-	-- 	lspconfig["lua-language-server"].setup({
-	-- 		settings = {
-	-- 			Lua = {
-	-- 				diagnostics = {
-	-- 					globals = { "vim" },
-	-- 				},
-	-- 			},
-	-- 		},
-	-- 	})
-	-- end,
 })
-
-mason_lsp_integration.setup({
-	ensure_installed = {
-		"clangd",
-		-- "lua-language-server",
-		"pyright",
-		"tsserver",
-	},
-	automatic_installation = true,
-})
-
 
 mason_null_ls.setup({
-	ensure_installed = {
-		"prettierd",
-		"eslint_d",
-		"pylint",
-		"autopep8",
-		"cpplint",
-		"clang_format",
-		"stylua",
-		"shellcheck",
-		"markdownlint",
-		"cfn_lint",
-		"hadolint",
-		"jsonlint"
-	},
-	automatic_installation = false,
-	automatic_setup = true,
+    ensure_installed = {
+        eslint_d,
+	pylint,
+	cpplint,
+	prettierd,
+	autopep8,
+	cfn_lint
+    },
+    automatic_installation = true,
+    automatic_setup = true,
 })
+
+null_ls.setup({
+    sources = {
+        null_ls.builtins.diagnostics.eslint_d,
+        null_ls.builtins.diagnostics.pylint,
+        null_ls.builtins.diagnostics.cpplint,
+        null_ls.builtins.diagnostics.cfn_lint,
+        null_ls.builtins.formatting.prettierd,
+        null_ls.builtins.formatting.autopep8,
+        null_ls.builtins.code_actions.eslint_d,
+        null_ls.builtins.code_actions.gitsigns
+    },
+    
+    on_attach = function(client, bufnr)
+        lsp_format_modifications.attach(client, bufnr, { format_on_save = true })
+    end
+})
+
+mason_null_ls.setup_handlers()

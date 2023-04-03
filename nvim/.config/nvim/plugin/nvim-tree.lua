@@ -14,7 +14,7 @@ nvimtree.setup({
 			},
 		},
 	},
-	disable_netrw = false,
+	disable_netrw = true,
 	hijack_netrw = true,
 	diagnostics = {
 		enable = true,
@@ -29,12 +29,28 @@ nvimtree.setup({
 		},
 	},
 	trash = {
-		cmd = "distrobox-host-exec gio trash",
+		cmd = "trash",
 		require_confirm = true,
 	},
 })
 
--- vim.cmd([[hi NvimTreeNormal guibg=NONE ctermbg=NONE]])
+local function open_nvim_tree(data)
+
+	-- buffer is a directory
+	local directory = vim.fn.isdirectory(data.file) == 1
+
+	if not directory then
+		return
+	end
+
+	-- change to the directory
+	vim.cmd.cd(data.file)
+
+	-- open the tree
+	require("nvim-tree.api").tree.open()
+end
+
+vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 
 -- Mappings
 vim.api.nvim_set_keymap("n", "<leader>t", "<cmd>NvimTreeToggle<CR>", { noremap = true, silent = true })

@@ -18,6 +18,11 @@ if not autopairs_setup then
 	return
 end
 
+local cmp_autopairs_setup, cmp_autopairs = pcall(require, "nvim-autopairs.completion.cmp")
+if not cmp_autopairs_setup then
+	return
+end
+
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -40,6 +45,7 @@ cmp.setup({
 		{ name = "luasnip" },
 		{ name = "buffer" },
 		{ name = "path" },
+		{ name = "emoji" }
 	}),
 	formatting = {
 		format = lspkind.cmp_format({
@@ -48,3 +54,8 @@ cmp.setup({
 		}),
 	},
 })
+
+cmp.event:on(
+	'confirm_done',
+	cmp_autopairs.on_confirm_done()
+)

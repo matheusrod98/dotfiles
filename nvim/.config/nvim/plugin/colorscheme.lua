@@ -1,29 +1,25 @@
-local setup, gruvbox = pcall(require, "gruvbox")
+local setup, tokyonight = pcall(require, "tokyonight")
 if not setup then
 	return
 end
 
-gruvbox.setup({
-	undercurl = true,
-	underline = true,
-	bold = true,
-	italic = {
-		strings = true,
-		comments = true,
-		operators = false,
-		folds = true,
-	},
-	strikethrough = true,
-	invert_selection = false,
-	invert_signs = false,
-	invert_tabline = false,
-	invert_intend_guides = false,
-	inverse = true, -- invert background for search, diffs, statuslines and errors
-	contrast = "soft", -- can be "hard", "soft" or empty string.
-	palette_overrides = {},
-	overrides = {},
+tokyonight.setup({
+	style = "night",
+	light_style = "day",
+	transparent = true,
+	terminal_colors = true,
+	hide_inactive_statusline = false,
 	dim_inactive = false,
-	transparent_mode = true,
+	lualine_bold = false,
+	styles = {
+		comments = { italic = true },
+		keywords = { italic = true },
+		functions = {},
+		variables = {},
+		-- Background styles. Can be "dark", "transparent" or "normal"
+		sidebars = "transparent",
+		floats = "transparent",
+	},
 })
 
-vim.cmd("colorscheme gruvbox")
+vim.cmd[[colorscheme tokyonight]]
