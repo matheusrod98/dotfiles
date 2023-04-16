@@ -1,39 +1,29 @@
 #!/bin/bash
 
-sudo transactional-update pkg rm \
-	gnome-shell-extension-desktop-icons \
-	gnome-shell-classic \
-	gnome-shell-extension-desktop-icons
-
 sudo transactional-update pkg in \
 	podman-compose \
 	systemd-zram-service\
 	zram-generator \
 	systemd-network \
-	syncthing
+	syncthing \
+    alacritty
 
 flatpak install \
-    com.brave.Browser \
     com.discordapp.Discord \
     com.getpostman.Postman \
-    com.github.ADBeveridge.Raider \
-    com.github.liferooter.textpieces \
     com.github.maoschanz.drawing \
     com.github.tchx84.Flatseal \
-    com.google.ChromeDev \
     com.heroicgameslauncher.hgl \
     com.hunterwittenborn.Celeste \
     com.mattjakeman.ExtensionManager \
     com.obsproject.Studio \
     com.rafaelmardojai.Blanket \
-    com.raggesilver.BlackBox \
     com.skype.Client \
     com.stremio.Stremio \
     com.todoist.Todoist \
     com.usebottles.bottles \
     com.valvesoftware.Steam \
     io.github.celluloid_player.Celluloid \
-    md.obsidian.Obsidian \
     org.gaphor.Gaphor \
     org.gimp.GIMP \
     org.gnome.Calculator \
@@ -44,7 +34,6 @@ flatpak install \
     org.gnome.eog \
     org.kde.kdenlive \
     org.libreoffice.LibreOffice \
-    org.mozilla.firefox \
     us.zoom.Zoom
 
 distrobox create -n arch -i docker.io/library/archlinux:latest
@@ -74,7 +63,7 @@ paru -S --noconfirm \
     neofetch btop tmux wl-clipboard visual-studio-code-bin \
     fortune-mod mosh openssh starship jq tldr howdoi \
     imagemagick zsh lsd zip unzip mcfly asdf-vm aws-cli-v2 \
-    newsboat lynx
+    newsboat lynx universal-android-debloater-bin
 
 git-lfs install
 

@@ -91,7 +91,7 @@ null_ls.setup({
     },
     
     on_attach = function(client, bufnr)
-        lsp_format_modifications.attach(client, bufnr, { format_on_save = true })
+        lsp_format_modifications.attach(client, bufnr, { format_on_save = false })
     end
 })
 

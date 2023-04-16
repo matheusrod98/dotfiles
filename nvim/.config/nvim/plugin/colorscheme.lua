@@ -10,7 +10,7 @@ tokyonight.setup({
 	terminal_colors = true,
 	hide_inactive_statusline = false,
 	dim_inactive = false,
-	lualine_bold = false,
+	lualine_bold = true,
 	styles = {
 		comments = { italic = true },
 		keywords = { italic = true },

@@ -20,6 +20,6 @@ dashboard.setup({
 			{ desc = " Neovim config", action = "e ~/.dotfiles/nvim/.config/nvim", key = "c" },
 			{ desc = " Update plugins", action = "Lazy update", key = "u" },
 		},
-		footer = { text },
+		footer = {},
 	},
 })
