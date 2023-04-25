@@ -95,4 +95,6 @@ null_ls.setup({
     end
 })
 
-mason_null_ls.setup_handlers()
+mason_null_ls.setup({
+	automatic_setup = true
+})

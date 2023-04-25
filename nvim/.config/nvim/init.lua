@@ -63,11 +63,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+    { 'rose-pine/neovim', name = 'rose-pine' },
     { "nvim-lua/plenary.nvim" },
     { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
     { "windwp/nvim-ts-autotag" },
-    { "folke/tokyonight.nvim" },
-    { "sam4llis/nvim-tundra" },
     { "zbirenbaum/copilot.lua", cmd = "Copilot", event = "InsertEnter" },
     { "glepnir/dashboard-nvim", event = "VimEnter" },
     { "kyazdani42/nvim-web-devicons" },
