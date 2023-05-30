@@ -3,11 +3,9 @@ if not setup then
 	return
 end
 
--- Make a hello world in Lua
-
 copilot.setup({
 	panel = {
-		enabled = false,
+		enabled = true,
 		auto_refresh = "true",
 		keymap = {
 			jump_prev = "[[",
@@ -22,7 +20,7 @@ copilot.setup({
 		},
 	},
 	suggestion = {
-		enabled = false,
+		enabled = true,
 		auto_trigger = false,
 		debounce = 75,
 		keymap = {

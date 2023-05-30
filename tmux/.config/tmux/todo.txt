@@ -1,0 +1,5 @@
+- Current pane shoud be brighter than the rest of the statusline
+- Panes should be centered
+- Right side should have only host machine
+- Splits should have same color as statuline components
+- Define shortcuts to swap panes

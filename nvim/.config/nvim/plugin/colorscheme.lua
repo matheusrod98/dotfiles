@@ -1,17 +1,35 @@
-local setup, rosepine = pcall(require, "rose-pine")
+local setup, kanagawa = pcall(require, "kanagawa")
 if not setup then
-	return
+    return
 end
 
-rosepine.setup({
-	--- @usage 'auto'|'main'|'moon'|'dawn'
-	variant = 'auto',
-	--- @usage 'main'|'moon'|'dawn'
-	dark_variant = 'main',
-	bold_vert_split = false,
-	dim_nc_background = true,
-	disable_background = false,
-	disable_float_background = false,
+kanagawa.setup({
+    compile = false,
+    undercurl = true,
+    commentStyle = { italic = true },
+    functionStyle = {},
+    keywordStyle = { italic = true},
+    statementStyle = { bold = true },
+    typeStyle = {},
+    transparent = false,         -- do not set background color
+    dimInactive = false,         -- dim inactive window `:h hl-NormalNC`
+    terminalColors = true,       -- define vim.g.terminal_color_{0,17}
+    colors = {
+        theme = { wave = {}, lotus = {}, dragon = {}, all = {
+            ui = {
+                bg_gutter = "none"
+            }
+        } },
+    },
+    overrides = function(colors) -- add/modify highlights
+        return {}
+    end,
+    theme = "dragon",              -- Load "wave" theme when 'background' option is not set
+    background = {               -- map the value of 'background' option to a theme
+        dark = "dragon",           -- try "dragon" !
+        light = "lotus"
+    },
 })
 
-vim.cmd('colorscheme rose-pine')
+-- setup must be called before loading
+vim.cmd("colorscheme kanagawa")

@@ -63,7 +63,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    { 'rose-pine/neovim', name = 'rose-pine' },
+    { "tpope/vim-obsession" },
+    { "tpope/vim-commentary" },
+    { "tpope/vim-surround" },
+    { "tpope/vim-fugitive" },
+    { "rebelot/kanagawa.nvim" },
     { "nvim-lua/plenary.nvim" },
     { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
     { "windwp/nvim-ts-autotag" },
@@ -75,11 +79,10 @@ require("lazy").setup({
     { "nvim-tree/nvim-tree.lua" },
     { "nvim-telescope/telescope.nvim" },
     { "nvim-telescope/telescope-fzf-native.nvim", run = "make", name = "fzf" },
-    { "numToStr/Comment.nvim" },
+    -- { "numToStr/Comment.nvim" },
     { "windwp/nvim-autopairs" },
     { "lewis6991/gitsigns.nvim" },
     { "folke/which-key.nvim" },
-    { "tpope/vim-surround" },
     { "rafamadriz/friendly-snippets" }, --Configure later.
     { "norcalli/nvim-colorizer.lua" },
     { "neovim/nvim-lspconfig" },
@@ -87,7 +90,7 @@ require("lazy").setup({
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
     { "jayp0521/mason-null-ls.nvim" },
-    { "joechrisellis/lsp-format-modifications.nvim" },
+    { "joechrisellis/lsp-format-modifications.nvim" }, -- Check if still slow
     { "glepnir/lspsaga.nvim" },
     { "folke/trouble.nvim" },
     { "L3MON4D3/LuaSnip" },
@@ -99,10 +102,10 @@ require("lazy").setup({
     { "hrsh7th/cmp-emoji" },
     { "saadparwaiz1/cmp_luasnip" },
     { "onsails/lspkind.nvim" },
-    { "edluffy/hologram.nvim" },
-    { "mfussenegger/nvim-dap" },
-    { "rcarriga/nvim-dap-ui" },
-    { "jay-babu/mason-nvim-dap.nvim" }
+    -- { "edluffy/hologram.nvim" },
+    { "mfussenegger/nvim-dap" }, -- Configure later
+    { "rcarriga/nvim-dap-ui" }, -- Configure later
+    { "jay-babu/mason-nvim-dap.nvim" } -- Configure later
 }, {
     ui = {
         border = "rounded",

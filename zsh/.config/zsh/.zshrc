@@ -1,9 +1,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Dev
-. /opt/asdf-vm/asdf.sh
-
 # Completion system.
 fpath=(
     $XDG_DATA_HOME/zsh/plugins/zsh-completions/src 
@@ -35,12 +32,16 @@ bindkey '^R' history-incremental-pattern-search-backward
 source $XDG_CONFIG_HOME/zsh/zsh_aliases
 
 # Set terminal title to $USER@$HOST:$PWD and the cursor to beam.
-precmd() { 
-    echo -ne '\e[5 q'
-    echo -ne "\e]0;${USER}@${HOST}: ${PWD/#$HOME/~}\a";
-}
+# precmd() { 
+   # echo -ne '\e[5 q'
+#     echo -ne "\e]0;${USER}@${HOST}: ${PWD/#$HOME/~}\a";
+# }
 
 # Prompt
 eval "$(starship init zsh)"
-eval "$(mcfly init zsh)"
+
+# Dev
+source $ASDF_DIR/asdf.sh
 eval "$(zoxide init zsh)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

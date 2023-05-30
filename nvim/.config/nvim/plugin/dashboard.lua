@@ -3,11 +3,11 @@ if not setup then
 	return
 end
 
-local emoji = "💭 "
-local handle = io.popen("fortune")
-local text = handle:read("*a")
-text = text:gsub("\n", "")
-handle:close()
+-- local emoji = "💭 "
+-- local handle = io.popen("fortune")
+-- local text = handle:read("*a")
+-- text = text:gsub("\n", "")
+-- handle:close()
 
 dashboard.setup({
 	theme = "hyper",

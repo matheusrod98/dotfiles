@@ -19,9 +19,13 @@ export SAVEHIST=1000000
 
 # Dev
 export NPM_CONFIG_PREFIX=$XDG_CONFIG_HOME/npm/npm-global
-export PATH=$HOME/.local/bin:$NPM_CONFIG_PREFIX/bin:/home/matheus/.cargo/bin:$PATH
-export ASDF_DIR=/opt/asdf-vm/
+export ASDF_DIR=$XDG_DATA_HOME/applications/cli/asdf
 export GOPATH=$HOME/.local/bin/go
+export PATH=$HOME/.local/bin:$NPM_CONFIG_PREFIX/bin:/home/matheus/.cargo/bin:$PATH
 
-# Modern command line
-export MCFLY_KEY_SCHEME=vim
+# ROS
+if [[ $HOSTNAME == *"Nautilus"* ]]; then
+    source /opt/ros/noetic/setup.zsh
+elif [[ $HOSTNAME == *"Harpia"* ]]; then
+    source /opt/ros/foxy/setup.zsh
+fi

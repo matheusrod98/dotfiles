@@ -6,34 +6,50 @@ sudo transactional-update pkg in \
 	zram-generator \
 	systemd-network \
 	syncthing \
-    alacritty
+    kitty
 
 flatpak install \
+    cc.arduino.IDE2 \
+    com.authy.Authy \
+    com.belmoussaoui.Authenticator \
+    com.brave.Browser \
     com.discordapp.Discord \
     com.getpostman.Postman \
+    com.github.alexkdeveloper.desktop-files-creator \
+    com.github.finefindus.eyedropper \
     com.github.maoschanz.drawing \
     com.github.tchx84.Flatseal \
+    com.google.Chrome \
     com.heroicgameslauncher.hgl \
-    com.hunterwittenborn.Celeste \
+    com.jgraph.drawio.desktop \
+    com.logseq.Logseq \
     com.mattjakeman.ExtensionManager \
+    com.microsoft.Edge \
     com.obsproject.Studio \
     com.rafaelmardojai.Blanket \
     com.skype.Client \
+    com.spotify.Client \
     com.stremio.Stremio \
-    com.todoist.Todoist \
     com.usebottles.bottles \
     com.valvesoftware.Steam \
     io.github.celluloid_player.Celluloid \
-    org.gaphor.Gaphor \
+    me.iepure.devtoolbox \
     org.gimp.GIMP \
     org.gnome.Calculator \
+    org.gnome.Loupe \
+    org.gnome.Snapshot \
     org.gnome.Solanum \
     org.gnome.TextEditor \
     org.gnome.Weather \
     org.gnome.clocks \
-    org.gnome.eog \
+    org.gnome.meld \
+    org.gtk.Gtk3theme.adw-gtk3 \
+    org.gtk.Gtk3theme.adw-gtk3-dark \
     org.kde.kdenlive \
     org.libreoffice.LibreOffice \
+    org.mozilla.firefox \
+    org.onlyoffice.desktopeditors \
+    org.telegram.desktop \
     us.zoom.Zoom
 
 distrobox create -n arch -i docker.io/library/archlinux:latest
@@ -63,7 +79,7 @@ paru -S --noconfirm \
     neofetch btop tmux wl-clipboard visual-studio-code-bin \
     fortune-mod mosh openssh starship jq tldr howdoi \
     imagemagick zsh lsd zip unzip mcfly asdf-vm aws-cli-v2 \
-    newsboat lynx universal-android-debloater-bin
+    universal-android-debloater-bin
 
 git-lfs install
 
