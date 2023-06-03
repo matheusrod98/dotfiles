@@ -18,7 +18,7 @@ dashboard.setup({
 			{ desc = " Logseq", action = "e ~/Logseq", key = "l" },
 			{ desc = " File browser", action = "e .", key = "b" },
 			{ desc = " Neovim config", action = "e ~/.dotfiles/nvim/.config/nvim", key = "c" },
-			{ desc = " Update plugins", action = "Lazy update", key = "u" },
+			{ desc = "󰏖 Update plugins", action = "Lazy update", key = "u" },
 		},
 		footer = {},
 	},

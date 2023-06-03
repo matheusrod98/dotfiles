@@ -8,6 +8,10 @@ saga.setup({
 		theme = "round",
 		border = "rounded",
 	},
+	lightbulb = {
+		enable = false,
+		enable_in_insert = false,
+	},
 	finder = {
 		edit = { "o", "<CR>" },
 		vsplit = "v",
