@@ -19,13 +19,16 @@ export SAVEHIST=1000000
 
 # Dev
 export NPM_CONFIG_PREFIX=$XDG_CONFIG_HOME/npm/npm-global
-export ASDF_DIR=$XDG_DATA_HOME/applications/cli/asdf
 export GOPATH=$HOME/.local/bin/go
-export PATH=$HOME/.local/bin:$NPM_CONFIG_PREFIX/bin:/home/matheus/.cargo/bin:$PATH
+export PATH=$HOME/.local/bin:$NPM_CONFIG_PREFIX/bin:$HOME/.cargo/bin:$PATH
 
 # ROS
-if [[ $HOSTNAME == *"Nautilus"* ]]; then
+if [[ $HOSTNAME == *"nautilus"* ]]; then
     source /opt/ros/noetic/setup.zsh
-elif [[ $HOSTNAME == *"Harpia"* ]]; then
-    source /opt/ros/foxy/setup.zsh
+    source $HOME/Devel/Nautilus/Nautilus/catkin_ws/devel/setup.zsh
+    source /usr/share/gazebo/setup.sh
+elif [[ $HOSTNAME == *"harpia"* ]]; then
+    source /opt/ros/humble/setup.zsh
+    source $HOME/Devel/Nautilus/Harpia/catkin_ws/install/setup.zsh
+    source /usr/share/gazebo/setup.sh 
 fi

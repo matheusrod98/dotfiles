@@ -84,8 +84,9 @@ null_ls.setup({
         null_ls.builtins.diagnostics.pylint,
         null_ls.builtins.diagnostics.cpplint,
         null_ls.builtins.diagnostics.cfn_lint,
-        null_ls.builtins.formatting.prettierd,
-        null_ls.builtins.formatting.autopep8,
+        null_ls.builtins.formatting.eslint_d,
+        null_ls.builtins.formatting.pyling,
+        null_ls.builtins.formatting.cpplint,
         null_ls.builtins.code_actions.eslint_d,
         null_ls.builtins.code_actions.gitsigns
     },

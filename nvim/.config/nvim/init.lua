@@ -79,7 +79,6 @@ require("lazy").setup({
     { "nvim-tree/nvim-tree.lua" },
     { "nvim-telescope/telescope.nvim" },
     { "nvim-telescope/telescope-fzf-native.nvim", run = "make", name = "fzf" },
-    -- { "numToStr/Comment.nvim" },
     { "windwp/nvim-autopairs" },
     { "lewis6991/gitsigns.nvim" },
     { "folke/which-key.nvim" },

@@ -4,7 +4,6 @@
 # Completion system.
 fpath=(
     $XDG_DATA_HOME/zsh/plugins/zsh-completions/src 
-    $ASDF_DIR/completions
     $fpath
 )
 autoload -Uz compinit
@@ -32,16 +31,14 @@ bindkey '^R' history-incremental-pattern-search-backward
 source $XDG_CONFIG_HOME/zsh/zsh_aliases
 
 # Set terminal title to $USER@$HOST:$PWD and the cursor to beam.
-# precmd() { 
-   # echo -ne '\e[5 q'
-#     echo -ne "\e]0;${USER}@${HOST}: ${PWD/#$HOME/~}\a";
-# }
+precmd() { 
+    echo -ne '\e[5 q'
+#    echo -ne "\e]0;${USER}@${HOST}: ${PWD/#$HOME/~}\a";
+}
 
-# Prompt
+# Rusty
 eval "$(starship init zsh)"
-
-# Dev
-source $ASDF_DIR/asdf.sh
 eval "$(zoxide init zsh)"
+eval "$(/bin/rtx activate zsh)"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.local/bin/fzf.zsh ] && source ~/.local/bin/fzf.zsh
