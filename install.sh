@@ -42,7 +42,7 @@ mkdir -p $XDG_CONFIG_HOME/npm/npm-global/bin
 mkdir -p $HOME/.cargo/bin
 mkdir -p $XDG_DATA_HOME/zsh/plugins
 
-sudo dnf install cargo cmake neovim zsh wl-clipboard zip unzip curl npm stow git-lfs clang gcc btop neofetch jq python3-pip
+sudo dnf install cargo cmake neovim zsh wl-clipboard zip unzip curl npm stow git-lfs clang gcc btop neofetch jq python3-pip wl-clipboard
 sudo cargo install zoxide bat starship ripgrep fd-find lsd zellij trashy tealdeer skim rtx-cli --locked --root /
 git clone https://github.com/z-shell/F-Sy-H $XDG_DATA_HOME/plugins/F-Sy-H
 

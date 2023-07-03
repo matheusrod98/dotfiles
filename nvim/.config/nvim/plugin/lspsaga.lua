@@ -1,32 +1,32 @@
 local setup, saga = pcall(require, "lspsaga")
 if not setup then
-	return
+    return
 end
 
 saga.setup({
-	ui = {
-		theme = "round",
-		border = "rounded",
-	},
-	lightbulb = {
-		enable = false,
-		enable_in_insert = false,
-	},
-	finder = {
-		edit = { "o", "<CR>" },
-		vsplit = "v",
-		split = "s",
-		tabe = "t",
-		quit = { "q", "<ESC>" },
-	},
-	definition = {
-		edit = "<CR>",
-		vsplit = "<C-o>v",
-		split = "<C-o>s",
-		tabe = "<C-c>t",
-		quit = "q",
-		close = "<Esc>",
-	},
+    ui = {
+        theme = "round",
+        border = "rounded",
+    },
+    lightbulb = {
+        enable = false,
+        enable_in_insert = false,
+    },
+    finder = {
+        edit = { "o", "<CR>" },
+        vsplit = "v",
+        split = "s",
+        tabe = "t",
+        quit = { "q", "<ESC>" },
+    },
+    definition = {
+        edit = "<CR>",
+        vsplit = "<C-o>v",
+        split = "<C-o>s",
+        tabe = "<C-c>t",
+        quit = "q",
+        close = "<Esc>",
+    },
 })
 
 vim.keymap.set("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
@@ -38,10 +38,10 @@ vim.keymap.set("n", "<leader>e", "<cmd>Lspsaga show_cursor_diagnostics<CR>", { s
 vim.keymap.set("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
 vim.keymap.set("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
 vim.keymap.set("n", "[E", function()
-	require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR })
+    require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR })
 end, { silent = true })
 vim.keymap.set("n", "]E", function()
-	require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
+    require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
 end, { silent = true })
 vim.keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", { silent = true })
 vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })

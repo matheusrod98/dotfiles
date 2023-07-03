@@ -1,5 +1,5 @@
 import:
-  - ~/.config/alacritty/themes/kanagawa/wave.yml
+  - ~/.config/alacritty/themes/catppuccin/mocha.yml
 
 # shell:
 #   program: /usr/bin/bash
@@ -38,6 +38,7 @@ font:
     family: terminal-font
     style: Bold Italic
 
+  draw_bold_text_with_bright_colors: false
   size: 14.0
 
 cursor:

@@ -3,10 +3,10 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.o.path = vim.o.path .. "**"
 vim.o.number = true
-vim.bo.sw = 4
-vim.bo.tabstop = 4
-vim.bo.softtabstop = 4
-vim.bo.expandtab = true
+vim.o.tabstop = 4
+vim.o.expandtab = true
+vim.o.softtabstop = 4
+vim.o.shiftwidth = 4
 vim.o.smartcase = true
 vim.o.ignorecase = true
 vim.o.cmdheight = 2
@@ -19,6 +19,13 @@ vim.wo.wrap = false
 vim.o.termguicolors = true
 vim.o.relativenumber = true
 vim.o.scrolloff = 8
+
+-- Restore cursor shape after exit
+vim.api.nvim_create_autocmd("VimLeave", {
+    callback = function()
+        vim.cmd [[set guicursor=a:ver100]]
+    end,
+})
 
 -- Leader key.
 vim.g.mapleader = ","
@@ -36,17 +43,11 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "{", "{zz")
 vim.keymap.set("n", "}", "}zz")
 
----- Center cursor after bottom file movement
-vim.keymap.set("n", "G", "Gzz")
-
 ---- Center search results
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 ---- Window management
-
----- Type a JSON object
-vim.keymap.set("n", "<leader>jt", ":w !command quicktype -o % --just-types<CR>e")
 
 -- Plugins
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -63,27 +64,44 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+
+    -- Tools
     { "tpope/vim-obsession" },
+    { "nvim-tree/nvim-tree.lua" },
+    { "folke/which-key.nvim" },
+
+    -- Coding helpers
+    { "zbirenbaum/copilot.lua", cmd = "Copilot", event = "InsertEnter" },
+    { "windwp/nvim-autopairs" },
     { "tpope/vim-commentary" },
     { "tpope/vim-surround" },
-    { "tpope/vim-fugitive" },
-    { "rebelot/kanagawa.nvim" },
-    { "nvim-lua/plenary.nvim" },
-    { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
     { "windwp/nvim-ts-autotag" },
-    { "zbirenbaum/copilot.lua", cmd = "Copilot", event = "InsertEnter" },
-    { "glepnir/dashboard-nvim", event = "VimEnter" },
-    { "kyazdani42/nvim-web-devicons" },
-    { "akinsho/bufferline.nvim" },
+    { "norcalli/nvim-colorizer.lua" },
+
+    -- General deps.
+    { "nvim-lua/plenary.nvim" },
+
+    -- Git
+    { "tpope/vim-fugitive" },
+    { "lewis6991/gitsigns.nvim" },
+
+    -- Appearance
+    { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
     { "nvim-lualine/lualine.nvim" },
-    { "nvim-tree/nvim-tree.lua" },
+    { "akinsho/bufferline.nvim" },
+    { "kyazdani42/nvim-web-devicons" },
+    { "glepnir/dashboard-nvim", event = "VimEnter" },
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+
+    -- Fuzzy Finder
     { "nvim-telescope/telescope.nvim" },
     { "nvim-telescope/telescope-fzf-native.nvim", run = "make", name = "fzf" },
-    { "windwp/nvim-autopairs" },
-    { "lewis6991/gitsigns.nvim" },
-    { "folke/which-key.nvim" },
+
+    -- Snippets
     { "rafamadriz/friendly-snippets" }, --Configure later.
-    { "norcalli/nvim-colorizer.lua" },
+    { "L3MON4D3/LuaSnip" },
+
+    -- LSP
     { "neovim/nvim-lspconfig" },
     { "jose-elias-alvarez/null-ls.nvim" },
     { "williamboman/mason.nvim" },
@@ -92,7 +110,6 @@ require("lazy").setup({
     { "joechrisellis/lsp-format-modifications.nvim" }, -- Check if still slow
     { "glepnir/lspsaga.nvim" },
     { "folke/trouble.nvim" },
-    { "L3MON4D3/LuaSnip" },
     { "hrsh7th/cmp-nvim-lsp" },
     { "hrsh7th/cmp-buffer" },
     { "hrsh7th/cmp-path" },
@@ -101,12 +118,23 @@ require("lazy").setup({
     { "hrsh7th/cmp-emoji" },
     { "saadparwaiz1/cmp_luasnip" },
     { "onsails/lspkind.nvim" },
-    -- { "edluffy/hologram.nvim" },
-    { "mfussenegger/nvim-dap" }, -- Configure later
-    { "rcarriga/nvim-dap-ui" }, -- Configure later
-    { "jay-babu/mason-nvim-dap.nvim" } -- Configure later
+
+
+    -- TODO Configure this later.
+    { "edluffy/hologram.nvim" },
+
+    -- DAP
+    -- TODO Configure later.
+    { "mfussenegger/nvim-dap-python" },
+    { "mfussenegger/nvim-dap" },
+    { "rcarriga/nvim-dap-ui" },
+    { "jay-babu/mason-nvim-dap.nvim" },
+
+    -- Languages
+    { "pmizio/typescript-tools.nvim" },
+
 }, {
-    ui = {
-        border = "rounded",
-    },
+        ui = {
+            border = "rounded",
+        },
 })

@@ -19,7 +19,6 @@ alias nv='nvim'
 alias podman-compose="distrobox-host-exec podman-compose"
 alias podman="distrobox-host-exec podman"
 alias open="distrobox-host-exec xdg-open"
-alias nvim=$HOME/.local/bin/appimages/nvim.appimage
 
 # Modern command line
 alias ls="lsd"

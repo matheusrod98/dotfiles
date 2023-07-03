@@ -8,8 +8,8 @@ if not lsp_setup then
 	return
 end
 
-local mason_setup, mason_lsp_integration = pcall(require, "mason-lspconfig")
-if not mason_setup then
+local mason_lsp_integration_setup, mason_lsp_integration = pcall(require, "mason-lspconfig")
+if not mason_lsp_integration_setup then
 	return
 end
 
@@ -43,7 +43,12 @@ mason_lsp_integration.setup({
 	ensure_installed = {
 		"clangd",
 		"pyright",
-		"tsserver",
+		"docker_compose_language_service",
+		"dockerls",
+		"angularls",
+		"arduino_language_server",
+		"cmake",
+		"bashls",
 	},
 	automatic_installation = true,
 })
@@ -66,36 +71,31 @@ mason_lsp_integration.setup_handlers({
 })
 
 mason_null_ls.setup({
-    ensure_installed = {
-        eslint_d,
-	pylint,
-	cpplint,
-	prettierd,
-	autopep8,
-	cfn_lint
-    },
-    automatic_installation = true,
-    automatic_setup = true,
+	ensure_installed = {
+		"eslint_d",
+		"prettierd",
+		"cfn-lint",
+		"shellcheck",
+		"cmakelint"
+	},
+	automatic_installation = true,
+	automatic_setup = true,
 })
 
 null_ls.setup({
-    sources = {
-        null_ls.builtins.diagnostics.eslint_d,
-        null_ls.builtins.diagnostics.pylint,
-        null_ls.builtins.diagnostics.cpplint,
-        null_ls.builtins.diagnostics.cfn_lint,
-        null_ls.builtins.formatting.eslint_d,
-        null_ls.builtins.formatting.pyling,
-        null_ls.builtins.formatting.cpplint,
-        null_ls.builtins.code_actions.eslint_d,
-        null_ls.builtins.code_actions.gitsigns
-    },
-    
-    on_attach = function(client, bufnr)
-        lsp_format_modifications.attach(client, bufnr, { format_on_save = false })
-    end
-})
+	sources = {
+		-- TypeScript
+		null_ls.builtins.diagnostics.eslint_d,
+		null_ls.builtins.formatting.prettierd,
+		null_ls.builtins.code_actions.eslint_d,
 
-mason_null_ls.setup({
-	automatic_setup = true
+		-- CloudFormation
+		null_ls.builtins.diagnostics.cfn_lint,
+
+		-- Shell
+		null_ls.builtins.diagnostics.shellcheck,
+
+		-- CMake
+		null_ls.builtins.diagnostics.cmakelint,
+	},
 })
