@@ -19,6 +19,7 @@ vim.wo.wrap = false
 vim.o.termguicolors = true
 vim.o.relativenumber = true
 vim.o.scrolloff = 8
+vim.opt.swapfile = false
 
 -- Restore cursor shape after exit
 vim.api.nvim_create_autocmd("VimLeave", {
