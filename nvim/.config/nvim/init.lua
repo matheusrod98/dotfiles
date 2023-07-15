@@ -92,7 +92,7 @@ require("lazy").setup({
     { "akinsho/bufferline.nvim" },
     { "kyazdani42/nvim-web-devicons" },
     { "glepnir/dashboard-nvim", event = "VimEnter" },
-    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+    { 'rose-pine/neovim', name = 'rose-pine' },
 
     -- Fuzzy Finder
     { "nvim-telescope/telescope.nvim" },

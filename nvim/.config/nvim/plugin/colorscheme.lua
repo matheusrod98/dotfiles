@@ -1,21 +1,56 @@
-local setup, catppuccin = pcall(require, "catppuccin")
+local setup, rosepine = pcall(require, "rose-pine")
 if not setup then
 	return
 end
 
-catppuccin.setup({
-    flavour = "mocha", -- latte, frappe, macchiato, mocha
-    background = { -- :h background
-        light = "latte",
-        dark = "mocha",
-    },
-    transparent_background = false, -- disables setting the background color.
-    show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
-    term_colors = true, -- sets terminal colors (e.g. `g:terminal_color_0`)
-    dim_inactive = {
-        enabled = true, -- dims the background color of inactive window
-        shade = "dark",
-        percentage = 0.15, -- percentage of the shade to apply to the inactive window
-    },
+rosepine.setup({
+	--- @usage 'auto'|'main'|'moon'|'dawn'
+	variant = 'auto',
+	--- @usage 'main'|'moon'|'dawn'
+	dark_variant = 'main',
+	bold_vert_split = false,
+	dim_nc_background = true,
+	disable_background = false,
+	disable_float_background = false,
+	disable_italics = false,
+
+	--- @usage string hex value or named color from rosepinetheme.com/palette
+	groups = {
+		background = 'base',
+		background_nc = '_experimental_nc',
+		panel = 'surface',
+		panel_nc = 'base',
+		border = 'highlight_med',
+		comment = 'muted',
+		link = 'iris',
+		punctuation = 'subtle',
+
+		error = 'love',
+		hint = 'iris',
+		info = 'foam',
+		warn = 'gold',
+
+		headings = {
+			h1 = 'iris',
+			h2 = 'foam',
+			h3 = 'rose',
+			h4 = 'gold',
+			h5 = 'pine',
+			h6 = 'foam',
+		}
+		-- or set all headings at once
+		-- headings = 'subtle'
+	},
+
+	-- Change specific vim highlight groups
+	-- https://github.com/rose-pine/neovim/wiki/Recipes
+	highlight_groups = {
+		ColorColumn = { bg = 'rose' },
+
+		-- Blend colours against the "base" background
+		CursorLine = { bg = 'foam', blend = 10 },
+		StatusLine = { fg = 'love', bg = 'love', blend = 10 },
+	}
 })
-vim.cmd.colorscheme "catppuccin"
+
+vim.cmd('colorscheme rose-pine')
