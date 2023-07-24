@@ -13,7 +13,7 @@ compinit
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 
 # Plugins.
-source $XDG_DATA_HOME/zsh/plugins/F-Sy-H/F-Sy-H.plugin.zsh
+source /home/matheus/.local/share/zsh/plugins/F-Sy-H/fast-syntax-highlighting.plugin.zsh
 
 # History settings.
 setopt HIST_IGNORE_DUPS

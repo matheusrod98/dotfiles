@@ -18,7 +18,7 @@ alias nv='nvim'
 # Distrobox
 alias podman-compose="distrobox-host-exec podman-compose"
 alias podman="distrobox-host-exec podman"
-alias open="distrobox-host-exec xdg-open"
+# alias open="distrobox-host-exec xdg-open"
 
 # Modern command line
 alias ls="lsd"
