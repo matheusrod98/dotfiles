@@ -8,7 +8,7 @@ config.default_cursor_style = 'SteadyBar'
 config.scrollback_lines = 100000
 
 -- Colorscheme
-config.color_scheme = 'Tokyo Night'
+config.color_scheme = 'GruvboxDarkHard'
 
 -- Tab bar
 config.use_fancy_tab_bar = false
