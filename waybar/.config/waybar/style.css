@@ -1,0 +1,48 @@
+* {
+    font-family: "Iosevka Nerd Font";
+    font-size: 16px;
+}
+
+window#waybar {
+    background-color: rgba(0, 0, 0, 1);
+    color: #ffffff;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: #808080;
+}
+
+#workspaces button.active {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+#custom-notification {
+    padding: 0 15px
+}
+
+#clock {
+    padding: 0 15px
+}
+
+#battery {
+    padding: 0 15px
+}
+
+#tray {
+    padding: 0 15px
+}
+
+#pulseaudio {
+    padding: 0 15px
+}
+
+#network {
+    padding: 0 15px
+}
+
+#bluetooth {
+    padding: 0 15px
+}
