@@ -1,80 +1,60 @@
 {
     "layer": "top",
-    "height": 26,
-    "spacing": 4,
+        "height": 18,
+        "spacing": 4,
 
-    "modules-left": [ "wlr/workspaces" ],
-    "wlr/workspaces": {
-        "format": "{icon}",
-    },
+        "modules-left": [ "temperature", "cpu", "memory" ],
+        "cpu": {
+            "interval": 1,
+            "format": "  {usage}%",
+        },
+        "memory": {
+            "interval": 1,
+            "format": " {}%"
+        },
+        "temperature": {
+            "interval": 1,
+            "critical-threshold": 80,
+            "format": " {temperatureC}°C",
+        },
 
-    "modules-right": [ "pulseaudio", "bluetooth", "network", "battery", "clock", "custom/notification", "tray" ],
-    "custom/notification": {
-        "tooltip": false,
-        "format": "{icon}",
-        "format-icons": {
-            "notification": "<span foreground='red'><sup></sup></span>",
-            "none": "",
-            "dnd-notification": "<span foreground='red'><sup></sup></span>",
-            "dnd-none": "",
-            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-            "inhibited-none": "",
-            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-            "dnd-inhibited-none": ""
+        "modules-center": [ "wlr/workspaces" ],
+        "wlr/workspaces": {
+            "format": "{icon}",
         },
-        "return-type": "json",
-        "exec-if": "which swaync-client",
-        "exec": "swaync-client -swb",
-        "on-click": "swaync-client -t -sw",
-        "on-click-right": "swaync-client -d -sw",
-        "escape": true
-    },
-    "clock": {
-        "format": "{:%a %d %H:%M}"
-    },
-    "battery": {
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% 󰂄 ",
-        "format-plugged": "{capacity}%  ",
-        "format-icons": [" ", " ", " ", " ", " "]
-    },
-    "pulseaudio": {
-        "format": "{volume}% {icon} {format_source}",
-        "format-muted": "{volume}% 󰖁 ",
-        "format-source": "{volume}%  ",
-        "format-source-muted": "{volume}%  ",
-        "format-icons": {
-            "headphones": " ",
-            "handsfree": "󰋎 ",
-            "headset": "󰋎 ",
-            "phone": " ",
-            "portable": " ",
-            "car": " ",
-            "default": [" ", " "]
+
+        "modules-right": [ "tray", "pulseaudio", "battery", "clock" ],
+        "clock": {
+            "interval": 1,
+            "format": " {:%a, %d %b, %H:%M}"
         },
-    },
-    "network": {
-        "interface": "wlp4s0",
-        "format": "{ifname}",
-        "format-wifi": "{essid} ({signalStrength}%)  ",
-        "format-ethernet": "{ifname}  ",
-        "format-disconnected": " ",
-        "tooltip-format": "{ifname}",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%)  ",
-        "tooltip-format-ethernet": "{ifname}  ",
-        "tooltip-format-disconnected": "Disconnected",
-        "max-length": 50
-    },
-    "bluetooth": {
-        "format": "󰂱 {status}",
-        "format-disabled": "󰂲 ",
-        "format-connected": " {num_connections} connected",
-        "tooltip-format": "{controller_alias}\t{controller_address}",
-        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
-        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
-    },
-    "tray": {
-        "icon-size": 19,
-        "spacing": 10
-    }
+        "battery": {
+            "states": {
+                "warning": 30,
+                "critical": 15
+            },
+            "format": "{icon} {capacity}%",
+            "format-charging": "{icon} {capacity}%",
+            "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+            "format-charging-icons": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂋", "󰂅"]
+        },
+        "pulseaudio": {
+            "format": "{icon} {volume}% {format_source}",
+            "format-muted": "󰖁 {volume}%",
+            "format-source": " {volume}%",
+            "format-source-muted": " {volume}%",
+            "format-icons": {
+                "headphones": "",
+                "handsfree": "󰋎",
+                "headset": "󰋎",
+                "phone": "",
+                "portable": "",
+                "car": "",
+                "default": ["", ""]
+            },
+        },
+        "tray": {
+            "icon-size": 15,
+            "spacing": 10
+        }
 }

@@ -4,7 +4,10 @@
 
 [core]
 	editor = nvim
-    pager = bat
+	pager = bat
+
+[pull]
+	rebase = true
 
 [push]
 	autoSetupRemote = true
@@ -14,8 +17,3 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-
-[alias]
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-[pull]
-	rebase = true

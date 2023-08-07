@@ -96,6 +96,6 @@ null_ls.setup({
 		null_ls.builtins.diagnostics.shellcheck,
 
 		-- CMake
-		null_ls.builtins.diagnostics.cmakelint,
+		-- null_ls.builtins.diagnostics.cmakelint,
 	},
 })

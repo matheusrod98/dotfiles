@@ -21,6 +21,11 @@ vim.o.relativenumber = true
 vim.o.scrolloff = 8
 vim.opt.swapfile = false
 
+-- Latex TODO: Put somewherelse later
+vim.cmd([[
+let g:vimtex_view_method = 'zathura'
+]])
+
 -- Restore cursor shape after exit
 vim.api.nvim_create_autocmd("VimLeave", {
     callback = function()
@@ -92,8 +97,7 @@ require("lazy").setup({
     { "akinsho/bufferline.nvim" },
     { "kyazdani42/nvim-web-devicons" },
     { "glepnir/dashboard-nvim", event = "VimEnter" },
-    { 'rose-pine/neovim', name = 'rose-pine' },
-    { "ellisonleao/gruvbox.nvim", priority = 1000 },
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 
     -- Fuzzy Finder
     { "nvim-telescope/telescope.nvim" },
@@ -134,9 +138,10 @@ require("lazy").setup({
 
     -- Languages
     { "pmizio/typescript-tools.nvim" },
+    { "lervag/vimtex" },
 
 }, {
         ui = {
             border = "rounded",
         },
-})
+    })
