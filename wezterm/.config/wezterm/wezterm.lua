@@ -1,6 +1,9 @@
 local wezterm = require 'wezterm'
 local config = {}
 
+-- FUCKING ANNOYING
+config.window_close_confirmation = 'NeverPrompt'
+
 -- Cursor
 config.default_cursor_style = 'SteadyBar'
 
@@ -10,10 +13,20 @@ config.scrollback_lines = 100000
 -- Colorscheme
 config.color_scheme = 'GruvboxDarkHard'
 
+config.colors = {
+    background = '#171717',
+}
+
 -- Tab bar
 config.use_fancy_tab_bar = false
-config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = true
+
+wezterm.on('update-right-status', function(window, pane)
+    window:set_right_status(wezterm.format {
+        { Text = '(' .. window:active_workspace() .. ')' },
+        { Foreground = { Color = "#000000" } }
+    })
+end)
 
 -- Window padding
 config.window_padding = {
@@ -35,6 +48,7 @@ local act = wezterm.action
 config.keys = {
     { key = 'Space', mods = 'ALT', action = act.ActivateCommandPalette },
     { key = 's', mods = 'ALT', action = act.ActivateCopyMode },
+    { key = 'w', mods = 'ALT', action = act.ShowLauncherArgs { flags = 'FUZZY|WORKSPACES' } },
 
     -- Tabs
     { key = 'n', mods = 'ALT', action = act.SpawnTab 'CurrentPaneDomain' },
