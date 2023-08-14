@@ -5,7 +5,10 @@ export XDG_DATA_HOME=$HOME/.local/share
 export XDG_STATE_HOME=$HOME/.local/state
 
 # Some environment variables.
-export EDITOR="nvim"
+export EDITOR="vim"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANROFFOPT='-c'
+export BAT_THEME="base16"
 export SYSTEMD_EDITOR="nvim"
 export VISUAL="nvim"
 
@@ -25,10 +28,10 @@ export PATH=$HOME/.local/bin:$NPM_CONFIG_PREFIX/bin:$HOME/.cargo/bin:$PATH
 # ROS
 if [[ $HOSTNAME == *"nautilus"* ]]; then
     source /opt/ros/noetic/setup.zsh
-    source $HOME/Devel/Nautilus/Nautilus/catkin_ws/devel/setup.zsh
+    source "$HOME"/Devel/Nautilus/Nautilus/catkin_ws/devel/setup.zsh
     source /usr/share/gazebo/setup.sh
 elif [[ $HOSTNAME == *"harpia"* ]]; then
     source /opt/ros/humble/setup.zsh
-    source $HOME/Devel/Nautilus/Harpia/catkin_ws/install/setup.zsh
+    source "$HOME"/Devel/Nautilus/Harpia/catkin_ws/install/setup.zsh
     source /usr/share/gazebo/setup.sh 
 fi

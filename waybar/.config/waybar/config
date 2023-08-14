@@ -3,7 +3,17 @@
         "height": 18,
         "spacing": 4,
 
-        "modules-left": [ "temperature", "cpu", "memory" ],
+        "modules-left": [ "wlr/workspaces" ],
+        "wlr/workspaces": {
+            "format": "{icon}",
+        },
+
+        "modules-right": [ "custom/scratchpad", "tray", "pulseaudio", "bluetooth", "network", "cpu", "memory", "temperature", "battery", "clock" ],
+        "custom/scratchpad": {
+            "exec": "windows=$(hyprctl -j workspaces | jq -rc '.[] | select(.'id'==-99).windows'); if [[ $windows -gt 0 ]]; then echo $windows; else echo '0'; fi",
+            "interval": 1,
+            "format": "  {}",
+        },
         "cpu": {
             "interval": 1,
             "format": "  {usage}%",
@@ -17,13 +27,6 @@
             "critical-threshold": 80,
             "format": " {temperatureC}°C",
         },
-
-        "modules-center": [ "wlr/workspaces" ],
-        "wlr/workspaces": {
-            "format": "{icon}",
-        },
-
-        "modules-right": [ "tray", "pulseaudio", "battery", "clock" ],
         "clock": {
             "interval": 1,
             "format": " {:%a, %d %b, %H:%M}"
@@ -34,13 +37,12 @@
                 "critical": 15
             },
             "format": "{icon} {capacity}%",
-            "format-charging": "{icon} {capacity}%",
+            "format-charging": "󰂄 {capacity}%",
             "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-            "format-charging-icons": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂋", "󰂅"]
         },
         "pulseaudio": {
             "format": "{icon} {volume}% {format_source}",
-            "format-muted": "󰖁 {volume}%",
+            "format-muted": "󰖁 {volume}% {format_source}",
             "format-source": " {volume}%",
             "format-source-muted": " {volume}%",
             "format-icons": {
@@ -52,6 +54,22 @@
                 "car": "",
                 "default": ["", ""]
             },
+        },
+        "network": {
+            "interval": 1,
+            "interface": "wlp4s0",
+            "format": "{ifname}",
+            "format-wifi": " {essid} ({signalStrength}%)  {bandwidthUpBits}  {bandwidthDownBits}",
+            "format-ethernet": " {ifname}  {bandwidthUpBits}  {bandwidthDownBits}",
+            "format-disconnected": "",
+            "tooltip-format-disconnected": "Disconnected"
+        },
+        "bluetooth": {
+            "format": " {status}",
+            "format-connected": " {num_connections} connected",
+            "tooltip-format": "{controller_alias}\t{controller_address}",
+            "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+            "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
         },
         "tray": {
             "icon-size": 15,

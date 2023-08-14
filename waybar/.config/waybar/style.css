@@ -1,6 +1,5 @@
 * {
     border: none;
-    border-radius: 8px;
     font-family: JetBrainsMono Nerd Font;
     font-size: 12px;
     font-style: normal;
@@ -17,7 +16,7 @@ window#waybar {
     background: #11111b;
     margin: 5px 5px;
     padding: 8px 5px;
-    border-radius: 16px;
+    border-radius: 14px;
     border: solid 0px #89b4fa;
     font-weight: normal;
     font-style: normal;
@@ -26,7 +25,7 @@ window#waybar {
 #workspaces button {
     padding: 0px 5px;
     margin: 0px 3px;
-    border-radius: 16px;
+    border-radius: 14px;
     color: #45475a;
     background-color: #45475a;
     transition: all 0.3s ease-in-out;
@@ -35,7 +34,7 @@ window#waybar {
 #workspaces button.active {
     color: #89b4fa;
     background-color: #89b4fa;
-    border-radius: 16px;
+    border-radius: 14px;
     min-width: 50px;
     background-size: 400% 400%;
     transition: all 0.3s ease-in-out;
@@ -45,7 +44,7 @@ window#waybar {
     background: #11111B;
     margin: 5px 5px;
     padding: 8px 8px;
-    border-radius: 16px;
+    border-radius: 14px;
     border: solid 0px #89b4fa;
 }
 
@@ -53,7 +52,18 @@ window#waybar {
     background: #11111b;
     margin: 5px 5px;
     padding: 8px 8px;
-    border-radius: 16px;
+    border-radius: 14px;
+    border: solid 0px #89b4fa;
+    color: #cdd6f4;
+    font-weight: bold;
+    font-style: normal;
+}
+
+#custom-scratchpad {
+    background: #11111b;
+    margin: 5px 5px;
+    padding: 8px 8px;
+    border-radius: 14px;
     border: solid 0px #89b4fa;
     color: #cdd6f4;
     font-weight: bold;
@@ -65,7 +75,7 @@ window#waybar {
     background: #11111b;
     margin: 5px 5px;
     padding: 8px 8px;
-    border-radius: 16px;
+    border-radius: 14px;
     border: solid 0px #89b4fa;
     font-weight: bold;
     font-style: normal;
@@ -76,7 +86,7 @@ window#waybar {
     background: #11111b;
     margin: 5px 5px;
     padding: 8px 8px;
-    border-radius: 16px;
+    border-radius: 14px;
     border: solid 0px #89b4fa;
     font-weight: bold;
     font-style: normal;
@@ -87,7 +97,7 @@ window#waybar {
     background: #11111b;
     margin: 5px 5px;
     padding: 8px 8px;
-    border-radius: 16px;
+    border-radius: 14px;
     border: solid 0px #89b4fa;
     font-weight: bold;
     font-style: normal;
@@ -98,7 +108,7 @@ window#waybar {
     background: #11111b;
     margin: 5px 5px;
     padding: 8px 8px;
-    border-radius: 16px;
+    border-radius: 14px;
     border: solid 0px #89b4fa;
     font-weight: bold;
     font-style: normal;
@@ -108,7 +118,7 @@ window#waybar {
     background: #11111b;
     margin: 5px 5px;
     padding: 8px 8px;
-    border-radius: 16px;
+    border-radius: 14px;
     border: solid 0px #89b4fa;
     color: #cdd6f4;
     font-weight: bold;
@@ -119,7 +129,29 @@ window#waybar {
     background: #11111b;
     margin: 5px 5px;
     padding: 8px 8px;
-    border-radius: 16px;
+    border-radius: 14px;
+    border: solid 0px #89b4fa;
+    color: #cdd6f4;
+    font-weight: bold;
+    font-style: normal;
+}
+
+#bluetooth {
+    background: #11111b;
+    margin: 5px 5px;
+    padding: 8px 8px;
+    border-radius: 14px;
+    border: solid 0px #89b4fa;
+    color: #cdd6f4;
+    font-weight: bold;
+    font-style: normal;
+}
+
+#network {
+    background: #11111b;
+    margin: 5px 5px;
+    padding: 8px 8px;
+    border-radius: 14px;
     border: solid 0px #89b4fa;
     color: #cdd6f4;
     font-weight: bold;
@@ -130,7 +162,7 @@ window#waybar {
     background: #0c0e0f;
     padding-left: 15px;
     padding-right: 15px;
-    border-radius: 16px;
+    border-radius: 14px;
     /*border-left: solid 1px #282738;*/
     /*border-right: solid 1px #282738;*/
     margin-top: 5px;
@@ -143,7 +175,7 @@ window#waybar {
     background: #11111b;
     margin: 5px 5px;
     padding: 8px 8px;
-    border-radius: 16px;
+    border-radius: 14px;
     border: solid 0px #89b4fa;
     color: #cdd6f4;
     font-weight: bold;
@@ -154,7 +186,7 @@ window#waybar {
     background: #11111b;
     margin: 5px 5px;
     padding: 8px 8px;
-    border-radius: 16px;
+    border-radius: 14px;
     border: solid 0px #89b4fa;
     color: #cdd6f4;
     font-weight: bold;
@@ -165,7 +197,7 @@ window#waybar {
     background: #11111b;
     margin: 5px 5px;
     padding: 8px 8px;
-    border-radius: 16px;
+    border-radius: 14px;
     border: solid 0px #89b4fa;
     color: #cdd6f4;
     font-weight: bold;
@@ -177,7 +209,7 @@ window#waybar {
     background: #11111b;
     margin: 5px 5px;
     padding: 8px 8px;
-    border-radius: 16px;
+    border-radius: 14px;
     border: solid 0px #89b4fa;
     font-weight: bold;
     font-style: normal;

@@ -1,0 +1,25 @@
+[global]
+    width = 300
+    height = 500
+    origin = top-right
+    offset = 10x10
+    notification_limit = 0
+    frame_width = 2
+    font = JetBrainsMono nerd Font 10
+    frame_color = "#89B4FA"
+    separator_color = frame
+    corner_radius = 8
+    icon_theme = Papirus
+
+[urgency_low]
+    background = "#1E1E2E"
+    foreground = "#CDD6F4"
+
+[urgency_normal]
+    background = "#1E1E2E"
+    foreground = "#CDD6F4"
+
+[urgency_critical]
+    background = "#1E1E2E"
+    foreground = "#CDD6F4"
+    frame_color = "#FAB387"
