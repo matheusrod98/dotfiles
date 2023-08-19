@@ -15,11 +15,11 @@ alias rm='rm -i'
 alias xc='wl-copy -n'
 alias nv='nvim'
 
-# Distrobox
-alias nvim="~/.local/bin/nvim.appimage"
-alias podman-compose="distrobox-host-exec podman-compose"
-alias podman="distrobox-host-exec podman"
-# alias open="distrobox-host-exec xdg-open"
-
-# Modern command line
 alias ls="lsd"
+
+# Distroboxes
+if [[ "$HOSTNAME" == *"nautilus"* ]] || [[ "$HOSTNAME" == *"harpia"* ]]; then
+    alias open="distrobox-host-exec xdg-open"
+else
+    alias open="xdg-open"
+fi

@@ -10,6 +10,7 @@
     separator_color = frame
     corner_radius = 8
     icon_theme = Papirus
+    show_indicators = false
 
 [urgency_low]
     background = "#1E1E2E"

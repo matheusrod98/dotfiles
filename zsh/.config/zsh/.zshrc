@@ -13,7 +13,7 @@ compinit
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 
 # Plugins.
-source /home/matheus/.local/share/zsh/plugins/F-Sy-H/fast-syntax-highlighting.plugin.zsh
+source "$HOME"/.local/share/zsh/plugins/F-Sy-H/fast-syntax-highlighting.plugin.zsh
 
 # History settings.
 setopt HIST_IGNORE_DUPS
@@ -30,15 +30,9 @@ bindkey '^R' history-incremental-pattern-search-backward
 # My aliases.
 source $XDG_CONFIG_HOME/zsh/zsh_aliases
 
-# Set terminal title to $USER@$HOST:$PWD and the cursor to beam.
-# precmd() { 
-#     echo -ne '\e[5 q'
-#    echo -ne "\e]0;${USER}@${HOST}: ${PWD/#$HOME/~}\a";
-# }
-
 # Rusty
 eval "$(starship init zsh)"
-eval "$(zoxide init zsh)"
 eval "$(/bin/rtx activate zsh)"
+eval "$(zoxide init zsh)"
 
-[ -f ~/.local/bin/fzf.zsh ] && source ~/.local/bin/fzf.zsh
+[ -f "$HOME"/.local/bin/.fzf.zsh ] && source "$HOME"/.local/bin/.fzf.zsh
