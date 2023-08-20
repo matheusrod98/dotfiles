@@ -7,17 +7,16 @@
 }
 
 window#waybar {
-    background: rgba(17, 17, 27, 0.8);
+    background: rgba(23, 23, 23, 0.6);
     padding: 0px;
     margin: 0px;
 }
 
 #workspaces {
-    background: #11111b;
+    background: #171717;
     margin: 5px 5px;
     padding: 8px 5px;
     border-radius: 14px;
-    border: solid 0px #89b4fa;
     font-weight: normal;
     font-style: normal;
 }
@@ -26,14 +25,14 @@ window#waybar {
     padding: 0px 5px;
     margin: 0px 3px;
     border-radius: 14px;
-    color: #45475a;
-    background-color: #45475a;
+    color: #3C3836;
+    background-color: #3C3836;
     transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
-    color: #89b4fa;
-    background-color: #89b4fa;
+    color: #689D6A;
+    background-color: #689D6A;
     border-radius: 14px;
     min-width: 50px;
     background-size: 400% 400%;
@@ -41,176 +40,138 @@ window#waybar {
 }
 
 #tray {
-    background: #11111B;
+    background: #171717;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
-    border: solid 0px #89b4fa;
 }
 
 #clock {
-    background: #11111b;
+    background: #171717;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
-    border: solid 0px #89b4fa;
-    color: #cdd6f4;
+    color: #FBF1C7;
     font-weight: bold;
     font-style: normal;
 }
 
 #custom-scratchpad {
-    background: #11111b;
+    background: #171717;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
-    border: solid 0px #89b4fa;
-    color: #cdd6f4;
+    color: #FBF1C7;
     font-weight: bold;
     font-style: normal;
 }
 
 #battery {
-    color: #a6e3a1;
-    background: #11111b;
+    color: #98971A;
+    background: #171717;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
-    border: solid 0px #89b4fa;
     font-weight: bold;
     font-style: normal;
 }
 
 #battery.charging {
-    color: #a6e3a1;
-    background: #11111b;
+    color: #98971A;
+    background: #171717;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
-    border: solid 0px #89b4fa;
     font-weight: bold;
     font-style: normal;
 }
 
 #battery.warning:not(.charging) {
     background-color: #f9e2af;
-    background: #11111b;
+    background: #171717;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
-    border: solid 0px #89b4fa;
     font-weight: bold;
     font-style: normal;
 }
 
 #battery.critical:not(.charging) {
     background-color: #f38ba8;
-    background: #11111b;
+    background: #171717;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
-    border: solid 0px #89b4fa;
     font-weight: bold;
     font-style: normal;
 }
 
 #pulseaudio {
-    background: #11111b;
+    background: #171717;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
-    border: solid 0px #89b4fa;
-    color: #cdd6f4;
+    color: #FBF1C7;
     font-weight: bold;
     font-style: normal;
 }
 
 #pulseaudio.muted {
-    background: #11111b;
+    background: #171717;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
-    border: solid 0px #89b4fa;
-    color: #cdd6f4;
+    color: #FBF1C7;
     font-weight: bold;
     font-style: normal;
 }
 
 #bluetooth {
-    background: #11111b;
+    background: #171717;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
-    border: solid 0px #89b4fa;
-    color: #cdd6f4;
+    color: #FBF1C7;
     font-weight: bold;
     font-style: normal;
 }
 
 #network {
-    background: #11111b;
+    background: #171717;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
-    border: solid 0px #89b4fa;
-    color: #cdd6f4;
+    color: #FBF1C7;
     font-weight: bold;
     font-style: normal;
 }
 
-#window {
-    background: #0c0e0f;
-    padding-left: 15px;
-    padding-right: 15px;
-    border-radius: 14px;
-    /*border-left: solid 1px #282738;*/
-    /*border-right: solid 1px #282738;*/
-    margin-top: 5px;
-    margin-bottom: 5px;
-    font-weight: normal;
-    font-style: normal;
-}
-
 #cpu {
-    background: #11111b;
+    background: #171717;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
-    border: solid 0px #89b4fa;
-    color: #cdd6f4;
+    color: #FBF1C7;
     font-weight: bold;
     font-style: normal;
 }
 
 #memory {
-    background: #11111b;
+    background: #171717;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
-    border: solid 0px #89b4fa;
-    color: #cdd6f4;
+    color: #FBF1C7;
     font-weight: bold;
     font-style: normal;
 }
 
 #temperature {
-    background: #11111b;
+    background: #171717;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
-    border: solid 0px #89b4fa;
-    color: #cdd6f4;
-    font-weight: bold;
-    font-style: normal;
-}
-
-#temperature.critical {
-    background-color: #f38ba8;
-    background: #11111b;
-    margin: 5px 5px;
-    padding: 8px 8px;
-    border-radius: 14px;
-    border: solid 0px #89b4fa;
+    color: #FBF1C7;
     font-weight: bold;
     font-style: normal;
 }

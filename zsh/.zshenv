@@ -5,12 +5,13 @@ export XDG_DATA_HOME=$HOME/.local/share
 export XDG_STATE_HOME=$HOME/.local/state
 
 # Some environment variables.
-export EDITOR="vim"
+export EDITOR="nvim"
+export VISUAL="nvim"
+export SYSTEMD_EDITOR="nvim"
+export BAT_THEME="gruvbox-dark"
+export PAGER="bat"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT='-c'
-export BAT_THEME="base16"
-export SYSTEMD_EDITOR="nvim"
-export VISUAL="nvim"
 
 # ZSH config directory.
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh

@@ -1,4 +1,4 @@
-@import "./../colors/catppuccin.rasi"
+@import "./../colors/gruvbox.rasi"
 
 /*****----- Main Window -----*****/
 window {
@@ -13,7 +13,7 @@ window {
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
-    border:                      0px solid;
+    border:                      2px solid;
     border-radius:               12px;
     border-color:                @selected;
     background-color:            @background;
