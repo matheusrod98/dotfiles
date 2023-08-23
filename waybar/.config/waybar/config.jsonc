@@ -1,78 +1,91 @@
 {
     "layer": "top",
-        "height": 18,
-        "spacing": 4,
+    "height": 18,
+    "spacing": 4,
 
-        "modules-left": [ "wlr/workspaces" ],
-        "wlr/workspaces": {
-            "format": "{icon}",
-        },
+    "modules-left": [ "wlr/workspaces" ],
+    "wlr/workspaces": {
+        "format": "{icon}",
+    },
 
-        "modules-right": [ "custom/scratchpad", "tray", "pulseaudio", "bluetooth", "network", "cpu", "memory", "temperature", "battery", "clock" ],
-        "custom/scratchpad": {
-            "exec": "windows=$(hyprctl -j workspaces | jq -rc '.[] | select(.'id'==-99).windows'); if [[ $windows -gt 0 ]]; then echo $windows; else echo '0'; fi",
-            "interval": 1,
-            "format": "  {}",
+    "modules-right": [ "mpris", "custom/scratchpad", "tray", "pulseaudio", "bluetooth", "network", "cpu", "memory", "temperature", "battery", "clock" ],
+    "mpris": {
+        "interval": 1,
+        "format": "{player_icon} {dynamic}",
+        "format-paused": "{status_icon} <i>{dynamic}</i>",
+        "player-icons": {
+            "default": "▶",
+            "mpv": "🎵"
         },
-        "cpu": {
-            "interval": 1,
-            "format": "  {usage}%",
+        "status-icons": {
+            "paused": "⏸"
         },
-        "memory": {
-            "interval": 1,
-            "format": " {}%"
+        "ignored-players": [ "firefox", "brave", "chromium", "google-chrome" ]
+    },
+    "custom/scratchpad": {
+        "exec": "windows=$(hyprctl -j workspaces | jq -rc '.[] | select(.'id'==-99).windows'); if [[ $windows -gt 0 ]]; then echo $windows; else echo '0'; fi",
+        "interval": 1,
+        "format": "  {}",
+    },
+    "cpu": {
+        "interval": 1,
+        "format": "  {usage}%",
+    },
+    "memory": {
+        "interval": 1,
+        "format": " {}%"
+    },
+    "temperature": {
+        "interval": 1,
+        "critical-threshold": 80,
+        "format": " {temperatureC}°C",
+    },
+    "clock": {
+        "interval": 1,
+        "format": " {:%a, %d %b, %H:%M}"
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
         },
-        "temperature": {
-            "interval": 1,
-            "critical-threshold": 80,
-            "format": " {temperatureC}°C",
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}% {format_source}",
+        "format-muted": "󰖁 {volume}% {format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": " {volume}%",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "󰋎",
+            "headset": "󰋎",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
         },
-        "clock": {
-            "interval": 1,
-            "format": " {:%a, %d %b, %H:%M}"
-        },
-        "battery": {
-            "states": {
-                "warning": 30,
-                "critical": 15
-            },
-            "format": "{icon} {capacity}%",
-            "format-charging": "󰂄 {capacity}%",
-            "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-        },
-        "pulseaudio": {
-            "format": "{icon} {volume}% {format_source}",
-            "format-muted": "󰖁 {volume}% {format_source}",
-            "format-source": " {volume}%",
-            "format-source-muted": " {volume}%",
-            "format-icons": {
-                "headphones": "",
-                "handsfree": "󰋎",
-                "headset": "󰋎",
-                "phone": "",
-                "portable": "",
-                "car": "",
-                "default": ["", ""]
-            },
-        },
-        "network": {
-            "interval": 1,
-            "interface": "wlp4s0",
-            "format": "{ifname}",
-            "format-wifi": " {essid} ({signalStrength}%)  {bandwidthUpBits}  {bandwidthDownBits}",
-            "format-ethernet": " {ifname}  {bandwidthUpBits}  {bandwidthDownBits}",
-            "format-disconnected": "",
-            "tooltip-format-disconnected": "Disconnected"
-        },
-        "bluetooth": {
-            "format": " {status}",
-            "format-connected": " {num_connections} connected",
-            "tooltip-format": "{controller_alias}\t{controller_address}",
-            "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
-            "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
-        },
-        "tray": {
-            "icon-size": 15,
-            "spacing": 10
-        }
+    },
+    "network": {
+        "interval": 1,
+        "interface": "wlp4s0",
+        "format": "{ifname}",
+        "format-wifi": " {essid} ({signalStrength}%)  {bandwidthUpBits}  {bandwidthDownBits}",
+        "format-ethernet": " {ifname}  {bandwidthUpBits}  {bandwidthDownBits}",
+        "format-disconnected": "",
+        "tooltip-format-disconnected": "Disconnected"
+    },
+    "bluetooth": {
+        "format": " {status}",
+        "format-connected": " {num_connections} connected",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+    },
+    "tray": {
+        "icon-size": 15,
+        "spacing": 10
+    }
 }
