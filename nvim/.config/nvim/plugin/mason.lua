@@ -29,73 +29,108 @@ if not lsp_format_modifications_setup then
 end
 
 mason.setup({
-	ui = {
-		border = "rounded",
-		icons = {
-			package_installed = "✓",
-			package_pending = "➜",
-			package_uninstalled = "✗",
-		},
-	},
+    ui = {
+        border = "rounded",
+        icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗",
+        },
+    },
 })
 
 mason_lsp_integration.setup({
-	ensure_installed = {
-		"clangd",
-		"pyright",
-		"docker_compose_language_service",
-		"dockerls",
-		"angularls",
-		"arduino_language_server",
-		"cmake",
-		"bashls",
-	},
-	automatic_installation = true,
+    ensure_installed = {
+        "clangd",
+        "pyright",
+        "angularls",
+        "arduino_language_server",
+        "bashls",
+        "cmake",
+        "cssls",
+        "docker_compose_language_service",
+        "dockerls",
+        "html",
+        "sqlls",
+        "tailwindcss",
+        "texlab"
+    },
+    automatic_installation = true,
 })
 
 mason_lsp_integration.setup_handlers({
-	function(server_name)
-		lspconfig[server_name].setup {
-			on_attach = on_attach,
-			flags = lsp_flags,
-			capabilities = capabilities,
-			settings = settings,
-		}
-	end,
+    function(server_name)
+	lspconfig[server_name].setup({
+		on_attach = on_attach,
+		flags = lsp_flags,
+		capabilities = capabilities,
+		settings = settings,
+	})
+    end,
 
-	["bashls"] = function()
-		lspconfig.bashls.setup({
-			filetypes = { "zsh", "sh" }
-		})
-	end
+    ["bashls"] = function()
+	lspconfig.bashls.setup({
+		filetypes = { "zsh", "sh" },
+	})
+    end
 })
 
 mason_null_ls.setup({
-	ensure_installed = {
-		"eslint_d",
-		"prettierd",
-		"cfn-lint",
-		"shellcheck",
-		"cmakelint"
-	},
-	automatic_installation = true,
-	automatic_setup = true,
+    ensure_installed = {
+        "eslint_d",
+        "jsonlint",
+        "cfn_lint",
+        "shellcheck",
+        "beautysh",
+        "cmakelint",
+        "gersemi",
+        "commitlint",
+        "cpplint",
+        "clang-format",
+        "flake8",
+        "autopep8",
+        "vale",
+        "latexindent",
+        "luals",
+        "stylua"
+    },
+    automatic_installation = true,
+    automatic_setup = true,
 })
 
 null_ls.setup({
-	sources = {
-		-- TypeScript
-		null_ls.builtins.diagnostics.eslint_d,
-		null_ls.builtins.formatting.prettierd,
-		null_ls.builtins.code_actions.eslint_d,
+    sources = {
+        null_ls.builtins.diagnostics.eslint_d,
+        null_ls.builtins.formatting.eslint_d,
+        null_ls.builtins.formatting.prettierd,
+        null_ls.builtins.code_actions.eslint_d,
+        null_ls.builtins.diagnostics.jsonlint,
 
-		-- CloudFormation
-		null_ls.builtins.diagnostics.cfn_lint,
+        null_ls.builtins.diagnostics.cfn_lint,
 
-		-- Shell
-		null_ls.builtins.diagnostics.shellcheck,
+        null_ls.builtins.diagnostics.shellcheck,
+        null_ls.builtins.code_actions.shellcheck,
+        null_ls.builtins.formatting.beautysh,
 
-		-- CMake
-		-- null_ls.builtins.diagnostics.cmakelint,
-	},
+        -- null_ls.builtins.diagnostics.cmakelint,
+        -- null_ls.builtins.code_actions.cmakelint,
+        null_ls.builtins.formatting.gersemi,
+
+        null_ls.builtins.diagnostics.commitlint,
+
+        null_ls.builtins.diagnostics.cpplint,
+        null_ls.builtins.formatting.clang_format,
+
+        null_ls.builtins.diagnostics.flake8,
+        null_ls.builtins.formatting.autopep8,
+
+        null_ls.builtins.diagnostics.vale,
+        null_ls.builtins.formatting.latexindent,
+
+        null_ls.builtins.formatting.stylua,
+        null_ls.builtins.diagnostics.luacheck,
+    },
+    on_attach = function(client, bufnr)
+	lsp_format_modifications.attach(client, bufnr, { format_on_save = true })
+    end
 })

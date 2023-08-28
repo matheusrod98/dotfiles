@@ -10,8 +10,11 @@ treesitter.setup({
 	highlight = {
 		enable = true,
 	},
-	indent = { enable = true }, -- Still experimental, messing my identation
-	autotag = { enable = true },
+	indent = { enable = true },
+	autotag = {
+        enable = true,
+        enable_close_on_slash = false
+    },
 	ensure_installed = "all",
 	auto_install = true,
 })
