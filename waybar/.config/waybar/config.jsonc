@@ -3,8 +3,8 @@
   "height": 18,
   "spacing": 4,
 
-  "modules-left": ["wlr/workspaces"],
-  "wlr/workspaces": {
+  "modules-left": ["hyprland/workspaces"],
+  "hyprland/workspaces": {
     "format": "{icon}"
   },
 
