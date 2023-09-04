@@ -72,6 +72,18 @@ mason_lsp_integration.setup_handlers({
 	lspconfig.bashls.setup({
 		filetypes = { "zsh", "sh" },
 	})
+    end,
+
+    ["lua_ls"] = function ()
+	lspconfig.lua_ls.setup({
+		settings = {
+			Lua = {
+				diagnostics = {
+					globals = { "vim" },
+				},
+			},
+		},
+	})
     end
 })
 
@@ -86,7 +98,7 @@ mason_null_ls.setup({
         "gersemi",
         "commitlint",
         "cpplint",
-        "clang-format",
+        -- "clang-format",
         "flake8",
         "autopep8",
         "vale",
@@ -119,7 +131,7 @@ null_ls.setup({
         null_ls.builtins.diagnostics.commitlint,
 
         null_ls.builtins.diagnostics.cpplint,
-        null_ls.builtins.formatting.clang_format,
+        -- null_ls.builtins.formatting.clang_format,
 
         null_ls.builtins.diagnostics.flake8,
         null_ls.builtins.formatting.autopep8,
