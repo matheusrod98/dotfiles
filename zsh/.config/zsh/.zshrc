@@ -28,7 +28,7 @@ bindkey "^?" backward-delete-char
 bindkey '^R' history-incremental-pattern-search-backward
 
 # My aliases.
-source $XDG_CONFIG_HOME/zsh/zsh_aliases
+source "$XDG_CONFIG_HOME"/zsh/zsh_aliases
 
 # Rusty
 eval "$(starship init zsh)"
