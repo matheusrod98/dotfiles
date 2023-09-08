@@ -22,17 +22,18 @@
     "clock"
   ],
   "mpris": {
-    "interval": 1,
-    "format": "{player_icon} {dynamic}",
-    "format-paused": "{status_icon} <i>{dynamic}</i>",
+    "interval": 0.5,
+    "format": "{player_icon} <i>{artist} - {title} - {position}/{length}</i>",
+    "format-paused": "{status_icon} <i>{artist} - {title} - {position}/{length}</i>",
+    "title-len": 20,
     "player-icons": {
       "default": "▶",
       "mpv": "🎵"
     },
     "status-icons": {
       "paused": "⏸"
-    },
-    "ignored-players": ["firefox", "brave", "chromium", "google-chrome"]
+    }
+    // "ignored-players": ["firefox", "brave", "chromium", "google-chrome"]
   },
   "custom/scratchpad": {
     "exec": "windows=$(hyprctl -j workspaces | jq -rc '.[] | select(.'id'==-99).windows'); if [[ $windows -gt 0 ]]; then echo $windows; else echo '0'; fi",

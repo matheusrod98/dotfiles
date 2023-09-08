@@ -5,7 +5,7 @@ end
 
 telescope.setup({
     defaults = {
-        file_ignore_patterns = { "^.git/", "node_modules" },
+        file_ignore_patterns = { "^.git/", "node_modules", "%.svg" },
     },
     extensions = {
         fzf = {

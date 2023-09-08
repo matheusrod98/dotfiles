@@ -1,6 +1,6 @@
 # Apps
 super + t
-	~/.local/bin/kitty.app/bin/kitty
+	~/.local/bin/wezterm
 super + b
     flatpak run com.brave.Browser
 super + f
