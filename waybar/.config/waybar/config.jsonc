@@ -22,10 +22,11 @@
     "clock"
   ],
   "mpris": {
-    "interval": 0.5,
+    "interval": 1,
     "format": "{player_icon} <i>{artist} - {title} - {position}/{length}</i>",
     "format-paused": "{status_icon} <i>{artist} - {title} - {position}/{length}</i>",
-    "title-len": 20,
+    "title-len": 30,
+    "artist-len": 20,
     "player-icons": {
       "default": "▶",
       "mpv": "🎵"

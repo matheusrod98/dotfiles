@@ -1,0 +1,22 @@
+return {
+    "mfussenegger/nvim-lint",
+    config = function() 
+        require("lint").linters.eslint.cmd = "./node_modules/.bin/eslint"
+        require("lint").linters_by_ft = {
+            typescript = { "eslint" },
+            javascript = { "eslint" }
+        }
+
+        vim.api.nvim_create_autocmd({ 
+            "BufEnter",
+            "TextChanged",
+            "InsertLeave",
+            "BufWritePost",
+            "TextChangedI"
+        }, {
+                callback = function()
+                    require("lint").try_lint()
+                end,
+            })
+    end
+}
