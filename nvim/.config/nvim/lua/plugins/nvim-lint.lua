@@ -1,7 +1,7 @@
 return {
     "mfussenegger/nvim-lint",
     config = function() 
-        require("lint").linters.eslint.cmd = "./node_modules/.bin/eslint"
+        require("lint").linters.eslint.cmd = "eslint"
         require("lint").linters_by_ft = {
             typescript = { "eslint" },
             javascript = { "eslint" }
