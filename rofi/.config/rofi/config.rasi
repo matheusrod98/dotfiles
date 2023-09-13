@@ -7,4 +7,5 @@ configuration {
     combi-mode:                 "window,drun,run";
     show-icons:                 true;
     terminal:                   "/home/matheus/.local/bin/wezterm";
+    run-command:                "{terminal} start {cmd}";
 }
