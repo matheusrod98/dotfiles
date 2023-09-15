@@ -7,6 +7,7 @@ return {
         lspconfig.pyright.setup {}
         lspconfig.tsserver.setup {}
         lspconfig.tailwindcss.setup{}
+        lspconfig.clangd.setup {}
 
         vim.o.completeopt = "menu,menuone,noselect"
 

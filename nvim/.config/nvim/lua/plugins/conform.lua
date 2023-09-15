@@ -6,6 +6,8 @@ return {
                 python = { "black" },
                 javascript = { "prettier" },
                 typescript = { "prettier" },
+                typescriptreact = { "prettier" },
+                javascriptreact = { "prettier" },
             },
             format_on_save = {
                 lsp_fallback = true,

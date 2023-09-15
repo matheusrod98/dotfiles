@@ -5,7 +5,8 @@ return {
         require("lint").linters_by_ft = {
             typescript = { "eslint" },
             javascript = { "eslint" },
-            python = { "ruff" }
+            python = { "ruff" },
+            cpp = { "cppcheck" },
         }
 
         vim.api.nvim_create_autocmd({ 
