@@ -22,17 +22,12 @@
     "clock"
   ],
   "mpris": {
-    "interval": 1,
-    "format": "{player_icon} <i>{artist} - {title} - {position}/{length}</i>",
-    "format-paused": "{status_icon} <i>{artist} - {title} - {position}/{length}</i>",
-    "title-len": 30,
-    "artist-len": 20,
-    "player-icons": {
-      "default": "▶",
-      "mpv": "🎵"
-    },
+    "format": "{status_icon} <i>{dynamic}</i>",
+    "dynamic-order": ["artist", "title", "position", "length"],
+    "title-len": 25,
     "status-icons": {
-      "paused": "⏸"
+      "paused": "⏸",
+      "playing": "⏵",
     }
     // "ignored-players": ["firefox", "brave", "chromium", "google-chrome"]
   },
