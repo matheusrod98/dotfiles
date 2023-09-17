@@ -11,5 +11,6 @@ require("which-key").register({
     ["<C-l><C-e>"] = { "<CMD>Lspsaga show_cursor_diagnostics<CR>", "Show cursor diagnostics" },
     ["<C-e><C-p>"] = { "<CMD>Lspsaga diagnostic_jump_prev<CR>", "Previous diagnostic" },
     ["<C-e><C-n>"] = { "<CMD>Lspsaga diagnostic_jump_next<CR>", "Next diagnostic" },
-    ["<leader>t"] = {"<CMD>NvimTreeToggle<CR>", "Toggle file tree" }
+    ["<leader>t"] = { "<CMD>NvimTreeToggle<CR>", "Toggle file tree" },
+    ["<leader>g"] = { "<CMD>G<CR>", "Open fugitive" }
 })
