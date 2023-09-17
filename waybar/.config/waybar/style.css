@@ -13,7 +13,7 @@ window#waybar {
 }
 
 #workspaces {
-    background: #171717;
+    background: #16161e;
     margin: 5px 5px;
     padding: 8px 5px;
     border-radius: 14px;
@@ -25,14 +25,14 @@ window#waybar {
     padding: 0px 5px;
     margin: 0px 3px;
     border-radius: 14px;
-    color: #3C3836;
-    background-color: #3C3836;
+    color: #292E42;
+    background-color: #292E42;
     transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
-    color: #689D6A;
-    background-color: #689D6A;
+    color: #7AA2F7;
+    background-color: #7AA2F7;
     border-radius: 14px;
     min-width: 50px;
     background-size: 400% 400%;
@@ -40,35 +40,35 @@ window#waybar {
 }
 
 #tray {
-    background: #171717;
+    background: #16161e;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
 }
 
 #clock {
-    background: #171717;
+    background: #16161e;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
-    color: #FBF1C7;
+    color: #C0CAF5;
     font-weight: bold;
     font-style: normal;
 }
 
 #custom-scratchpad {
-    background: #171717;
+    background: #16161e;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
-    color: #FBF1C7;
+    color: #C0CAF5;
     font-weight: bold;
     font-style: normal;
 }
 
 #battery {
-    color: #98971A;
-    background: #171717;
+    color: #9ECE6A;
+    background: #16161e;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
@@ -77,8 +77,8 @@ window#waybar {
 }
 
 #battery.charging {
-    color: #98971A;
-    background: #171717;
+    color: #9ECE6A;
+    background: #16161e;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
@@ -86,9 +86,9 @@ window#waybar {
     font-style: normal;
 }
 
-#battery.warning:not(.charging) {
-    background-color: #f9e2af;
-    background: #171717;
+#battery.warning.discharging {
+    color: #E0AF68; 
+    background: #16161e;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
@@ -96,9 +96,9 @@ window#waybar {
     font-style: normal;
 }
 
-#battery.critical:not(.charging) {
-    background-color: #f38ba8;
-    background: #171717;
+#battery.critical.discharging {
+    color: #F7768E;
+    background: #16161e;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
@@ -107,78 +107,78 @@ window#waybar {
 }
 
 #pulseaudio {
-    background: #171717;
+    background: #16161e;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
-    color: #FBF1C7;
+    color: #C0CAF5;
     font-weight: bold;
     font-style: normal;
 }
 
 #pulseaudio.muted {
-    background: #171717;
+    background: #16161e;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
-    color: #FBF1C7;
+    color: #C0CAF5;
     font-weight: bold;
     font-style: normal;
 }
 
 #bluetooth {
-    background: #171717;
+    background: #16161e;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
-    color: #FBF1C7;
+    color: #C0CAF5;
     font-weight: bold;
     font-style: normal;
 }
 
 #network {
-    background: #171717;
+    background: #16161e;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
-    color: #FBF1C7;
+    color: #C0CAF5;
     font-weight: bold;
     font-style: normal;
 }
 
 #cpu {
-    background: #171717;
+    background: #16161e;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
-    color: #FBF1C7;
+    color: #C0CAF5;
     font-weight: bold;
     font-style: normal;
 }
 
 #memory {
-    background: #171717;
+    background: #16161e;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
-    color: #FBF1C7;
+    color: #C0CAF5;
     font-weight: bold;
     font-style: normal;
 }
 
 #temperature {
-    background: #171717;
+    background: #16161e;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
-    color: #FBF1C7;
+    color: #C0CAF5;
     font-weight: bold;
     font-style: normal;
 }
 
 #mpris {
-    color: #98971A;
-    background: #171717;
+    color: #9D7CD8;
+    background: #16161e;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;

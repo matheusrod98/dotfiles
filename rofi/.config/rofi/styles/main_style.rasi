@@ -1,4 +1,4 @@
-@import "./../colors/gruvbox.rasi"
+@import "./../colors/tokyonight.rasi"
 
 /*****----- Main Window -----*****/
 window {

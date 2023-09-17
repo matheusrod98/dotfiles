@@ -6,6 +6,5 @@ configuration {
 	modi:                       "window,drun,run,combi";
     combi-mode:                 "window,drun,run";
     show-icons:                 true;
-    terminal:                   "/home/matheus/.local/bin/wezterm";
-    run-command:                "{terminal} start {cmd}";
+    terminal:                   "/home/matheus/.local/bin/kitty.app/bin/kitty";
 }
