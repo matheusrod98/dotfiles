@@ -35,6 +35,8 @@ volumedown
     wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
 mute
     wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+shift + mute
+    wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 
 # Screenshoting
 # print
