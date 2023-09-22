@@ -1,10 +1,21 @@
 # Apps
 super + t
-	~/.local/bin/kitty.app/bin/kitty
+	# ~/.local/bin/kitty.app/bin/kitty
+    ~/.local/bin/wezterm
 super + b
     flatpak run com.brave.Browser
 super + f
-    thunar
+    ~/.local/bin/wezterm start vifm
+super + a
+    ~/.local/bin/wezterm start pulsemixer
+super + m
+    ~/.local/bin/wezterm start btop
+super + n
+    flatpak run com.logseq.Logseq
+super + s
+    flatpak run com.spotify.Client
+super + d
+    flatpak run com.discordapp.Discord
 
 # Rofi
 super + space 
