@@ -1,6 +1,8 @@
 local wezterm = require 'wezterm'
 local config = {}
 
+config.enable_kitty_graphics=true
+
 config.color_scheme = 'Tokyo Night'
 config.colors = {
     tab_bar = {
@@ -46,6 +48,15 @@ config.keys = {
     { key = '<', mods = 'ALT|SHIFT', action = act.MoveTabRelative(-1) },
     { key = '>', mods = 'ALT|SHIFT', action = act.MoveTabRelative(1) },
     { key = 't', mods = 'ALT', action = act.ActivateLastTab },
+    { key = 'r', mods = 'ALT', action = act.PromptInputLine {
+            description = 'Enter new name for tab',
+            action = wezterm.action_callback(function(window, pane, line)
+                if line then
+                    window:active_tab():set_title(line)
+                end
+            end),
+        },
+    },
 
     -- Panes
     { key = 'h', mods = 'ALT', action = act.ActivatePaneDirection 'Left' },

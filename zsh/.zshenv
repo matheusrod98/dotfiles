@@ -8,7 +8,7 @@ export XDG_STATE_HOME=$HOME/.local/state
 export EDITOR="nvim"
 export VISUAL="nvim"
 export SYSTEMD_EDITOR="nvim"
-export BAT_THEME="gruvbox-dark"
+export BAT_THEME="base16-256"
 export PAGER="bat"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT='-c'
@@ -31,20 +31,12 @@ if [[ $HOSTNAME == "nautilus"* ]]; then
     source /opt/ros/noetic/setup.zsh
     source "$HOME"/Devel/Nautilus/Nautilus/catkin_ws/devel/setup.zsh
     source /usr/share/gazebo/setup.sh
-
 elif [[ $HOSTNAME == "harpia"* ]]; then
     source /opt/ros/humble/setup.zsh
     source "$HOME"/Devel/Nautilus/Harpia/catkin_ws/install/setup.zsh
-    source /usr/share/gazebo/setup.sh 
 
     # Ardupilot
-    export PATH=/usr/lib/ccache:$PATH
-    export PATH=$HOME/Devel/Nautilus/Harpia/ardupilot/Tools/autotest:$PATH
-    export PATH=/opt/gcc-arm-none-eabi-10-2020-q4-major/bin:$PATH
-    source $HOME/Devel/Nautilus/Harpia/ardupilot/Tools/completion/completion.zsh
-
-    # Ardupilot Gazebo
-    export GAZEBO_MODEL_PATH=$HOME/Devel/Nautilus/Harpia/ardupilot_gazebo/models
-    export GZ_SIM_RESOURCE_PATH=$HOME/Devel/Nautilus/Harpia/ardupilot_gazebo/models:$HOME/ardupilot_gazebo/worlds:$GZ_SIM_RESOURCE_PATH
-    export GZ_SIM_SYSTEM_PLUGIN_PATH=$HOME/Devel/Nautilus/Harpia/ardupilot_gazebo/build:$GZ_SIM_SYSTEM_PLUGIN_PATH
+    export PATH=$PATH:$HOME/Devel/Nautilus/Harpia/Micro-XRCE-DDS-Gen/scripts
+    export PATH=$HOME/Devel/Nautilus/Harpia/catkin_ws/src/ardupilot/Tools/autotest:$PATH
+    source $HOME/Devel/Nautilus/Harpia/catkin_ws/src/ardupilot/Tools/completion/completion.zsh
 fi

@@ -1,6 +1,5 @@
 # Apps
 super + t
-	# ~/.local/bin/kitty.app/bin/kitty
     ~/.local/bin/wezterm
 super + b
     flatpak run com.brave.Browser
@@ -39,13 +38,17 @@ super + escape
 # brightnessdown
 #     brightnessctl set 10%-
 
-# Volume control
+# Audio control
 volumeup
     wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
 volumedown
     wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
 mute
     wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+shift + volumeup
+    wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+
+shift + volumedown
+    wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-
 shift + mute
     wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 
