@@ -23,3 +23,6 @@ if [[ "$HOSTNAME" == *"nautilus"* ]] || [[ "$HOSTNAME" == *"harpia"* ]]; then
 else
     alias open="xdg-open"
 fi
+
+# Dev
+alias gco="git branch -a | grep -v '^\*' | fzf --height=20% --info=inline | xargs git checkout"

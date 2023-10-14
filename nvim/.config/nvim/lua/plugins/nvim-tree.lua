@@ -27,7 +27,7 @@ return {
                 },
             },
             trash = {
-                cmd = "trash",
+                cmd = "trash-put",
                 require_confirm = true,
             },
         })
