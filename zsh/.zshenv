@@ -12,7 +12,7 @@ export BAT_THEME="base16-256"
 export PAGER="bat"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT='-c'
-export export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_DEFAULT_COMMAND='fd --type f'
 
 # ZSH config directory.
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
