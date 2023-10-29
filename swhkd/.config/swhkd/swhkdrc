@@ -1,12 +1,12 @@
 # Apps
 super + t
-    ~/.local/bin/wezterm
+    foot
 super + b
     flatpak run com.brave.Browser
 super + a
-    ~/.local/bin/wezterm start pulsemixer
+    foot pulsemixer
 super + m
-    ~/.local/bin/wezterm start btop
+    foot btop
 super + n
     flatpak run com.logseq.Logseq
 super + s
@@ -14,7 +14,7 @@ super + s
 super + d
     flatpak run com.discordapp.Discord
 super + c
-    ~/.local/bin/wezterm start qalc
+    foot qalc
 
 # Rofi
 super + space 
