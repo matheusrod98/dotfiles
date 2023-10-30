@@ -20,3 +20,7 @@ vim.opt.swapfile = false
 vim.cmd([[
     let g:vimtex_view_method = 'zathura'
 ]])
+
+vim.cmd([[
+:autocmd VimLeave * set guicursor= | call chansend(v:stderr, "\x1b[ q")
+]])

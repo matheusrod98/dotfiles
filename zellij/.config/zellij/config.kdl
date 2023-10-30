@@ -23,8 +23,8 @@ keybinds clear-defaults=true {
         bind "Alt n" { NewTab; SwitchToMode "Normal"; }
         bind "Alt ," { GoToPreviousTab; SwitchToMode "Normal"; }
         bind "Alt ." { GoToNextTab; SwitchToMode "Normal"; }
-        bind "Alt s" { NewPane "Right"; SwitchToMode "Normal"; }
-        bind "Alt v" { NewPane "Down"; SwitchToMode "Normal"; }
+        bind "Alt s" { NewPane "Down"; SwitchToMode "Normal"; }
+        bind "Alt v" { NewPane "Right"; SwitchToMode "Normal"; }
         bind "Alt =" { Resize "Increase"; SwitchToMode "Normal"; }
         bind "Alt -" { Resize "Decrease"; SwitchToMode "Normal"; }
         bind "Alt q" { CloseFocus; SwitchToMode "Normal"; }
@@ -39,6 +39,7 @@ keybinds clear-defaults=true {
         bind "Alt 9" { GoToTab 9; SwitchToMode "Normal"; }
         bind "Alt f" { ToggleFloatingPanes; SwitchToMode "Normal"; }
         bind "Alt F" { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; }
+        bind "Alt t" { ToggleTab; }
     }
     locked {
         bind "Alt n" { SwitchToMode "Normal"; }
@@ -131,22 +132,22 @@ keybinds clear-defaults=true {
         bind "Enter" "Esc" { SwitchToMode "Normal"; }
     }
     shared_except "pane" "locked" {
-        bind "Alt p" { SwitchToMode "Pane"; }
+        bind "Alt P" { SwitchToMode "Pane"; }
     }
     shared_except "resize" "locked" {
-        bind "Alt r" { SwitchToMode "Resize"; }
+        bind "Alt R" { SwitchToMode "Resize"; }
     }
     shared_except "scroll" "locked" {
-        bind "Alt h" { SwitchToMode "Scroll"; }
+        bind "Alt H" { SwitchToMode "Scroll"; }
     }
     shared_except "session" "locked" {
-        bind "Alt s" { SwitchToMode "Session"; }
+        bind "Alt S" { SwitchToMode "Session"; }
     }
     shared_except "tab" "locked" {
-        bind "Alt t" { SwitchToMode "Tab"; }
+        bind "Alt T" { SwitchToMode "Tab"; }
     }
     shared_except "move" "locked" {
-        bind "Alt m" { SwitchToMode "Move"; }
+        bind "Alt M" { SwitchToMode "Move"; }
     }
 }
 
