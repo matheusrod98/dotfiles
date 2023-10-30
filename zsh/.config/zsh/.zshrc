@@ -1,7 +1,3 @@
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -18,7 +14,6 @@ bindkey -M menuselect '^[[Z' reverse-menu-complete
 
 # Plugins.
 source "$HOME"/.local/share/zsh/plugins/F-Sy-H/fast-syntax-highlighting.plugin.zsh
-source "$HOME"/.local/share/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme
 
 # History settings.
 setopt HIST_IGNORE_DUPS
@@ -42,5 +37,5 @@ eval "$(zoxide init zsh)"
 
 [ -f "$HOME"/.local/bin/.fzf.zsh ] && source "$HOME"/.local/bin/.fzf.zsh
 
-# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+# Setup starship
+eval "$(starship init zsh)"
