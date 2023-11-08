@@ -2,7 +2,7 @@
 super + t
     foot
 super + b
-    flatpak run com.brave.Browser
+    flatpak run org.mozilla.firefox
 super + a
     foot pulsemixer
 super + m
@@ -15,10 +15,12 @@ super + d
     flatpak run com.discordapp.Discord
 super + c
     foot qalc
+super + f 
+    thunar
 
 # Rofi
 super + space 
-    rofi -combi-modi "window,drun,finder:~/.local/bin/scripts/rofi/finder.sh" -show combi
+    rofi -combi-modi "window,drun" -show combi
 super + v
     rofi -modi clipboard:~/.local/bin/scripts/rofi/cliphist_rofi.sh -show clipboard
 super + semicolon

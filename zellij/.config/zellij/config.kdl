@@ -112,11 +112,10 @@ keybinds clear-defaults=true {
         bind "Ctrl b" { PageScrollUp; }
         bind "k" "Up" { ScrollUp; }
         bind "j" "Down" { ScrollDown; }
-        bind "e" { EditScrollback; }
+        bind "e" { EditScrollback; SwitchToMode "Normal"; }
         bind "g" { ScrollToTop; }
         bind "G" { ScrollToBottom; }
         bind "/" { SwitchToMode "EnterSearch"; SearchInput 0; }
-
     }
     search {
         bind "Alt n" { SwitchToMode "Normal"; }
