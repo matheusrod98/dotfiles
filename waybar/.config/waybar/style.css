@@ -7,13 +7,13 @@
 }
 
 window#waybar {
-    background: rgba(23, 23, 23, 0.5);
+    background: rgba(25, 23, 36, 0.7);
     padding: 0px;
     margin: 0px;
 }
 
 #workspaces {
-    background: #16161e;
+    background: #191724;
     margin: 5px 5px;
     padding: 8px 5px;
     border-radius: 14px;
@@ -25,14 +25,14 @@ window#waybar {
     padding: 0px 5px;
     margin: 0px 3px;
     border-radius: 14px;
-    color: #292E42;
-    background-color: #292E42;
+    color: #26233A;
+    background-color: #26233A;
     transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
-    color: #7AA2F7;
-    background-color: #7AA2F7;
+    color: #EBBCBA;
+    background-color: #EBBCBA;
     border-radius: 14px;
     min-width: 50px;
     background-size: 400% 400%;
@@ -40,35 +40,35 @@ window#waybar {
 }
 
 #tray {
-    background: #16161e;
+    background: #191724;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
 }
 
 #clock {
-    background: #16161e;
+    background: #191724;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
-    color: #C0CAF5;
+    color: #E0DEF4;
     font-weight: bold;
     font-style: normal;
 }
 
 #custom-scratchpad {
-    background: #16161e;
+    background: #191724;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
-    color: #C0CAF5;
+    color: #E0DEF4;
     font-weight: bold;
     font-style: normal;
 }
 
 #battery {
-    color: #9ECE6A;
-    background: #16161e;
+    color: #31748F;
+    background: #191724;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
@@ -77,8 +77,8 @@ window#waybar {
 }
 
 #battery.charging {
-    color: #9ECE6A;
-    background: #16161e;
+    color: #31748F;
+    background: #191724;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
@@ -87,8 +87,8 @@ window#waybar {
 }
 
 #battery.warning.discharging {
-    color: #E0AF68; 
-    background: #16161e;
+    color: #f6c177; 
+    background: #191724;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
@@ -97,8 +97,8 @@ window#waybar {
 }
 
 #battery.critical.discharging {
-    color: #F7768E;
-    background: #16161e;
+    color: #eb6f92;
+    background: #191724;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
@@ -107,78 +107,78 @@ window#waybar {
 }
 
 #pulseaudio {
-    background: #16161e;
+    background: #191724;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
-    color: #C0CAF5;
+    color: #E0DEF4;
     font-weight: bold;
     font-style: normal;
 }
 
 #pulseaudio.muted {
-    background: #16161e;
+    background: #191724;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
-    color: #C0CAF5;
+    color: #E0DEF4;
     font-weight: bold;
     font-style: normal;
 }
 
 #bluetooth {
-    background: #16161e;
+    background: #191724;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
-    color: #C0CAF5;
+    color: #E0DEF4;
     font-weight: bold;
     font-style: normal;
 }
 
 #network {
-    background: #16161e;
+    background: #191724;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
-    color: #C0CAF5;
+    color: #E0DEF4;
     font-weight: bold;
     font-style: normal;
 }
 
 #cpu {
-    background: #16161e;
+    background: #191724;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
-    color: #C0CAF5;
+    color: #E0DEF4;
     font-weight: bold;
     font-style: normal;
 }
 
 #memory {
-    background: #16161e;
+    background: #191724;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
-    color: #C0CAF5;
+    color: #E0DEF4;
     font-weight: bold;
     font-style: normal;
 }
 
 #temperature {
-    background: #16161e;
+    background: #191724;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;
-    color: #C0CAF5;
+    color: #E0DEF4;
     font-weight: bold;
     font-style: normal;
 }
 
 #mpris {
-    color: #9D7CD8;
-    background: #16161e;
+    color: #c4a7e7;
+    background: #191724;
     margin: 5px 5px;
     padding: 8px 8px;
     border-radius: 14px;

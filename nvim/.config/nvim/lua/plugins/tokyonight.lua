@@ -23,7 +23,5 @@ return {
             dim_inactive = true,
             lualine_bold = false,
         })
-
-        vim.cmd[[colorscheme tokyonight]]
     end
 }
