@@ -17,6 +17,8 @@ super + c
     foot qalc
 super + f 
     thunar
+super + e
+    foot nvim
 
 # Rofi
 super + space 
