@@ -1,24 +1,24 @@
 # Apps
 super + t
-    foot
+    kitty
 super + b
-    flatpak run org.mozilla.firefox
+    flatpak run com.brave.Browser
 super + a
-    foot pulsemixer
+    kitty pulsemixer
 super + m
-    foot btop
+    kitty btop
 super + n
-    flatpak run com.logseq.Logseq
+    flatpak run md.obsidian.Obsidian
 super + s
     flatpak run com.spotify.Client
 super + d
     flatpak run com.discordapp.Discord
 super + c
-    foot qalc
+    kitty qalc
 super + f 
     thunar
 super + e
-    foot nvim
+    kitty ~/.local/bin/nvim
 
 # Rofi
 super + space 

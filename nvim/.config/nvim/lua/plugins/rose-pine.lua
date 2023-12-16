@@ -59,7 +59,7 @@ return {
                 Search = { bg = 'gold', inherit = false },
             }
         })
-        vim.cmd('colorscheme rose-pine')
+        -- vim.cmd('colorscheme rose-pine')
     end
 }
 

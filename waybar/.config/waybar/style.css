@@ -1,187 +1,72 @@
+@import "./base16-default-dark.css";
+
 * {
     border: none;
+    border-radius: 0;
     font-family: JetBrainsMono Nerd Font;
-    font-size: 12px;
-    font-style: normal;
+    font-size: 11.5px;
     min-height: 0;
 }
 
 window#waybar {
-    background: rgba(25, 23, 36, 0.7);
-    padding: 0px;
-    margin: 0px;
+    background: @base00;
+    color: @base05;
 }
 
-#workspaces {
-    background: #191724;
-    margin: 5px 5px;
-    padding: 8px 5px;
-    border-radius: 14px;
-    font-weight: normal;
-    font-style: normal;
-}
-
-#workspaces button {
-    padding: 0px 5px;
-    margin: 0px 3px;
-    border-radius: 14px;
-    color: #26233A;
-    background-color: #26233A;
-    transition: all 0.3s ease-in-out;
-}
-
-#workspaces button.active {
-    color: #EBBCBA;
-    background-color: #EBBCBA;
-    border-radius: 14px;
-    min-width: 50px;
-    background-size: 400% 400%;
-    transition: all 0.3s ease-in-out;
-}
-
+#privacy,
+#window,
+#workspaces,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#mpris,
+#clock,
+#bluetooth,
+#battery,
+#temperature,
+#network,
+#custom-scratchpad,
 #tray {
-    background: #191724;
-    margin: 5px 5px;
-    padding: 8px 8px;
-    border-radius: 14px;
-}
-
-#clock {
-    background: #191724;
-    margin: 5px 5px;
-    padding: 8px 8px;
-    border-radius: 14px;
-    color: #E0DEF4;
-    font-weight: bold;
-    font-style: normal;
-}
-
-#custom-scratchpad {
-    background: #191724;
-    margin: 5px 5px;
-    padding: 8px 8px;
-    border-radius: 14px;
-    color: #E0DEF4;
-    font-weight: bold;
-    font-style: normal;
-}
-
-#battery {
-    color: #31748F;
-    background: #191724;
-    margin: 5px 5px;
-    padding: 8px 8px;
-    border-radius: 14px;
-    font-weight: bold;
-    font-style: normal;
-}
-
-#battery.charging {
-    color: #31748F;
-    background: #191724;
-    margin: 5px 5px;
-    padding: 8px 8px;
-    border-radius: 14px;
-    font-weight: bold;
-    font-style: normal;
-}
-
-#battery.warning.discharging {
-    color: #f6c177; 
-    background: #191724;
-    margin: 5px 5px;
-    padding: 8px 8px;
-    border-radius: 14px;
-    font-weight: bold;
-    font-style: normal;
-}
-
-#battery.critical.discharging {
-    color: #eb6f92;
-    background: #191724;
-    margin: 5px 5px;
-    padding: 8px 8px;
-    border-radius: 14px;
-    font-weight: bold;
-    font-style: normal;
-}
-
-#pulseaudio {
-    background: #191724;
-    margin: 5px 5px;
-    padding: 8px 8px;
-    border-radius: 14px;
-    color: #E0DEF4;
-    font-weight: bold;
-    font-style: normal;
-}
-
-#pulseaudio.muted {
-    background: #191724;
-    margin: 5px 5px;
-    padding: 8px 8px;
-    border-radius: 14px;
-    color: #E0DEF4;
-    font-weight: bold;
-    font-style: normal;
-}
-
-#bluetooth {
-    background: #191724;
-    margin: 5px 5px;
-    padding: 8px 8px;
-    border-radius: 14px;
-    color: #E0DEF4;
-    font-weight: bold;
-    font-style: normal;
-}
-
-#network {
-    background: #191724;
-    margin: 5px 5px;
-    padding: 8px 8px;
-    border-radius: 14px;
-    color: #E0DEF4;
-    font-weight: bold;
-    font-style: normal;
-}
-
-#cpu {
-    background: #191724;
-    margin: 5px 5px;
-    padding: 8px 8px;
-    border-radius: 14px;
-    color: #E0DEF4;
-    font-weight: bold;
-    font-style: normal;
-}
-
-#memory {
-    background: #191724;
-    margin: 5px 5px;
-    padding: 8px 8px;
-    border-radius: 14px;
-    color: #E0DEF4;
-    font-weight: bold;
-    font-style: normal;
-}
-
-#temperature {
-    background: #191724;
-    margin: 5px 5px;
-    padding: 8px 8px;
-    border-radius: 14px;
-    color: #E0DEF4;
-    font-weight: bold;
-    font-style: normal;
+    background: @base01;
+    padding: 1px 12px;
+    margin: 6px 6px 6px 0px;
+    border-radius: 10rem;
 }
 
 #mpris {
-    color: #c4a7e7;
-    background: #191724;
-    margin: 5px 5px;
-    padding: 8px 8px;
-    border-radius: 14px;
-    font-weight: bold;
-    font-style: normal;
+    color: @base0E;
+}
+
+#battery {
+    color: @base0B;
+}
+
+#battery.charging {
+    color: @base0B;
+}
+
+#memory.critical,
+#cpu.critical,
+#battery.critical.discharging,
+#temperature.critical {
+    color: @base08;
+}
+
+#memory.warning,
+#battery.warning.discharging,
+#cpu.warning {
+    color: @base0A;
+}
+
+#workspaces {
+    margin-left: 6px;
+}
+
+#workspaces button {
+    color: @base03;
+}
+
+#workspaces button.active {
+    color: @base0B;
 }
