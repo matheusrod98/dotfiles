@@ -2,7 +2,7 @@
 super + t
     kitty
 super + b
-    flatpak run com.brave.Browser
+    flatpak run com.google.Chrome
 super + a
     kitty pulsemixer
 super + m
