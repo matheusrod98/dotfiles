@@ -12,7 +12,6 @@ export BAT_THEME="base16-256"
 export PAGER="bat"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT='-c'
-export FZF_DEFAULT_COMMAND='fd --type f'
 
 # ZSH config directory.
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
@@ -25,7 +24,7 @@ export SAVEHIST=1000000
 # Dev
 export NPM_CONFIG_PREFIX=$XDG_CONFIG_HOME/npm/npm-global
 export GOPATH=$HOME/.local/bin/go
-export PATH=$HOME/.local/bin:$NPM_CONFIG_PREFIX/bin:$HOME/.cargo/bin:$PATH
+export PATH=$HOME/.local/bin:$NPM_CONFIG_PREFIX/bin:$HOME/.cargo/bin:$HOME/.local/bin/scripts/fzf:$PATH
 
 # ROS
 if [[ $HOSTNAME == "nautilus"* ]]; then

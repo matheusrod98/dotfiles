@@ -9,13 +9,14 @@ vim.o.ignorecase = true
 vim.o.cmdheight = 2
 vim.o.mouse = "a"
 vim.o.signcolumn = "yes"
-vim.wo.foldenable = false
 vim.o.shortmess = vim.o.shortmess .. "c"
 vim.o.clipboard = "unnamedplus"
 vim.wo.wrap = false
 vim.o.termguicolors = true
 vim.o.relativenumber = true
 vim.opt.swapfile = false
+vim.wo.foldmethod = "indent"
+vim.wo.foldenable = false
 
 vim.cmd([[
     let g:vimtex_view_method = 'zathura'

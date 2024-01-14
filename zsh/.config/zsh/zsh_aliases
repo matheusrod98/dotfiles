@@ -13,7 +13,6 @@ alias mv='mv -i'
 alias rm='rm -i'
 
 alias xc='wl-copy -n'
-alias nv='nvim'
 
 alias ls="lsd"
 
@@ -25,4 +24,9 @@ else
 fi
 
 # Dev
-alias gco="git branch -a | grep -v '^\*' | fzf --height=20% --info=inline | xargs git checkout"
+alias nv=nvim
+alias fm=man_finder.sh
+alias ff=file_finder.sh
+alias gw=git_switch.sh
+alias gco=git_checkout.sh
+alias fdr='fd --type d --base-directory $HOME | fzf --prompt="cd> " | xargs -I {} pushd $HOME/{}'

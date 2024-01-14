@@ -1,0 +1,20 @@
+[user]
+    name = Matheus de Souza
+    email = matheusrodrigues@poli.ufrj.br
+
+[core]
+    editor = nvim
+    pager = bat
+	excludesfile = /home/matheus/.config/git/.gitignore
+
+[pull]
+    rebase = true
+
+[push]
+    autoSetupRemote = true
+
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true

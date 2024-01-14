@@ -27,11 +27,16 @@ window#waybar {
 #temperature,
 #network,
 #custom-scratchpad,
+#custom-dunst,
 #tray {
     background: @base01;
     padding: 1px 12px;
     margin: 6px 6px 6px 0px;
     border-radius: 10rem;
+}
+
+#pulseaudio {
+    color: @base0E;
 }
 
 #mpris {

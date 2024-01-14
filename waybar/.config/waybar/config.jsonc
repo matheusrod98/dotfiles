@@ -2,15 +2,15 @@
     "layer": "top",
     "height": 18,
     "spacing": 4,
-
     "modules-left": ["hyprland/workspaces"],
     "hyprland/workspaces": {
         "format": "{icon}",
-    }
-
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1"
+    },
     "modules-right": [
-        "privacy",
         "mpris",
+        "privacy",
         "custom/scratchpad",
         "tray",
         "pulseaudio",
@@ -20,7 +20,8 @@
         "memory",
         "temperature",
         "battery",
-        "clock"
+        "clock",
+        "custom/dunst",
     ],
     "privacy": {
         "icon-spacing": 4,
@@ -52,7 +53,6 @@
             "paused": "⏸",
             "playing": "⏵",
         }
-        // "ignored-players": ["firefox", "brave", "chromium", "google-chrome"]
     },
     "custom/scratchpad": {
         "exec": "windows=$(hyprctl -j workspaces | jq -rc '.[] | select(.'id'==-99).windows'); if [[ $windows -gt 0 ]]; then echo $windows; else echo '0'; fi",
@@ -112,8 +112,8 @@
         "interval": 1,
         "interface": "wlp4s0",
         "format": "{ifname}",
-        "format-wifi": " {essid} ({signalStrength}%)  {bandwidthUpBits}  {bandwidthDownBits}",
-        "format-ethernet": " {ifname}  {bandwidthUpBits}  {bandwidthDownBits}",
+        "format-wifi": " {essid} ({signalStrength}%)",
+        "format-ethernet": " {ifname}",
         "format-disconnected": "",
         "tooltip-format-disconnected": "Disconnected"
     },
@@ -127,5 +127,10 @@
     "tray": {
         "icon-size": 15,
         "spacing": 10
+    },
+    "custom/dunst": {
+        "exec": "~/.local/bin/scripts/waybar/dunst.sh",
+        "on-click": "dunstctl set-paused toggle",
+        "restart-interval": 1,
     }
 }
