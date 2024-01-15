@@ -48,3 +48,5 @@ git clone https://github.com/z-shell/F-Sy-H $XDG_DATA_HOME/plugins/F-Sy-H
 
 cd $HOME/.dotfiles
 stow alacritty tmux rtx git zsh starship nvim
+
+sudo systemctl enable rfkill-unblock@all
