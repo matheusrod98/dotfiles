@@ -11,7 +11,6 @@
     "modules-right": [
         "mpris",
         "privacy",
-        "custom/scratchpad",
         "tray",
         "pulseaudio",
         "bluetooth",
