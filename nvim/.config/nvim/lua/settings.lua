@@ -17,6 +17,7 @@ vim.o.relativenumber = true
 vim.opt.swapfile = false
 vim.wo.foldmethod = "indent"
 vim.wo.foldenable = false
+vim.cmd("colorscheme kanagawa")
 
 vim.cmd([[
     let g:vimtex_view_method = 'zathura'
