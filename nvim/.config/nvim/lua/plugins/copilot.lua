@@ -43,7 +43,7 @@ return {
                 cvs = false,
                 ["."] = false,
             },
-            copilot_node_command = "/home/matheus/.local/share/rtx/installs/node/lts/bin/node", -- Node.js version must be > 16.x
+            copilot_node_command = "/home/matheus/.local/share/mise/installs/node/lts/bin/node",
             server_opts_overrides = {},
         })
     end

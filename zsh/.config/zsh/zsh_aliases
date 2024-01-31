@@ -30,6 +30,4 @@ alias ff=file_finder.sh
 alias gw=git_switch.sh
 alias gco=git_checkout.sh
 alias fdr='fd --type d --base-directory $HOME | fzf --prompt="cd> " | xargs -I {} pushd $HOME/{}'
-
-# Kitty
-alias icat="kitty +kitten icat"
+alias icat="wezterm imgcat"

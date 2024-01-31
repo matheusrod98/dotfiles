@@ -1,3 +1,5 @@
+vim.cmd("colorscheme onedark_dark")
+
 vim.o.path = vim.o.path .. "**"
 vim.o.number = true
 vim.o.tabstop = 4
@@ -17,12 +19,13 @@ vim.o.relativenumber = true
 vim.opt.swapfile = false
 vim.wo.foldmethod = "indent"
 vim.wo.foldenable = false
-vim.cmd("colorscheme kanagawa")
+vim.o.splitbelow = true
+vim.o.splitright = true
 
 vim.cmd([[
     let g:vimtex_view_method = 'zathura'
 ]])
 
 vim.cmd([[
-:autocmd VimLeave * set guicursor= | call chansend(v:stderr, "\x1b[ q")
+    :autocmd VimLeave * set guicursor= | call chansend(v:stderr, "\x1b[ q")
 ]])

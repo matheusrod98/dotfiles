@@ -1,18 +1,48 @@
-require("which-key").register({
-    ["<leader>ff"] = { "<CMD>Telescope find_files<CR>", "Find files" },
-    ["<leader>lg"] = { "<CMD>Telescope live_grep<CR>", "String search " },
-    ["<C-l><C-f>"] = { "<CMD>Lspsaga finder<CR>", "Find references" },
-    ["<C-l><C-i>"] = { "<CMD>Lspsaga finder imp<CR>", "Find where was implemented" },
-    ["<C-l><C-r>"] = { "<CMD>Lspsaga rename ++project<CR>", "Rename project-wise" },
-    ["<C-l><C-k>"] = { "<CMD>Lspsaga hover_doc<CR>", "Doc" },
-    ["<C-l><C-d>"] = { "<CMD>Lspsaga peek_definition<CR>", "View definition" },
-    ["<C-l><C-a>"] = { "<CMD>Lspsaga code_action<CR>", "Show code actions" },
-    ["<C-l><C-e>"] = { function() require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR }) end, "Go to next ERROR message"},
-    ["<C-l><C-S-e>"] = { function() require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR }) end, "Go to prev ERROR message"},
-    ["<C-l><C-w>"] = { function() require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.WARNING }) end, "Go to next WARNING message"},
-    ["<C-l><C-S-w>"] = { function() require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.WARNING }) end, "Go to prev WARNING message"},
-    ["<C-l><C-h>"] = { function() require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.HINT }) end, "Go to next HINT message"},
-    ["<C-l><C-S-h>"] = { function() require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.HINT }) end, "Go to prev HINT message"},
-    ["<leader>t"] = { "<CMD>NvimTreeToggle<CR>", "Toggle file tree" },
-    ["<leader>g"] = { "<CMD>G<CR>", "Open fugitive" }
-})
+-- Telescope
+vim.keymap.set("n", "<leader>ff" ,"<CMD>Telescope find_files<CR>", { silent = true })
+vim.keymap.set("n", "<leader>rg" ,"<CMD>Telescope live_grep<CR>", { silent = true })
+
+-- LSP
+vim.keymap.set("n", "<leader>fr", "<CMD>Lspsaga finder<CR>", { silent = true })
+vim.keymap.set("n", "<leader>fi", "<CMD>Lspsaga finder imp<CR>", { silent = true })
+vim.keymap.set("n", "<leader>rn", "<CMD>Lspsaga rename<CR>", { silent = true })
+vim.keymap.set("n", "K", "<CMD>Lspsaga hover_doc<CR>", { silent = true })
+vim.keymap.set("n", "gd", "<CMD>Lspsaga peek_definition<CR>", { silent = true })
+vim.keymap.set("n", "<leader>ca", "<CMD>Lspsaga code_action<CR>", { silent = true })
+vim.keymap.set("n", "<leader>ne", function() require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR }) end, { silent = true })
+vim.keymap.set("n", "<leader>pe", function() require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR }) end, { silent = true })
+vim.keymap.set("n", "<leader>nw", function() require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.WARNING }) end, { silent = true })
+vim.keymap.set("n", "<leader>pw", function() require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.WARNING }) end, { silent = true })
+vim.keymap.set("n", "<leader>nh", function() require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.HINT }) end, { silent = true })
+vim.keymap.set("n", "<leader>ph", function() require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.HINT }) end, { silent = true })
+
+-- Others
+vim.keymap.set("n", "<leader>g" ,"<CMD>G<CR>", { silent = true })
+
+-- Buffers
+vim.keymap.set("n", "<leader>bn","<CMD>bnext<CR>", { silent = true })
+vim.keymap.set("n", "<leader>bp","<CMD>bprevious<CR>", { silent = true })
+
+-- Windows
+vim.keymap.set("n", "<leader>-","<CMD>split<CR>", { silent = true })
+vim.keymap.set("n", "<leader>=","<CMD>vsplit<CR>", { silent = true })
+vim.keymap.set("n", "<leader>l","<CMD>wincmd l<CR>", { silent = true })
+vim.keymap.set("n", "<leader>h","<CMD>wincmd h<CR>", { silent = true })
+vim.keymap.set("n", "<leader>j","<CMD>wincmd j<CR>", { silent = true })
+vim.keymap.set("n", "<leader>k","<CMD>wincmd k<CR>", { silent = true })
+vim.keymap.set("n", "<leader>q","<CMD>q<CR>", { silent = true })
+vim.keymap.set("n", "<leader>o","<CMD>only<CR>", { silent = true })
+vim.keymap.set("n", "<leader>t","<CMD>resize +3<CR>", { silent = true })
+vim.keymap.set("n", "<leader>s","<CMD>resize -3<CR>", { silent = true })
+vim.keymap.set("n", "<leader>w","<CMD>vertical resize +3<CR>", { silent = true })
+vim.keymap.set("n", "<leader>n","<CMD>vertical resize -3<CR>", { silent = true })
+vim.keymap.set("n", "<C-S-h>","<CMD>wincmd H<CR>", { silent = true })
+vim.keymap.set("n", "<C-S-j>","<CMD>wincmd J<CR>", { silent = true })
+vim.keymap.set("n", "<C-S-k>","<CMD>wincmd K<CR>", { silent = true })
+vim.keymap.set("n", "<C-S-l>","<CMD>wincmd L<CR>", { silent = true })
+
+-- Quickfix list.
+vim.keymap.set("n", "<leader>cn","<CMD>cnext<CR>", { silent = true })
+vim.keymap.set("n", "<leader>cp","<CMD>cprev<CR>", { silent = true })
+vim.keymap.set("n", "<leader>co" ,"<CMD>copen<CR>", { silent = true })
+vim.keymap.set("n", "<leader>cc" ,"<CMD>cclose<CR>", { silent = true })

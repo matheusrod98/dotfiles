@@ -10,11 +10,11 @@ inside-wrong-color=00000000
 inside-clear-color=00000000
 inside-caps-lock-color=00000000
 
-text-color=00000000
-text-ver-color=00000000
-text-wrong-color=00000000
-text-clear-color=00000000
-text-caps-lock-color=00000000
+text-color=#b8b8b8
+text-ver-color=#b8b8b8
+text-wrong-color=#ab4642
+text-clear-color=#a1b56c
+text-caps-lock-color=#f7ca88
 
 ring-color=#383838
 ring-ver-color=#383838

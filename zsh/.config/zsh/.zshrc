@@ -51,7 +51,7 @@ bindkey '^o' run_find_files
 
 # Rusty
 [[ $HOSTNAME =~ harpia* || $HOSTNAME =~ nautilus* ]] ||
-eval "$(/bin/rtx activate zsh)"
+eval "$(/bin/mise activate zsh)"
 eval "$(zoxide init zsh)"
 
 # Setup starship
