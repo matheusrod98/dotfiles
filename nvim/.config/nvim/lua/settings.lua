@@ -1,5 +1,3 @@
-vim.cmd("colorscheme onedark_dark")
-
 vim.o.path = vim.o.path .. "**"
 vim.o.number = true
 vim.o.tabstop = 4
@@ -21,6 +19,9 @@ vim.wo.foldmethod = "indent"
 vim.wo.foldenable = false
 vim.o.splitbelow = true
 vim.o.splitright = true
+vim.cmd([[
+    let g:netrw_banner = 0
+]])
 
 vim.cmd([[
     let g:vimtex_view_method = 'zathura'
@@ -29,3 +30,4 @@ vim.cmd([[
 vim.cmd([[
     :autocmd VimLeave * set guicursor= | call chansend(v:stderr, "\x1b[ q")
 ]])
+vim.cmd('colorscheme base16-default-dark')

@@ -1,19 +1,17 @@
 local wezterm = require "wezterm"
 local config = {}
 
--- config.enable_kitty_graphics = true
-
 config.enable_scroll_bar = true
 
-config.enable_wayland = false
-
-config.use_fancy_tab_bar = true
+config.enable_wayland = true
 
 config.window_close_confirmation = "NeverPrompt"
 
 config.default_cursor_style = "SteadyBar"
 
 config.scrollback_lines = 100000
+
+config.color_scheme = 'Default Dark (base16)'
 
 config.window_padding = {
     left = 4,
@@ -76,7 +74,7 @@ config.keys = {
 config.key_tables = {
     copy_mode = {
         { key = "/", mods = "NONE", action = act.Search { CaseInSensitiveString = "" }},
-        { key = 'Escape', mods = 'NONE', action = act.CopyMode 'Close' },
+        { key = 'q', mods = 'NONE', action = act.CopyMode 'Close' },
         { key = 'V', mods = 'NONE', action = act.CopyMode { SetSelectionMode = 'Cell' } },
         { key = 'V', mods = 'SHIFT', action = act.CopyMode { SetSelectionMode = 'Line' } },
         { key = '0', mods = 'NONE', action = act.CopyMode 'MoveToStartOfLine' },
@@ -100,7 +98,7 @@ config.key_tables = {
         { key = 'n', mods = 'SHIFT', action = act.CopyMode 'PriorMatch' },
     },
     search_mode = {
-        { key = 'Escape', mods = 'NONE', action = act.CopyMode 'Close' },
+        { key = 'Escape', mods = 'NONE', action = act.Search { CaseInSensitiveString = "" }},
         { key = 'Enter', mods = 'NONE', action = act.CopyMode 'AcceptPattern' },
     },
 }
