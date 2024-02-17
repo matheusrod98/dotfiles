@@ -29,6 +29,8 @@ vim.keymap.set("n", "<leader>gl" ,"<CMD>Git log<CR>", { silent = true })
 vim.keymap.set("n", "<leader>gp" ,"<CMD>Git push<CR>", { silent = true })
 vim.keymap.set("n", "<leader>gr" ,"<CMD>Git rebase<CR>", { silent = true })
 vim.keymap.set("n", "<leader>gw" ,"<CMD>Git write<CR>", { silent = true })
+vim.keymap.set("n", "<leader>gt", "<CMD>diffget //2<CR>", { silent = true })
+vim.keymap.set("n", "<leader>go", "<CMD>diffget //3<CR>", { silent = true })
 
 -- Buffers
 vim.keymap.set("n", "<leader>bn","<CMD>bnext<CR>", { silent = true })

@@ -1,5 +1,5 @@
-alias ls='ls --color=auto'
-alias l='ls --color=auto'
+alias ls='ls --color=auto --hyperlink=auto'
+alias l='ls --color=auto --hyperlink=auto'
 alias ll='ls -lh'
 alias la='ls -Ah'
 alias lal='ls -Alh'
@@ -8,11 +8,12 @@ alias lla='ls -Alh'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+alias rg='rg --hyperlink-format=kitty'
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 
-alias xc='wl-copy -n'
+alias xc='kitten clipboard'
 
 alias ls="lsd"
 
@@ -30,4 +31,4 @@ alias ff=file_finder.sh
 alias gw=git_switch.sh
 alias gco=git_checkout.sh
 alias fdr='fd --type d --base-directory $HOME | fzf --prompt="cd> " | xargs -I {} pushd $HOME/{}'
-alias icat="wezterm imgcat"
+alias ssh="kitten ssh"

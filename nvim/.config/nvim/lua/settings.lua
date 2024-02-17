@@ -19,6 +19,7 @@ vim.wo.foldmethod = "indent"
 vim.wo.foldenable = false
 vim.o.splitbelow = true
 vim.o.splitright = true
+
 vim.cmd([[
     let g:netrw_banner = 0
 ]])
@@ -30,4 +31,5 @@ vim.cmd([[
 vim.cmd([[
     :autocmd VimLeave * set guicursor= | call chansend(v:stderr, "\x1b[ q")
 ]])
-vim.cmd('colorscheme base16-default-dark')
+
+vim.cmd[[colorscheme tokyonight]]
