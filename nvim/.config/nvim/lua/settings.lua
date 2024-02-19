@@ -32,4 +32,6 @@ vim.cmd([[
     :autocmd VimLeave * set guicursor= | call chansend(v:stderr, "\x1b[ q")
 ]])
 
-vim.cmd[[colorscheme tokyonight]]
+vim.cmd[[colorscheme kanagawa]]
+
+vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"

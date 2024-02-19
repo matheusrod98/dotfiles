@@ -1,21 +1,20 @@
 local wezterm = require "wezterm"
 local config = {}
 
+local theme = require("colorschemes/kanagawa-dragon")
+
 config.enable_scroll_bar = true
 config.enable_wayland = true
 config.enable_kitty_graphics = true
 config.window_close_confirmation = "NeverPrompt"
 config.default_cursor_style = "SteadyBar"
 config.scrollback_lines = 100000
-config.color_scheme = 'tokyonight_night'
-config.window_padding = {
-    left = 4,
-    right = 4,
-    top = 4,
-    bottom = 4,
-}
+config.colors = theme
+config.use_fancy_tab_bar = false
+config.window_padding = { left = 4, right = 4, top = 4, bottom = 4 }
 config.font = wezterm.font "CommitMono"
 config.font_size = 14
+
 
 -- Keybindings
 local act = wezterm.action

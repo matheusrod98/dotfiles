@@ -1,23 +1,55 @@
 return {
     "hrsh7th/nvim-cmp",
     dependencies = {
+        "neovim/nvim-lspconfig",
+        "onsails/lspkind.nvim",
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-calc",
         "hrsh7th/cmp-nvim-lsp",
         "davidsierradz/cmp-conventionalcommits",
-        "neovim/nvim-lspconfig",
-        "onsails/lspkind.nvim",
-        'saadparwaiz1/cmp_luasnip'
+        "js-everts/cmp-tailwind-colors",
+        "saadparwaiz1/cmp_luasnip",
+        "amarakon/nvim-cmp-buffer-lines",
+        "hrsh7th/cmp-emoji",
     },
+
     config = function()
         local cmp = require"cmp"
-        local lspkind = require('lspkind')
+        local lspkind = require("lspkind")
+
+        local kind_icons = {
+            Text = "",
+            Method = "󰆧",
+            Function = "󰊕",
+            Constructor = "",
+            Field = "󰇽",
+            Variable = "󰂡",
+            Class = "󰠱",
+            Interface = "",
+            Module = "",
+            Property = "󰜢",
+            Unit = "",
+            Value = "󰎠",
+            Enum = "",
+            Keyword = "󰌋",
+            Snippet = "",
+            Color = "󰏘",
+            File = "󰈙",
+            Reference = "",
+            Folder = "󰉋",
+            EnumMember = "",
+            Constant = "󰏿",
+            Struct = "",
+            Event = "",
+            Operator = "󰆕",
+            TypeParameter = "󰅲",
+        }
 
         cmp.setup({
             snippet = {
                 expand = function(args)
-                    require('luasnip').lsp_expand(args.body)
+                    require("luasnip").lsp_expand(args.body)
                 end
             },
             window = {
@@ -36,19 +68,22 @@ return {
                 { name = "luasnip" },
                 { name = "path" },
                 { name = "buffer" },
-                { name = "calc" }
+                { name = "calc" },
+                { name = "tailwind-colors" },
+                { name = "conventionalcommits" },
+                -- { name = "buffer-lines" },
+                { name = "emoji" },
             }),
             formatting = {
-                format = lspkind.cmp_format({
-                    mode = 'symbol_text',
-                    maxwidth = 50,
-                    ellipsis_char = '...',
-                    -- before = function (entry, vim_item)
-                    --     ...
-                    --     return vim_item
-                    -- end
-                })
-            }
+                format = function(entry, item)
+                    item.menu = item.kind
+                    item = require("cmp-tailwind-colors").format(entry, item)
+                    if kind_icons[item.kind] then
+                        item.kind = kind_icons[item.kind] .. " "
+                    end
+                    return item
+                end,
+            },
         })
     end
 }

@@ -59,3 +59,18 @@ vim.keymap.set("n", "<leader>cn","<CMD>cnext<CR>", { silent = true })
 vim.keymap.set("n", "<leader>cp","<CMD>cprev<CR>", { silent = true })
 vim.keymap.set("n", "<leader>co" ,"<CMD>copen<CR>", { silent = true })
 vim.keymap.set("n", "<leader>cc" ,"<CMD>cclose<CR>", { silent = true })
+
+-- NvimTree
+vim.keymap.set("n", "<leader>nt" ,"<CMD>NvimTreeToggle<CR>", { silent = true })
+
+-- TodoComments
+vim.keymap.set("n", "<leader>td" ,"<CMD>TodoQuickFix<CR>", { silent = true })
+
+-- Trouble
+vim.keymap.set("n", "<leader>tr" ,"<CMD>TroubleToggle<CR>", { silent = true })
+
+-- Oil
+vim.keymap.set("n", "<leader>ol" ,"<CMD>Oil<CR>", { silent = true })
+
+-- Undotree
+vim.keymap.set("n", "<leader>u" ,"<CMD>UndotreeToggle<CR>", { silent = true })
