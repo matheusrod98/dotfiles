@@ -14,24 +14,15 @@ vim.o.clipboard = "unnamedplus"
 vim.wo.wrap = false
 vim.o.termguicolors = true
 vim.o.relativenumber = true
-vim.opt.swapfile = false
-vim.wo.foldmethod = "indent"
-vim.wo.foldenable = false
-vim.o.splitbelow = true
-vim.o.splitright = true
+vim.o.swapfile = false
+vim.cmd("colorscheme gruvbox")
 
 vim.cmd([[
     let g:netrw_banner = 0
 ]])
 
 vim.cmd([[
-    let g:vimtex_view_method = 'zathura'
-]])
-
-vim.cmd([[
     :autocmd VimLeave * set guicursor= | call chansend(v:stderr, "\x1b[ q")
 ]])
-
-vim.cmd[[colorscheme kanagawa]]
 
 vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"

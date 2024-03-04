@@ -35,6 +35,10 @@ window#waybar {
     border-radius: 10rem;
 }
 
+#window {
+    font-size: 20px;
+}
+
 #pulseaudio {
     color: @base0E;
 }
