@@ -14,29 +14,22 @@ window#waybar {
 }
 
 #privacy,
-#window,
 #workspaces,
 #pulseaudio,
 #network,
-#cpu,
-#memory,
 #mpris,
-#clock,
 #bluetooth,
 #battery,
-#temperature,
 #network,
 #custom-scratchpad,
 #custom-dunst,
+#hardware,
+#day,
 #tray {
     background: @base01;
-    padding: 1px 12px;
+    padding: 0px 12px;
     margin: 6px 6px 6px 0px;
     border-radius: 10rem;
-}
-
-#window {
-    font-size: 20px;
 }
 
 #pulseaudio {
@@ -78,4 +71,28 @@ window#waybar {
 
 #workspaces button.active {
     color: @base0B;
+}
+
+#temperature {
+    margin: 0px 16px 0px 0px;
+}
+
+#cpu {
+    margin: 0px 16px 0px 0px;
+}
+
+#custom-gpu.critical {
+    color: @base08;
+}
+
+#custom-gpu.warning {
+    color: @base0A;
+}
+
+#custom-gpu {
+    margin: 0px 16px 0px 0px;
+}
+
+#memory {
+    margin: 0px 0px 0px 0px;
 }

@@ -11,17 +11,47 @@
     "modules-right": [
         "mpris",
         "privacy",
-        "tray",
         "pulseaudio",
         "bluetooth",
         "network",
-        "cpu",
-        "memory",
-        "temperature",
+        "group/hardware",
         "battery",
-        "clock",
+        "tray",
         "custom/dunst",
+        "group/day",
     ],
+    "group/hardware": {
+        "orientation": "horizontal",
+        "modules": [
+            "temperature",
+            "cpu",
+            "custom/gpu",
+            "memory",
+        ],
+    },
+    "group/day": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/weather",
+            "clock",
+        ],
+    },
+    "custom/gpu": {
+        "exec": "cat /sys/class/hwmon/hwmon6/device/gpu_busy_percent",
+        "format": " {}%",
+        "interval": 1,
+        "states": {
+            "warning": 80,
+            "critical": 90
+        },
+    },
+    "custom/weather": {
+        "format": "{}° ",
+        "tooltip": true,
+        "interval": 3600,
+        "exec": "wttrbar",
+        "return-type": "json"
+    },
     "privacy": {
         "icon-spacing": 4,
         "icon-size": 18,
@@ -45,22 +75,22 @@
         ]
     },
     "mpris": {
-        "format": "{status_icon} <i>{dynamic}</i>",
+        "format": "{player_icon} {dynamic}",
+        "format-paused": "{status_icon} <i>{dynamic}</i>",
         "dynamic-order": ["artist", "title", "position", "length"],
-        "title-len": 25,
+        "title-len": 20,
+        "player-icons": {
+            "default": "▶",
+            "spotify": "",
+            "firefox": "󰈹 ",
+        },
         "status-icons": {
-            "paused": "⏸",
-            "playing": "⏵",
-        }
-    },
-    "custom/scratchpad": {
-        "exec": "windows=$(hyprctl -j workspaces | jq -rc '.[] | select(.'id'==-99).windows'); if [[ $windows -gt 0 ]]; then echo $windows; else echo '0'; fi",
-        "interval": 1,
-        "format": "  {}"
+            "paused": "󰏤"
+        },
     },
     "cpu": {
         "interval": 1,
-        "format": "  {usage}%",
+        "format": " {usage}%",
         "states": {
             "warning": 80,
             "critical": 90
@@ -68,7 +98,7 @@
     },
     "memory": {
         "interval": 1,
-        "format": " {}%",
+        "format": " {}%",
         "states": {
             "warning": 80,
             "critical": 90
@@ -77,11 +107,11 @@
     "temperature": {
         "interval": 1,
         "critical-threshold": 85,
-        "format": " {temperatureC}°C"
+        "format": " {temperatureC}°C"
     },
     "clock": {
         "interval": 1,
-        "format": " {:%a %d %b, %H:%M}"
+        "format": "{:%a %d %b, %H:%M}"
     },
     "battery": {
         "states": {
@@ -89,8 +119,9 @@
             "critical": 15
         },
         "format": "{icon} {capacity}%",
-        "format-charging": "󰂄 {capacity}%",
-        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+        "format-icons": ["", "", "", "", ""],
+        "format-charging": " {capacity}%",
+
     },
     "pulseaudio": {
         "format": "{icon} {volume}% {format_source}",
@@ -118,10 +149,14 @@
     },
     "bluetooth": {
         "format": " {status}",
-        "format-connected": " {num_connections} connected",
-        "tooltip-format": "{controller_alias}\t{controller_address}",
-        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
-        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+        "format-connected": " {device_alias}",
+        "format-connected-battery": " {device_alias} ({device_battery_percentage}%)",
+        "format-connected-enumerate": " {num_connections} connected",
+        "format-connected-enumerate-battery": " {num_connections} connected",
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
     },
     "tray": {
         "icon-size": 15,

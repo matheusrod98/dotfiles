@@ -1,0 +1,5 @@
+[general]
+fullscreen = false
+early-exit = true
+copy-command = "wl-copy"
+output-filename = "/home/matheus/Pictures/Screenshots/%Y%m%d_%Hh%Mm%Ss.png"

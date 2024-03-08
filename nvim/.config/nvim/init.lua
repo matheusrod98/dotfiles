@@ -17,6 +17,10 @@ require("lazy").setup("plugins", { ui = { border = "rounded" } })
 require("settings")
 require("mappings")
 
+vim.filetype.add({
+	pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
+})
+
 -- [x]: Setup Lua and Neovim LSP.
 -- [x]: Show signature while typing.
 -- [x]: Resize windows keybindings.

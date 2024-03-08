@@ -6,6 +6,7 @@ vim.keymap.set("n", "<leader>fh", "<CMD>Telescope help_tags<CR>", { silent = tru
 vim.keymap.set("n", "<leader>fm", "<CMD>Telescope man_pages<CR>", { silent = true })
 
 -- LSP
+vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)
 vim.keymap.set("n", "[d", function()
 	require("vim.diagnostic").goto_prev()
 end)

@@ -10,6 +10,7 @@ return {
 		"js-everts/cmp-tailwind-colors",
 		"saadparwaiz1/cmp_luasnip",
 		"hrsh7th/cmp-nvim-lsp-signature-help",
+		"chrisgrieser/cmp-nerdfont",
 	},
 
 	config = function()
@@ -68,6 +69,7 @@ return {
 				{ name = "tailwind-colors" },
 				{ name = "conventionalcommits" },
 				{ name = "nvim_lsp_signature_help" },
+				{ name = "nerdfont" },
 			}),
 			formatting = {
 				format = function(entry, item)
@@ -80,5 +82,6 @@ return {
 				end,
 			},
 		})
+		vim.opt.completeopt = "menuone,noinsert"
 	end,
 }
