@@ -4,9 +4,13 @@
     "spacing": 4,
     "modules-left": ["hyprland/workspaces"],
     "hyprland/workspaces": {
-        "format": "{name}",
+        "format": "{icon}",
         "on-scroll-up": "hyprctl dispatch workspace e+1",
-        "on-scroll-down": "hyprctl dispatch workspace e-1"
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "show-special": true,
+        "format-icons": {
+            "special": "",
+        }
     },
     "modules-right": [
         "mpris",
@@ -15,9 +19,10 @@
         "bluetooth",
         "network",
         "group/hardware",
-        "battery",
         "tray",
         "custom/dunst",
+        // "group/power",
+        "battery",
         "group/day",
     ],
     "group/hardware": {
@@ -36,8 +41,26 @@
             "clock",
         ],
     },
+    // "group/power": {
+    //     "orientation": "horizontal",
+    //     "modules": [
+    //         "battery",
+    //         "power-profiles-daemon",
+    //     ],
+    // },
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
+    },
     "custom/gpu": {
-        "exec": "cat /sys/class/hwmon/hwmon6/device/gpu_busy_percent",
+        "exec": "cat /sys/class/hwmon/hwmon7/device/gpu_busy_percent",
         "format": " {}%",
         "interval": 1,
         "states": {

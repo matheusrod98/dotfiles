@@ -14,7 +14,6 @@ window#waybar {
 }
 
 #privacy,
-#workspaces,
 #pulseaudio,
 #network,
 #mpris,
@@ -25,6 +24,7 @@ window#waybar {
 #custom-dunst,
 #hardware,
 #day,
+/* #power, */
 #tray {
     background: @base01;
     padding: 0px 12px;
@@ -62,7 +62,10 @@ window#waybar {
 }
 
 #workspaces {
-    margin-left: 6px;
+    background: @base01;
+    padding: 0px 12px;
+    margin: 6px 6px 6px 0px;
+    border-radius: 10rem;
 }
 
 #workspaces button {
@@ -71,6 +74,10 @@ window#waybar {
 
 #workspaces button.active {
     color: @base0B;
+}
+
+#workspaces button.special {
+    color: @base03;
 }
 
 #temperature {
