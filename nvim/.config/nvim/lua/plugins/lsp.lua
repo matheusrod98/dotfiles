@@ -11,16 +11,12 @@ return {
 		lspconfig.gopls.setup({})
 		lspconfig.tailwindcss.setup({})
 		lspconfig.lua_ls.setup({
-			settings = {
-				Lua = {
-					diagnostics = {
-						globals = {
-							"vim",
-						},
-					},
-				},
-			},
+			settings = { Lua = { diagnostics = { globals = { "vim" } } } },
 		})
+		lspconfig.docker_compose_language_service.setup({})
+		lspconfig.dockerls.setup({})
+		lspconfig.marksman.setup({})
+		lspconfig.yamlls.setup({})
 
 		vim.diagnostic.config({
 			virtual_text = false,
