@@ -35,7 +35,7 @@ source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
 
 run_find_dir () {
-    local dir=$(fd --type d --base-directory $HOME | fzf --prompt="cd> ") &&
+    local dir=$(fd -H -L --type d --base-directory $HOME | fzf || return) &&
     cd "$HOME/$dir"
     zle reset-prompt
 }
@@ -43,16 +43,15 @@ zle -N run_find_dir
 bindkey '^p' run_find_dir
 
 run_find_files() {
-    $HOME/.local/bin/scripts/fzf/file_finder.sh
+    local file=$(fd --type f --base-directory=$HOME --full-path $HOME | fzf --preview 'fzf-preview.sh {}' || return) &&
+    exo-open "$HOME/$file"
     zle reset-prompt
 }
 zle -N run_find_files
 bindkey '^o' run_find_files
 
-# Rusty
 [[ $HOSTNAME =~ harpia* || $HOSTNAME =~ nautilus* ]] ||
 eval "$(/bin/mise activate zsh)"
-eval "$(zoxide init zsh)"
 
-# Setup starship
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"

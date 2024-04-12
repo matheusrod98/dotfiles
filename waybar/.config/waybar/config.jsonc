@@ -9,21 +9,20 @@
         "on-scroll-down": "hyprctl dispatch workspace e-1",
         "show-special": true,
         "format-icons": {
-            "special": "",
+            "special": ""
         }
     },
     "modules-right": [
         "mpris",
-        "privacy",
         "pulseaudio",
         "bluetooth",
         "network",
+        "privacy",
         "group/hardware",
         "tray",
-        "custom/dunst",
-        // "group/power",
-        "battery",
+        "group/power",
         "group/day",
+        "custom/dunst"
     ],
     "group/hardware": {
         "orientation": "horizontal",
@@ -31,23 +30,23 @@
             "temperature",
             "cpu",
             "custom/gpu",
-            "memory",
-        ],
+            "memory"
+        ]
     },
     "group/day": {
         "orientation": "horizontal",
         "modules": [
             "custom/weather",
-            "clock",
-        ],
+            "clock"
+        ]
     },
-    // "group/power": {
-    //     "orientation": "horizontal",
-    //     "modules": [
-    //         "battery",
-    //         "power-profiles-daemon",
-    //     ],
-    // },
+    "group/power": {
+        "orientation": "horizontal",
+        "modules": [
+            "battery",
+            "power-profiles-daemon"
+        ] 
+    },
     "power-profiles-daemon": {
         "format": "{icon}",
         "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
@@ -61,59 +60,48 @@
     },
     "custom/gpu": {
         "exec": "cat /sys/class/hwmon/hwmon7/device/gpu_busy_percent",
-        "format": " {}%",
+        "format": " {}%",
         "interval": 1,
         "states": {
             "warning": 80,
             "critical": 90
-        },
+        }
     },
     "custom/weather": {
-        "format": "{}° ",
+        "format": "{}°  ",
         "tooltip": true,
         "interval": 3600,
         "exec": "wttrbar",
         "return-type": "json"
     },
     "privacy": {
-        "icon-spacing": 4,
-        "icon-size": 18,
+        "icon-spacing": 10,
+        "icon-size": 12,
         "transition-duration": 250,
         "modules": [
             {
                 "type": "screenshare",
-                "tooltip": true,
-                "tooltip-icon-size": 24
-            },
-            {
-                "type": "audio-out",
-                "tooltip": true,
-                "tooltip-icon-size": 24
+                "tooltip": true
             },
             {
                 "type": "audio-in",
-                "tooltip": true,
-                "tooltip-icon-size": 24
+                "tooltip": true
             }
         ]
     },
     "mpris": {
-        "format": "{player_icon} {dynamic}",
-        "format-paused": "{status_icon} <i>{dynamic}</i>",
-        "dynamic-order": ["artist", "title", "position", "length"],
-        "title-len": 20,
+        "format": "{player_icon}   {player}",
+        "format-paused": "{status_icon}   {player}",
         "player-icons": {
-            "default": "▶",
-            "spotify": "",
-            "firefox": "󰈹 ",
+            "default": ""
         },
         "status-icons": {
-            "paused": "󰏤"
-        },
+            "paused": ""
+        }
     },
     "cpu": {
         "interval": 1,
-        "format": " {usage}%",
+        "format": " {usage}%",
         "states": {
             "warning": 80,
             "critical": 90
@@ -121,7 +109,7 @@
     },
     "memory": {
         "interval": 1,
-        "format": " {}%",
+        "format": " {}%",
         "states": {
             "warning": 80,
             "critical": 90
@@ -130,11 +118,11 @@
     "temperature": {
         "interval": 1,
         "critical-threshold": 85,
-        "format": " {temperatureC}°C"
+        "format": " {temperatureC}°C"
     },
     "clock": {
         "interval": 1,
-        "format": "{:%a %d %b, %H:%M}"
+        "format": "{:%a %d %b,  %H:%M}"
     },
     "battery": {
         "states": {
@@ -143,18 +131,17 @@
         },
         "format": "{icon} {capacity}%",
         "format-icons": ["", "", "", "", ""],
-        "format-charging": " {capacity}%",
-
+        "format-charging": " {capacity}%"
     },
     "pulseaudio": {
-        "format": "{icon} {volume}% {format_source}",
-        "format-muted": "󰖁 {volume}% {format_source}",
+        "format": "{icon} {volume}%  {format_source}",
+        "format-muted": " {volume}%  {format_source}",
         "format-source": " {volume}%",
         "format-source-muted": " {volume}%",
         "format-icons": {
             "headphones": "",
-            "handsfree": "󰋎",
-            "headset": "󰋎",
+            "handsfree": "",
+            "headset": "",
             "phone": "",
             "portable": "",
             "car": "",
@@ -165,8 +152,8 @@
         "interval": 1,
         "interface": "wlp4s0",
         "format": "{ifname}",
-        "format-wifi": " {essid} ({signalStrength}%)",
-        "format-ethernet": " {ifname}",
+        "format-wifi": "  {essid} ({signalStrength}%)    {bandwidthUpBits}    {bandwidthDownBits}",
+        "format-ethernet": " {ifname}    {bandwidthUpBits}    {bandwidthDownBits}",
         "format-disconnected": "",
         "tooltip-format-disconnected": "Disconnected"
     },
@@ -188,6 +175,6 @@
     "custom/dunst": {
         "exec": "~/.local/bin/scripts/waybar/dunst.sh",
         "on-click": "dunstctl set-paused toggle",
-        "restart-interval": 1,
+        "restart-interval": 1
     }
 }

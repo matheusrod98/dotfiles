@@ -185,3 +185,4 @@ paru -S lua-language-server \
 
 ## Linters and formatters
 paru -S stylua
+ln -s /usr/bin/kitty /usr/bin/xdg-terminal-exec

@@ -1,105 +1,98 @@
-@import "./base16-default-dark.css";
-
 * {
-    border: none;
-    border-radius: 0;
-    font-family: JetBrainsMono Nerd Font;
-    font-size: 11.5px;
     min-height: 0;
+    border: none;
+    border-radius: 0%;
+    padding: 0px;
+    margin: 0px;
+    font-family: "Noto Sans", "Font Awesome 6 Free";
+    font-size: 11px;
 }
 
 window#waybar {
-    background: @base00;
-    color: @base05;
+    background: #181818;
 }
 
-#privacy,
 #pulseaudio,
 #network,
 #mpris,
 #bluetooth,
-#battery,
 #network,
 #custom-scratchpad,
 #custom-dunst,
+#power,
 #hardware,
+#workspaces,
 #day,
-/* #power, */
+#privacy,
+#custom-dunst,
 #tray {
-    background: @base01;
-    padding: 0px 12px;
-    margin: 6px 6px 6px 0px;
-    border-radius: 10rem;
-}
-
-#pulseaudio {
-    color: @base0E;
+    padding: 5px 14px;
+    margin: 6px 0px 6px 4px;
+    background: #282828;
+    border-radius: 16px;
+    color: #d8d8d8;
 }
 
 #mpris {
-    color: @base0E;
+    color: #ba8baf;
+}
+
+#privacy {
+    color: #f6c177;
+}
+
+#clock {
+    margin: 0px 0px 0px 4px;
 }
 
 #battery {
-    color: @base0B;
+    color: #a1b56c;
+    margin: 0px 8px 0px 0px;
 }
 
 #battery.charging {
-    color: @base0B;
+    color: #a1b56c;
+}
+
+#temperature,
+#cpu,
+#custom-gpu {
+    margin: 0px 12px 0px 0px;
+}
+
+#memory {
+    margin: 0px 0px 0px 0px;
 }
 
 #memory.critical,
 #cpu.critical,
 #battery.critical.discharging,
+#custom-gpu.critical,
 #temperature.critical {
-    color: @base08;
+    color: #ab4642;
 }
 
 #memory.warning,
 #battery.warning.discharging,
+#custom-gpu.warning,
 #cpu.warning {
-    color: @base0A;
-}
-
-#workspaces {
-    background: @base01;
-    padding: 0px 12px;
-    margin: 6px 6px 6px 0px;
-    border-radius: 10rem;
+    color: #f6c177;
 }
 
 #workspaces button {
-    color: @base03;
+    color: #585858;
+    border-radius: 100%;
+    margin: 0px 8px;
 }
 
 #workspaces button.active {
-    color: @base0B;
+    color: #a1b56c;
 }
 
-#workspaces button.special {
-    color: @base03;
+#custom-dunst {
+    margin: 6px 8px 6px 4px;
 }
 
-#temperature {
-    margin: 0px 16px 0px 0px;
-}
-
-#cpu {
-    margin: 0px 16px 0px 0px;
-}
-
-#custom-gpu.critical {
-    color: @base08;
-}
-
-#custom-gpu.warning {
-    color: @base0A;
-}
-
-#custom-gpu {
-    margin: 0px 16px 0px 0px;
-}
-
-#memory {
-    margin: 0px 0px 0px 0px;
+#workspaces {
+    margin: 6px 0px 6px 8px;
 }

@@ -15,7 +15,11 @@ vim.wo.wrap = false
 vim.o.termguicolors = true
 vim.o.relativenumber = true
 vim.o.swapfile = false
-vim.cmd("colorscheme gruvbox")
+vim.o.splitbelow = true
+vim.o.splitright = true
+vim.cmd([[
+    colorscheme base16-default-dark
+]])
 
 vim.cmd([[
     let g:netrw_banner = 0

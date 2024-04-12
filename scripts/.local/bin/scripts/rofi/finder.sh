@@ -6,5 +6,11 @@ else
     fd --full-path \
         --base-directory="$HOME" \
         --exclude "node_modules" \
+        --exclude "CMakeFiles" \
+        --exclude "build" \
+        --exclude "target" \
+        --exclude "dist" \
+        --exclude "out" \
+        --exclude "*.pyc" \
         --type file
 fi

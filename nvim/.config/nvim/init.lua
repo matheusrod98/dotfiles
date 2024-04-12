@@ -20,14 +20,3 @@ require("mappings")
 vim.filetype.add({
 	pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
 })
-
--- [x]: Setup Lua and Neovim LSP.
--- [x]: Show signature while typing.
--- [x]: Resize windows keybindings.
--- [x]: Keybinding to toggle quickfix list.
--- [ ]: Edit quickfix list.
--- [ ]: Bordered hover doc window.
--- [ ]: Setup folding.
--- [ ]: Setup neotest.
--- [ ]: Setup nvim_dap and nvim_dap_ui.
--- [ ]: Setup vim_dadbod and vim_dadbod_ui.

@@ -82,6 +82,6 @@ return {
 				end,
 			},
 		})
-		vim.opt.completeopt = "menuone,noinsert"
+		vim.o.completeopt = "menu,menuone,noselect"
 	end,
 }

@@ -8,8 +8,8 @@ export XDG_STATE_HOME=$HOME/.local/state
 export EDITOR="nvim"
 export VISUAL="nvim"
 export SYSTEMD_EDITOR="nvim"
-export BAT_THEME="base16-256"
-export PAGER="bat"
+
+# Pager
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT='-c'
 
@@ -17,14 +17,14 @@ export MANROFFOPT='-c'
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
 
 # ZSH history config.
-export HISTFILE="$XDG_CACHE_HOME/zsh/.zhistory"
+export HISTFILE="$XDG_CACHE_HOME/zsh/zhistory"
 export HISTSIZE=1000000
 export SAVEHIST=1000000
 
 # Dev
 export NPM_CONFIG_PREFIX=$XDG_CONFIG_HOME/npm/npm-global
 export GOPATH=$HOME/.local/bin/go
-export PATH=$HOME/.local/bin:$NPM_CONFIG_PREFIX/bin:$HOME/.cargo/bin:$HOME/.local/bin/scripts/fzf:$PATH
+export PATH=$HOME/.local/bin:$NPM_CONFIG_PREFIX/bin:$HOME/.cargo/bin:$HOME/.local/bin/scripts/rofi:$PATH
 
 # ROS
 if [[ $HOSTNAME == "nautilus"* ]]; then
@@ -40,3 +40,11 @@ elif [[ $HOSTNAME == "harpia"* ]]; then
     export PATH=$HOME/Devel/Nautilus/Harpia/catkin_ws/src/ardupilot/Tools/autotest:$PATH
     source $HOME/Devel/Nautilus/Harpia/catkin_ws/src/ardupilot/Tools/completion/completion.zsh
 fi
+
+# FZF
+export FZF_DEFAULT_OPTS="
+	--color=fg:#686868,bg:#181818,hl:#a1b56c
+	--color=fg+:#e8e8e8,bg+:#181818,hl+:#a1b56c
+	--color=border:#383838,header:#ba8baf,gutter:#181818
+	--color=spinner:#f7ca88,info:#86c1b9,separator:#383838
+	--color=pointer:#86c1b9,marker:#ab4642,prompt:#383838"

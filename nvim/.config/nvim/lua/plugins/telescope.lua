@@ -8,6 +8,12 @@ return {
 		require("telescope").setup({
 			defaults = {
 				file_ignore_patterns = { "^.git/", "node_modules" },
+				mappings = {
+					i = {
+						["<c-v>"] = require("telescope.actions").select_vertical,
+						["<c-x>"] = require("telescope.actions").select_horizontal,
+					},
+				},
 			},
 			pickers = {
 				find_files = {
