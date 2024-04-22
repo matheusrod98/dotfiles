@@ -59,7 +59,7 @@
         }
     },
     "custom/gpu": {
-        "exec": "cat /sys/class/hwmon/hwmon7/device/gpu_busy_percent",
+        "exec": "cat /sys/class/hwmon/hwmon6/device/gpu_busy_percent",
         "format": " {}%",
         "interval": 1,
         "states": {
@@ -90,8 +90,10 @@
         ]
     },
     "mpris": {
-        "format": "{player_icon}   {player}",
-        "format-paused": "{status_icon}   {player}",
+        "format": "{player_icon}   {dynamic}",
+        "format-paused": "{status_icon}   {dynamic}",
+        "dynamic-order": ["artist", "title", "position", "length"],
+        "title-len": 20,
         "player-icons": {
             "default": ""
         },

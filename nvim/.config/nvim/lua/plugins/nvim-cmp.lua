@@ -81,7 +81,9 @@ return {
 					return item
 				end,
 			},
+			completion = {
+				completeopt = "menu,menuone,noinsert",
+			},
 		})
-		vim.o.completeopt = "menu,menuone,noselect"
 	end,
 }

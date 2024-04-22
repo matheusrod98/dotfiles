@@ -19,7 +19,8 @@ alias less="bat --paging=always"
 alias cd="z"
 alias ci="zi"
 
-alias nv=nvim
+alias nv="nvim"
+alias ssh="wezterm ssh"
 
 alias gd="git difftool --no-symlinks --dir-diff"
 alias gs="git status"

@@ -1,4 +1,5 @@
 vim.o.path = vim.o.path .. "**"
+vim.g.have_nerd_font = true
 vim.o.number = true
 vim.o.tabstop = 4
 vim.o.expandtab = true
@@ -17,13 +18,19 @@ vim.o.relativenumber = true
 vim.o.swapfile = false
 vim.o.splitbelow = true
 vim.o.splitright = true
-vim.cmd([[
-    colorscheme base16-default-dark
-]])
+vim.opt.breakindent = true
+vim.opt.updatetime = 250
+vim.opt.timeoutlen = 300
+vim.opt.list = true
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+vim.opt.inccommand = "split"
+vim.opt.scrolloff = 10
 
 vim.cmd([[
     let g:netrw_banner = 0
 ]])
+
+vim.cmd("colorscheme base16-default-dark")
 
 vim.cmd([[
     :autocmd VimLeave * set guicursor= | call chansend(v:stderr, "\x1b[ q")

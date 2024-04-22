@@ -1,9 +1,9 @@
 -- Telescope
-vim.keymap.set("n", "<leader>ff", "<CMD>Telescope find_files<CR>", { silent = true })
-vim.keymap.set("n", "<leader>rg", "<CMD>Telescope live_grep<CR>", { silent = true })
-vim.keymap.set("n", "<leader>lb", "<CMD>Telescope buffers<CR>", { silent = true })
-vim.keymap.set("n", "<leader>fh", "<CMD>Telescope help_tags<CR>", { silent = true })
-vim.keymap.set("n", "<leader>fm", "<CMD>Telescope man_pages<CR>", { silent = true })
+vim.keymap.set("n", "<leader>p", "<CMD>Telescope find_files<CR>", { silent = true })
+vim.keymap.set("n", "<leader>l", "<CMD>Telescope live_grep<CR>", { silent = true })
+vim.keymap.set("n", "<leader>b", "<CMD>Telescope buffers<CR>", { silent = true })
+vim.keymap.set("n", "<leader>ht", "<CMD>Telescope help_tags<CR>", { silent = true })
+vim.keymap.set("n", "<leader>mp", "<CMD>Telescope man_pages<CR>", { silent = true })
 
 -- LSP
 vim.keymap.set("n", "K", "<CMD>Lspsaga hover_doc<CR>", { silent = true })
@@ -87,4 +87,14 @@ vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 vim.keymap.set("n", "<leader>u", "<CMD>UndotreeToggle | UndotreeFocus<CR>", { silent = true })
 
 -- Others
-vim.keymap.set("n", "<C-c>", "<CMD>noh<CR>", { silent = true })
+-- vim.keymap.set("n", "<C-c>", "<CMD>noh<CR>", { silent = true })
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+
+-- TODO
+vim.keymap.set("n", "]t", function()
+	require("todo-comments").jump_next()
+end)
+
+vim.keymap.set("n", "[t", function()
+	require("todo-comments").jump_prev()
+end)
