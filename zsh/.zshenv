@@ -12,6 +12,7 @@ export SYSTEMD_EDITOR="nvim"
 # Pager
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT='-c'
+export LESSUTFCHARDEF=E000-F8FF:p,F0000-FFFFD:p,100000-10FFFD:p
 
 # ZSH config directory.
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
@@ -42,9 +43,7 @@ elif [[ $HOSTNAME == "harpia"* ]]; then
 fi
 
 # FZF
-export FZF_DEFAULT_OPTS="
-	--color=fg:#686868,bg:#181818,hl:#a1b56c
-	--color=fg+:#e8e8e8,bg+:#181818,hl+:#a1b56c
-	--color=border:#383838,header:#ba8baf,gutter:#181818
-	--color=spinner:#f7ca88,info:#86c1b9,separator:#383838
-	--color=pointer:#86c1b9,marker:#ab4642,prompt:#383838"
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#11111b,spinner:#f9e2af,hl:#f38ba8 \
+--color=fg:#6c7086,header:#f38ba8,info:#89b4fa,pointer:#f9e2af \
+--color=marker:#f9e2af,fg+:#cdd6f4,prompt:#89b4fa,hl+:#f38ba8"

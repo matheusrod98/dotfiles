@@ -89,6 +89,7 @@ vim.keymap.set("n", "<leader>u", "<CMD>UndotreeToggle | UndotreeFocus<CR>", { si
 -- Others
 -- vim.keymap.set("n", "<C-c>", "<CMD>noh<CR>", { silent = true })
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+vim.keymap.set("n", "<leader>c", "<CMD>Noice dismiss<CR>", { silent = true })
 
 -- TODO
 vim.keymap.set("n", "]t", function()

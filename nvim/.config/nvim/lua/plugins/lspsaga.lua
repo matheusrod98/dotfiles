@@ -4,12 +4,14 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		"nvim-tree/nvim-web-devicons",
 	},
+	after = "catppuccin",
 	config = function()
 		require("lspsaga").setup({
-			-- ui = {
-			-- 	theme = "round",
-			-- 	border = "rounded",
-			-- },
+			ui = {
+				theme = "round",
+				border = "rounded",
+				kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
+			},
 			lightbulb = {
 				enable = false,
 				enable_in_insert = false,

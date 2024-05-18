@@ -92,8 +92,8 @@
     "mpris": {
         "format": "{player_icon}   {dynamic}",
         "format-paused": "{status_icon}   {dynamic}",
-        "dynamic-order": ["artist", "title", "position", "length"],
-        "title-len": 20,
+        "dynamic-order": ["title", "position", "length"],
+        "title-len": 30,
         "player-icons": {
             "default": ""
         },
