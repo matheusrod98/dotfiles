@@ -4,7 +4,7 @@
 
 [core]
     editor = nvim
-    pager = bat
+    pager = bat --style=plain
     excludesfile = /home/matheus/.config/git/.gitignore
 
 [pull]

@@ -19,10 +19,10 @@ alias cd="z"
 alias ci="zi"
 alias vim="nvim"
 
-alias xc="kitten clipboard"
-alias ssh="kitten ssh"
+alias xc="wl-copy"
+alias ssh="wezterm ssh"
 
-alias gd="git difftool --no-symlinks --dir-diff"
+alias gd="git diff"
 alias gs="git status"
 alias gc="git commit"
 alias gl="git log"

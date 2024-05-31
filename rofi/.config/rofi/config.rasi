@@ -1,5 +1,5 @@
 configuration {
-	modi:                       "power:/home/matheus/.local/bin/scripts/rofi/power.sh,combi,finder:/home/matheus/.local/bin/scripts/rofi/finder.sh,emoji:rofimoji --max-recent 0,clipboard:/home/matheus/.local/bin/scripts/rofi/cliphist.sh,calc";
+	modi:                       "power:/home/matheus/.local/bin/scripts/rofi/power.sh,combi,finder:/home/matheus/.local/bin/scripts/rofi/finder.sh,emoji:rofimoji --max-recent 0,clipboard:/home/matheus/.local/bin/scripts/rofi/cliphist.sh";
     combi-modi:                 "window,drun";
     show-icons:                 true;
     display-combi:              "󰀻";
@@ -17,29 +17,29 @@ configuration {
 }
 
 * {
-    border-colour:               #45475a;
-    handle-colour:               #89b4fa;
-    background-colour:           #11111b;
-    foreground-colour:           #cdd6f4;
-    alternate-background:        #1e1e2e;
-    normal-background:           #11111b;
-    normal-foreground:           #cdd6f4;
-    urgent-background:           #f38ba8;
-    urgent-foreground:           #11111b;
-    active-background:           #cba6f7;
-    active-foreground:           #11111b;
-    selected-normal-background:  #89b4fa;
-    selected-normal-foreground:  #11111b;
-    selected-urgent-background:  #cba6f7;
-    selected-urgent-foreground:  #11111b;
-    selected-active-background:  #f38ba8;
-    selected-active-foreground:  #11111b;
-    alternate-normal-background: #11111b;
-    alternate-normal-foreground: #cdd6f4;
-    alternate-urgent-background: #f38ba8;
-    alternate-urgent-foreground: #11111b;
-    alternate-active-background: #cba6f7;
-    alternate-active-foreground: #11111b;
+    border-colour:               #303030;
+    handle-colour:               #6a9fb5;
+    background-colour:           #121212;
+    foreground-colour:           #e0e0e0;
+    alternate-background:        #242424;
+    normal-background:           #121212;
+    normal-foreground:           #e0e0e0;
+    urgent-background:           #ac4142;
+    urgent-foreground:           #121212;
+    active-background:           #90a959;
+    active-foreground:           #121212;
+    selected-normal-background:  #6a9fb5;
+    selected-normal-foreground:  #121212;
+    selected-urgent-background:  #90a959;
+    selected-urgent-foreground:  #121212;
+    selected-active-background:  #ac4142;
+    selected-active-foreground:  #121212;
+    alternate-normal-background: #121212;
+    alternate-normal-foreground: #e0e0e0;
+    alternate-urgent-background: #ac4142;
+    alternate-urgent-foreground: #121212;
+    alternate-active-background: #90a959;
+    alternate-active-foreground: #121212;
 }
 
 window {

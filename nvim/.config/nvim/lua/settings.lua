@@ -30,8 +30,6 @@ vim.cmd([[
     let g:netrw_banner = 0
 ]])
 
-vim.cmd.colorscheme("catppuccin")
-
 vim.cmd([[
     :autocmd VimLeave * set guicursor= | call chansend(v:stderr, "\x1b[ q")
 ]])

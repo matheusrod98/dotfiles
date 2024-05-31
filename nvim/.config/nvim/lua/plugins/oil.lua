@@ -8,6 +8,7 @@ return {
 			lsp_file_methods = {
 				autosave_changes = true,
 			},
+			experimental_watch_for_changes = true,
 			keymaps = {
 				["g?"] = "actions.show_help",
 				["<CR>"] = "actions.select",

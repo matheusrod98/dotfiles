@@ -21,26 +21,24 @@ return {
 		lspconfig.clangd.setup({})
 		lspconfig.tsserver.setup({})
 		lspconfig.gopls.setup({})
-		lspconfig.lua_ls.setup({
-			settings = { Lua = { diagnostics = { globals = { "vim" } } } },
-		})
+		-- lspconfig.lua_ls.setup({
+		-- 	settings = { Lua = { diagnostics = { globals = { "vim" } } } },
+		-- })
 		lspconfig.tailwindcss.setup({})
 		lspconfig.docker_compose_language_service.setup({})
 		lspconfig.dockerls.setup({})
-		lspconfig.marksman.setup({})
-		lspconfig.yamlls.setup({
-			yaml = {
-				schemaStore = {
-					enable = true,
-				},
-			},
-		})
+		-- lspconfig.yamlls.setup({
+		-- 	yaml = {
+		-- 		schemaStore = {
+		-- 			enable = true,
+		-- 		},
+		-- 	},
+		-- })
 		lspconfig.autotools_ls.setup({})
-		lspconfig.texlab.setup({})
-		lspconfig.bashls.setup({
-			filetypes = { "sh", "bash" },
-			cmd = { "bash-language-server", "start" },
-		})
+		-- lspconfig.bashls.setup({
+		-- 	filetypes = { "sh", "bash" },
+		-- 	cmd = { "bash-language-server", "start" },
+		-- })
 
 		vim.diagnostic.config({
 			virtual_text = false,

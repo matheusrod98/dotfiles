@@ -3,7 +3,8 @@ return {
 	keys = { "<space>m", "<space>j", "<space>s" },
 	dependencies = { "nvim-treesitter/nvim-treesitter" },
 	config = function()
-		require("treesj").setup({--[[ your config ]]
+		require("treesj").setup({
+			max_join_length = 999999999999999,
 		})
 	end,
 }
