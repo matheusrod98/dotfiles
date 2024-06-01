@@ -7,42 +7,13 @@ return {
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-nvim-lsp",
 		"davidsierradz/cmp-conventionalcommits",
-		"js-everts/cmp-tailwind-colors",
 		"saadparwaiz1/cmp_luasnip",
 		"hrsh7th/cmp-nvim-lsp-signature-help",
-		"chrisgrieser/cmp-nerdfont",
+		"luckasRanarison/tailwind-tools.nvim"
 	},
 
 	config = function()
 		local cmp = require("cmp")
-
-		local kind_icons = {
-			Text = "",
-			Method = "󰆧",
-			Function = "󰊕",
-			Constructor = "",
-			Field = "󰇽",
-			Variable = "󰂡",
-			Class = "󰠱",
-			Interface = "",
-			Module = "",
-			Property = "󰜢",
-			Unit = "",
-			Value = "󰎠",
-			Enum = "",
-			Keyword = "󰌋",
-			Snippet = "",
-			Color = "󰏘",
-			File = "󰈙",
-			Reference = "",
-			Folder = "󰉋",
-			EnumMember = "",
-			Constant = "󰏿",
-			Struct = "",
-			Event = "",
-			Operator = "󰆕",
-			TypeParameter = "󰅲",
-		}
 
 		cmp.setup({
 			snippet = {
@@ -59,27 +30,20 @@ return {
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
 				["<C-Space>"] = cmp.mapping.complete(),
 				["<C-e>"] = cmp.mapping.abort(),
-				["<CR>"] = cmp.mapping.confirm({ select = false }),
+				["<C-CR>"] = cmp.mapping.confirm({ select = false }),
 			}),
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "path" },
 				{ name = "buffer" },
-				{ name = "tailwind-colors" },
 				{ name = "conventionalcommits" },
 				{ name = "nvim_lsp_signature_help" },
-				{ name = "nerdfont" },
 			}),
 			formatting = {
-				format = function(entry, item)
-					item.menu = item.kind
-					item = require("cmp-tailwind-colors").format(entry, item)
-					if kind_icons[item.kind] then
-						item.kind = kind_icons[item.kind] .. " "
-					end
-					return item
-				end,
+				format = require("lspkind").cmp_format({
+					before = require("tailwind-tools.cmp").lspkind_format
+				})
 			},
 			completion = {
 				completeopt = "menu,menuone,noinsert",

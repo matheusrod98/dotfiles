@@ -11,14 +11,14 @@ config.default_cursor_style = "BlinkingBar"
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
 config.scrollback_lines = 100000
-config.color_scheme = 'Classic Dark (base16)'
+config.color_scheme = 'Material Darker (base16)'
 config.colors = {
-	background = "#121212",
+	background = "#111111",
 	tab_bar = {
 		background = "#303030",
 		active_tab = {
-			bg_color = "#121212",
-			fg_color = "#e0e0e0",
+			bg_color = "#111111",
+			fg_color = "#eeffff",
 			intensity = "Normal",
 			underline = "None",
 			italic = false,
@@ -29,8 +29,8 @@ config.colors = {
 			fg_color = "#606060",
 		},
 		inactive_tab_hover = {
-			bg_color = "#121212",
-			fg_color = "#e0e0e0",
+			bg_color = "#111111",
+			fg_color = "#eeffff",
 			italic = false,
 		},
 		new_tab = {
@@ -38,8 +38,8 @@ config.colors = {
 			fg_color = "#606060",
 		},
 		new_tab_hover = {
-			bg_color = "#121212",
-			fg_color = "#e0e0e0",
+			bg_color = "#111111",
+			fg_color = "#eeffff",
 			italic = false,
 		},
 	},

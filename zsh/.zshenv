@@ -26,7 +26,3 @@ export SAVEHIST=1000000
 export NPM_CONFIG_PREFIX=$XDG_CONFIG_HOME/npm/npm-global
 export GOPATH=$HOME/.local/bin/go
 export PATH=$HOME/.local/bin:$NPM_CONFIG_PREFIX/bin:$HOME/.cargo/bin:$HOME/.local/bin/scripts/rofi:$PATH
-export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS"\
-" --color=bg+:-1,bg:-1,spinner:#75b5aa,hl:#6a9fb5"\
-" --color=fg:#606060,header:#6a9fb5,info:#f4bf75,pointer:#75b5aa"\
-" --color=marker:#75b5aa,fg+:#e0e0e0,prompt:#f4bf75,hl+:#6a9fb5"

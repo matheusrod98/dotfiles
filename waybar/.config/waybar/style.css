@@ -9,7 +9,7 @@
 }
 
 window#waybar {
-    background: #121212;
+    background: #111111;
 }
 
 #pulseaudio,
@@ -28,17 +28,17 @@ window#waybar {
 #tray {
     padding: 5px 14px;
     margin: 6px 0px 6px 6px;
-    background: #202020;
+    background: #282828;
     border-radius: 16px;
-    color: #e0e0e0;
+    color: #eeffff;
 }
 
 #mpris {
-    color: #aa759f;
+    color: #c792ea;
 }
 
 #privacy {
-    color: #f4bf75;
+    color: #ffcb6b;
 }
 
 #clock {
@@ -46,12 +46,12 @@ window#waybar {
 }
 
 #battery {
-    color: #90a959;
+    color: #c3e88d;
     margin: 0px 8px 0px 0px;
 }
 
 #battery.charging {
-    color: #90a959;
+    color: #c3e88d;
 }
 
 #temperature,
@@ -69,24 +69,24 @@ window#waybar {
 #battery.critical.discharging,
 #custom-gpu.critical,
 #temperature.critical {
-    color: #ac4142;
+    color: #ff5370;
 }
 
 #memory.warning,
 #battery.warning.discharging,
 #custom-gpu.warning,
 #cpu.warning {
-    color: #f4bf75;
+    color: #ffcb6b;
 }
 
 #workspaces button {
-    color: #505050;
+    color: #4a4a4a;
     border-radius: 100%;
     margin: 0px 8px;
 }
 
 #workspaces button.active {
-    color: #90a959;
+    color: #82aaff;
 }
 
 #custom-dunst {

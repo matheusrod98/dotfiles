@@ -14,12 +14,6 @@ return {
 				enable = false,
 				enable_in_insert = false,
 			},
-			-- finder = {
-			-- 	keys = {
-			-- 		vsplit = "v",
-			-- 		split = "s",
-			-- 	},
-			-- },
 			definition = {
 				keys = {
 					edit = "o",
@@ -28,12 +22,6 @@ return {
 					tabe = "t",
 				},
 			},
-			-- rename = {
-			-- 	keys = {
-			-- 		quit = "q",
-			-- 		select = "s",
-			-- 	},
-			-- },
 		})
 	end,
 }

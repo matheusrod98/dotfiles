@@ -4,7 +4,7 @@ return {
 	dependencies = { "nvim-treesitter/nvim-treesitter" },
 	config = function()
 		require("treesj").setup({
-			max_join_length = 999999999999999,
+			max_join_length = 1000,
 		})
 	end,
 }

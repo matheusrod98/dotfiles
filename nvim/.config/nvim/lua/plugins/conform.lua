@@ -10,7 +10,6 @@ return {
 				css = { "prettier" },
 				scss = { "prettier" },
 				json = { "prettier" },
-				lua = { "stylua" },
 			},
 			format_on_save = {
 				timeout_ms = 500,
