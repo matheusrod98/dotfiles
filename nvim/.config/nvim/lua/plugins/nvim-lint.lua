@@ -9,6 +9,7 @@ return {
 			cpp = { "cppcheck" },
 			dockerfile = { "hadolint" },
 			yaml = { "yamllint" },
+			tex = { "chktex" },
 			-- python
 			-- go
 		}

@@ -10,6 +10,7 @@ return {
 				css = { "prettier" },
 				scss = { "prettier" },
 				json = { "prettier" },
+				tex = { "latexindent" },
 			},
 			format_on_save = {
 				timeout_ms = 500,

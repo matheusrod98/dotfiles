@@ -14,13 +14,11 @@ alias find="fd"
 alias cat="bat --paging=never"
 alias tree="exa --tree"
 alias less="bat --paging=always"
-
 alias cd="z"
 alias ci="zi"
 alias vim="nvim"
-
 alias xc="wl-copy"
-alias ssh="wezterm ssh"
+alias open="xdg-open"
 
 alias gd="git diff"
 alias gs="git status"

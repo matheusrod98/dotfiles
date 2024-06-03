@@ -2,4 +2,3 @@ zsh/.config/zsh/plugins/
 zsh/.config/zsh/.zcompdump*
 tmux/.config/tmux/plugins
 btop/.config/btop/btop.log
-todo.md
