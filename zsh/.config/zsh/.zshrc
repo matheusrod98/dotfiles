@@ -3,7 +3,10 @@
 
 # Plugins.
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fpath=($HOME/gits/zsh-completions/src $fpath)
+fpath=(
+    $HOME/gits/zsh-completions/src $fpath
+    $XDG_CONFIG_HOME/docker $fpath
+)
 
 # Completion system.
 autoload -Uz compinit
@@ -17,7 +20,7 @@ setopt HIST_IGNORE_DUPS
 setopt APPEND_HISTORY
 setopt HIST_REDUCE_BLANKS
 
-# VI mode.
+# Vi mode.
 bindkey -v
 bindkey "^?" backward-delete-char
 
@@ -28,26 +31,7 @@ bindkey "^R" history-incremental-pattern-search-backward
 source "$XDG_CONFIG_HOME"/zsh/zsh_aliases
 
 # FZF
-source /usr/share/fzf/shell/key-bindings.zsh
+source $HOME/.local/bin/scripts/fzf/key-bindings.sh
 
-run_find_dir () {
-    local dir=$(fd -H -L --type d --base-directory $HOME | fzf || return) &&
-    cd "$HOME/$dir"
-    zle reset-prompt
-}
-zle -N run_find_dir
-bindkey '^p' run_find_dir
-
-run_find_files() {
-    local file=$(fd --type f --base-directory=$HOME --full-path $HOME | fzf --preview 'fzf-preview.sh {}' || return) &&
-    exo-open "$HOME/$file"
-    zle reset-prompt
-}
-zle -N run_find_files
-bindkey '^o' run_find_files
-
-[[ $HOSTNAME =~ harpia* || $HOSTNAME =~ nautilus* ]] ||
 # eval "$(/bin/mise activate zsh)"
-
 eval "$(starship init zsh)"
-eval "$(zoxide init zsh)"

@@ -11,10 +11,10 @@ video/x-matroska=mpv.desktop
 video/x-msvideo=mpv.desktop
 video/x-ms-wmv=mpv.desktop
 
-x-scheme-handler/http=com.brave.Browser.desktop
-x-scheme-handler/https=com.brave.Browser.desktop
-x-scheme-handler/mailto=com.brave.Browser.desktop
-x-scheme-handler/webcal=com.brave.Browser.desktop
+x-scheme-handler/http=com.google.Chrome.desktop
+x-scheme-handler/https=com.google.Chrome.desktop
+x-scheme-handler/mailto=com.google.Chrome.desktop
+x-scheme-handler/webcal=com.google.Chrome.desktop
 
 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=org.libreoffice.LibreOffice.calc.desktop
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=org.libreoffice.LibreOffice.writer.desktop
@@ -28,10 +28,11 @@ x-scheme-handler/magnet=transmission-qt.desktop
 text/plain=nvim.desktop
 application/javascript=nvim.desktop
 application/typescript=nvim.desktop
+x-scheme-handler/postman=Postman.desktop
 
 [Added Associations]
 image/png=imv.desktop;
-application/pdf=com.brave.Browser.desktop;org.pwmt.zathura-pdf-mupdf.desktop;
+application/pdf=com.google.Chrome.desktop;org.pwmt.zathura-pdf-mupdf.desktop;
 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=org.libreoffice.LibreOffice.calc.desktop;
 image/jpeg=imv.desktop;
 image/webp=imv.desktop;

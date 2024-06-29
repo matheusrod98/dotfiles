@@ -38,6 +38,7 @@ return {
 			},
 		})
 		lspconfig.texlab.setup({})
+		lspconfig.csharp_ls.setup({})
 
 		vim.diagnostic.config({
 			virtual_text = false,

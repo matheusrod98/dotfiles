@@ -25,4 +25,4 @@ export SAVEHIST=1000000
 # Dev
 export NPM_CONFIG_PREFIX=$XDG_CONFIG_HOME/npm/npm-global
 export GOPATH=$HOME/.local/bin/go
-export PATH=$HOME/.local/bin:$NPM_CONFIG_PREFIX/bin:$HOME/.cargo/bin:$HOME/.local/bin/scripts/rofi:$PATH
+export PATH=$HOME/.local/bin:$NPM_CONFIG_PREFIX/bin:$HOME/.cargo/bin:$HOME/.local/bin/scripts/fzf/:$PATH

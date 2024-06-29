@@ -22,9 +22,11 @@ vim.opt.breakindent = true
 vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
 vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣", eol = "↲" }
 vim.opt.inccommand = "split"
 vim.opt.scrolloff = 10
+
+vim.cmd("colorscheme onedark_dark")
 
 vim.cmd([[
     let g:netrw_banner = 0

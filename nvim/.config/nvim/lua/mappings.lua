@@ -69,8 +69,8 @@ vim.keymap.set("n", "<leader>wn", "<CMD>vertical resize -3<CR>", { silent = true
 vim.keymap.set("n", "<leader>wq", "<CMD>q<CR>", { silent = true })
 
 -- Tabs
-vim.keymap.set("n", "[t", "<CMD>tabNext<CR>", { silent = true })
-vim.keymap.set("n", "]t", "<CMD>tabprevious<CR>", { silent = true })
+vim.keymap.set("n", "[t", "<CMD>tabNext<CR>", { silent = true, noremap = true })
+vim.keymap.set("n", "]t", "<CMD>tabprevious<CR>", { silent = true, noremap = true })
 
 -- Quickfix list.
 vim.keymap.set("n", "]q", "<CMD>cnext<CR>", { silent = true })
@@ -98,10 +98,10 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("n", "<leader>c", "<CMD>Noice dismiss<CR>", { silent = true })
 
 -- TODO
-vim.keymap.set("n", "]t", function()
-	require("todo-comments").jump_next()
-end)
-
-vim.keymap.set("n", "[t", function()
-	require("todo-comments").jump_prev()
-end)
+-- vim.keymap.set("n", "]t", function()
+-- 	require("todo-comments").jump_next()
+-- end)
+--
+-- vim.keymap.set("n", "[t", function()
+-- 	require("todo-comments").jump_prev()
+-- end)

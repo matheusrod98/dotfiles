@@ -2,8 +2,9 @@ return {
 	"mfussenegger/nvim-lint",
 	config = function()
 		require("lint").linters_by_ft = {
-			typescript = { "eslint" },
-			javascript = { "eslint" },
+			-- use local eslint
+			-- typescript = { "eslint" },
+			-- javascript = { "eslint" },
 			sh = { "shellcheck" },
 			make = { "checkmake" },
 			cpp = { "cppcheck" },

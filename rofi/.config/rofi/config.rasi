@@ -1,5 +1,5 @@
 configuration {
-	modi:                       "power:/home/matheus/.local/bin/scripts/rofi/power.sh,combi,finder:/home/matheus/.local/bin/scripts/rofi/finder.sh,emoji:rofimoji --max-recent 0,clipboard:/home/matheus/.local/bin/scripts/rofi/cliphist.sh";
+	modi:                       "power:/home/matheus/.local/bin/scripts/rofi/power.sh,combi,emoji:rofimoji --max-recent 0,clipboard:/home/matheus/.local/bin/scripts/rofi/cliphist.sh";
     combi-modi:                 "window,drun";
     show-icons:                 true;
     display-combi:              "󰀻";
