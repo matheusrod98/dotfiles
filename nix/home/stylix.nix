@@ -23,5 +23,10 @@
     sizes.terminal = 13;
   };
   stylix.cursor.size = 24;
-  stylix.iconTheme.package = pkgs.papirus-icon-theme;
+  stylix.iconTheme = {
+    enable = true;
+    package = pkgs.papirus-icon-theme;
+    dark = "Papirus Dark";
+    light = "Papirus Light";
+  };
 }
