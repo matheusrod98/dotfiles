@@ -5,7 +5,6 @@
     enable = true;
     settings = {
       background = {
-        path = "screenshot";
         blur_passes = 3;
       };
       input-field = {

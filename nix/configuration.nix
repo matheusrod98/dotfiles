@@ -39,6 +39,7 @@
     ./system/timezone.nix
     ./system/user.nix
     ./system/zram.nix
+    ./system/stylix.nix
   ];
 
   system.stateVersion = "24.05";

@@ -15,8 +15,6 @@
         offset = "4x4";
         notification_limit = 0;
         frame_width = 2;
-        font = "Noto Sans 11";
-        separator_color = "frame";
         corner_radius = 6;
         show_indicators = "yes";
         dmenu = "walker -d";

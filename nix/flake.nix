@@ -8,12 +8,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     ghostty.url = "github:ghostty-org/ghostty/main";
+    stylix.url = "github:danth/stylix";
   };
 
   outputs =
     {
       self,
       nixpkgs,
+      stylix,
       home-manager,
       ...
     }@inputs:
@@ -22,6 +24,7 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
+          stylix.nixosModules.stylix
           ./configuration.nix
           home-manager.nixosModules.home-manager
           {
