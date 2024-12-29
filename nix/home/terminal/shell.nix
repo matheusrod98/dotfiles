@@ -61,7 +61,7 @@
       VISUAL = "nvim";
       SYSTEMD_EDITOR = "nvim";
       MANPAGER = "nvim +Man!";
-      PATH = $HOME/.local/bin:$PATH;
+      PATH = "$HOME/.local/bin:$PATH";
     };
     shellAliases = {
       "l" = "exa --icons --color=auto --hyperlink";
