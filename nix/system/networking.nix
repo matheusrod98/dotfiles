@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   networking = {
+    networkmanager.enable = true;
     hostName = "matheus-laptop";
     nameservers = [
       "1.1.1.1#cloudflare-dns.com"
