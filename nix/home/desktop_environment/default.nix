@@ -2,8 +2,9 @@
 {
   imports = [
     ./apps
-    ./fonts.nix
     ./hyprland
     ./syncthing.nix
+    ./../mimeapps.nix
+    ./../stylix.nix
   ];
 }

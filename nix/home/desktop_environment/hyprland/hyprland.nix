@@ -16,15 +16,12 @@
       env = XDG_SESSION_DESKTOP,Hyprland
       env = GDK_BACKEND,wayland,x11,*
       env = SDL_VIDEODRIVER,wayland
-      env = XCURSOR_SIZE,24
-      env = HYPRCURSOR_SIZE,24
     ";
     settings = {
       exec-once = [
         "dbus-update-activation-environment --systemd --all"
         "systemctl --user import-environment QT_QPA_PLATFORMTHEME"
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
-        "hyprctl setcursor Adwaita 24"
         "walker --gapplication-service"
         "dunst"
         "nm-applet"

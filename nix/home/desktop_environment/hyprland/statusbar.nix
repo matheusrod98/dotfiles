@@ -6,10 +6,8 @@
     style = ''
       * {
           min-height: 0;
-          font-family: "Noto Sans", "Font Awesome 6 Free";
       }
       window#waybar {
-          font-size: 10px;
           border: none;
           border-radius: 0%;
           padding: 0px;
@@ -35,7 +33,6 @@
       }
       #tray menu {
           border-radius: 12px;
-          font-size: 14px;
       }
       #mpris {
       }

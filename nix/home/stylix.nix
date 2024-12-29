@@ -22,4 +22,6 @@
     };
     sizes.terminal = 13;
   };
+  stylix.cursor.size = 24;
+  stylix.iconTheme.package = pkgs.papirus-icon-theme;
 }
