@@ -25,4 +25,10 @@
     unrar-wrapper
     zip
   ];
+
+  imports = [
+    ./fzf.nix
+    ./prompt.nix
+    ./shell.nix
+  ];
 }
