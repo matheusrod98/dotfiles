@@ -11,7 +11,6 @@ vim.o.cmdheight = 2
 vim.o.mouse = "a"
 vim.o.signcolumn = "yes"
 vim.o.shortmess = vim.o.shortmess .. "c"
-vim.o.clipboard = "unnamedplus"
 vim.wo.wrap = false
 vim.o.termguicolors = true
 vim.o.relativenumber = true
@@ -22,11 +21,15 @@ vim.opt.breakindent = true
 vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
 vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣", eol = "↲" }
+vim.opt.listchars = {tab = "» ", trail = "·", nbsp = "␣"}
 vim.opt.inccommand = "split"
 vim.opt.scrolloff = 10
-
-vim.cmd("colorscheme onedark_dark")
+vim.opt.laststatus = 3
+vim.schedule(function() vim.opt.clipboard = 'unnamedplus' end)
+vim.opt.undofile = true
+vim.opt.list = true
+vim.opt.listchars = {tab = '» ', trail = '·', nbsp = '␣'}
+vim.opt.autoread = true
 
 vim.cmd([[
     let g:netrw_banner = 0
@@ -36,4 +39,12 @@ vim.cmd([[
     :autocmd VimLeave * set guicursor= | call chansend(v:stderr, "\x1b[ q")
 ]])
 
+vim.filetype.add({
+    pattern = {
+        ["%.env%.?[%w_.-]*"] = "dotenv",
+        [".*/hypr/.*%.conf"] = "hyprlang"
+    }
+})
+
 vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+vim.cmd("colorscheme rose-pine")
