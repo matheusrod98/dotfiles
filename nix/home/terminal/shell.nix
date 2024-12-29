@@ -2,55 +2,55 @@
 
 {
   home.packages = with pkgs; [
-      zsh-syntax-highlighting
-      zsh-completions
+    zsh-syntax-highlighting
+    zsh-completions
   ];
   programs.zsh = {
     enable = true;
     syntaxHighlighting.enable = true;
     initExtraFirst = "[[ $- != *i* ]] && return";
     initExtraBeforeCompInit = ''
-    bindkey "^R" history-incremental-pattern-search-backward
-    bindkey "^?" backward-delete-char
+      bindkey "^R" history-incremental-pattern-search-backward
+      bindkey "^?" backward-delete-char
     '';
     initExtra = ''
-    source <(warp-cli generate-completions zsh)
-    function find_user_files() {
-      local dir=$(fd -H -L --type d --base-directory $HOME --exclude "*node_modules*" --exclude "*nix*" --exclude "*.local*" --exclude "*.git*" --exclude ".cache" | fzf --preview 'eza --tree -L2 $HOME/{}')
-      if [[ -z "$dir" ]]; then
-              zle redisplay
-              return 0
-      fi
-      zle push-line
-      if [[ "$dir" != "$HOME/" ]]; then
-              BUFFER="builtin cd -- '$HOME/$dir'"
-              zle accept-line
-      fi
-      local ret=$?
-      unset dir
-      zle reset-prompt
-      return $ret
-    }
-    zle -N find_user_files
-    bindkey '^P' find_user_files
+      source <(warp-cli generate-completions zsh)
+      function find_user_files() {
+        local dir=$(fd -H -L --type d --base-directory $HOME --exclude "*node_modules*" --exclude "*nix*" --exclude "*.local*" --exclude "*.git*" --exclude ".cache" | fzf --preview 'eza --tree -L2 $HOME/{}')
+        if [[ -z "$dir" ]]; then
+                zle redisplay
+                return 0
+        fi
+        zle push-line
+        if [[ "$dir" != "$HOME/" ]]; then
+                BUFFER="builtin cd -- '$HOME/$dir'"
+                zle accept-line
+        fi
+        local ret=$?
+        unset dir
+        zle reset-prompt
+        return $ret
+      }
+      zle -N find_user_files
+      bindkey '^P' find_user_files
 
-    function open_files() {
-      local file=$(fd --type f --base-directory=$HOME --full-path $HOME | fzf --preview '$HOME/.local/bin/scripts/fzf/fzf-preview.sh $HOME/{}')
-      [[ $file == "" ]] && return
-      xdg-open $HOME/$file & disown
-      zle reset-prompt
-    }
-    zle -N open_files
-    bindkey '^o' open_files
+      function open_files() {
+        local file=$(fd --type f --base-directory=$HOME --full-path $HOME | fzf --preview '$HOME/.local/bin/scripts/fzf/fzf-preview.sh $HOME/{}')
+        [[ $file == "" ]] && return
+        xdg-open $HOME/$file & disown
+        zle reset-prompt
+      }
+      zle -N open_files
+      bindkey '^o' open_files
     '';
     enableCompletion = true;
     completionInit = ''
-    autoload bashcompinit && bashcompinit
-    autoload -Uz compinit && compinit
-    zstyle ':completion:*' menu select
-    zmodload -i zsh/complist
-    bindkey -M menuselect "^[[Z" reverse-menu-complete
-    complete -C '$(which aws_completer)' aws
+      autoload bashcompinit && bashcompinit
+      autoload -Uz compinit && compinit
+      zstyle ':completion:*' menu select
+      zmodload -i zsh/complist
+      bindkey -M menuselect "^[[Z" reverse-menu-complete
+      complete -C '$(which aws_completer)' aws
     '';
     history = {
       ignoreAllDups = true;
@@ -80,9 +80,8 @@
       "less" = "bat --paging=always --decorations=never";
       "open" = "xdg-open";
       "vim" = "nvim";
-      "xc" = "kitten clipboard";
+      "xc" = "wl-copy";
       "cl" = "clear";
-      "ssh" = "kitten ssh";
       "neofetch" = "fastfetch";
       "gd" = "git difftool --no-symlinks --dir-diff";
       "gs" = "git status";
