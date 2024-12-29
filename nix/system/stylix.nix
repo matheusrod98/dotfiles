@@ -8,6 +8,9 @@
       package = pkgs.jetbrains-mono;
       name = "JetBrains Mono";
     };
-    sizes.terminal = 13;
+    sizes = {
+      terminal = 13;
+      desktop = 9;
+    };
   };
 }
