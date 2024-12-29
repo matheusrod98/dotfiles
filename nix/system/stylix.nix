@@ -10,7 +10,8 @@
     };
     sizes = {
       terminal = 13;
-      desktop = 9;
+      desktop = 8;
+      popups = 11;
     };
   };
 }

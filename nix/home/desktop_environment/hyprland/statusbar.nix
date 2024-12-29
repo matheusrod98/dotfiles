@@ -8,7 +8,7 @@
 {
   programs.waybar = {
     enable = true;
-    style = ''
+    style = lib.mkForce ''
       * {
           min-height: 0;
       }
@@ -17,6 +17,8 @@
           border-radius: 0%;
           padding: 0px;
           margin: 0px;
+          background: #${config.lib.stylix.colors.base02};
+          font-size: 11px;
       }
       #pulseaudio,
       #network,
@@ -35,20 +37,23 @@
           margin: 6px 2px;
           padding: 0px 12px;
           border-radius: 16px;
-          color: lib.mkForce "${config.stylix.base16Scheme.base07}";
+          background: #${config.lib.stylix.colors.base07};
       }
       #tray menu {
           border-radius: 12px;
       }
       #mpris {
+          color: #${config.lib.stylix.colors.base0D};
       }
       #privacy {
       }
       #clock {
       }
       #battery {
+          color: #${config.lib.stylix.colors.base0B};
       }
       #battery.charging {
+          color: #${config.lib.stylix.colors.base0B};
       }
       #temperature,
       #cpu,
@@ -61,11 +66,13 @@
       #battery.critical.discharging,
       #custom-gpu.critical,
       #temperature.critical {
+          color: #${config.lib.stylix.colors.base08};
       }
       #memory.warning,
       #battery.warning.discharging,
       #custom-gpu.warning,
       #cpu.warning {
+          color: #${config.lib.stylix.colors.base09};
       }
       #workspaces {
         margin: 6px;
@@ -73,8 +80,10 @@
       }
       #workspaces button {
           border-radius: 100%;
+          color: #${config.lib.stylix.colors.base03};
       }
       #workspaces button.active {
+          color: #${config.lib.stylix.colors.base0A};
       }
       #custom-dunst {
         margin: 6px 6px 6px 0px;
