@@ -1,4 +1,9 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 
 {
   programs.waybar = {
@@ -30,6 +35,7 @@
           margin: 6px 2px;
           padding: 0px 12px;
           border-radius: 16px;
+          color: lib.mkForce "${config.stylix.base16Scheme.base07}";
       }
       #tray menu {
           border-radius: 12px;
