@@ -8,4 +8,7 @@
     dark = "Papirus Dark";
     light = "Papirus Light";
   };
+  stylix.targets = {
+    neovim.enable = false;
+  };
 }
