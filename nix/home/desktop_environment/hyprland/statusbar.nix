@@ -46,6 +46,7 @@
           color: #${config.lib.stylix.colors.base0D};
       }
       #privacy {
+          color: #${config.lib.stylix.colors.base09};
       }
       #clock {
       }
