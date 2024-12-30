@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     papirus-icon-theme
+    papirus-folders
   ];
 
   gtk.iconTheme = {
