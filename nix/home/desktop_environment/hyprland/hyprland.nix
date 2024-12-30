@@ -26,7 +26,6 @@
         "dunst"
         "nm-applet"
         "blueman-applet"
-        "gammastep-indicator"
         "skypeforlinux"
         "discord-canary"
         "pritunl-client-electron"
