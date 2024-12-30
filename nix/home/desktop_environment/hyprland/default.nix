@@ -18,7 +18,6 @@
     brightnessctl
     libadwaita
     wtype
-    gtk4
     udiskie
     xdotool
     networkmanagerapplet
