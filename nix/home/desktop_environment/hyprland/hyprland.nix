@@ -27,7 +27,7 @@
         "nm-applet"
         "blueman-applet"
         "skypeforlinux"
-        "discord-canary"
+        "discord"
         "pritunl-client-electron"
         "systemctl --user start warp-taskbar"
       ];

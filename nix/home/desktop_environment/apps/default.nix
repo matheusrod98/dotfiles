@@ -8,7 +8,7 @@
   ];
 
   home.packages = with pkgs; [
-    discord-canary
+    discord
     skypeforlinux
     stremio
     obsidian
