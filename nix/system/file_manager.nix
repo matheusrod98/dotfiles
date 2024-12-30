@@ -7,25 +7,10 @@
 }:
 
 {
-  environment.systemPackages = [
-    pkgs.nautilus
-    pkgs.gst_all_1.gstreamer
+  programs.thunar.plugins = with pkgs.xfce; [
+    thunar-archive-plugin
+    thunar-volman
   ];
-  services.gvfs.enable = true;
-  nixpkgs.overlays = [
-    (self: super: {
-      gnome = super.gnome.overrideScope (
-        gself: gsuper: {
-          nautilus = gsuper.nautilus.overrideAttrs (nsuper: {
-            buildInputs =
-              nsuper.buildInputs
-              ++ (with pkgs.gst_all_1; [
-                gst-plugins-good
-                gst-plugins-bad
-              ]);
-          });
-        }
-      );
-    })
-  ];
+  programs.xfconf.enable = true;
+  programs.thunar.enable = true;
 }
