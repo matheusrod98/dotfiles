@@ -28,7 +28,7 @@
         "gammastep-indicator"
         "waybar"
         "skypeforlinux"
-        "discord"
+        "discord-canary"
         "pritunl-client-electron"
         "systemctl --user start warp-taskbar"
       ];
