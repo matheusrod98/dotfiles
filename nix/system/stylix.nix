@@ -8,6 +8,14 @@
       package = pkgs.jetbrains-mono;
       name = "JetBrains Mono";
     };
+    serif = {
+      name = "Noto Serif";
+      package = pkgs.noto-fonts;
+    };
+    sansSerif = {
+      name = "Noto Sans";
+      package = pkgs.noto-fonts;
+    };
     sizes = {
       terminal = 13;
       desktop = 8;
