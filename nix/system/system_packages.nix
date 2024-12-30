@@ -3,7 +3,7 @@
   environment = {
     systemPackages = with pkgs; [
       git
-      vim
+      neovim
       wget
       greetd.regreet
       polkit
