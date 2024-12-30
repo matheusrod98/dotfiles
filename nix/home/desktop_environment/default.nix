@@ -1,5 +1,6 @@
 { pkgs, ... }:
 {
+
   imports = [
     ./apps
     ./hyprland
@@ -7,5 +8,6 @@
     ./../fonts.nix
     ./../mimeapps.nix
     ./../stylix.nix
+    ./keyboard_launcher.nix
   ];
 }

@@ -25,6 +25,5 @@
     blueman
     wttrbar
     grim
-    walker
   ];
 }

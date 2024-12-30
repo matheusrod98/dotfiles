@@ -22,7 +22,6 @@
         "dbus-update-activation-environment --systemd --all"
         "systemctl --user import-environment QT_QPA_PLATFORMTHEME"
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
-        "walker --gapplication-service"
         "dunst"
         "nm-applet"
         "blueman-applet"
