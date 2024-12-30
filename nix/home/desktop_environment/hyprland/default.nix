@@ -10,6 +10,7 @@
     ./statusbar.nix
     ./wallpaper.nix
     ./udiskie.nix
+    ./gtk.nix
   ];
 
   home.packages = with pkgs; [
