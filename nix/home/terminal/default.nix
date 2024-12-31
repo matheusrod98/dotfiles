@@ -2,7 +2,19 @@
 
 {
   home.packages = with pkgs; [
-    dig
+    unrar-wrapper
+    zip
+    dnsutils
+    nmap
+    ipcalc
+    cowsay
+    cmatrix
+    strace
+    ltrace
+    lsof
+    lm_sensors
+    pciutils
+    usbutils
     pstree
     gnumake
     stow
@@ -22,8 +34,6 @@
     unzip
     trash-cli
     inputs.ghostty.packages.x86_64-linux.default
-    unrar-wrapper
-    zip
   ];
 
   imports = [
