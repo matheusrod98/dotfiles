@@ -8,6 +8,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
+    systemd.variables = [ "--all" ];
     extraConfig = "
       env = QT_QPA_PLATFORM,wayland;xcb
       env = QT_QPA_PLATFORMTHEME,qt5ct
@@ -16,11 +17,11 @@
       env = XDG_SESSION_DESKTOP,Hyprland
       env = GDK_BACKEND,wayland,x11,*
       env = SDL_VIDEODRIVER,wayland
+      env = CLUTTER_BACKEND,wayland
     ";
     settings = {
       exec-once = [
         "dbus-update-activation-environment --systemd --all"
-        "systemctl --user import-environment QT_QPA_PLATFORMTHEME"
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
         "waybar"
         "dunst"
