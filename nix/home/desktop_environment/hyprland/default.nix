@@ -11,6 +11,7 @@
     ./wallpaper.nix
     ./udiskie.nix
     ./gtk.nix
+    ./portal.nix
   ];
 
   home.packages = with pkgs; [
