@@ -21,6 +21,7 @@
     ";
     settings = {
       exec-once = [
+        "systemctl --user import-environment QT_QPA_PLATFORMTHEME"
         "dbus-update-activation-environment --systemd --all"
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
         "waybar"
