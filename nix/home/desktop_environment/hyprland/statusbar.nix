@@ -51,10 +51,10 @@
       #clock {
       }
       #battery {
-          color: #${config.lib.stylix.colors.base0B};
+          color: #${config.lib.stylix.colors.base0C};
       }
       #battery.charging {
-          color: #${config.lib.stylix.colors.base0B};
+          color: #${config.lib.stylix.colors.base0C};
       }
       #temperature,
       #cpu,
