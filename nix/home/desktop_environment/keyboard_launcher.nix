@@ -1,7 +1,8 @@
 { pkgs, ... }:
+
 {
   programs.walker = {
-    enable = true;
+    enable = false;
     runAsService = true;
   };
 }
