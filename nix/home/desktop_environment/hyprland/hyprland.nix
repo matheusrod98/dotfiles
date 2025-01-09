@@ -33,6 +33,8 @@
         "pritunl-client-electron"
         "systemctl --user start warp-taskbar"
         "slack -s"
+        "todoist-electron"
+        "thunderbird"
         "walker --gapplication-service"
       ];
       bindm = [
