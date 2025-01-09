@@ -11,6 +11,7 @@
     slack
     discord
     todoist-electron
+    thunderbird-latest
     skypeforlinux
     stremio
     obsidian
