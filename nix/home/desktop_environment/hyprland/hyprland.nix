@@ -30,9 +30,10 @@
         "blueman-applet"
         "skypeforlinux"
         "discord"
-        "slack -s"
         "pritunl-client-electron"
         "systemctl --user start warp-taskbar"
+        "slack -s"
+        "walker --gapplication-service"
       ];
       bindm = [
         "SUPER, mouse:272, movewindow"

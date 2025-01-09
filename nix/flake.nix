@@ -8,7 +8,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     stylix.url = "github:danth/stylix";
-    walker.url = "github:abenz1267/walker";
   };
 
   outputs =

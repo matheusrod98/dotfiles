@@ -12,7 +12,6 @@
     ./home/programming
     ./home/terminal
     ./home/mimeapps.nix
-    inputs.walker.homeManagerModules.default
   ];
 
   home = {
