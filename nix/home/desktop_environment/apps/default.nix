@@ -10,7 +10,7 @@
   home.packages = with pkgs; [
     slack
     discord
-    todoist
+    todoist-electron
     skypeforlinux
     stremio
     obsidian
