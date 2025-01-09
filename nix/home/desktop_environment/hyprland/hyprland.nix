@@ -30,6 +30,7 @@
         "blueman-applet"
         "skypeforlinux"
         "discord"
+        "slack -u"
         "pritunl-client-electron"
         "systemctl --user start warp-taskbar"
       ];
