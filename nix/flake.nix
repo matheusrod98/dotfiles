@@ -7,7 +7,6 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    ghostty.url = "github:ghostty-org/ghostty/main";
     stylix.url = "github:danth/stylix";
     walker.url = "github:abenz1267/walker";
   };
