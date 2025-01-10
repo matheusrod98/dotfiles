@@ -41,5 +41,6 @@
     ./fzf.nix
     ./prompt.nix
     ./shell.nix
+    ./tmux.nix
   ];
 }
