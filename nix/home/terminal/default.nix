@@ -34,7 +34,6 @@
     unzip
     trash-cli
     tmux
-    ghostty
   ];
 
   imports = [
@@ -42,5 +41,6 @@
     ./prompt.nix
     ./shell.nix
     ./tmux.nix
+    ./ghostty.nix
   ];
 }
