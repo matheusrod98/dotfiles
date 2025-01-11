@@ -15,6 +15,7 @@
     '';
     initExtra = ''
       source <(warp-cli generate-completions zsh)
+      source <(kubectl completion zsh)
       function find_user_files() {
         local dir=$(fd -H -L --type d --base-directory $HOME --exclude "*node_modules*" --exclude "*nix*" --exclude "*.local*" --exclude "*.git*" --exclude ".cache" | fzf --preview 'eza --tree -L2 $HOME/{}')
         if [[ -z "$dir" ]]; then
