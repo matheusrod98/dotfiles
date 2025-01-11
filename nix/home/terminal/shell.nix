@@ -95,6 +95,7 @@
       "gci" =
         "git branch -a | grep -v \"^\\*\" | sed \"s/^[[:space:]]*//g\" | sed \"s/remotes\\/origin\\///g\" | sort -u | fzf | xargs git checkout";
       "awslocal" = "aws --profile localstack";
+      "ti" = "tmux attach -t $(tmux ls | sort -u | fzf | sed \"s/:.*//g\")";
     };
   };
 }
