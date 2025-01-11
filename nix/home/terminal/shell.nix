@@ -91,6 +91,8 @@
       "gp" = "git pull";
       "gP" = "git push";
       "gr" = "git restore .";
+      "gci" =
+        "git branch -a | grep -v \"^\\*\" | sed \"s/^[[:space:]]*//g\" | sed \"s/remotes\\/origin\\///g\" | sort -u | fzf | xargs git checkout";
       "awslocal" = "aws --profile localstack";
     };
   };
