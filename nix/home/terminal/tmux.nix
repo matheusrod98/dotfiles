@@ -15,12 +15,6 @@
       set -g default-terminal "$TERM"
       set -ga terminal-overrides ",$TERM*:Tc"
       set-option -g status-left-length 100
-      set-window-option -g mode-keys vi
-      unbind -T copy-mode-vi Space;
-      unbind -T copy-mode-vi Enter;
-      bind -T copy-mode-vi v send-keys -X begin-selection
-      bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "wl-copy -n"
-      set-window-option -g mode-keys vi
       unbind -T copy-mode-vi Space;
       unbind -T copy-mode-vi Enter;
       bind -T copy-mode-vi v send-keys -X begin-selection
@@ -53,12 +47,12 @@
       bind -n M-w last-window
       bind -n M-= split-window -h -c "#{pane_current_path}"
       bind -n M-- split-window -v -c "#{pane_current_path}"
-      bind n command-prompt "rename-window '%%'"
       bind -n M-, previous-window
       bind -n M-. next-window
       bind -n M-< swap-window -d -t -1
       bind -n M-> swap-window -d -t +1
-      bind-key -n M-s copy-mode
+      bind -n M-s copy-mode
+      bind -n r command-prompt "rename-window '%%'"
       bind S command-prompt "new-session '-s%%'"
       bind D command-prompt "kill-session '-t%%'"
       unbind %
