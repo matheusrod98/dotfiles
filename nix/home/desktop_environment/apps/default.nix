@@ -11,7 +11,7 @@
     slack
     discord
     todoist-electron
-    thunderbird-latest-unwrapped
+    thunderbird-latest
     skypeforlinux
     stremio
     obsidian
