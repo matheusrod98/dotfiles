@@ -10,91 +10,120 @@
     enable = true;
     style = lib.mkForce ''
       * {
+          font-size: 12px;
           min-height: 0;
-      }
-      window#waybar {
-          border: none;
-          border-radius: 0%;
           padding: 0px;
           margin: 0px;
+      }
+      window#waybar {
           background: #${config.lib.stylix.colors.base02};
-          font-size: 11px;
       }
-      #pulseaudio,
-      #network,
-      #mpris,
-      #bluetooth,
-      #network,
-      #custom-scratchpad,
-      #custom-dunst,
-      #power,
-      #hardware,
-      #workspaces,
-      #day,
-      #privacy,
-      #custom-dunst,
+      .modules-left {
+        margin: 6px 0px 6px 6px;
+      }
+      .modules-right {
+        margin: 6px 6px 6px 0px;
+      }
+      #workspaces {
+        background: #403d52;
+        padding: 2px 6px;
+        border-radius: 16px;
+      }
+      #workspaces button {
+        color: #${config.lib.stylix.colors.base03};
+        padding: 2px 4px;
+        border-radius: 16px;
+      }
+      #workspaces button.active {
+        color: #${config.lib.stylix.colors.base0A};
+        padding: 2px 4px;
+        border-radius: 16px;
+      }
       #tray {
-          margin: 6px 2px;
-          padding: 0px 12px;
-          border-radius: 16px;
-          background: #${config.lib.stylix.colors.base07};
+        background: #403d52;
+        padding: 2px 12px;
+        border-radius: 16px;
       }
-      #tray menu {
-          border-radius: 12px;
+      #pulseaudio {
+        background: #403d52;
+        padding: 2px 12px;
+        border-radius: 16px;
+      }
+      #network {
+        background: #403d52;
+        padding: 2px 12px;
+        border-radius: 16px;
+      }
+      #bluetooth {
+        background: #403d52;
+        padding: 2px 12px;
+        border-radius: 16px;
+      }
+      #power {
+        background: #403d52;
+        padding: 2px 12px;
+        border-radius: 16px;
+      }
+      #day {
+        background: #403d52;
+        padding: 2px 12px;
+        border-radius: 16px;
+      }
+      #hardware {
+        background: #403d52;
+        padding: 2px 12px;
+        border-radius: 16px;
       }
       #mpris {
-          color: #${config.lib.stylix.colors.base0D};
+        background: #403d52;
+        color: #${config.lib.stylix.colors.base0D};
+        padding: 2px 12px;
+        border-radius: 16px;
       }
-      #privacy {
-          color: #${config.lib.stylix.colors.base09};
+      #cpu {
+        padding-right: 14px;
       }
-      #clock {
+      #custom-dunst {
+        padding-right: 14px;
+      }
+      #memory {
+        padding-right: 14px;
+      }
+      #disk {
+        padding-right: 0px;
+      }
+      #custom-gpu {
+        padding-right: 14px;
+      }
+      #temperature {
+        padding-right: 14px;
       }
       #battery {
           color: #${config.lib.stylix.colors.base0C};
+          padding-right: 10px;
       }
       #battery.charging {
           color: #${config.lib.stylix.colors.base0C};
       }
-      #temperature,
-      #cpu,
-      #custom-gpu {
-      }
-      #memory {
-      }
       #memory.critical,
       #cpu.critical,
-      #battery.critical.discharging,
       #custom-gpu.critical,
-      #temperature.critical {
+      #temperature.critical,
+      #battery.critical.discharging {
           color: #${config.lib.stylix.colors.base08};
       }
-      #memory.warning,
       #battery.warning.discharging,
       #custom-gpu.warning,
+      #memory.warning,
       #cpu.warning {
           color: #${config.lib.stylix.colors.base09};
-      }
-      #workspaces {
-        margin: 6px;
-        padding: 0px;
-      }
-      #workspaces button {
-          border-radius: 100%;
-          color: #${config.lib.stylix.colors.base03};
-      }
-      #workspaces button.active {
-          color: #${config.lib.stylix.colors.base0A};
-      }
-      #custom-dunst {
-        margin: 6px 6px 6px 0px;
       }
     '';
     settings = [
       {
         layer = "top";
         height = 18;
-        spacing = 4;
+        spacing = 10;
         modules-left = [ "hyprland/workspaces" ];
         "hyprland/workspaces" = {
           format = "{icon}";
@@ -112,10 +141,9 @@
           "network"
           "privacy"
           "group/hardware"
-          "tray"
           "group/power"
+          "tray"
           "group/day"
-          "custom/dunst"
         ];
         "group/hardware" = {
           orientation = "horizontal";
@@ -130,7 +158,7 @@
         "group/day" = {
           orientation = "horizontal";
           modules = [
-            "custom/weather"
+            "custom/dunst"
             "clock"
           ];
         };
@@ -141,21 +169,21 @@
             "power-profiles-daemon"
           ];
         };
-        power-profiles-daemon = {
-          format = "{icon}";
-          tooltip-format = "Power profile = {profile}\nDriver = {driver}";
-          tooltip = true;
-          format-icons = {
-            default = "  ";
-            performance = "  ";
-            balanced = "  ";
-            power-saver = "  ";
+        "power-profiles-daemon" = {
+          "format" = "{icon}";
+          "tooltip-format" = "Power profile = {profile}\nDriver = {driver}";
+          "tooltip" = true;
+          "format-icons" = {
+            "default" = "";
+            "performance" = "";
+            "balanced" = "";
+            "power-saver" = "";
           };
         };
         "custom/gpu" = {
-          exec = "cat /sys/class/hwmon/hwmon6/device/gpu_busy_percent";
-          format = "      {}%";
-          interval = 1;
+          "exec" = "cat /sys/class/hwmon/hwmon6/device/gpu_busy_percent";
+          "format" = "{}% ";
+          "interval" = 1;
           states = {
             warning = 80;
             critical = 90;
@@ -163,15 +191,24 @@
         };
         "disk" = {
           "interval" = 30;
-          "format" = "      {free}";
           "unit" = "GB";
+          "format" = "{free} ";
         };
-        "custom/weather" = {
-          "format" = "{}°    ";
-          "tooltip" = true;
-          "interval" = 3600;
-          "exec" = "wttrbar";
-          "return-type" = "json";
+        "mpris" = {
+          "format" = "{player_icon}   {player}";
+          "format-paused" = "{status_icon}   {player}";
+          "dynamic-order" = [
+            "title"
+            "position"
+            "length"
+          ];
+          "title-len" = 30;
+          "player-icons" = {
+            "default" = "";
+          };
+          "status-icons" = {
+            "paused" = "";
+          };
         };
         "privacy" = {
           "icon-spacing" = 10;
@@ -188,25 +225,9 @@
             }
           ];
         };
-        "mpris" = {
-          "format" = "{player_icon}   {dynamic}";
-          "format-paused" = "{status_icon}   {dynamic}";
-          "dynamic-order" = [
-            "title"
-            "position"
-            "length"
-          ];
-          "title-len" = 30;
-          "player-icons" = {
-            "default" = "";
-          };
-          "status-icons" = {
-            "paused" = "";
-          };
-        };
         "cpu" = {
           "interval" = 1;
-          "format" = "      {usage}%";
+          "format" = "{usage}% ";
           "states" = {
             "warning" = 80;
             "critical" = 90;
@@ -214,7 +235,7 @@
         };
         "memory" = {
           "interval" = 1;
-          "format" = "      {}%";
+          "format" = "{}% ";
           "states" = {
             "warning" = 80;
             "critical" = 90;
@@ -223,18 +244,19 @@
         "temperature" = {
           "interval" = 1;
           "critical-threshold" = 85;
-          "format" = "  {temperatureC}°C";
+          "format" = "{temperatureC}°C ";
         };
         "clock" = {
           "interval" = 1;
           "format" = "{:%a %d %b,  %H:%M}";
         };
         "battery" = {
+          "interval" = 60;
           "states" = {
             "warning" = 30;
             "critical" = 15;
           };
-          "format" = "{icon} {capacity}%";
+          "format" = "{capacity}% {icon}";
           "format-icons" = [
             ""
             ""
@@ -242,7 +264,6 @@
             ""
             ""
           ];
-          "format-charging" = " {capacity}%";
         };
         "pulseaudio" = {
           "format" = "{icon} {volume}%  {format_source}";
@@ -290,11 +311,26 @@
         };
         "custom/dunst" = {
           "exec" = pkgs.writeShellScript "hello-from-waybar" ''
-            COUNT=$(dunstctl count waiting)
-            ENABLED=
-            DISABLED=
-            if [ "$COUNT" != 0 ]; then DISABLED=" $COUNT"; fi
-            if dunstctl is-paused | grep -q "false" ; then echo $ENABLED; else echo "$DISABLED"; fi
+            #!/usr/bin/env bash
+            set -euo pipefail
+            readonly ENABLED=
+            readonly DISABLED=
+            dbus-monitor path='/org/freedesktop/Notifications',interface='org.freedesktop.DBus.Properties',member='PropertiesChanged' --profile |
+              while read -r _; do
+                PAUSED="$(dunstctl is-paused)"
+                if [ "$PAUSED" == 'false' ]; then
+                  CLASS="enabled"
+                  TEXT="$ENABLED"
+                else
+                  CLASS="disabled"
+                  TEXT="$DISABLED"
+                  COUNT="$(dunstctl count waiting)"
+                  if [ "$COUNT" != '0' ]; then
+                    TEXT="$DISABLED ($COUNT)"
+                  fi
+                fi
+                printf '%s\n' "$TEXT"
+              done
           '';
           "on-click" = "dunstctl set-paused toggle";
           "restart-interval" = 1;
