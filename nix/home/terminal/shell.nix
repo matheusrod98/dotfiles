@@ -14,6 +14,7 @@
       bindkey "^?" backward-delete-char
     '';
     initExtra = ''
+      echo -e "\e[5 q"
       source <(warp-cli generate-completions zsh)
       source <(kubectl completion zsh)
       function find_user_files() {
