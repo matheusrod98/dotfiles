@@ -31,12 +31,12 @@
       }
       #workspaces button {
         color: #${config.lib.stylix.colors.base03};
-        padding: 2px 4px;
+        padding: 2px 6px;
         border-radius: 16px;
       }
       #workspaces button.active {
         color: #${config.lib.stylix.colors.base0A};
-        padding: 2px 4px;
+        padding: 2px 6px;
         border-radius: 16px;
       }
       #tray {
