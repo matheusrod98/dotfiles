@@ -90,7 +90,7 @@
         padding-right: 14px;
       }
       #custom-dunst {
-        padding-right: 14px;
+        padding-right: 12px;
       }
       #memory {
         padding-right: 14px;
