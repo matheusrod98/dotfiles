@@ -10,7 +10,7 @@
     enable = true;
     style = lib.mkForce ''
       * {
-          font-size: 12px;
+          font-size: 11px;
           min-height: 0;
           padding: 0px;
           margin: 0px;
