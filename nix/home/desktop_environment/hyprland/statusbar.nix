@@ -64,6 +64,12 @@
         padding: 2px 12px;
         border-radius: 16px;
       }
+      #privacy {
+        background: #403d52;
+        color: #${config.lib.stylix.colors.base09};
+        padding: 2px 12px;
+        border-radius: 16px;
+      }
       #day {
         background: #403d52;
         padding: 2px 12px;
@@ -136,10 +142,10 @@
         };
         modules-right = [
           "mpris"
+          "privacy"
           "pulseaudio"
           "bluetooth"
           "network"
-          "privacy"
           "group/hardware"
           "group/power"
           "tray"
