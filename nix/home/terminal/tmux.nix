@@ -52,7 +52,7 @@
       bind -n M-< swap-window -d -t -1
       bind -n M-> swap-window -d -t +1
       bind -n M-s copy-mode
-      bind -n r command-prompt "rename-window '%%'"
+      bind R command-prompt "rename-window '%%'"
       bind S command-prompt "new-session '-s%%'"
       bind D command-prompt "kill-session '-t%%'"
       unbind %
