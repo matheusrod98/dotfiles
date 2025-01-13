@@ -17,9 +17,9 @@
     avahi.enable = true;
     resolved = {
       enable = true;
-      dnssec = "allow-downgrade";
+      dnssec = "true";
       domains = [ "~." ];
-      dnsovertls = "opportunistic";
+      dnsovertls = "true";
       fallbackDns = [
         "8.8.8.8#dns.google"
         "8.8.4.4#dns.google"
