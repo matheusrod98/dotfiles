@@ -15,6 +15,7 @@
       set -g default-terminal "$TERM"
       set -ga terminal-overrides ",$TERM*:Tc"
       set-option -g status-left-length 100
+      set-option -g renumber-windows on
       unbind -T copy-mode-vi Space;
       unbind -T copy-mode-vi Enter;
       bind -T copy-mode-vi v send-keys -X begin-selection
