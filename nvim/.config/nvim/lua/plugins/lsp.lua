@@ -20,7 +20,7 @@ return {
         if pcall(require, "blink.cmp") then
             capabilities = require('blink.cmp').get_lsp_capabilities()
         end
-
+        require('lspconfig').nixd.setup({})
         require("lspconfig").cssls.setup({capabilities = capabilities})
         require("lspconfig").html.setup({capabilities = capabilities})
         require("lspconfig").jsonls.setup({

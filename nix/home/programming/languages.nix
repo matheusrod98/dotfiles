@@ -13,6 +13,7 @@
     luajitPackages.luacheck
 
     # Nix
+    nixd
     nixfmt-rfc-style
 
     # Python
