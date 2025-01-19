@@ -85,7 +85,7 @@
       "xc" = "wl-copy";
       "cl" = "clear";
       "neofetch" = "fastfetch";
-      "gd" = "git difftool --no-symlinks --dir-diff";
+      "gd" = "git diff";
       "gs" = "git status";
       "gl" = "git log";
       "gc" = "git checkout";
