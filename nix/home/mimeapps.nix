@@ -5,7 +5,7 @@
     mimeApps = {
       enable = true;
       defaultApplications = {
-        "application/x-executable" = [ "foot.desktop" ];
+        "application/x-executable" = [ "alacritty.desktop" ];
         "image/jpeg" = [ "imv.desktop" ];
         "image/png" = [ "imv.desktop" ];
         "image/webp" = [ "imv.desktop" ];

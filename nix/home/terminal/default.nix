@@ -41,6 +41,6 @@
     ./prompt.nix
     ./shell.nix
     ./tmux.nix
-    ./foot.nix
+    ./alacritty.nix
   ];
 }
