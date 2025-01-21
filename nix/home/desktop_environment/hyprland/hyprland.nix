@@ -24,6 +24,7 @@
         "systemctl --user import-environment QT_QPA_PLATFORMTHEME"
         "dbus-update-activation-environment --systemd --all"
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
+        "walker --gapplication-service"
         "waybar"
         "dunst"
         "nm-applet"
@@ -35,7 +36,6 @@
         "slack -s"
         "todoist-electron"
         "thunderbird"
-        "walker --gapplication-service"
       ];
       bindm = [
         "SUPER, mouse:272, movewindow"
