@@ -17,12 +17,14 @@
       label = [
         {
           text = "Hi there, $USER";
+          font_size = 25;
           position = "0, -40";
           halign = "center";
           valign = "center";
         }
         {
           text = "cmd[update:1000] echo $(date +'%H:%M')";
+          font_size = 120;
           position = "0, -300";
           halign = "center";
           valign = "top";
