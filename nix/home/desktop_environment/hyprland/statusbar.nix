@@ -201,14 +201,14 @@
           "format" = "{free} ";
         };
         "mpris" = {
-          "format" = "{player_icon}   {player}";
-          "format-paused" = "{status_icon}   {player}";
+          "format" = "{player_icon}   <i>{dynamic}</i>";
+          "format-paused" = "{status_icon}   <i>{dynamic}</i>";
           "dynamic-order" = [
             "title"
             "position"
             "length"
           ];
-          "title-len" = 30;
+          "title-len" = 15;
           "player-icons" = {
             "default" = "";
           };
