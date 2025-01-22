@@ -5,6 +5,7 @@
     scc
     kubectl
     postman
+    insomnia
     vscode
     redisinsight
     dig
