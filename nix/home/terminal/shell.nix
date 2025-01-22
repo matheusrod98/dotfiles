@@ -94,10 +94,10 @@
       "gP" = "git push";
       "gr" = "git restore .";
       "gi" =
-        "git branch -a | grep -v \"^\\*\" | sed \"s/^[[:space:]]*//g\" | sed \"s/remotes\\/origin\\///g\" | sort -u | fzf --height 20% --layout=reverse | xargs git switch 21&>> /dev/null";
+        "git branch -a | grep -v \"^\\*\" | sed \"s/^[[:space:]]*//g\" | sed \"s/remotes\\/origin\\///g\" | sort -u | fzf --height 20% --layout=reverse | xargs git switch 2&>> /dev/null";
       "awslocal" = "aws --profile localstack";
       "ti" =
-        "tmux attach -t $(tmux ls | sort -u | fzf --height 20% --layout=reverse | sed \"s/:.*//g\") 21&>> /dev/null";
+        "tmux attach -t $(tmux ls | sort -u | fzf --height 20% --layout=reverse | sed \"s/:.*//g\") 2&>> /dev/null";
     };
   };
 }
