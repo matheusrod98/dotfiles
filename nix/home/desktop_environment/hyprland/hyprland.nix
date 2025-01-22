@@ -59,7 +59,7 @@
         "SHIFT, XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-"
         "SUPER, B, exec, brave"
         "SUPER, RETURN, exec, alacritty"
-        "SUPER SHIFT, RETURN, exec, [float; size 1280 720; center] alacritty --command"
+        "SUPER SHIFT, RETURN, exec, [float; size 1280 720; center] alacritty"
         "SUPER, F, exec, thunar"
         "SUPER, A, exec, [float; size 1280 720; center] pavucontrol"
         "SUPER, M, exec, alacritty --command btop"
