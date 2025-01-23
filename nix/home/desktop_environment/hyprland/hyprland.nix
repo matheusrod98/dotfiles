@@ -57,7 +57,7 @@
         "SHIFT, XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
         "SHIFT, XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+"
         "SHIFT, XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-"
-        "SUPER, B, exec, brave"
+        "SUPER, B, exec, zen"
         "SUPER, RETURN, exec, alacritty"
         "SUPER SHIFT, RETURN, exec, [float; size 1280 720; center] alacritty"
         "SUPER, F, exec, thunar"
