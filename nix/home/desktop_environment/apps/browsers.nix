@@ -1,9 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   home.packages = with pkgs; [
     google-chrome
-    firefox
     brave
+    inputs.zen-browser.packages."${system}".default
   ];
 }
