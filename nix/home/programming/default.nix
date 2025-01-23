@@ -6,6 +6,7 @@
     kubectl
     postman
     insomnia
+    pm2
     vscode
     redisinsight
     dig
