@@ -17,7 +17,6 @@
     ./system/docker.nix
     ./system/environment_variables.nix
     ./system/experimental_features.nix
-    ./system/file_manager.nix
     ./system/firmware.nix
     ./system/fontconfig.nix
     ./system/gc.nix
