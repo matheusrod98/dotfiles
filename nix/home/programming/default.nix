@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    scc
+    tokei
     kubectl
     postman
     insomnia
