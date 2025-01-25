@@ -60,7 +60,7 @@
         "SUPER, B, exec, zen"
         "SUPER, RETURN, exec, ghostty"
         "SUPER SHIFT, RETURN, exec, [float; size 1280 720; center] ghostty"
-        "SUPER, F, exec, thunar"
+        "SUPER, F, exec, ghostty --command=yazi"
         "SUPER, A, exec, [float; size 1280 720; center] pavucontrol"
         "SUPER, M, exec, ghostty --command=btop"
         "SUPER, E, exec, ghostty --command=nvim"
