@@ -12,30 +12,11 @@
     initExtraBeforeCompInit = ''
       bindkey "^R" history-incremental-pattern-search-backward
       bindkey "^?" backward-delete-char
+      echo -e "\e[5 q"
     '';
     initExtra = ''
-      echo -e "\e[5 q"
       source <(warp-cli generate-completions zsh)
       source <(kubectl completion zsh)
-      function find_user_files() {
-        local dir=$(fd -H -L --type d --base-directory $HOME --exclude "*node_modules*" --exclude "*nix*" --exclude "*.local*" --exclude "*.git*" --exclude ".cache" | fzf --preview 'eza --tree -L2 $HOME/{}')
-        if [[ -z "$dir" ]]; then
-                zle redisplay
-                return 0
-        fi
-        zle push-line
-        if [[ "$dir" != "$HOME/" ]]; then
-                BUFFER="builtin cd -- '$HOME/$dir'"
-                zle accept-line
-        fi
-        local ret=$?
-        unset dir
-        zle reset-prompt
-        return $ret
-      }
-      zle -N find_user_files
-      bindkey '^P' find_user_files
-
       function open_files() {
         local file=$(fd --type f --base-directory=$HOME --full-path $HOME | fzf --preview '$HOME/.local/bin/scripts/fzf/fzf-preview.sh $HOME/{}')
         [[ $file == "" ]] && return
@@ -98,6 +79,7 @@
       "awslocal" = "aws --profile localstack";
       "ti" =
         "tmux attach -t $(tmux ls | sort -u | fzf --height 20% --layout=reverse | sed \"s/:.*//g\") 2&>> /dev/null";
+      "cloc" = "tokei";
     };
   };
 }
