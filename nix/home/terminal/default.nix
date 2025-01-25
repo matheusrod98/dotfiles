@@ -34,6 +34,7 @@
     unzip
     trash-cli
     tmux
+    yazi
   ];
 
   imports = [
