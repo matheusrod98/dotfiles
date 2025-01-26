@@ -1,7 +1,24 @@
-{ pkgs, ... }:
+{ ... }:
+
 {
   networking = {
-    networkmanager.enable = true;
+    wireless = {
+      iwd = {
+        settings = {
+          IPv6 = {
+            Enabled = true;
+          };
+          Settings = {
+            AutoConnect = true;
+            Hidden = true;
+          };
+        };
+      };
+    };
+    networkmanager = {
+      enable = true;
+      wifi.backend = "iwd";
+    };
     hostName = "matheus-laptop";
     nameservers = [
       "1.1.1.1#cloudflare-dns.com"
