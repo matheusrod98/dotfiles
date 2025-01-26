@@ -35,6 +35,11 @@
     trash-cli
     tmux
     yazi
+    impala
+    bluetui
+    rtorrent
+    ncpamixer
+    openvpn
   ];
 
   imports = [

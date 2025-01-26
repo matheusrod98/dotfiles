@@ -20,8 +20,6 @@
     wtype
     udiskie
     xdotool
-    networkmanagerapplet
-    blueman
     wttrbar
     grim
   ];

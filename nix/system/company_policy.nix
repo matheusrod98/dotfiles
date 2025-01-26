@@ -2,26 +2,23 @@
 {
   environment = {
     systemPackages = with pkgs; [
-      pritunl-client
       cloudflare-warp
     ];
   };
 
   services = {
     clamav = {
-      daemon.enable = true;
-      updater.enable = true;
+      daemon.enable = false;
+      updater.enable = false;
     };
   };
 
   systemd = {
     packages = [
-      pkgs.pritunl-client
       pkgs.cloudflare-warp
     ];
     targets = {
       multi-user.wants = [
-        "pritunl-client.service"
         "warp-svc.service"
       ];
     };

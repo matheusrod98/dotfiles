@@ -15,11 +15,8 @@
     skypeforlinux
     stremio
     obsidian
-    qbittorrent
     zathura
-    pavucontrol
     bitwarden-desktop
-    qalculate-gtk
     libqalculate
     imv
     obs-studio
