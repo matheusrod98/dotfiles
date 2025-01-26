@@ -8,6 +8,7 @@
       window-decoration = false;
       mouse-hide-while-typing = true;
       confirm-close-surface = false;
+      gtk-single-instance = true;
     };
   };
 }
