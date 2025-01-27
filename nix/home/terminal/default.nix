@@ -23,7 +23,6 @@
     fastfetch
     ripgrep
     fd
-    eza
     qrencode
     file
     timg
@@ -34,8 +33,6 @@
     wl-clipboard
     unzip
     trash-cli
-    tmux
-    yazi
     networkmanagerapplet
     rtorrent
     pulsemixer
@@ -47,5 +44,7 @@
     ./shell.nix
     ./tmux.nix
     ./ghostty.nix
+    ./yazi.nix
+    ./lsd.nix
   ];
 }

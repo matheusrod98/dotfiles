@@ -28,8 +28,6 @@
       bindkey -M menuselect 'k' vi-up-line-or-history
       bindkey -M menuselect 'l' vi-forward-char
       bindkey -M menuselect 'j' vi-down-line-or-history
-
-      echo -e "\e[5 q"
     '';
     enableCompletion = true;
     completionInit = ''
@@ -57,19 +55,12 @@
       PATH = "$HOME/.local/bin:$PATH";
     };
     shellAliases = {
-      "l" = "exa --icons --color=auto --hyperlink";
-      "ll" = "exa --long --icons --color=auto --hyperlink";
-      "la" = "exa --icons --all --color=auto --hyperlink";
-      "lla" = "exa --long --icons --all --color=auto --hyperlink";
-      "lal" = "exa --long --icons --all --color=auto --hyperlink";
-      "ls" = "exa --icons --color=auto --hyperlink";
       "cp" = "cp -i";
       "mv" = "mv -i";
       "rm" = "rm -i";
       "grep" = "rg";
       "find" = "fd";
       "cat" = "bat --paging=never --decorations=never";
-      "tree" = "exa --tree --icons --color=auto";
       "less" = "bat --paging=always --decorations=never";
       "open" = "xdg-open";
       "vim" = "nvim";
@@ -85,10 +76,10 @@
       "gP" = "git push";
       "gr" = "git restore .";
       "gi" =
-        "git branch -a | grep -v \"^\\*\" | sed \"s/^[[:space:]]*//g\" | sed \"s/remotes\\/origin\\///g\" | sort -u | fzf --height 20% --layout=reverse | xargs git switch 2&>> /dev/null";
+        "git branch -a | grep -v \"^\\*\" | sed \"s/^[[:space:]]*//g\" | sed \"s/remotes\\/origin\\///g\" | sort -u | fzf --height 20% --layout=reverse | xargs -r git switch";
       "awslocal" = "aws --profile localstack";
       "ti" =
-        "tmux attach -t $(tmux ls | sort -u | fzf --height 20% --layout=reverse | sed \"s/:.*//g\") 2&>> /dev/null";
+        "tmux ls | sort -u | fzf --height 20% --layout=reverse | sed \"s/:.*//g\" | xargs -r tmux attach -t";
       "cloc" = "tokei";
     };
   };

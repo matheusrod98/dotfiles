@@ -298,6 +298,10 @@
           "format-disconnected" = "";
           "tooltip-format-disconnected" = "Disconnected";
         };
+        "custom/vpn" = {
+          "exec" = " $(nmcli connection show | awk '$3 == \" vpn \" && $4 != \" - -\" {print $1}')";
+          "interval" = 5;
+        };
         "bluetooth" = {
           "format" = " {status}";
           "format-connected" = " {device_alias}";
