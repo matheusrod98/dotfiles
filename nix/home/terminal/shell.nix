@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   home.packages = with pkgs; [
@@ -7,16 +7,14 @@
   ];
   programs.zsh = {
     enable = true;
+    dotDir = ".config/zsh";
     syntaxHighlighting.enable = true;
     initExtraFirst = "[[ $- != *i* ]] && return";
     initExtraBeforeCompInit = ''
       bindkey "^R" history-incremental-pattern-search-backward
       bindkey "^?" backward-delete-char
-      echo -e "\e[5 q"
     '';
     initExtra = ''
-      source <(warp-cli generate-completions zsh)
-      source <(kubectl completion zsh)
       function open_files() {
         local file=$(fd --type f --base-directory=$HOME --full-path $HOME | fzf --preview '$HOME/.local/bin/scripts/fzf/fzf-preview.sh $HOME/{}')
         [[ $file == "" ]] && return
@@ -25,6 +23,13 @@
       }
       zle -N open_files
       bindkey '^o' open_files
+
+      bindkey -M menuselect 'h' vi-backward-char
+      bindkey -M menuselect 'k' vi-up-line-or-history
+      bindkey -M menuselect 'l' vi-forward-char
+      bindkey -M menuselect 'j' vi-down-line-or-history
+
+      echo -e "\e[5 q"
     '';
     enableCompletion = true;
     completionInit = ''
@@ -34,10 +39,15 @@
       zmodload -i zsh/complist
       bindkey -M menuselect "^[[Z" reverse-menu-complete
       complete -C '$(which aws_completer)' aws
+      source <(warp-cli generate-completions zsh)
+      source <(kubectl completion zsh)
     '';
     history = {
       ignoreAllDups = true;
+      ignoreSpace = true;
       size = 1000000;
+      append = true;
+      path = "${config.xdg.cacheHome}/zsh/zsh_history";
     };
     localVariables = {
       EDITOR = "nvim";
