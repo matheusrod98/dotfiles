@@ -1,7 +1,8 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
   home.packages = with pkgs; [
+    libqalculate
     unrar-wrapper
     zip
     dnsutils
@@ -35,11 +36,9 @@
     trash-cli
     tmux
     yazi
-    impala
-    bluetui
+    networkmanagerapplet
     rtorrent
-    ncpamixer
-    openvpn
+    pulsemixer
   ];
 
   imports = [
