@@ -15,5 +15,6 @@
     lynx
     python312Packages.pylatexenc
     python312Packages.debugpy
+    vscode-js-debug
   ];
 }

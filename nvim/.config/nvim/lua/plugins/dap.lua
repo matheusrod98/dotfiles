@@ -2,11 +2,8 @@ return {
     "mfussenegger/nvim-dap",
     dependencies = {
         "rcarriga/nvim-dap-ui", "theHamsta/nvim-dap-virtual-text",
-        "nvim-neotest/nvim-nio", "mxsdev/nvim-dap-vscode-js", {
-            'microsoft/vscode-js-debug',
-            build = 'npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out'
-        }, -- Languages
-        "leoluz/nvim-dap-go", "mfussenegger/nvim-dap-python"
+        "nvim-neotest/nvim-nio", "leoluz/nvim-dap-go",
+        "mfussenegger/nvim-dap-python"
     },
     config = function()
         local dap = require("dap")
@@ -16,12 +13,6 @@ return {
         require("dap-go").setup()
         require("dap-python").setup()
 
-        require("dap-vscode-js").setup {
-            debugger_path = vim.fn.stdpath 'data' .. '/lazy/vscode-js-debug',
-            adapters = {'pwa-node', 'pwa-chrome'}
-        }
-
-        local dap = require("dap")
         dap.adapters.gdb = {
             type = "executable",
             command = "gdb",
@@ -29,6 +20,17 @@ return {
                 "--interpreter=dap", "--eval-command", "set print pretty on"
             }
         }
+
+        for _, adapter in ipairs({
+            "pwa-node", "pwa-chrome", "pwa-msedge", "pwa-extensionHost"
+        }) do
+            dap.adapters[adapter] = {
+                type = "server",
+                host = "localhost",
+                port = "${port}",
+                executable = {command = "js-debug", args = {"${port}"}}
+            }
+        end
 
         dap.adapters.delve = function(callback, config)
             if config.mode == 'remote' and config.request == 'attach' then
@@ -156,15 +158,34 @@ return {
             }
         end
 
-        for _, lang in ipairs {"typescriptreact", "javascriptreact"} do
-            dap.configurations[lang] = {
+        for _, language in ipairs({"typescriptreact", "javascriptreact"}) do
+            dap.configurations[language] = {
                 {
-                    type = "pwa-chrome",
-                    request = "launch",
-                    name = "Launch Chrome",
-                    url = "http://localhost:5173",
+                    name = 'Launch & Debug Chrome',
+                    type = 'pwa-chrome',
+                    request = 'launch',
+                    url = function()
+                        local co = coroutine.running()
+                        return coroutine.create(function()
+                            vim.ui.input({
+                                prompt = 'Enter URL: ',
+                                default = 'http://localhost:3000'
+                            }, function(url)
+                                if url == nil or url == '' then
+                                    return
+                                else
+                                    coroutine.resume(co, url)
+                                end
+                            end)
+                        end)
+                    end,
+                    webRoot = vim.fn.getcwd(),
+                    protocol = 'inspector',
                     sourceMaps = true,
-                    protocol = "inspector"
+                    userDataDir = false,
+                    resolveSourceMapLocations = {
+                        '${workspaceFolder}/**', '!**/node_modules/**'
+                    }
                 }
             }
         end
