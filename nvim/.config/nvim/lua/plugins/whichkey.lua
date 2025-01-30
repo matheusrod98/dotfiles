@@ -110,6 +110,16 @@ return {
         {"<leader>wn", "<CMD>vertical resize -3<CR>", mode = "n"},
         {"<leader>wq", "<CMD>q<CR>", mode = "n"},
         {"<Esc>", "<CMD>nohlsearch<CR>", mode = "n"},
-        {"<leader>t", "<CMD>QuickType<CR>", mode = "n"}
+        {"<leader>t", "<CMD>QuickType<CR>", mode = "n"},
+        {"<F5>", "<CMD> lua require('dap').continue()<CR>", mode = "n"},
+        {"<F10>", "<CMD> lua require('dap').step_over()<CR>", mode = "n"},
+        {"<F11>", "<CMD> lua require('dap').step_into()<CR>", mode = "n"},
+        {"<F12>", "<CMD> lua require('dap').step_out()<CR>", mode = "n"},
+        {
+            "<leader>b",
+            "<CMD> lua require('dap').toggle_breakpoint()<CR>",
+            mode = "n"
+        },
+        {"<leader>dr", "<CMD> lua require('dap').repl.open()<CR>", mode = "n"}
     }
 }
