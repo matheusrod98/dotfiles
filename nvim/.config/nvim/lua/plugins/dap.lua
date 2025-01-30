@@ -6,12 +6,26 @@ return {
         "mfussenegger/nvim-dap-python"
     },
     config = function()
-        local dap = require("dap")
         require("dapui").setup()
         require("nvim-dap-virtual-text").setup({})
 
         require("dap-go").setup()
         require("dap-python").setup()
+
+        local dap, dapui = require("dap"), require("dapui")
+
+        dap.listeners.before.attach.dapui_config = function()
+            dapui.open()
+        end
+        dap.listeners.before.launch.dapui_config = function()
+            dapui.open()
+        end
+        dap.listeners.before.event_terminated.dapui_config = function()
+            dapui.close()
+        end
+        dap.listeners.before.event_exited.dapui_config = function()
+            dapui.close()
+        end
 
         dap.adapters.gdb = {
             type = "executable",
@@ -106,7 +120,7 @@ return {
                 request = "launch",
                 mode = "test",
                 program = "${file}"
-            }, -- works with go.mod packages and sub packages 
+            }, -- works with go.mod packages and sub packages
             {
                 type = "delve",
                 name = "Debug test (go.mod)",
