@@ -14,7 +14,6 @@
     skypeforlinux
     stremio
     obsidian
-    openboard
     zathura
     imv
     obs-studio
