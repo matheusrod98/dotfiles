@@ -10,7 +10,7 @@
     enable = true;
     style = lib.mkForce ''
       * {
-          font-size: 11px;
+          font-size: 10px;
           min-height: 0;
           padding: 0px;
           margin: 0px;
@@ -19,10 +19,10 @@
           background: #${config.lib.stylix.colors.base02};
       }
       .modules-left {
-        margin: 6px 0px 6px 6px;
+        margin: 4px 0px 4px 6px;
       }
       .modules-right {
-        margin: 6px 6px 6px 0px;
+        margin: 4px 6px 4px 0px;
       }
       #workspaces {
         background: #403d52;
@@ -128,7 +128,7 @@
     settings = [
       {
         layer = "top";
-        height = 18;
+        height = 16;
         spacing = 10;
         modules-left = [ "hyprland/workspaces" ];
         "hyprland/workspaces" = {
