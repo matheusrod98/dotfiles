@@ -18,7 +18,6 @@
     ./system/graphics.nix
     ./system/hyprland.nix
     ./system/input.nix
-    ./system/kernel.nix
     ./system/keyring.nix
     ./system/networking.nix
     ./system/nixpkgs.nix

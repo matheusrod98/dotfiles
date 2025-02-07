@@ -1,4 +1,5 @@
 { pkgs, ... }:
+
 {
   imports = [
     ./blue_light_filter.nix
@@ -18,7 +19,6 @@
     brightnessctl
     libadwaita
     wtype
-    udiskie
     xdotool
     wttrbar
     grim
