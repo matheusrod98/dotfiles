@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     tokei
     kubectl
+    k9s
     postman
     insomnia
     pm2

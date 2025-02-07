@@ -35,7 +35,9 @@
     trash-cli
     networkmanagerapplet
     rtorrent
-    pulsemixer
+    ncpamixer
+    bluetui
+    duf
   ];
 
   imports = [
