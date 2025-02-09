@@ -4,7 +4,11 @@
   networking = {
     networkmanager = {
       enable = true;
+      dns = "systemd-resolved";
+      wifi.powersave = true;
     };
+    useDHCP = false;
+    dhcpcd.enable = false;
     hostName = "matheus-laptop";
     nameservers = [
       "1.1.1.1#cloudflare-dns.com"

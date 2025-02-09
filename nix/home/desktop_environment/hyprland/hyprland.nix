@@ -37,22 +37,22 @@
         "[workspace 1 silent] todoist-electron"
         "[workspace 2 silent] discord"
         "[workspace 3 silent] slack"
-        "[workspace 4 silent] ghostty"
-        pkgs.writeShellScript
-        "move-windows-to-ext-mon"
-        ''
-          #!/bin/sh
-
-          handle() {
-            case $1 in monitoradded*)
-              hyprctl dispatch moveworkspacetomonitor "1 1"
-              hyprctl dispatch moveworkspacetomonitor "2 1"
-              hyprctl dispatch moveworkspacetomonitor "3 1"
-            esac
-          }
-
-          socat - "UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock" | while read -r line; do handle "$line"; done
-        ''
+        "[workspace 3 silent] ghostty"
+        # pkgs.writeShellScript
+        # "move-windows-to-ext-mon"
+        # ''
+        #   #!/bin/sh
+        #
+        #   handle() {
+        #     case $1 in monitoradded*)
+        #       hyprctl dispatch moveworkspacetomonitor "1 1"
+        #       hyprctl dispatch moveworkspacetomonitor "2 1"
+        #       hyprctl dispatch moveworkspacetomonitor "3 1"
+        #     esac
+        #   }
+        #
+        #   socat - "UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/${HYPRLAND_INSTANCE_SIGNATURE}/.socket2.sock" | while read -r line; do handle "$line"; done
+        # ''
       ];
       bindm = [
         "SUPER, mouse:272, movewindow"
