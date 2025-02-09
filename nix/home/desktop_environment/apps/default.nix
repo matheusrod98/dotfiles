@@ -11,6 +11,7 @@
     slack
     discord
     todoist-electron
+    mailspring
     skypeforlinux
     stremio
     obsidian

@@ -33,7 +33,7 @@
         "dunst"
         "systemctl --user start warp-taskbar"
         "skypeforlinux"
-        "[workspace 1 silent] zen"
+        "[workspace 1 silent] mailspring"
         "[workspace 1 silent] todoist-electron"
         "[workspace 2 silent] discord"
         "[workspace 3 silent] slack"
