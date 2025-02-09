@@ -37,7 +37,7 @@
         "[workspace 1 silent] todoist-electron"
         "[workspace 2 silent] discord"
         "[workspace 3 silent] slack"
-        "[workspace 3 silent] ghostty"
+        "[workspace 4 silent] ghostty"
         # pkgs.writeShellScript
         # "move-windows-to-ext-mon"
         # ''
