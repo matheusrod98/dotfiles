@@ -22,5 +22,6 @@
     xdotool
     wttrbar
     grim
+    socat
   ];
 }

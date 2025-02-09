@@ -20,6 +20,10 @@
       env = CLUTTER_BACKEND,wayland
     ";
     settings = {
+      ecosystem = {
+        no_donation_nag = true;
+        no_update_news = true;
+      };
       exec-once = [
         "systemctl --user import-environment QT_QPA_PLATFORMTHEME"
         "dbus-update-activation-environment --systemd --all"
@@ -27,12 +31,28 @@
         "walker --gapplication-service"
         "waybar"
         "dunst"
-        "skypeforlinux"
-        "discord"
         "systemctl --user start warp-taskbar"
-        "slack -s"
-        "todoist-electron"
-        "thunderbird"
+        "skypeforlinux"
+        "[workspace 1 silent] zen"
+        "[workspace 1 silent] todoist-electron"
+        "[workspace 2 silent] discord"
+        "[workspace 3 silent] slack"
+        "[workspace 4 silent] ghostty"
+        pkgs.writeShellScript
+        "move-windows-to-ext-mon"
+        ''
+          #!/bin/sh
+
+          handle() {
+            case $1 in monitoradded*)
+              hyprctl dispatch moveworkspacetomonitor "1 1"
+              hyprctl dispatch moveworkspacetomonitor "2 1"
+              hyprctl dispatch moveworkspacetomonitor "3 1"
+            esac
+          }
+
+          socat - "UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock" | while read -r line; do handle "$line"; done
+        ''
       ];
       bindm = [
         "SUPER, mouse:272, movewindow"
