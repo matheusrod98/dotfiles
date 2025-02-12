@@ -80,7 +80,7 @@
         "SUPER, A, exec, [float; size 1280 720; center] ghostty -e ncpamixer"
         "SUPER, C, exec, [float; size 900 600; center] ghostty -e qalc"
         "SUPER, F, exec, ghostty -e yazi"
-        "SUPER, M, exec, ghostty -e btm"
+        "SUPER, M, exec, ghostty -e btop"
         "SUPER, E, exec, ghostty -e nvim"
         "SUPER, N, exec, obsidian"
         "SUPER, ESCAPE, exec, hyprlock"
