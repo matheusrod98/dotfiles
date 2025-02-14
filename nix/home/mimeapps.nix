@@ -25,7 +25,7 @@
         "application/eps" = [ "org.pwmt.zathura.desktop" ];
         "application/pdf" = [ "org.pwmt.zathura.desktop zen.desktop" ];
         "text/plain" = [ "nvim.desktop" ];
-        "text/x-python" = [ "nvim.desktop;" ];
+        "text/x-python" = [ "nvim.desktop" ];
         "application/javascript" = [ "nvim.desktop" ];
         "application/typescript" = [ "nvim.desktop" ];
         "application/x-shellscript" = [ "nvim.desktop" ];
