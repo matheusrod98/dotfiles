@@ -16,7 +16,7 @@
           margin: 0px;
       }
       window#waybar {
-          background: #${config.lib.stylix.colors.base02};
+          background: #${config.lib.stylix.colors.base01};
       }
       .modules-left {
         margin: 4px 0px 4px 6px;
@@ -25,7 +25,7 @@
         margin: 4px 6px 4px 0px;
       }
       #workspaces {
-        background: #403d52;
+        background: #${config.lib.stylix.colors.base02};
         padding: 2px 6px;
         border-radius: 16px;
       }
@@ -35,54 +35,54 @@
         border-radius: 16px;
       }
       #workspaces button.active {
-        color: #${config.lib.stylix.colors.base0A};
+        color: #${config.lib.stylix.colors.base0B};
         padding: 2px 6px;
         border-radius: 16px;
       }
       #tray {
-        background: #403d52;
+        background: #${config.lib.stylix.colors.base02};
         padding: 2px 12px;
         border-radius: 16px;
       }
       #pulseaudio {
-        background: #403d52;
+        background: #${config.lib.stylix.colors.base02};
         padding: 2px 12px;
         border-radius: 16px;
       }
       #network {
-        background: #403d52;
+        background: #${config.lib.stylix.colors.base02};
         padding: 2px 12px;
         border-radius: 16px;
       }
       #bluetooth {
-        background: #403d52;
+        background: #${config.lib.stylix.colors.base02};
         padding: 2px 12px;
         border-radius: 16px;
       }
       #power {
-        background: #403d52;
+        background: #${config.lib.stylix.colors.base02};
         padding: 2px 12px;
         border-radius: 16px;
       }
       #privacy {
-        background: #403d52;
+        background: #${config.lib.stylix.colors.base02};
         color: #${config.lib.stylix.colors.base09};
         padding: 2px 12px;
         border-radius: 16px;
       }
       #day {
-        background: #403d52;
+        background: #${config.lib.stylix.colors.base02};
         padding: 2px 12px;
         border-radius: 16px;
       }
       #hardware {
-        background: #403d52;
+        background: #${config.lib.stylix.colors.base02};
         padding: 2px 12px;
         border-radius: 16px;
       }
       #mpris {
-        background: #403d52;
-        color: #${config.lib.stylix.colors.base0D};
+        background: #${config.lib.stylix.colors.base02};
+        color: #${config.lib.stylix.colors.base0E};
         padding: 2px 12px;
         border-radius: 16px;
       }
@@ -105,11 +105,11 @@
         padding-right: 14px;
       }
       #battery {
-          color: #${config.lib.stylix.colors.base0C};
+          color: #${config.lib.stylix.colors.base0B};
           padding-right: 10px;
       }
       #battery.charging {
-          color: #${config.lib.stylix.colors.base0C};
+          color: #${config.lib.stylix.colors.base0B};
       }
       #memory.critical,
       #cpu.critical,
@@ -122,7 +122,7 @@
       #custom-gpu.warning,
       #memory.warning,
       #cpu.warning {
-          color: #${config.lib.stylix.colors.base09};
+          color: #${config.lib.stylix.colors.base0A};
       }
     '';
     settings = [

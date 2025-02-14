@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
   stylix.enable = true;
-  stylix.image = ./../wallpapers/flower.jpg;
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
+  stylix.image = ./../wallpapers/mary-ray-6nTIsDdHVcc-unsplash.jpg;
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/default-dark.yaml";
   stylix.fonts = {
     monospace = {
       package = pkgs.jetbrains-mono;

@@ -47,4 +47,4 @@ vim.filetype.add({
 })
 
 vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
-vim.cmd("colorscheme rose-pine")
+vim.cmd('colorscheme base16-default-dark')
