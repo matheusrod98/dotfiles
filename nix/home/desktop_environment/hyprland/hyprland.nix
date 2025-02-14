@@ -34,10 +34,10 @@
         "systemctl --user start warp-taskbar"
         "skypeforlinux"
         "[workspace 1 silent] zen"
-        "[workspace 1 silent] todoist-electron"
-        "[workspace 2 silent] discord"
-        "[workspace 3 silent] slack"
-        "[workspace 4 silent] ghostty"
+        "[workspace 2 silent] ghostty"
+        "[workspace 8 silent] discord"
+        "[workspace 9 silent] slack"
+        "[workspace 10 silent] todoist-electron"
         # pkgs.writeShellScript
         # "move-windows-to-ext-mon"
         # ''
