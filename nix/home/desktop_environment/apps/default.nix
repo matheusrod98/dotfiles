@@ -11,7 +11,6 @@
     slack
     discord
     todoist-electron
-    skypeforlinux
     stremio
     obsidian
     zathura
