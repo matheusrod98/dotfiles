@@ -32,10 +32,8 @@
         "waybar"
         "dunst"
         "systemctl --user start warp-taskbar"
-        "skypeforlinux"
-        "[workspace 1 silent] zen"
-        "[workspace 2 silent] ghostty"
-        "[workspace 8 silent] discord"
+        "[workspace 2 silent] zen"
+        "[workspace 1 silent] ghostty"
         "[workspace 9 silent] slack"
         "[workspace 10 silent] todoist-electron"
         # pkgs.writeShellScript
