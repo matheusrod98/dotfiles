@@ -5,40 +5,18 @@ return {
     },
     version = '*',
     opts = {
-        snippets = {preset = 'luasnip'},
+        enabled = function()
+            return not vim.tbl_contains({"markdown"}, vim.bo.filetype) and
+                       vim.bo.buftype ~= "prompt" and vim.b.completion ~= false
+        end,
+        cmdline = {enabled = false},
         completion = {
-            menu = {border = 'none'},
-            documentation = {
-                window = {border = 'rounded'},
-                auto_show = true,
-                auto_show_delay_ms = 500
-            },
-            ghost_text = {enabled = false}
+            accept = {auto_brackets = {enabled = false}},
+            documentation = {window = {border = 'rounded'}, auto_show = true},
+            ghost_text = {enabled = true}
         },
-        signature = {window = {border = 'rounded'}, enabled = false},
-        keymap = {
-            preset = 'default',
-            ['<C-space>'] = {'show', 'show_documentation', 'hide_documentation'},
-            ['<C-e>'] = {'hide'},
-            ['<C-y>'] = {'select_and_accept'},
-            ['<CR>'] = {'select_and_accept', 'fallback'},
-
-            ['<C-p>'] = {'select_prev', 'fallback'},
-            ['<C-n>'] = {'select_next', 'fallback'},
-
-            ['<C-b>'] = {'scroll_documentation_up', 'fallback'},
-            ['<C-f>'] = {'scroll_documentation_down', 'fallback'},
-
-            ['<Tab>'] = {'snippet_forward', 'fallback'},
-            ['<S-Tab>'] = {'snippet_backward', 'fallback'}
-        },
-        appearance = {
-            -- Set to 'mono' for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
-            -- Adjusts spacing to ensure icons are aligned
-            nerd_font_variant = 'mono'
-        },
-        sources = {default = {'lsp', 'path', 'snippets', 'buffer'}}
-    },
-    keymap = {preset = 'default', ['<CR>'] = {'accept', 'fallback'}},
-    opts_extend = {"sources.default"}
+        signature = {enabled = true, window = {border = 'rounded'}},
+        sources = {default = {'lsp', 'path', 'snippets', 'buffer'}},
+        keymap = {preset = 'enter'}
+    }
 }
