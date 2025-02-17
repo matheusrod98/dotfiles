@@ -13,7 +13,7 @@ return {
             dockerfile = {"hadolint"},
             tex = {"chktex"},
             python = {"ruff"},
-            go = {"revive"},
+            -- go = {"revive"},
             lua = {"luacheck"}
         }
 
