@@ -47,4 +47,3 @@ vim.filetype.add({
 })
 
 vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
-vim.cmd('colorscheme base16-default-dark')
