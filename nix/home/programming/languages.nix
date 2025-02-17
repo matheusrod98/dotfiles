@@ -23,6 +23,7 @@
 
     # Typescript/Javascript
     nodejs
+    pnpm
     nodePackages.ts-node
     typescript-language-server
     eslint
