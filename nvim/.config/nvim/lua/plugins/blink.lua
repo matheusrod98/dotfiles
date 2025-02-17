@@ -37,10 +37,7 @@ return {
             -- Adjusts spacing to ensure icons are aligned
             nerd_font_variant = 'mono'
         },
-        sources = {
-            default = {'lsp', 'path', 'snippets', 'buffer'},
-            cmdline = {}
-        }
+        sources = {default = {'lsp', 'path', 'snippets', 'buffer'}}
     },
     keymap = {preset = 'default', ['<CR>'] = {'accept', 'fallback'}},
     opts_extend = {"sources.default"}
