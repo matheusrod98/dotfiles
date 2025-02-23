@@ -13,7 +13,6 @@ return {
         completion = {
             accept = {auto_brackets = {enabled = false}},
             documentation = {window = {border = 'rounded'}, auto_show = true},
-            ghost_text = {enabled = true}
         },
         signature = {enabled = true, window = {border = 'rounded'}},
         sources = {default = {'lsp', 'path', 'snippets', 'buffer'}},
