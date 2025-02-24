@@ -33,10 +33,6 @@
     wl-clipboard
     unzip
     trash-cli
-    networkmanagerapplet
-    rtorrent
-    ncpamixer
-    bluetui
     duf
   ];
 

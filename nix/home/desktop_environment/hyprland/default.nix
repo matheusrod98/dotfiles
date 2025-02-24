@@ -23,5 +23,10 @@
     wttrbar
     grim
     socat
+    networkmanagerapplet
+    blueman
+    pavucontrol
+    qbittorrent
+    qalculate-gtk
   ];
 }
