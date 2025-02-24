@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 
 {
   programs.hyprlock = {
@@ -6,6 +6,8 @@
     settings = {
       background = {
         blur_passes = 3;
+        path = lib.mkForce "screenshot";
+        blur_size = 8;
       };
       input-field = {
         position = "0, -120";
