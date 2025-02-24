@@ -2,7 +2,6 @@
 {
   stylix.enable = true;
   stylix.image = ./../wallpapers/mary-ray-6nTIsDdHVcc-unsplash.jpg;
-  # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/default-dark.yaml";
   stylix.base16Scheme = {
     base00 = "#161616";
     base01 = "#292828";
