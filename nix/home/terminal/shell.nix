@@ -29,6 +29,9 @@
       bindkey -M menuselect 'l' vi-forward-char
       bindkey -M menuselect 'j' vi-down-line-or-history
     '';
+    envExtra = ''
+      export CYPRESS_RUN_BINARY=${pkgs.cypress}/bin/Cypress
+    '';
     enableCompletion = true;
     completionInit = ''
       autoload bashcompinit && bashcompinit

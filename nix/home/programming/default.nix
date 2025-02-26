@@ -23,6 +23,7 @@
     hadolint
     localstack
     awscli
+    cypress
   ];
 
   imports = [
