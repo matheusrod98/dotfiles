@@ -40,7 +40,6 @@
       zmodload -i zsh/complist
       bindkey -M menuselect "^[[Z" reverse-menu-complete
       complete -C '$(which aws_completer)' aws
-      source <(warp-cli generate-completions zsh)
       source <(kubectl completion zsh)
     '';
     history = {

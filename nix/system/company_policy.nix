@@ -8,8 +8,8 @@
 
   services = {
     clamav = {
-      daemon.enable = false;
-      updater.enable = false;
+      daemon.enable = true;
+      updater.enable = true;
     };
   };
 

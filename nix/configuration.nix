@@ -6,7 +6,7 @@
     ./system/appimage.nix
     ./system/bluetooth.nix
     ./system/bootloader.nix
-    ./system/company_policy.nix
+    # ./system/company_policy.nix
     ./system/display_manager.nix
     ./system/docker.nix
     ./system/environment_variables.nix
