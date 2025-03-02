@@ -16,6 +16,6 @@
     zathura
     imv
     obs-studio
-    libreoffice
+    onlyoffice-bin
   ];
 }
