@@ -24,6 +24,7 @@
     localstack
     awscli
     cypress
+    act
   ];
 
   imports = [
