@@ -9,6 +9,7 @@
     nmap
     ipcalc
     cowsay
+    yt-dlp
     cmatrix
     strace
     ltrace
