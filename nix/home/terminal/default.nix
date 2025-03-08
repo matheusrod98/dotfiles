@@ -42,7 +42,6 @@
     ./shell.nix
     ./tmux.nix
     ./ghostty.nix
-    ./yazi.nix
     ./lsd.nix
   ];
 }

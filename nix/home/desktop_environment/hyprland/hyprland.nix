@@ -78,7 +78,6 @@
         "SUPER SHIFT, RETURN, exec, [float; size 1280 720; center] ghostty"
         "SUPER, A, exec, [float; size 1280 720; center] pavucontrol"
         "SUPER, C, exec, [float; size 900 600; center] qalculate-gtk"
-        "SUPER, F, exec, ghostty -e yazi"
         "SUPER, M, exec, ghostty -e btop"
         "SUPER, E, exec, ghostty -e nvim"
         "SUPER, N, exec, obsidian"
