@@ -14,7 +14,6 @@
     texliveFull
     gdb
     android-tools
-    devpod
     jq
     gnumake
     clang
@@ -25,6 +24,7 @@
     awscli
     cypress
     act
+    devpod
   ];
 
   imports = [

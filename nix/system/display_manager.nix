@@ -16,4 +16,5 @@
   };
 
   security.pam.services.greetd.enableGnomeKeyring = true;
+  security.pam.services.greetd.gnupg.enable = true;
 }

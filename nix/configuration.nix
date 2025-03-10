@@ -32,6 +32,7 @@
     ./system/user.nix
     ./system/zram.nix
     ./system/stylix.nix
+    ./system/gnupg.nix
   ];
 
   system.stateVersion = "24.05";
