@@ -33,8 +33,8 @@
         "dunst"
         "nm-applet"
         "blueman-applet"
-        "[workspace 2 silent] zen"
         "[workspace 1 silent] ghostty"
+        "[workspace 8 silent] zen"
         "[workspace 9 silent] slack"
         "[workspace 10 silent] todoist-electron"
         # pkgs.writeShellScript
