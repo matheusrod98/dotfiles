@@ -7,7 +7,7 @@ return {
             ensure_installed = {
                 "markdown", "markdown_inline", "gowork", "sql", "gotmpl",
                 "comment", "gomod", "gosum", "latex", "html", "cpp", "go",
-                "json", "tsx", "css", "diff"
+                "json", "tsx", "css", "diff", "jsonc"
             },
             sync_install = true,
             auto_install = true,
