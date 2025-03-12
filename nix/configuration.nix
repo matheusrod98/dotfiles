@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -33,6 +33,11 @@
     ./system/zram.nix
     ./system/stylix.nix
     ./system/gnupg.nix
+  ];
+
+  environment.systemPackages = [
+    pkgs.gcc
+    pkgs.clang
   ];
 
   system.stateVersion = "24.05";

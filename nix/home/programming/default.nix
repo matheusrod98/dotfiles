@@ -16,7 +16,6 @@
     android-tools
     jq
     gnumake
-    clang
     clang-tools
     quicktype
     hadolint
