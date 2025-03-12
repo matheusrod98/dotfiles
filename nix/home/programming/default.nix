@@ -23,6 +23,7 @@
     awscli
     cypress
     act
+    goose
     devpod
   ];
 
