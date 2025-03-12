@@ -26,6 +26,7 @@
     goose
     devpod
     devcontainer
+    distrobox
   ];
 
   imports = [
