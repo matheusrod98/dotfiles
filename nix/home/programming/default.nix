@@ -25,6 +25,7 @@
     act
     goose
     devpod
+    devcontainer
   ];
 
   imports = [
