@@ -7,6 +7,10 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     stylix.url = "github:danth/stylix";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
@@ -17,6 +21,7 @@
       nixpkgs,
       stylix,
       home-manager,
+      sops-nix,
       ...
     }@inputs:
     {
@@ -25,8 +30,9 @@
         specialArgs = { inherit inputs; };
         modules = [
           stylix.nixosModules.stylix
-          ./configuration.nix
+          sops-nix.nixosModules.sops
           home-manager.nixosModules.home-manager
+          ./configuration.nix
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;

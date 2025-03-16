@@ -1,4 +1,8 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  config,
+  ...
+}:
 
 {
   imports = [
@@ -39,6 +43,18 @@
     pkgs.gcc
     pkgs.clang
   ];
+
+  sops = {
+    defaultSopsFile = ./secrets.yaml;
+    defaultSopsFormat = "yaml";
+    age.keyFile = "/home/matheus/.config/sops/age/keys.txt";
+  };
+
+  sops.secrets = {
+    CLAUDE_API_KEY = {
+      owner = config.users.users.matheus.name;
+    };
+  };
 
   system.stateVersion = "24.05";
 }

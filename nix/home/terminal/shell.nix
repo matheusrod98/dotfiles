@@ -1,4 +1,8 @@
-{ pkgs, config, ... }:
+{
+  pkgs,
+  config,
+  ...
+}:
 
 {
   home.packages = with pkgs; [
@@ -31,6 +35,7 @@
     '';
     envExtra = ''
       export CYPRESS_RUN_BINARY=${pkgs.cypress}/bin/Cypress
+      export ANTHROPIC_API_KEY=$(cat /run/secrets/CLAUDE_API_KEY)
     '';
     enableCompletion = true;
     completionInit = ''

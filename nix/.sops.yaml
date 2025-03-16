@@ -1,0 +1,7 @@
+keys:
+  - &matheus age10du6pvlw4qa5hqaf057l75gnwlwz60zun0686jlsepsut7nkvy6sat5en3
+creation_rules:
+  - path_regex: secrets.yaml$
+    key_groups:
+      - age:
+          - *matheus
