@@ -43,12 +43,17 @@
     revive
 
     # Autotools
-    checkmake
+    autotools-language-server
+
+    # Docker
+    dockerfile-language-server-nodejs
+    docker-compose-language-service
 
     # C/C++
     cppcheck
 
     # LaTeX
+    texlab
     texlivePackages.chktex
 
     # Others
