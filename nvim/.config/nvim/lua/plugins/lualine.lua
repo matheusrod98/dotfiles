@@ -7,5 +7,6 @@ return {
             sections = {lualine_x = {"overseer"}}
         }
         vim.go.showmode = false
+        vim.opt.laststatus = 3
     end
 }
