@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   programs.git = {
@@ -8,7 +8,7 @@
     userEmail = "maths.souza98@gmail.com";
     userName = "Matheus de Souza";
     signing = {
-      key = "970BD0800764160F148823B51934C2D9CC5B4B0B";
+      key = "896477E5EBF4BAB9C15E237C61282F5E41962F08";
       signByDefault = true;
       format = "openpgp";
     };
