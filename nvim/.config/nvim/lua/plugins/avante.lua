@@ -70,6 +70,7 @@ return {
                 close_from_input = nil -- e.g., { normal = "<Esc>", insert = "<C-d>" }
             }
         },
-        hints = {enabled = true}
+        hints = {enabled = true},
+        windows = {edit = {start_insert = false}, ask = {start_insert = false}}
     }
 }
