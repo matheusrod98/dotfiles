@@ -111,15 +111,15 @@ return {
         {"<leader>wq", "<CMD>q<CR>", mode = "n"},
         {"<Esc>", "<CMD>nohlsearch<CR>", mode = "n"},
         {"<leader>t", "<CMD>QuickType<CR>", mode = "n"},
-        {"<F5>", "<CMD> lua require('dap').continue()<CR>", mode = "n"},
-        {"<F10>", "<CMD> lua require('dap').step_over()<CR>", mode = "n"},
-        {"<F11>", "<CMD> lua require('dap').step_into()<CR>", mode = "n"},
-        {"<F12>", "<CMD> lua require('dap').step_out()<CR>", mode = "n"},
+        {"<leader>dc", "<CMD> lua require('dap').continue()<CR>", mode = "n"},
+        {"<leader>do", "<CMD> lua require('dap').step_over()<CR>", mode = "n"},
+        {"<leader>di", "<CMD> lua require('dap').step_into()<CR>", mode = "n"},
+        {"<leader>dO", "<CMD> lua require('dap').step_out()<CR>", mode = "n"},
         {
-            "<leader>b",
+            "<leader>db",
             "<CMD> lua require('dap').toggle_breakpoint()<CR>",
             mode = "n"
-        },
+        }, {"<leader>dt", "<CMD>DapUiToggle<CR>", mode = "n"},
         {"<leader>dr", "<CMD> lua require('dap').repl.open()<CR>", mode = "n"}
     }
 }
