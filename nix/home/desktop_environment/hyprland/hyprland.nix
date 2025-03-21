@@ -34,6 +34,7 @@
         "nm-applet"
         "blueman-applet"
         "[workspace 1 silent] ghostty"
+        "[workspace 2 silent] insomnia"
         "[workspace 8 silent] zen"
         "[workspace 9 silent] slack"
         "[workspace 10 silent] todoist-electron"
