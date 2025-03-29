@@ -26,6 +26,7 @@ vim.opt.laststatus = 3
 vim.schedule(function() vim.opt.clipboard = 'unnamedplus' end)
 vim.opt.undofile = true
 vim.opt.autoread = true
+vim.cmd.colorscheme "catppuccin"
 
 vim.cmd([[
     let g:netrw_banner = 0
