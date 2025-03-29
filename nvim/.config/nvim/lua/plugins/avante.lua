@@ -5,8 +5,7 @@ return {
     dependencies = {
         "nvim-treesitter/nvim-treesitter", "stevearc/dressing.nvim",
         "nvim-lua/plenary.nvim", "MunifTanjim/nui.nvim",
-        "nvim-telescope/telescope.nvim", "nvim-tree/nvim-web-devicons",
-        "zbirenbaum/copilot.lua", {
+        "nvim-telescope/telescope.nvim", "nvim-tree/nvim-web-devicons", {
             "HakonHarnes/img-clip.nvim",
             event = "VeryLazy",
             opts = {
