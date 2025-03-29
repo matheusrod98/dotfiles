@@ -24,6 +24,7 @@
     cypress
     act
     goose
+    golangci-lint
     devpod
     devcontainer
     distrobox
