@@ -37,9 +37,9 @@
         "blueman-applet"
         "[workspace 1 silent] ghostty"
         "[workspace 2 silent] insomnia"
-        "[workspace 8 silent] zen"
+        "[workspace 4 silent] google-chrome-stable"
         "[workspace 9 silent] slack"
-        "[workspace 10 silent] todoist-electron"
+        "[workspace 10 silent] google-chrome-stable"
         # pkgs.writeShellScript
         # "move-windows-to-ext-mon"
         # ''
@@ -76,7 +76,7 @@
         "SHIFT, XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
         "SHIFT, XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+"
         "SHIFT, XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-"
-        "SUPER, B, exec, zen"
+        "SUPER, B, exec, google-chrome-stable"
         "SUPER, RETURN, exec, ghostty"
         "SUPER SHIFT, RETURN, exec, [float; size 1280 720; center] ghostty"
         "SUPER, A, exec, [float; size 1280 720; center] pavucontrol"

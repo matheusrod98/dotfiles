@@ -28,6 +28,8 @@
     devpod
     devcontainer
     distrobox
+    rust-stakeholder
+    fireplace
   ];
 
   imports = [
