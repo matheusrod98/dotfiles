@@ -18,6 +18,8 @@
       env = GDK_BACKEND,wayland,x11,*
       env = SDL_VIDEODRIVER,wayland
       env = CLUTTER_BACKEND,wayland
+      env = HYPRCURSOR_THEME,Adwaita
+      env = HYPRCURSOR_SIZE,24
     ";
     settings = {
       ecosystem = {
