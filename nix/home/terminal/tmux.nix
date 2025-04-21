@@ -10,6 +10,7 @@
     focusEvents = true;
     historyLimit = 100000;
     keyMode = "vi";
+    sensibleOnTop = true;
     prefix = "M-Space";
     extraConfig = ''
       set -g default-terminal "$TERM"
