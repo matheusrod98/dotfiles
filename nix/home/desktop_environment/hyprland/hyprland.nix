@@ -40,6 +40,7 @@
         "[workspace 4 silent] google-chrome-stable"
         "[workspace 5 silent] slack"
         "[workspace 10 silent] google-chrome-stable"
+        "hyprctl setcursor Adwaita 24"
         # pkgs.writeShellScript
         # "move-windows-to-ext-mon"
         # ''
