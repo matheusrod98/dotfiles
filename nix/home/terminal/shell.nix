@@ -65,8 +65,6 @@
       "cp" = "cp -i";
       "mv" = "mv -i";
       "rm" = "rm -i";
-      "grep" = "rg";
-      "find" = "fd";
       "cat" = "bat --paging=never --decorations=never";
       "less" = "bat --paging=always --decorations=never";
       "open" = "xdg-open";
