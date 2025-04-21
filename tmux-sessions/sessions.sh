@@ -18,14 +18,13 @@ if [ "$script_count" -eq 0 ]; then
   exit 1
 fi
 
-selected_script=$(find "$SCRIPTS_DIR" -type f | sed 's/\.sh$//' | fzf --prompt="Select a tmux session template: ")
-
-if [ -z "$selected_script" ]; then
+selected_template=$(find "$SCRIPTS_DIR" -type f | sed "s|$SCRIPTS_DIR/||" | sed 's/\.sh$//' | fzf --prompt="Select a tmux session template: ")
+if [ -z "$selected_template" ]; then
   echo "No script selected. Exiting."
   exit 1
 fi
 
-script_path="$selected_script.sh"
+script_path="$SCRIPTS_DIR/$selected_template.sh"
 if [ ! -f "$script_path" ]; then
   echo "Error: Script $script_path does not exist."
   exit 1
@@ -39,9 +38,9 @@ if [ -z "$SESSION_NAME" ]; then
   exit 1
 fi
 
-chmod +x "$script_path"
-
 export SESSION_NAME
+
+chmod +x "$script_path"
 "$script_path"
 
 if ! tmux has-session -t "$SESSION_NAME" 2>/dev/null; then
