@@ -86,6 +86,7 @@
       "ti" =
         "tmux ls | sort -u | fzf --height 20% --layout=reverse | sed \"s/:.*//g\" | xargs -r tmux attach -t";
       "cloc" = "tokei";
+      "si" = "$HOME/.dotfiles/tmux-sessions/sessions.sh";
     };
   };
 }
