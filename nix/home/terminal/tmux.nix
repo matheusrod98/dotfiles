@@ -14,6 +14,7 @@
     prefix = "M-Space";
     extraConfig = ''
       set-option -s extended-keys on
+      set -g allow-passthrough on
       set -g default-terminal "$TERM"
       set -ga terminal-overrides ",$TERM*:Tc"
       set-option -g status-left-length 100
