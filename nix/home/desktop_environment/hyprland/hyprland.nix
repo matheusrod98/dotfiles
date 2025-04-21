@@ -38,7 +38,7 @@
         "[workspace 1 silent] ghostty"
         "[workspace 2 silent] insomnia"
         "[workspace 4 silent] google-chrome-stable"
-        "[workspace 9 silent] slack"
+        "[workspace 5 silent] slack"
         "[workspace 10 silent] google-chrome-stable"
         # pkgs.writeShellScript
         # "move-windows-to-ext-mon"
