@@ -30,6 +30,8 @@
     distrobox
     rust-stakeholder
     fireplace
+    gh
+    gh-dash
   ];
 
   imports = [
