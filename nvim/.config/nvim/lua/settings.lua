@@ -27,6 +27,14 @@ vim.schedule(function() vim.opt.clipboard = 'unnamedplus' end)
 vim.opt.undofile = true
 vim.opt.autoread = true
 vim.cmd.colorscheme "catppuccin"
+vim.opt.list = true
+vim.opt.listchars = {tab = '» ', trail = '·', nbsp = '␣'}
+vim.opt.cursorline = true
+vim.opt.confirm = true
+vim.o.foldcolumn = '1' -- '0' is not bad
+vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
 
 vim.cmd([[
     let g:netrw_banner = 0
@@ -44,3 +52,10 @@ vim.filetype.add({
 })
 
 vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+
+vim.api.nvim_create_autocmd('TextYankPost', {
+    desc = 'Highlight when yanking (copying) text',
+    group = vim.api.nvim_create_augroup('kickstart-highlight-yank',
+                                        {clear = true}),
+    callback = function() vim.highlight.on_yank() end
+})
