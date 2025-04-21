@@ -24,6 +24,7 @@
       unbind -T copy-mode-vi Enter;
       bind -T copy-mode-vi v send-keys -X begin-selection
       bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "wl-copy -n"
+      bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
       bind -n M-h select-pane -L
       bind -n M-j select-pane -D
       bind -n M-k select-pane -U
