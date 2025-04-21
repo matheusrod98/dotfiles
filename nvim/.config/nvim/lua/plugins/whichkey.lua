@@ -20,7 +20,27 @@ return {
         {"<leader>uh", "<CMD>Gitsigns undo_stage_hunk<CR>", mode = "n"},
         {"<leader>ph", "<CMD>Gitsigns preview_hunk<CR>", mode = "n"},
         {"<leader>gs", "<CMD>Neogit<CR>", mode = "n"},
-        {"<C-s>", "<CMD>lua vim.lsp.buf.signature_help()<CR>", mode = "i"}, {
+        {"<leader>gb", "<CMD>Neogit branch<CR>", mode = "n"},
+        {
+            "<leader>gp",
+            require('neogit').action('pull', 'from_pushremote'),
+            mode = "n"
+        }, {
+            "<leader>gc",
+            require('neogit').action('branch', 'checkout_local_branch'),
+            mode = "n"
+        },
+        {
+            "<leader>gP",
+            require('neogit').action('push', 'to_pushremote'),
+            mode = "n"
+        },
+        {
+            "<leader>gl",
+            require('neogit').action('log', 'log_all_branches'),
+            mode = "n"
+        }, {"<C-s>", "<CMD>lua vim.lsp.buf.signature_help()<CR>", mode = "i"},
+        {
             "<leader>ih",
             "<CMD> lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({0}),{0})<CR>",
             mode = "n"
@@ -120,6 +140,16 @@ return {
             "<CMD> lua require('dap').toggle_breakpoint()<CR>",
             mode = "n"
         }, {"<leader>dt", "<CMD>DapUiToggle<CR>", mode = "n"},
-        {"<leader>dr", "<CMD> lua require('dap').repl.open()<CR>", mode = "n"}
+        {"<leader>dr", "<CMD> lua require('dap').repl.open()<CR>", mode = "n"},
+        {
+            "<leader>zR",
+            "<CMD> lua require('ufo').openAllFolds()<CR>",
+            mode = "n"
+        },
+        {
+            "<leader>zM",
+            "<CMD> lua require('ufo').closeAllFolds()<CR>",
+            mode = "n"
+        }
     }
 }

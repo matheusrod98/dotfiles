@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
   programs.newsboat = {
     enable = true;
@@ -14,6 +14,10 @@
       {
         url = "https://overreacted.io/rss.xml";
         tags = [ "Web development" ];
+      }
+      {
+        url = "https://aguasdorio.com.br/feed";
+        tags = [ "local-news" ];
       }
     ];
     extraConfig = ''

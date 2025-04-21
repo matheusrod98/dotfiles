@@ -32,6 +32,8 @@
     fireplace
     gh
     gh-dash
+    lazydocker
+    moreutils
   ];
 
   imports = [
