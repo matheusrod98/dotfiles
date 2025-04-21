@@ -13,6 +13,7 @@
     sensibleOnTop = true;
     prefix = "M-Space";
     extraConfig = ''
+      bind r source-file ~/.config/tmux/tmux.conf
       set-option -s extended-keys on
       set -g allow-passthrough on
       set -g default-terminal "$TERM"
