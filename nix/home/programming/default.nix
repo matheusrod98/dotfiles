@@ -20,7 +20,7 @@
     quicktype
     hadolint
     localstack
-    awscli
+    awscli2
     cypress
     act
     goose
