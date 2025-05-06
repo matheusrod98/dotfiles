@@ -37,6 +37,7 @@
     ./system/zram.nix
     ./system/stylix.nix
     ./system/gnupg.nix
+    ./system/kernel.nix
   ];
 
   environment.systemPackages = [
