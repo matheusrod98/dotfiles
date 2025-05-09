@@ -2,6 +2,7 @@
   description = "Personal system configuration as flake.";
 
   inputs = {
+    mcp-hub.url = "github:ravitemer/mcp-hub";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/master";

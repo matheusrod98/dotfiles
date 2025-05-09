@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -34,6 +34,7 @@
     gh-dash
     lazydocker
     moreutils
+    inputs.mcp-hub.packages."${system}".default
   ];
 
   imports = [

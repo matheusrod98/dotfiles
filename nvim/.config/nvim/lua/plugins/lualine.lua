@@ -4,7 +4,11 @@ return {
     config = function()
         require('lualine').setup {
             options = {globalstatus = true},
-            sections = {lualine_x = {"overseer"}}
+            sections = {
+                lualine_x = {
+                    {"overseer"}, {require('mcphub.extensions.lualine')}
+                }
+            }
         }
         vim.go.showmode = false
         vim.opt.laststatus = 3
