@@ -37,6 +37,7 @@
       export CYPRESS_RUN_BINARY=${pkgs.cypress}/bin/Cypress
       export ANTHROPIC_API_KEY=$(cat /run/secrets/CLAUDE_API_KEY)
       export GROQ_API_KEY=$(cat /run/secrets/GROQ_API_KEY)
+      export TAVILY_API_KEY=$(cat /run/secrets/TAVILY_API_KEY)
     '';
     enableCompletion = true;
     completionInit = ''

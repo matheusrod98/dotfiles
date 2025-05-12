@@ -27,14 +27,13 @@ vim.schedule(function() vim.opt.clipboard = 'unnamedplus' end)
 vim.opt.undofile = true
 vim.opt.autoread = true
 vim.cmd.colorscheme "catppuccin"
-vim.opt.list = true
-vim.opt.listchars = {tab = '» ', trail = '·', nbsp = '␣'}
-vim.opt.cursorline = true
 vim.opt.confirm = true
-vim.o.foldcolumn = nil
-vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
-vim.o.foldlevelstart = 99
-vim.o.foldenable = true
+-- vim.o.foldcolumn = nil
+-- vim.o.foldenable = true
+-- vim.opt.listchars = {tab = '» ', trail = '·', nbsp = '␣'}
+-- vim.opt.cursorline = true
+-- vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+-- vim.o.foldlevelstart = 99
 
 vim.cmd([[
     let g:netrw_banner = 0

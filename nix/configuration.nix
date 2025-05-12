@@ -58,6 +58,9 @@
     GROQ_API_KEY = {
       owner = config.users.users.matheus.name;
     };
+    TAVILY_API_KEY = {
+      owner = config.users.users.matheus.name;
+    };
   };
 
   system.stateVersion = "24.05";
